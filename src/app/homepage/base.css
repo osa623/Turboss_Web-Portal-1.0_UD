@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+.swiper-slide {
+  width: 30rem;
+  height: 30rem;
+  position: flex;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
+
+.slider-controler {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.slider-controler .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+
+.slider-controler .slider-arrow::after {
+  content: '';
+}
+
+

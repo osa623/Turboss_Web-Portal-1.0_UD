@@ -1,0 +1,364 @@
+[
+    {
+      "id": 1,
+      "name": "Turbocharger",
+      "image": "/assets/turbo.png",
+      "partset1": [
+        {
+          "name" : "CamShaft",
+          "image": "/assets/engineParts/camshaft.png"
+        },
+        {
+          "name" : "CrankShaft",
+          "image": "/assets/engineParts/crankshaft.png"
+        },
+        {
+          "name" : "Connecting Rods",
+          "image": "/assets/engineParts/connectingRods.png"
+        },
+        {
+          "name" : "Pistons",
+          "image": "/assets/engineParts/pistons.png"
+        },
+        {
+          "name" : "Spark Plugs",
+          "image": "/assets/engineParts/plugs.png"
+        },
+        {
+          "name" : "Engine Block",
+          "image": "/assets/engineParts/engineBlock.png"
+        },
+        {
+          "name" : "Cylinder Head",
+          "image": "/assets/engineParts/headCylinder.png"
+        }
+
+
+            ],
+      "detailset1": [
+        {
+          "topic": "What is the Turbocharger",
+          "Description": "A turbocharger is a forced induction system that significantly enhances an engine’s power and efficiency by compressing air entering the combustion chamber. Composed of a turbine and a compressor linked by a shared shaft, it operates by harnessing wasted exhaust gases to spin the turbine. This rotational energy drives the compressor, which pressurizes ambient air, increasing its density before injecting it into the engine. By delivering more oxygen-rich air, the engine can burn fuel more completely and aggressively, generating greater horsepower without requiring a larger displacement. Modern turbochargers often include advanced features like intercoolers (to cool compressed air for better density), variable geometry turbines (to optimize airflow at different RPMs), and lightweight materials for reduced lag. Originally developed for aircraft engines in the early 20th century, turbos are now ubiquitous in automotive engineering, enabling smaller engines to rival the output of larger ones while improving fuel economy and reducing emissions."
+        },
+        {
+          "topic": "How Does it Work",
+          "Description": "The turbocharger operates through a four-stage process: exhaust gas redirection, turbine activation, air compression, and combustion enhancement. First, exhaust gases expelled from the engine are funneled through the turbo’s turbine housing, causing the turbine wheel to spin at speeds exceeding 150,000 RPM. This spinning motion transfers energy to the compressor wheel on the opposite end of the shaft. The compressor draws in ambient air, pressurizes it, and forces it into the engine’s intake manifold. However, compressed air heats up during this process, reducing its density. To counteract this, an intercooler cools the air before it enters the combustion chamber, maximizing oxygen content. The denser air allows the engine to inject more fuel, creating a more powerful explosion in the cylinders. This cycle is managed by a wastegate, which regulates boost pressure to prevent engine damage. While turbochargers historically suffered from 'turbo lag' (a delay in power delivery), modern designs use twin-scroll housings, ball bearings, and electric assist systems to minimize this drawback, delivering near-instantaneous throttle response."
+        },
+        {
+          "topic": "Common in Performance Cars",
+          "Description": "Turbochargers are a cornerstone of high-performance automotive engineering, particularly in sports cars, supercars, and rally vehicles. Brands like Porsche, Audi, and Ferrari use turbocharged engines to achieve extraordinary power-to-weight ratios. For example, the Porsche 911 Turbo S generates 640 horsepower from a 3.8L twin-turbo flat-six engine, rivaling the output of naturally aspirated V12 engines at half the displacement. Turbos are also critical in motorsports; Formula 1’s hybrid-era V6 engines rely on turbocharging paired with energy recovery systems for efficiency and power. Beyond raw performance, automakers use turbos to meet strict emissions regulations. By downsizing engines (e.g., replacing a V8 with a turbocharged V6), manufacturers reduce weight and fuel consumption while maintaining power. Even mainstream brands like Hyundai and Ford now turbocharge smaller engines (e.g., 1.6L or 2.0L) to replace older, less efficient larger engines. In diesel trucks, turbos provide the low-end torque needed for towing and hauling, making them indispensable in commercial and off-road applications."
+        }
+      ],
+      "shadow": "/assets/turboShadow.png",
+      "description": "A turbocharger increases the engine's efficiency and power by forcing more air into the combustion chamber. Turbochargers are a key performance-enhancing component in modern engines. By increasing the amount of air entering the engine, a turbo enables a higher combustion rate, improving power output without increasing engine size. This allows manufacturers to create smaller, more efficient engines that produce the same or even higher performance than larger, naturally aspirated counterparts. Turbos also help reduce emissions and improve fuel economy. They are commonly found in sports cars, high-performance vehicles, and commercial trucks, where they provide the necessary power and torque for both speed and load-bearing capabilities.",
+      "details": [
+        "Improves engine power",
+        "Increases fuel efficiency",
+        "Common in performance cars"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Engine",
+      "image": "/assets/engine.png",
+      "shadow": "/assets/engineShadow.png",
+      "description": "The engine is the heart of a vehicle...",
+      "partset1": [
+          {
+            "name": "Camshaft",
+            "image": "/assets/engineParts/camshaft.png",
+            "description": "The camshaft is responsible for controlling the timing of the intake and exhaust valves, ensuring optimal engine performance and efficiency."
+          },
+          {
+            "name": "Crankshaft",
+            "image": "/assets/engineParts/crankshaft.png",
+            "description": "The crankshaft converts the reciprocating motion of the pistons into rotational motion, which drives the vehicle's wheels."
+          },
+          {
+            "name": "Connecting Rods",
+            "image": "/assets/engineParts/connectingRods.png",
+            "description": "Connecting rods link the pistons to the crankshaft, transmitting the force generated by combustion to create rotational power."
+          },
+          {
+            "name": "Pistons",
+            "image": "/assets/engineParts/pistons.png",
+            "description": "Pistons move up and down inside the cylinders, compressing the air-fuel mixture and transferring energy from combustion to the crankshaft."
+          },
+          {
+            "name": "Spark Plugs",
+            "image": "/assets/engineParts/plugs.png",
+            "description": "Spark plugs generate the spark needed to ignite the air-fuel mixture in the combustion chamber, powering the engine."
+          },
+          {
+            "name": "Engine Block",
+            "image": "/assets/engineParts/engineBlock.png",
+            "description": "The engine block is the main structure of the engine, housing cylinders, pistons, and other crucial components."
+          },
+          {
+            "name": "Cylinder Head",
+            "image": "/assets/engineParts/headCylinder.png",
+            "description": "The cylinder head sits atop the engine block and contains the intake and exhaust valves, spark plugs, and fuel injectors."
+          }
+        ],
+      "variations" : [
+
+        {
+           "name": "V2",
+            "image": "/assets/engines/v2.png"
+
+        },
+        {
+            "name": "V6",
+            "image": "/assets/engines/v6.png"
+        },
+        {
+            "name": "V8",
+            "image": "/assets/engines/v8.png"
+        },
+        {
+            "name": "V10",
+            "image": "/assets/engines/v10.png"
+        },
+        {
+            "name": "V12",
+            "image": "/assets/engines/v12.png"
+        },
+        {
+          "name": "W12",
+          "image": "/assets/engines/w12.png"
+        },
+        {
+          "name": "W16",
+          "image": "/assets/engines/w16.png"
+       }
+
+      ],
+      "detailset1": [
+        {
+          "topic": "Engine Types & Evolution",
+          "Description": "Internal combustion engines (ICE) have evolved from early carbureted designs to modern direct-injection systems. Gasoline engines dominate passenger vehicles due to their high RPM capabilities and refinement, while diesel engines leverage compression ignition for superior thermal efficiency (up to 40% vs. 30% in gasoline). Hybrid powertrains, like Toyota’s THS-II, combine ICE with electric motors for regenerative braking and idle-stop functionality. Fully electric engines, such as Tesla’s AC induction motors, deliver instant torque (0-60 mph in 2.3s in Model S Plaid) and eliminate tailpipe emissions. Emerging technologies include hydrogen combustion engines (Toyota Mirai) and rotary engines (Mazda’s SkyActiv-R), each addressing specific efficiency and packaging challenges."
+        },
+        {
+          "topic": "Performance Engineering",
+          "Description": "Engine performance is governed by metrics like horsepower, torque, and specific output. Turbocharging (e.g., BMW’s TwinPower Turbo) forces dense air into cylinders, increasing volumetric efficiency. Variable valve timing (Honda’s VTEC) optimizes airflow across RPM ranges. High-performance engines use forged components (pistons, crankshafts) and lightweight materials (aluminum blocks, titanium valves) to withstand extreme pressures. Formula 1’s 1.6L V6 hybrid engines produce 1000+ HP via MGU-H/MGU-K energy recovery systems, showcasing the pinnacle of ICE-efficiency synergy."
+        },
+        {
+          "topic": "Maintenance & Longevity",
+          "Description": "Critical maintenance intervals include oil changes (5W-30 synthetic every 10k miles), timing belt replacements (60k-100k miles), and carbon buildup cleaning (direct-injection engines). Symptoms of failure: knocking (pre-ignition), blue exhaust (oil burning), or misfires (faulty coils). Engine lifespan ranges from 200k miles (turbodiesels) to 500k+ miles (commercial truck engines), contingent on cooling system integrity and lubrication quality."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Suspension",
+      "image": "/assets/suspension.png",
+      "shadow": "/assets/suspensionShadow.png",
+      "description": "Suspension systems are responsible for...",
+      "partset1": [
+        {
+          "name" : "CamShaft",
+          "image": "/assets/engineParts/camshaft.png"
+        },
+        {
+          "name" : "CrankShaft",
+          "image": "/assets/engineParts/crankshaft.png"
+        },
+        {
+          "name" : "Connecting Rods",
+          "image": "/assets/engineParts/connectingRods.png"
+        },
+        {
+          "name" : "Pistons",
+          "image": "/assets/engineParts/pistons.png"
+        },
+        {
+          "name" : "Spark Plugs",
+          "image": "/assets/engineParts/plugs.png"
+        },
+        {
+          "name" : "Engine Block",
+          "image": "/assets/engineParts/engineBlock.png"
+        },
+        {
+          "name" : "Cylinder Head",
+          "image": "/assets/engineParts/headCylinder.png"
+        }
+
+
+            ],
+      "detailset1": [
+        {
+          "topic": "Suspension Engineering Fundamentals",
+          "Description": "Suspension geometry (camber, caster, toe) dictates tire contact and stability. MacPherson struts (common in front-wheel drives) combine shock/spring into a compact unit, while multi-link designs (Mercedes E-Class) enable precise wheel control. Spring rates (measured in lbs/in) and damping coefficients determine ride stiffness—sports cars use 400+ lbs/in springs vs. 150 lbs/in in sedans. Anti-roll bars reduce body lean by 30-50% during cornering, enhancing driver confidence."
+        },
+        {
+          "topic": "Advanced Suspension Technologies",
+          "Description": "Adaptive dampers (GM’s MagneRide) use magnetorheological fluid to adjust firmness in 1ms. Air suspension (Audi A8) auto-levels the vehicle and lowers at speed for aerodynamics. Active rear steering (Porsche 911 GT3) turns rear wheels up to 5° for tighter turns. Track-focused systems like Ferrari’s SCM-E integrate accelerometers and GPS to predict road surfaces, optimizing damping in real time."
+        },
+        {
+          "topic": "Application-Specific Designs",
+          "Description": "Off-road suspensions (Jeep Wrangler) prioritize articulation (20+ inches) via solid axles and long-travel shocks. Luxury cars (Lexus LS) employ frequency-reactive dampers to isolate cabin from road noise. Motorsport suspensions use pushrod/pullrod layouts (F1 cars) to lower centers of gravity. Autonomous vehicles require tunable suspensions to compensate for sensor latency during evasive maneuvers."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cooler",
+      "image": "/assets/cooler.png",
+      "shadow": "/assets/coolerShadow.png",
+      "description": "Coolers help regulate engine temperatures...",
+      "partset1": [
+        {
+          "name" : "CamShaft",
+          "image": "/assets/engineParts/camshaft.png"
+        },
+        {
+          "name" : "CrankShaft",
+          "image": "/assets/engineParts/crankshaft.png"
+        },
+        {
+          "name" : "Connecting Rods",
+          "image": "/assets/engineParts/connectingRods.png"
+        },
+        {
+          "name" : "Pistons",
+          "image": "/assets/engineParts/pistons.png"
+        },
+        {
+          "name" : "Spark Plugs",
+          "image": "/assets/engineParts/plugs.png"
+        },
+        {
+          "name" : "Engine Block",
+          "image": "/assets/engineParts/engineBlock.png"
+        },
+        {
+          "name" : "Cylinder Head",
+          "image": "/assets/engineParts/headCylinder.png"
+        }
+
+
+            ],
+      "detailset1": [
+        {
+          "topic": "Thermodynamics of Cooling Systems",
+          "Description": "Cooling systems manage 30-40% of engine heat via convection and conduction. Radiators use aluminum cores (95% conductivity) with 100+ microtubes to maximize surface area. Coolant mixtures (50% ethylene glycol) raise boiling points to 265°F and prevent freezing. Oil coolers maintain viscosity by stabilizing temps between 190-220°F—critical for turbocharged engines (e.g., Subaru WRX) where oil degrades rapidly under high thermal loads."
+        },
+        {
+          "topic": "High-Performance Cooling Solutions",
+          "Description": "Track cars employ dual-pass radiators with 30% greater flow rates. Auxiliary oil coolers (BMW M3) add 2-3 quarts of capacity. Intercoolers (Volvo’s Charge Air Cooler) reduce intake temps by 100°F, increasing air density for combustion. Liquid-to-air systems (Ford GT) cool both transmission and differential fluids via shared heat exchangers. Formula 1 cars use 10-layer carbon fiber oil tanks with integrated cooling fins."
+        },
+        {
+          "topic": "Failure Prevention & Diagnostics",
+          "Description": "Common failures: corroded cores (pH imbalance), cracked tanks (vibration stress), or clogged passages (contaminated coolant). Infrared thermography identifies hotspots, while pressure tests (15 psi) detect leaks. Preventative measures include biannual coolant flushes and additive packages (Water Wetter) to enhance heat transfer."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Brake",
+      "image": "/assets/brake.png",
+      "shadow": "/assets/brakeShadow.png",
+      "description": "Brakes are essential for slowing down...",
+      "partset1": [
+        {
+          "name" : "CamShaft",
+          "image": "/assets/engineParts/camshaft.png"
+        },
+        {
+          "name" : "CrankShaft",
+          "image": "/assets/engineParts/crankshaft.png"
+        },
+        {
+          "name" : "Connecting Rods",
+          "image": "/assets/engineParts/connectingRods.png"
+        },
+        {
+          "name" : "Pistons",
+          "image": "/assets/engineParts/pistons.png"
+        },
+        {
+          "name" : "Spark Plugs",
+          "image": "/assets/engineParts/plugs.png"
+        },
+        {
+          "name" : "Engine Block",
+          "image": "/assets/engineParts/engineBlock.png"
+        },
+        {
+          "name" : "Cylinder Head",
+          "image": "/assets/engineParts/headCylinder.png"
+        }
+
+
+            ],
+      "detailset1": [
+        {
+          "topic": "Braking System Mechanics",
+          "Description": "Hydraulic systems amplify pedal force (6:1 ratio) via master cylinders. Disc brakes (Brembo 4-piston calipers) provide 20% better fade resistance than drums. Ceramic pads (Akebono PRO-ACT) reduce dust and noise, while carbon-ceramic rotors (Porsche PCCB) withstand 1,800°F temps but cost $15k+/set. Regenerative braking (Tesla Model 3) recaptures 70% of kinetic energy, extending EV range by 10-15%."
+        },
+        {
+          "topic": "Safety & Innovation",
+          "Description": "ABS modulates brake pressure 15 times/sec to prevent lockup. Electronic brakeforce distribution (EBD) balances front/rear bias dynamically. Autonomous emergency braking (AEB) uses radar/LiDAR to apply 1g deceleration if collisions are imminent. Future tech: brake-by-wire systems (Mercedes Sensotronic) replace hydraulic lines with electronic actuators for faster response."
+        },
+        {
+          "topic": "High-Performance Braking Solutions",
+          "Description": "Racing brakes use 6-piston monobloc calipers (AP Racing) and vented rotors with 1,200 drilled holes for heat dissipation. Air ducts (NASCAR) force-cool rotors during straights. Carbon-carbon brakes (F1) achieve 0.7g stopping power but require 500°F to function optimally. Drag racing utilizes parachutes for 200mph+ deceleration."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "ECU",
+      "image": "/assets/ecu.png",
+      "shadow": "/assets/ecuShadow.png",
+      "description": "The Engine Control Unit (ECU) is...",
+      "partset1": [
+        {
+          "name" : "CamShaft",
+          "image": "/assets/engineParts/camshaft.png"
+        },
+        {
+          "name" : "CrankShaft",
+          "image": "/assets/engineParts/crankshaft.png"
+        },
+        {
+          "name" : "Connecting Rods",
+          "image": "/assets/engineParts/connectingRods.png"
+        },
+        {
+          "name" : "Pistons",
+          "image": "/assets/engineParts/pistons.png"
+        },
+        {
+          "name" : "Spark Plugs",
+          "image": "/assets/engineParts/plugs.png"
+        },
+        {
+          "name" : "Engine Block",
+          "image": "/assets/engineParts/engineBlock.png"
+        },
+        {
+          "name" : "Cylinder Head",
+          "image": "/assets/engineParts/headCylinder.png"
+        }
+
+
+            ],
+      "detailset1": [
+        {
+          "topic": "ECU Architecture & Functionality",
+          "Description": "Modern ECUs (Bosch Motronic) use 32-bit microprocessors processing 250+ sensor inputs. Maps (fuel, ignition, boost) are stored in EEPROM chips. OBD-II protocols (CAN bus) enable real-time monitoring of parameters like AFR (14.7:1 stoichiometric) or knock sensor voltages. Flex-fuel ECUs (Ford EcoBoost) auto-adjust for E85 ethanol’s 30% lower energy density."
+        },
+        {
+          "topic": "Performance Tuning & Calibration",
+          "Description": "Stage 1 tunes (COBB Accessport) remap boost tables for +50HP while retaining OEM reliability. Dyno tuning (Mustang Dyno) customizes ignition advance curves for specific octane ratings. Anti-lag systems (rally cars) inject fuel into exhaust manifolds to maintain turbo spool between shifts. ECU cloning (BMW FEMTO) bypasses immobilizers for engine swaps."
+        },
+        {
+          "topic": "Integration with Vehicle Systems",
+          "Description": "ECUs network with TCU (transmission control) for rev-matching downshifts. Hybrid ECUs (Toyota Hybrid Synergy) manage power split between ICE and electric motors. Cybersecurity: Tesla’s ECU firmware uses SHA-256 encryption to prevent unauthorized tuning access."
+        }
+      ]
+    }
+  ]
+  
