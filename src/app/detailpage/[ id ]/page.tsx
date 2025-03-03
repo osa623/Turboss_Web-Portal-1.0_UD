@@ -311,7 +311,7 @@ useEffect(() => {
         <div className={`absolute flex flex-col items-center justify-center ${expandSection ? 'lgs:w-[80vw]' : 'lgs:w-[60vw]'} bg-primary overflow-auto right-0 h-auto z-30`}/>
  
                 {/* Upper Section */}
-                <div className={`flex ${expandSection ? 'lgs:w-[50vw]' : 'lgs:w-[50vw]'} lgs:h-[40rem] bg-orange-600  z-40 items-center`}>
+                  <div className={`flex ${expandSection ? 'lgs:w-[50vw]' : 'lgs:w-[50vw]'} lgs:h-[40rem] bg-orange-600  z-40 items-center`}>
 
                       <div className='flex lgs:w-[50vw] lgs:h-[40rem] z-40 bg-transparent items-center justify-center'>
 
@@ -333,7 +333,7 @@ useEffect(() => {
                           {/* Navigation Section */}
                             <div className='flex w-full lgs:h-[5rem] bg-primary overflow-hidden z-50 items-center justify-center'>
 
-                             <div onClick={()=> handleExpand() } className= {`absolute flex cursor-pointer lgs:w-[10rem] lgs:h-[5rem] bg-orange-600 right-0 items-center justify-center`}>
+                             <div onClick={()=> handleExpand() } className= {`absolute flex cursor-pointer lgs:w-[10rem] lgs:h-[5rem] bg-primary right-0 items-center justify-center`}>
 
                                 Sample
 
@@ -344,8 +344,14 @@ useEffect(() => {
                             
                           {/* Upper Parts Section Section */}
                            <div className='flex w-full lgs:h-[35rem] bg-transparent z-50 items-center justify-center'>
+
+                            
+                              {/* View Part Section */}
+                                <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[15vw]' : 'lgs:w-[0vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-orange-600 opacity-10`}>
+
+                              </div> 
                               {/* Parts Section */}
-                              <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[30vw]' : 'lgs:w-[20vw]'} transition-all duration-1000 ease-in-out place-content-center z-50 place-items-center scrollbar-hide overflow-y-scroll bg-transparent`}>
+                              <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[25vw]' : 'lgs:w-[20vw]'} transition-all duration-1000 ease-in-out place-content-center z-50 place-items-center scrollbar-hide overflow-y-scroll bg-transparent`}>
 
                                 <div className='absolute flex items-center justify-center flex-col lgs:space-y-2 lgs:h-[35rem] lgs:w-[20vw] z-40'>
                                   {data?.partset1.map((tool, index) => (
@@ -363,12 +369,12 @@ useEffect(() => {
                                   ))}
                                   </div>
 
-                                  <div className='absolute opacity-40  bg-orange-700 lgs:h-[35rem] lgs:w-[20vw] z-20'/>
+                                  <div className={`absolute opacity-40  bg-orange-700 lgs:h-[35rem] ${expandSection ? 'lgs:w-[25vw]' : 'lgs:w-[20vw]'} transition-all duration-1000 ease-in-out  z-20`}/>
 
                               </div> 
 
-                              {/* View Part Section */}
-                                <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[70vw]' : 'lgs:w-[80vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-transparent`}>
+                                {/* View Part Section */}
+                                <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[80vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-transparent`}>
  
                                     <div className='flex w-full items-center justify-center h-auto lgs:mt-12'>
 
@@ -429,6 +435,7 @@ useEffect(() => {
 
 
                                 </div> 
+
                            </div>
 
 
@@ -441,10 +448,10 @@ useEffect(() => {
 
                       </div>  
 
-                </div>
+                  </div>
 
-                {/* Content Section */}
-                <div className='flex flex-col w-auto h-auto bg-transparent z-50'>
+                  {/* Content Section */}
+                  <div className='flex flex-col w-auto h-auto bg-transparent z-50'>
 
 
 
