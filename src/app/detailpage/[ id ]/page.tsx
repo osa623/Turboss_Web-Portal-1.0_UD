@@ -347,7 +347,7 @@ useEffect(() => {
 
                             
                               {/* View Part Section */}
-                                <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[15vw]' : 'lgs:w-[0vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-orange-600 opacity-10`}>
+                                <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[15vw]' : 'lgs:w-[0vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-secondary opacity-50`}>
 
                               </div> 
                               {/* Parts Section */}
@@ -527,11 +527,109 @@ useEffect(() => {
 
 
 
+        {/* Sub Section for more details */}
+        <div className='flex bg-secondary w-full  lgs:h-auto'>
 
-        <div className='flex bg-secondary w-full  lgs:h-[30rem]'>
+
+
+
+        <div className="flex lgs:h-[25rem] lgs:w-[40vw] items-center justify-center">
+
+        </div>
+        <div className="relative flex lgs:h-[25rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
+                
+                <div className="flex absolute bg-gradient-to-r lgs:h-[30rem] lgs:w-[80vw]  from-secondary to-transparent z-40"/>
+                <div className="flex absolute bg-gradient-to-l lgs:h-[30rem] lgs:w-[20vw] right-0  from-secondary to-transparent z-40"/>
+        </div>
+
+        <div className="absolute flex w-full lgs:h-[25rem] items-center justify-center z-50">
+            <div className="flex flex-col h-[25rem]  lgs:w-[60vw] items-center justify-center">
+                <div className="flex w-auto h-auto">
+
+                        <h2 className="flex lgs:text-lg font-dmsans text-center items-start lgs:pt-5 text-primary" style={{
+                            fontWeight:'100'
+                        }}>
+                        Want to know
+                        </h2>
+
+                        <span className="flex lgs:text-6xl font-dmsans text-center items-center p-2 text-primary"
+                            style={{
+                                fontWeight:'100'
+                            }}>
+                            About Your Car?
+                        </span>
+                </div>
+
+                    <p className="font-dmsans lgs:w-[40vw] lgs:text-lg text-center lgs:mt-8 text-primary h-auto items-center"
+                    style={{
+                        fontWeight:'100'
+                    }}>
+                            <span className="lgs:mr-2 lgs:text-xl font-russoone lgs:p-1" style={{ fontWeight: '400' }}>
+                                {"\u0022"}
+                            </span>Explore <span className="lgs:mr-2 bg-baseprimary lgs:p-1"
+                      style={{
+                        fontWeight:'400'
+                      }}>
+                      Baos Wheels 
+                        </span>for expert car reviews, in-depth articles, and the latest auto industry updates. Stay informed with insights, tips, and engaging videos.
+                        <span className="lgs:mr-2 lgs:text-xl font-russoone lgs:p-1" style={{ fontWeight: '400' }}>
+                                {"\u0022"}
+                            </span></p>
+            </div>
+                <div className="flex h-[30rem] lgs:w-[40vw]  items-center justify-center overflow-hidden">
+                <video
+                        src='/baoswheels.webm'
+                        autoPlay
+                        muted
+                        loop
+                        width={1000}
+                        height={1000}
+                        className="lgs:scale-150 lgs:pr-24"
+                        playsInline // Ensures playback restarts if it ever stops
+                    />
+                
+                </div>
+
+        </div>
 
 
         </div>  
+
+               {/* Topic Section */}
+       <div className='absolute flex w-auto h-auto bg-transparent z-50 lgs:mt-48 items-end justify-end'>
+
+            <div className='flex w-auto h-auto  right-0 transform origin-top-left -rotate-90'>
+
+
+              <h2 className='flex flex-col font-bricolagegrotesque text-xl items-center justify-center lgs:p-3  bg-secondary text-primary'style={{
+                boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
+                fontWeight:'700'
+              }}>
+                <span className='flex font-thin'>Garage</span>
+                <span className='flex text-6xl'>101</span>
+                
+              </h2>
+
+              <h2 className='font-bricolagegrotesque text-6xl lgs:p-2 place-content-center bg-orange-600 text-primary'style={{
+                boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
+                fontWeight:'700'
+              }}>
+                {data?.name}
+              </h2>
+
+              
+
+            </div>    
+
+      </div>
+
+
+        
+
+
+
+
+
               {/* Variation Section */}
          {
 
