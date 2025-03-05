@@ -580,7 +580,7 @@ useEffect(() => {
 
  
                                       <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-40'>
-                                          <h2 className='font-bricolagegrotesque lgs:w-[8vw] lgs:h-[5rem]  text-md text-center text-primary'
+                                          <h2 className='font-poppins lgs:w-[8vw] lgs:h-[5rem] group-hover:scale-125 transition-all duration-700 ease-in-out  text-md text-center text-primary'
                                           style={{
                                             fontWeight:'100'
                                           }}>
@@ -589,7 +589,7 @@ useEffect(() => {
 
                                       </div>  
                                       <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-30'>
-                                          <h2 className='font-poppins lgs:h-[5rem]  text-3xl text-center opacity-15 text-primary'
+                                          <h2 className='font-poppins lgs:h-[5rem]  text-3xl text-center group-hover:scale-125 transition-all duration-700 ease-in-out opacity-15 text-primary'
                                           style={{
                                             fontWeight:'100'
                                           }}>
