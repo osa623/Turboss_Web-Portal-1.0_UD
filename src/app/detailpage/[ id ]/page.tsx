@@ -40,6 +40,12 @@ interface ToolData {
   shadow: string;
   description: string;
   details: string[];
+  subTopic1: string;
+  subTopic2: string;
+  subSection: Array<{
+    subName1: string;
+    subImage1: string; 
+  }>;
   detailset1: Array<{
     topic: string;
     Description: string;
@@ -64,17 +70,6 @@ const Detailpage = () => {
     const [offsetY, setOffsetY] = useState(0);
     const [parallex1 , setParallex1] = useState(0);
     
-    //craete an interface of that dataset from the json file
-
-    interface Tools {
-
-        id: number;
-        name: string;
-        image: string;
-        shadow: string;
-        description: string;
-        details: string[];
-    }
 
     const [dnaData, setDnaData] = useState<Tools[]>([]);
 
@@ -129,7 +124,7 @@ const Detailpage = () => {
   const [selectedname , setSelectedName] = useState<string | null>(null);
   const [selectedDescription , setSelectedDescription] = useState<string | null>(null);
   const [expandSection , setExpandSection] = useState(false);
-
+  const [hover, setHover] = useState<number | null>(null);
 
   //handle expands 001
   const handleExpand = () => {
@@ -552,7 +547,7 @@ useEffect(() => {
                             <h2 className='flex flex-col font-poppins lgs:w-[40vw] lgs:text-5xl text-primary' style={{
                               fontWeight:'100'
                             }}>
-                            Analyze and optimize key engine parameters,<span className='flex flex-col text-orange-600 text-lg' style={{ fontWeight:'400'}}>including<span className='flex flex-col text-primary lgs:text-nowrap'>Torque | Displacement | Compression Ratio | Fuel Consumption
+                            Analyze and optimize key <span>{data?.subTopic1} parameters,</span><span className='flex flex-col text-orange-600 text-lg' style={{ fontWeight:'400'}}>including<span className='flex flex-col text-primary lgs:text-nowrap'>{data?.subTopic2}
                               <span className='text-start italic'
                               style={{
                                 fontWeight:'100'
@@ -564,18 +559,48 @@ useEffect(() => {
                         </div>
                         
                         <div className="flex h-[25rem]  lgs:w-[40vw] items-center justify-center">
-                            
-                            <div className=' h-[25rem] lgs:w-[10vw] bg-orange-400 border-2'>
-                              <h2 className=''>
 
-                              </h2>
-                            </div>  
-                            <div className=' h-[25rem] lgs:w-[10vw] bg-orange-400 border-2'>
-                            </div>  
-                            <div className=' h-[25rem] lgs:w-[10vw] bg-orange-400 border-2'>
-                            </div>  
-                            <div className=' h-[25rem] lgs:w-[10vw] bg-orange-400 border-2'>
-                            </div>   
+                          {data?.subSection.map((tool, index)=> (
+                                   
+                                <div key={index}  className='group relative flex w-auto h-auto cursor-pointer'
+                                onMouseEnter={()=> setHover(index)}
+                                onMouseLeave={()=> setHover(null)}
+                                >
+                                      
+                                   <div className='relative h-[25rem] lgs:w-[10vw] bg-orange-400 overflow-hidden'>
+                                      <Image src={tool?.subImage1} alt='turbo' className='flex object-cover group-hover:scale-125 w-full h-full transition-all border-2 duration-700 ease-in-out' layout='fill' />
+                                      <div className='absolute flex w-full h-1/4 items-center justify-center bg-gradient-to-b top-0 from-secondary to-transparent z-30'/>
+                                      <div className='absolute flex w-full h-3/4 items-center justify-center bg-gradient-to-t bottom-0 from-secondary to-transparent z-30'/>
+                                      <div className='absolute flex w-3/4 h-full items-center justify-center bg-gradient-to-r left-0 from-secondary to-transparent z-30'/>
+                                      <div className='absolute flex w-full h-full items-center justify-center left-0 z-30' style={{
+                                         boxShadow: hover == index ?
+                                          'inset 0px 0px 100px 1px rgba(255, 69, 0 , 0.9)' : 'inset 0px 0px 10px 1px rgba(255, 69, 0 , 0.9)',
+                                          transition:"box-shadow 0.5s ease-in-out",
+                                      }}/>
+
+ 
+                                      <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-40'>
+                                          <h2 className='font-bricolagegrotesque lgs:w-[8vw] lgs:h-[5rem]  text-md text-center text-primary'
+                                          style={{
+                                            fontWeight:'100'
+                                          }}>
+                                            {tool?.subName1}
+                                          </h2>
+
+                                      </div>  
+                                      <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-30'>
+                                          <h2 className='font-poppins lgs:h-[5rem]  text-3xl text-center opacity-15 text-primary'
+                                          style={{
+                                            fontWeight:'100'
+                                          }}>
+                                            {tool?.subName1}
+                                          </h2>
+
+                                      </div>  
+                                  </div> 
+                                </div>   
+                          ))}
+                            
 
                         </div>
 

@@ -63,6 +63,28 @@
       "image": "/assets/engine.png",
       "shadow": "/assets/engineShadow.png",
       "description": "The engine is the heart of a vehicle...",
+      "subTopic1" : "engine",
+      "subTopic2" : "Torque | Displacement | Compression Ratio | Fuel Consumption",
+      "subSection": [
+
+        {
+          "subName1": "Torque",
+          "subImage1": "/assets/engines/subset/sub1.png"
+        },
+        {
+         "subName1": "Displacement",
+         "subImage1": "/assets/engines/subset/sub2.png"
+        },
+       {
+       "subName1": "Compression Ratio",
+       "subImage1": "/assets/engines/subset/sub3.png"
+       },
+       {
+       "subName1": "Fuel Consumption",
+       "subImage1": "/assets/engines/subset/sub4.png"
+        }
+
+          ],
       "partset1": [
           {
             "name": "Camshaft",
