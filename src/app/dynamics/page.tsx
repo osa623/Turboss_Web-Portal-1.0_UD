@@ -24,61 +24,62 @@ const Dynamics = () => {
     const [hover, setHover] = useState<number | null>(null);
 
   return (
-    <div className='relative h-screen w-full'>
-        <div className='absolute w-full min-h-screen bg-transparent'>
+    <div className='relative flex h-screen w-full'>
+        <div className='relative w-full h-screen bg-transparent'>
 
             {/* Section */}
-            <div className='flex lgs:w-full h-auto items-center justify-center'>
-                <div className='flex lgs:w-[30vw] lgs:min-h-screen bg-secondary items-center justify-center'>
-
-                    <div className='flex flex-col lgs:w-[30vw] lgs:h-[40rem] items-center justify-center'>
-                        {
-                            subset.map((tool, index)=> (
-                                 <div key={index}  className='group relative flex w-auto h-auto cursor-pointer'
-                                 onMouseEnter={()=> setHover(index)}
-                                 onMouseLeave={()=> setHover(null)}
-                                 >
-                                       
-                                    <div className='relative h-[10rem] lgs:w-[30vw] bg-orange-400 overflow-hidden'>
-                                       <Image src={tool?.image} alt='turbo' className='flex object-cover group-hover:scale-125 w-full h-full transition-all border-2 duration-700 ease-in-out' layout='fill' />
-                                       <div className='absolute flex w-full h-1/4 items-center justify-center bg-gradient-to-b top-0 from-secondary to-transparent z-30'/>
-                                       <div className='absolute flex w-full h-3/4 items-center justify-center bg-gradient-to-t bottom-0 from-secondary to-transparent z-30'/>
-                                       <div className='absolute flex w-3/4 h-full items-center justify-center bg-gradient-to-r left-0 from-secondary to-transparent z-30'/>
-                                       <div className='absolute flex w-full h-full items-center justify-center left-0 z-30' style={{
-                                          boxShadow: hover == index ?
-                                           'inset 0px 0px 100px 1px rgba(255, 69, 0 , 0.9)' : 'inset 0px 0px 10px 1px rgba(0, 0, 0 , 0.9)',
-                                           transition:"box-shadow 0.5s ease-in-out",
-                                       }}/>
- 
+            <div className='flex lgs:w-full h-[100vh] items-center justify-center'>
   
-                                       <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-40'>
-                                           <h2 className='font-poppins lgs:w-[8vw] lgs:h-[5rem] text-nowrap group-hover:scale-150 transition-all duration-700 ease-in-out  text-lg text-center text-primary'
-                                           style={{
-                                             fontWeight:'100'
-                                           }}>
-                                             {tool?.title}
-                                           </h2>
- 
-                                       </div>  
-                                       <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-30'>
-                                           <h2 className='font-poppins lgs:h-[5rem]  text-4xl text-center group-hover:scale-150 transition-all duration-700 ease-in-out opacity-15 text-primary'
-                                           style={{
-                                             fontWeight:'100'
-                                           }}>
-                                             {tool?.title}
-                                           </h2>
- 
-                                       </div>  
-                                   </div> 
-                                 </div>                                  
-                            ))
-                        }
+                <div className='flex lgs:w-[100vw] h-[100vh] bg-yellow-700'>
+                       <div className='relative flex lgs:w-[100vw] lgs:h-[10rem] items-center justify-center'>
 
-                   </div>
+                                
+                    {
+                        subset.map((tool, index)=> (
+                            <div key={index}  className='group flex relative w-auto h-auto cursor-pointer'
+                            onMouseEnter={()=> setHover(index)}
+                            onMouseLeave={()=> setHover(null)}
+                            >
+                                  
+                                <div className='relative h-[10rem] lgs:w-[25vw] bg-orange-400 overflow-hidden rounded-b-2xl'>
+                                  <Image src={tool?.image} alt='turbo' className='flex object-cover group-hover:scale-125 w-full h-full transition-all border-2 duration-700 z-30 ease-in-out' layout='fill' />
+                                  <div className='absolute flex w-full h-1/4 items-center justify-center bg-gradient-to-b top-0 from-secondary to-transparent z-30'/>
+                                  <div className='absolute flex w-full h-3/4 items-center justify-center bg-gradient-to-t bottom-0 from-secondary to-transparent z-30'/>
+                                  <div className='absolute flex w-3/4 h-full items-center justify-center bg-gradient-to-r left-0 from-secondary to-transparent z-30'/>
+                                  <div className='absolute flex w-full h-full items-center justify-center left-0 z-30' style={{
+                                      boxShadow: hover == index ?
+                                      'inset 0px 0px 100px 1px rgba(255, 69, 0 , 0.9)' : 'inset 0px 0px 10px 1px rgba(0, 0, 0 , 0.9)',
+                                      transition:"box-shadow 0.5s ease-in-out",
+                                  }}/>
 
-                </div>
-                <div className='relative flex lgs:w-[70vw] lgs:min-h-screen bg-yellow-700'>
-                    <Image src={heroBackground} layout='fill' objectFit='cover' objectPosition='center' alt='hero background' />
+
+                                  <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-40'>
+                                      <h2 className='font-poppins lgs:w-[8vw] lgs:h-[5rem] text-nowrap group-hover:scale-150 transition-all duration-700 ease-in-out  text-lg text-center text-primary'
+                                      style={{
+                                        fontWeight:'100'
+                                      }}>
+                                        {tool?.title}
+                                      </h2>
+
+                                  </div>  
+                                  <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-30'>
+                                      <h2 className='font-poppins lgs:h-[5rem]  text-4xl text-center group-hover:scale-150 transition-all duration-700 ease-in-out opacity-15 text-primary'
+                                      style={{
+                                        fontWeight:'100'
+                                      }}>
+                                        {tool?.title}
+                                      </h2>
+
+                                  </div>  
+                              </div> 
+                            </div>                                  
+                        ))
+                    }
+
+
+
+                        </div>
+                    <Image src={heroBackground} layout='fill' objectFit='cover' objectPosition='center' alt='hero background' className='lgs:h-[100rem]' />
                     <div className='absolute top-0 w-full h-full bg-gradient-to-t bottom-0 from-secondary to-transparent z-20'/>
                     <div className='absolute top-0 w-full h-full bg-gradient-to-r left-0 from-secondary to-transparent z-20'/>
                 </div>

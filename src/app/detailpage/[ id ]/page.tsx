@@ -577,6 +577,7 @@ useEffect(() => {
                                           'inset 0px 0px 100px 1px rgba(255, 69, 0 , 0.9)' : 'inset 0px 0px 10px 1px rgba(255, 69, 0 , 0.9)',
                                           transition:"box-shadow 0.5s ease-in-out",
                                       }}/>
+                                      
 
  
                                       <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-40'>
