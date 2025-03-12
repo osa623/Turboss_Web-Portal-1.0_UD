@@ -187,6 +187,18 @@
   animation: spinAround 10s linear infinite;
 }
 
+@keyframes movingShadow {
+
+  0% { box-shadow:  10px 10px 10px rgba(0, 0, 0, 0.6); }
+  50% { box-shadow:  20px 15px 10px rgba(0, 0, 0, 0.4) }
+  100% { box-shadow:  10px 10px 10px rgba(0, 0, 0, 0.6) }
+  
+}
+
+.animate-movingShadow {
+  animation: movingShadow 2s ease-in-out infinite;
+}
+
 
 
 body {

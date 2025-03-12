@@ -155,20 +155,58 @@
        }
 
       ],
+      "maindetailset1": {
+
+          "topic": "The Evolution of Engines",
+          "Description": "The evolution of engines is a fascinating journey that spans centuries, marked by groundbreaking innovations and technological advancements. Engines, which convert various forms of energy into mechanical work, have played a pivotal role in shaping modern civilization. From the early steam engines to the sophisticated internal combustion engines and the emerging electric propulsion systems, the development of engines has been driven by the need for efficiency, power, and sustainability."
+
+      },
       "detailset1": [
         {
-          "topic": "Engine Types & Evolution",
-          "Description": "Internal combustion engines (ICE) have evolved from early carbureted designs to modern direct-injection systems. Gasoline engines dominate passenger vehicles due to their high RPM capabilities and refinement, while diesel engines leverage compression ignition for superior thermal efficiency (up to 40% vs. 30% in gasoline). Hybrid powertrains, like Toyota’s THS-II, combine ICE with electric motors for regenerative braking and idle-stop functionality. Fully electric engines, such as Tesla’s AC induction motors, deliver instant torque (0-60 mph in 2.3s in Model S Plaid) and eliminate tailpipe emissions. Emerging technologies include hydrogen combustion engines (Toyota Mirai) and rotary engines (Mazda’s SkyActiv-R), each addressing specific efficiency and packaging challenges."
+          "topic": "The Steam Engine: The Dawn of the Industrial Revolution",
+          "Description": "The story of engine evolution begins with the invention of the steam engine in the 18th century. Thomas Newcomen's atmospheric engine, developed in 1712, was one of the first practical steam engines used to pump water out of mines. However, it was James Watt's improvements in the late 18th century that truly revolutionized the steam engine. Watt's addition of a separate condenser significantly increased efficiency, making steam engines viable for a wide range of industrial applications.Steam engines became the backbone of the Industrial Revolution, powering factories, locomotives, and ships. They enabled mass production, transformed transportation, and facilitated the growth of cities. Despite their success, steam engines were bulky, required significant maintenance, and had limited efficiency, prompting the search for more advanced technologies."
         },
         {
-          "topic": "Performance Engineering",
-          "Description": "Engine performance is governed by metrics like horsepower, torque, and specific output. Turbocharging (e.g., BMW’s TwinPower Turbo) forces dense air into cylinders, increasing volumetric efficiency. Variable valve timing (Honda’s VTEC) optimizes airflow across RPM ranges. High-performance engines use forged components (pistons, crankshafts) and lightweight materials (aluminum blocks, titanium valves) to withstand extreme pressures. Formula 1’s 1.6L V6 hybrid engines produce 1000+ HP via MGU-H/MGU-K energy recovery systems, showcasing the pinnacle of ICE-efficiency synergy."
+          "topic": "The Internal Combustion Engine: A New Era of Mobility",
+          "Description": "The late 19th and early 20th centuries marked a pivotal period in the history of technology with the rise of the internal combustion engine (ICE). This revolutionary invention became the dominant engine technology for over a century, fundamentally transforming transportation, industry, and daily life. Unlike earlier engines, such as the steam engine, which relied on external combustion, the ICE operates by burning fuel directly within a combustion chamber. This process generates high-pressure gases that drive pistons or turbines, converting chemical energy into mechanical work with remarkable efficiency.The ICE's ability to provide compact, powerful, and reliable energy sources made it the cornerstone of modern industrialization. It enabled the development of automobiles, airplanes, and a wide range of machinery, reshaping economies and societies worldwide. However, its widespread adoption also brought challenges, particularly regarding environmental impact and reliance on fossil fuels. Below, we explore the key milestones in the development of the ICE, its transformative impact, and the challenges it has faced"
         },
         {
-          "topic": "Maintenance & Longevity",
-          "Description": "Critical maintenance intervals include oil changes (5W-30 synthetic every 10k miles), timing belt replacements (60k-100k miles), and carbon buildup cleaning (direct-injection engines). Symptoms of failure: knocking (pre-ignition), blue exhaust (oil burning), or misfires (faulty coils). Engine lifespan ranges from 200k miles (turbodiesels) to 500k+ miles (commercial truck engines), contingent on cooling system integrity and lubrication quality."
+          "topic": "The Jet Engine: Propelling Aviation to New Heights",
+          "Description": "The mid-20th century witnessed the advent of the jet engine, which transformed aviation. Sir Frank Whittle and Hans von Ohain independently developed the first operational jet engines in the 1930s and 1940s. Jet engines work by compressing air, mixing it with fuel, and igniting it to produce a high-speed exhaust jet that generates thrust.Jet engines enabled faster, higher, and longer flights, making air travel accessible to the masses. They also powered military aircraft, leading to advancements in aerospace technology. Over time, jet engines have become more efficient, quieter, and environmentally friendly, with ongoing research focused on reducing emissions and fuel consumption."
         }
-      ]
+      ],
+      "maindetailset2": {
+
+        "topic": "The Diverse World of Engines",
+        "Description": "Engines have evolved from traditional combustion-based systems to cutting-edge clean energy technologies, each with unique advantages and challenges. From the quiet efficiency of Stirling engines and the compact design of Wankel rotary engines to the zero-emission potential of electric propulsion and hydrogen fuel cells, this exploration covers the full spectrum of engine technologies. It also delves into hybrid systems, the immense power of rocket engines, and the versatility of turbine engines, highlighting their roles in shaping transportation, industry, and space exploration. Together, these innovations reflect humanity’s quest for efficiency, sustainability, and progress in power generation."
+
+    },
+    "detailset2": [
+      {
+        "topic": "The Stirling Engine: An Alternative Approach",
+        "Description": "The Stirling engine, invented by Robert Stirling in 1816, is an external combustion engine that operates by cyclically compressing and expanding a working gas (such as air or helium) at different temperatures. Unlike internal combustion engines, which burn fuel inside the engine, the Stirling engine uses an external heat source, making it highly versatile. It works on the principle of temperature differentials, where heat is applied to one end of the engine and removed from the other, creating a cycle of expansion and contraction that drives a piston or rotor.",
+        "image": "/assets/engines/w12.png",
+        "Advantages":"High Efficiency: Stirling engines can achieve high thermal efficiency, especially when paired with renewable heat sources like solar energy.Low Noise: Since combustion occurs externally, Stirling engines operate quietly compared to internal combustion engines.Versatility: They can use almost any heat source, including solar, nuclear, or waste heat from industrial processes.",
+        "Issues":"Slow Response Time: Stirling engines are not well-suited for applications requiring rapid changes in power output, as they take time to adjust to temperature changes.Complexity and Cost: The need for precise engineering to maintain gas seals and manage heat transfer makes Stirling engines expensive to manufacture and maintain.Low Power-to-Weight Ratio: They are generally bulkier and heavier than internal combustion engines, limiting their use in mobile applications."
+
+      },
+      {
+        "topic": "The Wankel Rotary Engine: A Unique Design",
+        "Description": "The Wankel rotary engine, developed by Felix Wankel in the 1950s, is an internal combustion engine that uses a triangular rotor instead of reciprocating pistons. The rotor spins in an epitrochoidal chamber, creating three combustion spaces that undergo intake, compression, combustion, and exhaust cycles in a single rotation. This design allows for smooth and continuous power delivery.",
+        "image": "/assets/engines/w12.png",
+        "Advantages":"Compact Size: The Wankel engine is smaller and lighter than traditional piston engines, making it ideal for applications where space is limited.High Power-to-Weight Ratio: Its design allows for high power output relative to its size.Smooth Operation: The absence of reciprocating parts reduces vibration and noise.",
+        "Issues":"Fuel Efficiency and Emissions: Wankel engines tend to consume more fuel and produce higher emissions compared to piston engines, due to incomplete combustion and sealing challenges.Sealing Problems: Maintaining a tight seal between the rotor and the chamber is difficult, leading to wear and reduced durability over time.Limited Market Adoption: Despite its advantages, the Wankel engine has seen limited use, primarily in niche applications like Mazda’s RX series of sports cars."
+
+      },
+      {
+        "topic": "Hybrid Engines: Combining the Best of Both Worlds",
+        "Description": "Hybrid engines combine an internal combustion engine (ICE) with an electric propulsion system to improve efficiency and reduce emissions. They can operate in multiple modes, including electric-only, engine-only, or a combination of both, depending on driving conditions.",
+        "image": "/assets/engines/w12.png",
+        "Advantages":"Improved Fuel Efficiency: Hybrids use regenerative braking and electric power to reduce fuel consumption.Reduced Emissions: By relying on electric power for low-speed driving, hybrids produce fewer emissions.Extended Range: The ICE provides backup power, eliminating range anxiety associated with pure electric vehicle",
+        "Issues":"Complexity: Hybrid systems are more complex than traditional engines, requiring advanced control systems and software.Higher Cost: The additional components and technology make hybrids more expensive to produce and purchase.Battery Limitations: Like electric vehicles, hybrids rely on batteries, which have environmental and durability concerns."
+
+      }
+    ]
     },
     {
       "id": 3,

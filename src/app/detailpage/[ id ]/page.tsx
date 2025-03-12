@@ -23,6 +23,7 @@ import background from '../../assests/detailbackground1.jpg';
 //import background1 from '../../assests/detailbackground2.jpg';
 import background2 from '../../assests/detailbackground3.jpg';
 import subsetback01 from '../../assests/subSetBack01.png';
+import turbossLOgo from '../../assests/turbossLogo.png';
 
 //css imports
 import '../../detailpage/base.css';
@@ -46,9 +47,24 @@ interface ToolData {
     subName1: string;
     subImage1: string; 
   }>;
+  maindetailset1: {
+    topic: string;
+    Description: string;
+  };
   detailset1: Array<{
     topic: string;
     Description: string;
+  }>;
+  maindetailset2: {
+    topic: string;
+    Description: string;
+  };
+  detailset2: Array<{
+    topic: string;
+    Description: string;
+    image: string;
+    Advantages: string;
+    Issues: string;
   }>;
   partset1: Array<{
     name: string;
@@ -71,7 +87,7 @@ const Detailpage = () => {
     const [parallex1 , setParallex1] = useState(0);
     
 
-    const [dnaData, setDnaData] = useState<Tools[]>([]);
+    const [dnaData, setDnaData] = useState<ToolData[]>([]);
 
     //navigation
 
@@ -236,7 +252,7 @@ useEffect(() => {
         />
         
     
-
+       
         <div className='absolute flex lgs:w-[50vw] right-0 h-full z-30'>
           {/* Portal Video */}
           <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] lgs:-bottom-5 left-12 bg-transparent items-center justify-center z-50'>
@@ -264,6 +280,8 @@ useEffect(() => {
             )}
           </div>
         </div>
+
+
 
 
         <div className='absolute flex  lgs:w-auto right-0 h-auto bottom-0 z-50'>
@@ -297,6 +315,8 @@ useEffect(() => {
           </div>
 
         </div>
+
+
 
         
 
@@ -447,12 +467,46 @@ useEffect(() => {
 
                   </div>
 
+
                   {/* Content Section */}
                   <div className='flex flex-col w-auto h-auto bg-transparent z-50'>
 
+                  {/* Main Topic 01 */}
+                  <div  className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} h-auto lgs:space-y-5 transition-all duration-1000 ease-in-out bg-transparent items-start  lgs:p-8 justify-center`}
+                      style={{
+                        
+                      }}>
+                          <div className='flex w-auto h-auto'>
+
+                                    
+                          <h2 className='flex flex-col font-bricolagegrotesque text-2xl lgs:p-2  bg-orange-600 text-primary'style={{
+                            boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
+                            fontWeight:'700'
+                          }}>
+                            <span className='flex font-thin'>{data?.maindetailset1.topic}</span>
+                            
+                          </h2>
 
 
-                  <div className={`flex flex-col ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[50vw]'} h-auto lgs:space-y-5 transition-all duration-1000 ease-in-out bg-transparent items-start  lgs:p-8 justify-center`}>
+                          </div>  
+
+                          <div className='flex w-auto h-auto'>
+
+
+                            <p className='flex flex-col font-bricolagegrotesque text-lg lgs:p-2  text-secondary'style={{
+                              fontWeight:'100'
+                            }}>
+                              {data?.maindetailset1.Description}
+                              
+                            </p>
+
+
+                          </div> 
+                  </div> 
+
+
+                  {/* Main Description 01 */}
+                  <div className={`flex flex-col ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[50vw]'} h-auto bg-orange-800 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start lgs:pr-5  lgs:p-8 justify-center`}>
 
                     {data?.detailset1.map((tool, index) => (
 
@@ -463,11 +517,11 @@ useEffect(() => {
                           <div className='flex w-auto h-auto'>
 
                                     
-                          <h2 className='flex flex-col font-bricolagegrotesque text-lg lgs:p-2  bg-orange-600 text-primary'style={{
-                            boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
-                            fontWeight:'700'
+                          <h2 className='flex flex-col font-bricolagegrotesque text-xl lgs:p-2   text-primary'style={{
+                           
+                            fontWeight:'900'
                           }}>
-                            <span className='flex font-thin'>{tool?.topic}</span>
+                            <span className='flex'>{tool?.topic}</span>
                             
                           </h2>
 
@@ -477,7 +531,7 @@ useEffect(() => {
                           <div className='flex w-auto h-auto'>
 
 
-                            <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                            <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-primary'style={{
                               fontWeight:'100'
                             }}>
                               {tool?.Description}
@@ -489,6 +543,173 @@ useEffect(() => {
                       </div>    
 
                     ))}
+
+
+
+
+
+                  </div>
+
+                   {/* Main Topic 02 */}                 
+                  <div  className={`flex flex-col ${expandSection ? 'lgs:w-[100vw] items-start' : 'lgs:w-[50vw] items-start'} h-auto lgs:space-y-5 transition-all duration-1000 ease-in-out bg-transparent   lgs:p-8 justify-center`}
+                      style={{
+                        
+                      }}>
+                        <div className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} transition-all duration-1000 ease-in-out h-auto`}
+                      style={{
+                       
+                      }}>
+                          <div className='flex w-auto h-auto'>
+
+                                    
+                          <h2 className='flex flex-col font-bricolagegrotesque text-2xl lgs:p-2  bg-orange-600 text-primary'style={{
+                            boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
+                            fontWeight:'700'
+                          }}>
+                            <span className='flex'>{data?.maindetailset2.topic}</span>
+                            
+                          </h2>
+
+
+                          </div>  
+
+                          <div className='flex w-auto h-auto'>
+
+
+                            <p className='flex flex-col font-bricolagegrotesque text-lg lgs:p-2  text-secondary'style={{
+                              fontWeight:'100'
+                            }}>
+                              {data?.maindetailset2.Description}
+                              
+                            </p>
+
+
+                          </div> 
+                      </div>    
+                  </div> 
+
+
+                  {/* Main Description 02 */}
+                  <div className={`relative flex flex-col ${expandSection ? 'lgs:w-[100vw] items-end justify-end' : 'lgs:w-[50vw] items-start justify-start'} h-auto bg-orange-850 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
+
+                        <div className='flex flex-col w-auto h-auto lgs:pr-5  lgs:p-8 z-40'>
+
+                        {data?.detailset2.map((tool, index) => (
+
+                          <div key={index}  className={`flex  ${expandSection ? 'lgs:w-full' : 'lgs:w-[45vw]'} transition-all duration-1000 items-center ease-in-out h-auto`}
+                          style={{
+                          }}>
+
+                              {/* Image Section */}
+                            <div className={`flex flex-col ${expandSection ? 'lgs:w-[40vw] opacity-100' : 'lgs:w-[0vw] opacity-0'} items-center h-auto`}>
+                               <div className='relative flex lgs:h-[30rem] lgs:w-[30rem] bg-primary rounded-full animate-movingShadow overflow-hidden'
+                               style={{
+                                 boxShadow:' inset 10px 10px 10px rgba(255, 255, 255, 0.6)'
+                               }}>
+                                  <Image src={tool?.image} alt='turbo' layout='fill' objectFit='cover' className='scale-95 z-40' />
+                                  <div className='absolute flex lgs:h-[30rem] lgs:w-[40rem]  to-transparent z-30 overflow-hidden'>
+                                  <Image src={turbossLOgo} alt='turbo' layout='fill' objectFit='cover' className='scale-125 z-30 pr-48' />
+                                  <div className='flex lgs:h-[30rem] lgs:w-[40rem] bg-gradient-to-l from-white via-primary to-transparent z-40 overflow-hidden'/>
+                                  
+                                  </div>  
+                              
+                              </div>
+                            </div>  
+
+                            {/* other Section */}
+                            <div className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} `}>
+                              
+                              {/* Main Topic and Description */}
+                              <div className='flex w-auto h-auto lgs:mt-5'>
+
+                                        
+                              <h2 className='flex flex-col font-bricolagegrotesque w-full text-xl lgs:p-2 bg-orange-600   text-primary'style={{
+                              
+                                fontWeight:'900'
+                              }}>
+                                <span className='flex'>{tool?.topic}</span>
+                                
+                              </h2>
+
+
+                              </div>  
+
+                              <div className={`flex flex-col ${expandSection ? 'lgs:w-[0vw] opacity-0 lgs:h-[0rem]' : 'lgs:w-[45vw] opacity-100 lgs:h-[20rem]'} items-center lgs:mt-4 h-auto`}>
+                               <div className='relative lgs:h-[20rem] lgs:w-[20vw]'>
+                                  <Image src={tool?.image} alt='turbo' layout='fill' objectFit='cover' className='scale-100' />
+
+                              </div>
+                             </div>  
+
+                              {/*  Description */}
+                              <div className='flex w-auto h-auto lgs:mt-5'>
+
+
+                                <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                                  fontWeight:'100'
+                                }}>
+                                  {tool?.Description}
+                                  
+                                </p>
+
+
+                              </div> 
+
+                              {/* Advantages */}
+                              <div className='flex flex-col w-auto h-auto lgs:mt-5'>
+
+                                    <h2 className='flex flex-col font-bricolagegrotesque text-xl lgs:p-2  text-orange-600'style={{
+                                    
+                                    fontWeight:'900'
+                                  }}>
+                                    <span className='flex'>Advantages</span>
+                                    
+                                  </h2>
+
+
+                                  <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                                    fontWeight:'100'
+                                  }}>
+                                    {tool?.Advantages}
+                                    
+                                  </p>
+
+
+                               </div> 
+
+                              {/* Issues */}
+                              <div className='flex flex-col w-auto h-auto lgs:mt-5'>
+
+                              <h2 className='flex flex-col font-bricolagegrotesque text-xl lgs:p-2 text-secondary'style={{
+                              
+                              fontWeight:'900'
+                            }}>
+                              <span className='flex'>Issues</span>
+                              
+                            </h2>
+
+
+                              <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                                fontWeight:'100'
+                              }}>
+                                {tool?.Issues}
+                                
+                              </p>
+
+
+                              </div> 
+
+                              <div className='lgs:h-[5rem] bg-transparent'/>
+
+                               
+                            </div>  
+                          </div>    
+
+                        ))}
+
+                        </div>
+
+
 
 
 
