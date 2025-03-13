@@ -24,6 +24,7 @@ import tuning from "../assests/engineTuning.png";
 import wheelAlignments from "../assests/WheelAlignments.png";
 import TransissonAlignments from "../assests/TransissonAlignments.png";
 import mainBackground from "../assests/mainBackground.jpg";
+import turbossLogo from "../assests/turbossLogo.png";
 
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
@@ -121,15 +122,23 @@ const Home = () => {
         <div className="relative h-auto w-full">
 
             {/* First Section */}
-            <div className='relative flex lgs:h-screen w-full overflow-hidden'>
+            <div className='relative lgs:h-screen w-full overflow-hidden'>
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
+
                 <div className="relative bg-transparent z-30 lgs:h-screen w-full">
                     <div className="absolute lgs:w-1/2 h-screen bg-gradient-to-r left-0 from-secondary to-transparent"/>
                     <div className="absolute lgs:w-1/2 h-screen bg-gradient-to-l right-0 from-secondary to-transparent"/>
                     <div className="absolute lgs:w-full h-1/2 bg-gradient-to-b top-0 from-secondary to-transparent"/>
                     <div className="absolute lgs:w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
+
+                    
+                    <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-screen w-full">
+                        <Image src={turbossLogo} alt="" className="absolute object-cover z-40 w-auto lgs:h-[25rem] "/>                   
+                    </div>
                 
                 </div>
+
+
             </div>
 
             {/* Second Section */}
