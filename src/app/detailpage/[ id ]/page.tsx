@@ -6,7 +6,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
+import { faVolumeDown, faVolumeHigh } from '@fortawesome/free-solid-svg-icons';
 
 
 // Import Swiper styles
@@ -20,7 +20,6 @@ import "swiper/css/navigation";
 
 // Images
 import background from '../../assests/detailbackground1.jpg';
-//import background1 from '../../assests/detailbackground2.jpg';
 import background2 from '../../assests/detailbackground3.jpg';
 import subsetback01 from '../../assests/subSetBack01.png';
 import turbossLOgo from '../../assests/turbossLogo.png';
@@ -74,6 +73,7 @@ interface ToolData {
   variations: Array<{
       name: string;
       image: string;
+      sound: string;
   }>;
 }
 
@@ -82,21 +82,49 @@ interface ToolData {
 
 const Detailpage = () => {
 
+    //hooks
     const [activeIndex, setActiveIndex] = useState(0);
     const [offsetY, setOffsetY] = useState(0);
     const [parallex1 , setParallex1] = useState(0);
-    
-
+    const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+    const [audioInstance, setAudioInstance] = useState<HTMLAudioElement | null>(null);
+    const [data, setData] = useState<ToolData | null>(null);
+    const [loading, isLoading] = useState(true);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [selectedname , setSelectedName] = useState<string | null>(null);
+    const [selectedDescription , setSelectedDescription] = useState<string | null>(null);
+    const [expandSection , setExpandSection] = useState(false);
+    const [hover, setHover] = useState<number | null>(null);
+    const [click, setClick] = useState(false);     
     const [dnaData, setDnaData] = useState<ToolData[]>([]);
+  
+    const handleAudioToggle = (index: number, sound: string) => {
+      if (playingIndex === index) {
+        if (audioInstance) {
+          audioInstance.pause();
+          audioInstance.currentTime = 0;
+        }
+        setPlayingIndex(null);
+        setAudioInstance(null);
+      } else {
+        if (audioInstance) {
+          audioInstance.pause();
+        }
+        const newAudio = new Audio(sound);
+        newAudio.play();
+        newAudio.onended = () => setPlayingIndex(null);
+        setPlayingIndex(index);
+        setAudioInstance(newAudio);
+      }
+    };
+    
+    const handleClick = () => {
 
-    //navigation
+      setClick(!click);
+    }
 
 
-
-
-
-
-
+    //navigati
     useEffect(() => {
         const handleScroll = () => {
             setOffsetY(window.scrollY * 0.05);
@@ -126,21 +154,6 @@ const Detailpage = () => {
 
     } ,[]);
 
-
-
-
-
-
-
-
-  
-  const [data, setData] = useState<ToolData | null>(null);
-  const [loading, isLoading] = useState(true);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedname , setSelectedName] = useState<string | null>(null);
-  const [selectedDescription , setSelectedDescription] = useState<string | null>(null);
-  const [expandSection , setExpandSection] = useState(false);
-  const [hover, setHover] = useState<number | null>(null);
 
   //handle expands 001
   const handleExpand = () => {
@@ -602,14 +615,15 @@ useEffect(() => {
 
                               {/* Image Section */}
                             <div className={`flex flex-col ${expandSection ? 'lgs:w-[40vw] opacity-100' : 'lgs:w-[0vw] opacity-0'} items-center h-auto`}>
-                               <div className='relative flex lgs:h-[30rem] lgs:w-[30rem] bg-primary rounded-full animate-movingShadow overflow-hidden'
+                               <div className='relative flex lgs:h-[30rem] lgs:w-[30rem] bg-primary rounded-full  animate-animation overflow-hidden'
                                style={{
                                  boxShadow:' inset 10px 10px 10px rgba(255, 255, 255, 0.6)'
+                                 
                                }}>
-                                  <Image src={tool?.image} alt='turbo' layout='fill' objectFit='cover' className='scale-95 z-40' />
-                                  <div className='absolute flex lgs:h-[30rem] lgs:w-[40rem]  to-transparent z-30 overflow-hidden'>
-                                  <Image src={turbossLOgo} alt='turbo' layout='fill' objectFit='cover' className='scale-125 z-30 pr-48' />
-                                  <div className='flex lgs:h-[30rem] lgs:w-[40rem] bg-gradient-to-l from-white via-primary to-transparent z-40 overflow-hidden'/>
+                                  <Image src={tool?.image} alt='turbo' layout='fill' objectFit='cover' className='scale-95 z-40 ' />
+                                  <div className='absolute flex lgs:h-[30rem] lgs:w-[40rem]  to-transparent z-30 overflow-hidden '>
+                                  <Image src={turbossLOgo} alt='turbo' layout='fill' objectFit='cover' className='scale-125 z-30 pr-48 ' />
+                                  <div className='flex lgs:h-[30rem] lgs:w-[40rem] bg-gradient-to-l from-white via-primary to-transparent z-40  overflow-hidden'/>
                                   
                                   </div>  
                               
@@ -992,18 +1006,32 @@ useEffect(() => {
                                                             </div>
                                                              {/* Sound wave Layer Layer */}
                                                             <div className='absolute flex z-50  lgs:w-[20rem] lgs:h-[10rem] items-start justify-end lgs:p-6'>
-                                                                <div className='font-poppins bottom lgs:w-[10rem] lgs:h-[4rem] text-5xl bg-primary opacity-90'
+                                                                <div className='flex bottom lgs:w-[10rem] lgs:h-[4rem] text-5xl justify-end bg-secondary opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
+
+                                                                      <div                 
+                                                                                className=" flex z-50 bottom-0 lgs:left-6 items-center justify-center cursor-pointer lgs:p-2"
+                                                                                onClick={() => { handleAudioToggle(index, tool?.sound); handleClick(); }}
+                                                                              >
+                                                                                <div className="flex items-center justify-center rounded-full lgs:w-[3rem] lgs:h-[3rem] bg-primary opacity-90">
+                                                                                  <FontAwesomeIcon icon={playingIndex === index ? faVolumeHigh : faVolumeDown} className='lgs:h-5'/>
+                                                                                </div>
+                                                                              </div>
                                                                     
                                                                 </div>
                                                             </div>
                                                             {/* Button Layer */}
-                                                           <div className='absolute flex z-50 bottom-0 lgs:left-6  items-center justify-center cursor-pointer lgs:p-2'>
-                                                                <div className='flex items-center justify-center rounded-full lgs:w-[2.5rem] lgs:h-[2.5rem]  bg-primary opacity-90'>
-                                                                    <FontAwesomeIcon icon={faVolumeHigh} />
-                                                                </div>
+                                                            <div
+                                                              className="absolute flex z-50 lgs:bottom-2 lgs:left-6 items-center justify-center lgs:space-x-2 cursor-pointer lgs:p-2"
+                                                              
+                                                            > 
+                                                              <div className={`flex items-center justify-center rounded-full ${activeIndex === index && click ? 'bg-green-600' : 'bg-primary'} lgs:w-[1rem] lgs:h-[1rem]  opacity-90`}/>
+
+                                                              <div className={`flex items-center justify-center rounded-full ${activeIndex === index && click ? 'bg-primary' : 'bg-red-700'} lgs:w-[1rem] lgs:h-[1rem] opacity-90`}/>
+                                  
+                                                         
                                                             </div>
                                                             
 

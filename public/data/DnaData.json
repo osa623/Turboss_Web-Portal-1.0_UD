@@ -125,29 +125,35 @@
       "variations" : [
 
         {
-           "name": "V2",
-            "image": "/assets/engines/v2.png"
+            "name": "V2",
+            "image": "/assets/engines/v2.png",
+            "sound": "/assets/records/v8Sound.mp3"
 
         },
         {
             "name": "V6",
-            "image": "/assets/engines/v6.png"
+            "image": "/assets/engines/v6.png",
+            "sound": "/assets/records/v8Sound.mp3"
         },
         {
             "name": "V8",
-            "image": "/assets/engines/v8.png"
+            "image": "/assets/engines/v8.png",
+            "sound": "/assets/records/v8Sound.mp3"
         },
         {
             "name": "V10",
-            "image": "/assets/engines/v10.png"
+            "image": "/assets/engines/v10.png",
+            "sound": "/assets/records/v8Sound.mp3"
         },
         {
             "name": "V12",
-            "image": "/assets/engines/v12.png"
+            "image": "/assets/engines/v12.png",
+            "sound": "/assets/records/v8Sound.mp3"
         },
         {
           "name": "W12",
-          "image": "/assets/engines/w12.png"
+          "image": "/assets/engines/w12.png",
+          "sound": "/assets/records/v8Sound.mp3"
         },
         {
           "name": "W16",

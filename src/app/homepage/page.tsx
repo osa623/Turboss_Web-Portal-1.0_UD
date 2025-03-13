@@ -23,6 +23,7 @@ import herobackground5 from '../assests/herosec5.jpg';
 import tuning from "../assests/engineTuning.png";
 import wheelAlignments from "../assests/WheelAlignments.png";
 import TransissonAlignments from "../assests/TransissonAlignments.png";
+import mainBackground from "../assests/mainBackground.jpg";
 
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
@@ -120,7 +121,15 @@ const Home = () => {
         <div className="relative h-auto w-full">
 
             {/* First Section */}
-            <div className='relative flex lgs:h-screen w-full'>
+            <div className='relative flex lgs:h-screen w-full overflow-hidden'>
+                <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
+                <div className="relative bg-transparent z-30 lgs:h-screen w-full">
+                    <div className="absolute lgs:w-1/2 h-screen bg-gradient-to-r left-0 from-secondary to-transparent"/>
+                    <div className="absolute lgs:w-1/2 h-screen bg-gradient-to-l right-0 from-secondary to-transparent"/>
+                    <div className="absolute lgs:w-full h-1/2 bg-gradient-to-b top-0 from-secondary to-transparent"/>
+                    <div className="absolute lgs:w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
+                
+                </div>
             </div>
 
             {/* Second Section */}
