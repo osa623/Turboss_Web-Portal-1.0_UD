@@ -29,7 +29,10 @@ import turbossLogo from "../assests/turbossLogo.png";
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
 import jesko from '../assests/DYN/Jejsko.png';
-import flywheel from '../assests/flywheel.png';
+
+//flywheel images
+import flywheel0 from '../assests/flywheel.png';
+import flywheel1 from '../assests/flywheel2.png';
 
 
 
@@ -135,16 +138,25 @@ const Home = () => {
 
                     
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
-                        <Image src={turbossLogo} alt="" className="absolute object-cover z-50 w-auto lgs:h-[25rem] "/>       
+                        <Image src={turbossLogo} alt="" className="absolute object-cover z-50 w-auto  mt-2 lgs:h-[28rem] "/>       
 
                         <div className="relative flex bg-transparent items-center justify-center lgs:h-[200vh] w-full">
-                          <div className="flex bg-primary h-[22rem] w-[22rem] mb-2 rounded-full z-40" style={{
+                          <div className="flex bg-primary h-[25rem] w-[25rem] rounded-full z-40" style={{
                             boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9)'
                           }}/>             
 
-                          <Image src={flywheel} alt="" className="absolute object-cover z-30 w-[30rem] lgs:h-[25rem] animate-spin" style={{
+                          <Image src={flywheel0} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
                             animationDuration:'10s'
                           }}/>   
+
+                        <div className="absolute flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
+
+                          }}>
+                           <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
+                            animationDuration:'10s',
+                            animationDirection:'reverse'
+                          }}/>   
+                            </div>
                        </div>
 
                     </div>
