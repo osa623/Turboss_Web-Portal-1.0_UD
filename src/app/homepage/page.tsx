@@ -29,6 +29,7 @@ import turbossLogo from "../assests/turbossLogo.png";
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
 import jesko from '../assests/DYN/Jejsko.png';
+import flywheel from '../assests/flywheel.png';
 
 
 
@@ -136,9 +137,15 @@ const Home = () => {
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
                         <Image src={turbossLogo} alt="" className="absolute object-cover z-50 w-auto lgs:h-[25rem] "/>       
 
-                        <div className="relative flex bg-transparent items-center justify-center z-40 lgs:h-[200vh] w-full">
-                          <div className="flex bg-primary h-[22rem] w-[22rem] rounded-full"/>                
-                    </div>
+                        <div className="relative flex bg-transparent items-center justify-center lgs:h-[200vh] w-full">
+                          <div className="flex bg-primary h-[22rem] w-[22rem] mb-2 rounded-full z-40" style={{
+                            boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9)'
+                          }}/>             
+
+                          <Image src={flywheel} alt="" className="absolute object-cover z-30 w-[30rem] lgs:h-[25rem] animate-spin" style={{
+                            animationDuration:'10s'
+                          }}/>   
+                       </div>
 
                     </div>
 
