@@ -615,7 +615,7 @@ useEffect(() => {
 
                               {/* Image Section */}
                             <div className={`flex flex-col ${expandSection ? 'lgs:w-[40vw] opacity-100' : 'lgs:w-[0vw] opacity-0'} items-center h-auto`}>
-                               <div className='relative flex lgs:h-[30rem] lgs:w-[30rem] bg-primary rounded-full  animate-animation overflow-hidden'
+                               <div className='relative flex lgs:h-[25rem] lgs:w-[25rem] bg-primary rounded-full  animate-animation overflow-hidden'
                                style={{
                                  boxShadow:' inset 10px 10px 10px rgba(255, 255, 255, 0.6)'
                                  

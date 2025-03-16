@@ -3,58 +3,78 @@
       "id": 1,
       "name": "Turbocharger",
       "image": "/assets/turbo.png",
-      "partset1": [
-        {
-          "name" : "CamShaft",
-          "image": "/assets/engineParts/camshaft.png"
-        },
-        {
-          "name" : "CrankShaft",
-          "image": "/assets/engineParts/crankshaft.png"
-        },
-        {
-          "name" : "Connecting Rods",
-          "image": "/assets/engineParts/connectingRods.png"
-        },
-        {
-          "name" : "Pistons",
-          "image": "/assets/engineParts/pistons.png"
-        },
-        {
-          "name" : "Spark Plugs",
-          "image": "/assets/engineParts/plugs.png"
-        },
-        {
-          "name" : "Engine Block",
-          "image": "/assets/engineParts/engineBlock.png"
-        },
-        {
-          "name" : "Cylinder Head",
-          "image": "/assets/engineParts/headCylinder.png"
-        }
-
-
-            ],
-      "detailset1": [
-        {
-          "topic": "What is the Turbocharger",
-          "Description": "A turbocharger is a forced induction system that significantly enhances an engine’s power and efficiency by compressing air entering the combustion chamber. Composed of a turbine and a compressor linked by a shared shaft, it operates by harnessing wasted exhaust gases to spin the turbine. This rotational energy drives the compressor, which pressurizes ambient air, increasing its density before injecting it into the engine. By delivering more oxygen-rich air, the engine can burn fuel more completely and aggressively, generating greater horsepower without requiring a larger displacement. Modern turbochargers often include advanced features like intercoolers (to cool compressed air for better density), variable geometry turbines (to optimize airflow at different RPMs), and lightweight materials for reduced lag. Originally developed for aircraft engines in the early 20th century, turbos are now ubiquitous in automotive engineering, enabling smaller engines to rival the output of larger ones while improving fuel economy and reducing emissions."
-        },
-        {
-          "topic": "How Does it Work",
-          "Description": "The turbocharger operates through a four-stage process: exhaust gas redirection, turbine activation, air compression, and combustion enhancement. First, exhaust gases expelled from the engine are funneled through the turbo’s turbine housing, causing the turbine wheel to spin at speeds exceeding 150,000 RPM. This spinning motion transfers energy to the compressor wheel on the opposite end of the shaft. The compressor draws in ambient air, pressurizes it, and forces it into the engine’s intake manifold. However, compressed air heats up during this process, reducing its density. To counteract this, an intercooler cools the air before it enters the combustion chamber, maximizing oxygen content. The denser air allows the engine to inject more fuel, creating a more powerful explosion in the cylinders. This cycle is managed by a wastegate, which regulates boost pressure to prevent engine damage. While turbochargers historically suffered from 'turbo lag' (a delay in power delivery), modern designs use twin-scroll housings, ball bearings, and electric assist systems to minimize this drawback, delivering near-instantaneous throttle response."
-        },
-        {
-          "topic": "Common in Performance Cars",
-          "Description": "Turbochargers are a cornerstone of high-performance automotive engineering, particularly in sports cars, supercars, and rally vehicles. Brands like Porsche, Audi, and Ferrari use turbocharged engines to achieve extraordinary power-to-weight ratios. For example, the Porsche 911 Turbo S generates 640 horsepower from a 3.8L twin-turbo flat-six engine, rivaling the output of naturally aspirated V12 engines at half the displacement. Turbos are also critical in motorsports; Formula 1’s hybrid-era V6 engines rely on turbocharging paired with energy recovery systems for efficiency and power. Beyond raw performance, automakers use turbos to meet strict emissions regulations. By downsizing engines (e.g., replacing a V8 with a turbocharged V6), manufacturers reduce weight and fuel consumption while maintaining power. Even mainstream brands like Hyundai and Ford now turbocharge smaller engines (e.g., 1.6L or 2.0L) to replace older, less efficient larger engines. In diesel trucks, turbos provide the low-end torque needed for towing and hauling, making them indispensable in commercial and off-road applications."
-        }
-      ],
       "shadow": "/assets/turboShadow.png",
       "description": "A turbocharger increases the engine's efficiency and power by forcing more air into the combustion chamber. Turbochargers are a key performance-enhancing component in modern engines. By increasing the amount of air entering the engine, a turbo enables a higher combustion rate, improving power output without increasing engine size. This allows manufacturers to create smaller, more efficient engines that produce the same or even higher performance than larger, naturally aspirated counterparts. Turbos also help reduce emissions and improve fuel economy. They are commonly found in sports cars, high-performance vehicles, and commercial trucks, where they provide the necessary power and torque for both speed and load-bearing capabilities.",
-      "details": [
-        "Improves engine power",
-        "Increases fuel efficiency",
-        "Common in performance cars"
+      "subTopic1" : "Turbo",
+      "subTopic2" : "Turbo Boosting Measurements",
+      "subSection": [
+       {
+       "subName1": "Turbo Bosting",
+       "subImage1": "/assets/engines/subset/sub4.png"
+        }
+
+          ],
+      "partset1": [
+          {
+            "name": "Camshaft",
+            "image": "/assets/engineParts/camshaft.png",
+            "description": "The camshaft is responsible for controlling the timing of the intake and exhaust valves, ensuring optimal engine performance and efficiency."
+          },
+          {
+            "name": "Crankshaft",
+            "image": "/assets/engineParts/crankshaft.png",
+            "description": "The crankshaft converts the reciprocating motion of the pistons into rotational motion, which drives the vehicle's wheels."
+          },
+          {
+            "name": "Connecting Rods",
+            "image": "/assets/engineParts/connectingRods.png",
+            "description": "Connecting rods link the pistons to the crankshaft, transmitting the force generated by combustion to create rotational power."
+          }
+        ],
+      "maindetailset1": {
+        "topic": "The Evolution of Turbochargers",
+        "Description": "Turbochargers have revolutionized engine performance by increasing power output and efficiency. Originally developed for aircraft engines in the early 20th century, turbochargers have become a staple in automotive and industrial applications. By forcing more air into the combustion chamber, turbochargers enable engines to burn more fuel and produce more power without increasing engine size. This technology has evolved significantly, with advancements in materials, design, and integration with hybrid and electric systems."
+      },
+      "detailset1": [
+        {
+          "topic": "Early Turbochargers: From Aircraft to Automobiles",
+          "Description": "The first turbochargers were developed in the early 1900s to improve the performance of aircraft engines at high altitudes, where air density is lower. Swiss engineer Alfred Büchi patented the first practical turbocharger in 1905. By the 1920s, turbochargers were widely used in aviation, and by the 1960s, they began appearing in commercial vehicles and performance cars. Early turbo systems were prone to 'turbo lag' and reliability issues, but they laid the foundation for modern turbocharging technology."
+        },
+        {
+          "topic": "Modern Turbochargers: Efficiency and Performance",
+          "Description": "Modern turbochargers are highly efficient and reliable, thanks to advancements in materials like lightweight alloys and ceramics. Twin-scroll and variable geometry turbochargers have reduced turbo lag, while electronic controls optimize performance across a wide range of conditions. Turbochargers are now used in everything from small passenger cars to heavy-duty trucks, improving fuel efficiency and reducing emissions. Hybrid and electric turbochargers are also emerging, offering even greater efficiency and responsiveness."
+        },
+        {
+          "topic": "Future of Turbocharging: Electric and Hybrid Systems",
+          "Description": "The future of turbocharging lies in electric and hybrid systems. Electric turbochargers, powered by a small motor, eliminate turbo lag entirely and provide instant boost. Hybrid systems combine traditional turbochargers with electric assist, improving efficiency and performance. These innovations are particularly important as the automotive industry shifts toward electrification, ensuring that internal combustion engines remain competitive in a low-emission future."
+        }
+      ],
+      "maindetailset2": {
+        "topic": "The Latest Innovations in Turbocharger Technology",
+        "Description": "Turbocharger technology continues to evolve, driven by the need for greater efficiency, reduced emissions, and improved performance. Recent advancements include electric turbochargers, advanced materials, and integration with hybrid and electric powertrains. These innovations are shaping the future of automotive and industrial engines, making turbochargers more versatile and environmentally friendly than ever before."
+      },
+      "detailset2": [
+        {
+          "topic": "Electric Turbochargers: Eliminating Turbo Lag",
+          "Description": "Electric turbochargers, also known as e-turbos, are one of the most significant recent advancements in turbocharging technology. These systems use an electric motor to spin the turbocharger's compressor wheel, eliminating turbo lag and providing instant boost. Electric turbochargers are particularly beneficial in hybrid and performance vehicles, where rapid response and efficiency are critical. Companies like Garrett Motion and BorgWarner are leading the development of e-turbos, with applications in both passenger cars and commercial vehicles.",
+          "image": "/assets/turbochargers/e-turbo.png",
+          "Advantages": "Instant Boost: Electric motors provide immediate power, eliminating turbo lag.Improved Efficiency: E-turbos can operate independently of exhaust gases, optimizing performance.Integration with Hybrid Systems: Electric turbochargers work seamlessly with hybrid powertrains, enhancing overall efficiency.",
+          "Issues": "Cost: Electric turbochargers are more expensive to produce than traditional systems.Complexity: Integrating electric motors and control systems adds complexity to the design.Power Requirements: E-turbos require additional electrical power, which can strain vehicle electrical systems."
+        },
+        {
+          "topic": "Variable Geometry Turbochargers (VGT): Precision and Flexibility",
+          "Description": "Variable Geometry Turbochargers (VGTs) use adjustable vanes to control the flow of exhaust gases, optimizing performance across a wide range of engine speeds. This technology reduces turbo lag at low RPMs and improves efficiency at high RPMs. VGTs are widely used in diesel engines and are increasingly being adopted in gasoline engines. Recent advancements in materials and design have made VGTs more durable and cost-effective.",
+          "image": "/assets/turbochargers/vgt.png",
+          "Advantages": "Reduced Turbo Lag: Adjustable vanes provide better low-end performance.Improved Efficiency: VGTs optimize exhaust gas flow, enhancing fuel economy.Versatility: Suitable for both diesel and gasoline engines.",
+          "Issues": "Complexity: VGTs require precise control systems and durable materials.Cost: The additional components and engineering make VGTs more expensive.Maintenance: VGTs may require more frequent maintenance due to moving parts."
+        },
+        {
+          "topic": "Turbochargers in Hybrid and Electric Vehicles",
+          "Description": "Turbochargers are playing an increasingly important role in hybrid and electric vehicles. In hybrids, turbochargers improve the efficiency of internal combustion engines, while in electric vehicles, they can be used in range-extender applications. Recent developments include integrated turbo-generator systems that generate electricity from exhaust gases, further enhancing the efficiency of hybrid powertrains.",
+          "image": "/assets/turbochargers/hybrid-turbo.png",
+          "Advantages": "Enhanced Efficiency: Turbochargers improve the performance of hybrid engines.Range Extension: Turbo-generator systems can extend the range of electric vehicles.Reduced Emissions: Optimized combustion reduces greenhouse gas emissions.",
+          "Issues": "Integration Challenges: Combining turbochargers with hybrid systems requires advanced engineering.Cost: Hybrid and electric turbo systems are more expensive to develop and produce.Weight: Additional components can increase vehicle weight, affecting efficiency."
+        }
       ]
     },
     {

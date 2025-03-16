@@ -33,6 +33,7 @@ import jesko from '../assests/DYN/Jejsko.png';
 //flywheel images
 import flywheel0 from '../assests/flywheel.png';
 import flywheel1 from '../assests/flywheel2.png';
+import flywheel2 from '../assests/flywheel3.png';
 
 
 
@@ -59,6 +60,7 @@ const Home = () => {
     const [offsetY, setOffsetY] = useState(0);
     const [parallex1 , setParallex1] = useState(0);
     const [currentIndex , setCurrentIndex] = useState(0);
+    const [hover, setHover] = useState(false);
     
     //craete an interface of that dataset from the json file
 
@@ -138,24 +140,65 @@ const Home = () => {
 
                     
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
-                        <Image src={turbossLogo} alt="" className="absolute object-cover z-50 w-auto  mt-2 lgs:h-[28rem] "/>       
+
+                        <Image src={turbossLogo} alt="" className="absolute object-cover z-50 w-auto  mt-2 lgs:h-[28rem] "/>   
+
+                        
+                    <div className="absolute flex  flex-col bg-transparent items-center justify-start lgs:h-[200vh] w-full">
+                          <h2 className="flex font-primary font-poppins text-primary text-shadow-xl text-center" style={{
+                            fontWeight:'100',
+                            fontSize:'20rem'
+                          }}>
+                            Turboss
+                            </h2>              
+                    </div>    
 
                         <div className="relative flex bg-transparent items-center justify-center lgs:h-[200vh] w-full">
                           <div className="flex bg-primary h-[25rem] w-[25rem] rounded-full z-40" style={{
                             boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9)'
                           }}/>             
 
+                            {/* Middle Cogwheel */}
                           <Image src={flywheel0} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
                             animationDuration:'10s'
                           }}/>   
-
-                        <div className="absolute flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
+#
+                            {/* 1rd Cogwheel */}
+                            <div className="absolute flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
 
                           }}>
                            <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
                             animationDuration:'10s',
                             animationDirection:'reverse'
                           }}/>   
+                            </div>
+
+                            {/* 3rd Cogwheel */}
+                            <div className="absolute flex bg-transparent justify-end items-center lgs:h-[50rem] lgs:w-[80rem] z-10">
+
+                                <div className="absolute flex lgs:w-[40rem] lgs:h=[40rem] items-center justify-center z-10">
+
+
+                                       
+                                    <Image src={flywheel2} alt="" className="absolute object-cover z-10 w-[40rem] lgs:h-[40rem] animate-spin" style={{
+                                    animationDuration:'20s'
+                                    }}/>   
+
+                                    <div className="absolute flex bg-primary hover:bg-purple-600 cursor-pointer items-center justify-start h-[28rem] w-[28rem] rounded-full z-20"
+                                    style={{
+                                        boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9)'
+                                    }}>
+
+                                    
+                                         <Image src={flywheel0} alt="" className="flex object-cover z-30 w-[20rem] lgs:h-[20rem] animate-spin" style={{
+                                        animationDuration:'10s',
+                                        animationDirection:'reverse'
+                                        }}/>
+
+                                    </div>
+
+                                </div>        
+
                             </div>
                        </div>
 
@@ -166,9 +209,6 @@ const Home = () => {
                 
                 </div>
 
-                <div className="relative flex bg-transparent items-center justify-center z-40 lgs:h-[200vh] w-full">
-                        <div className="absolute flex  bg-primary lgs:h-[30rem] lgs:w-[30rem] rounded-full"/>                  
-                </div>
 
 
             </div>
