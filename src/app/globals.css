@@ -207,6 +207,33 @@
   animation: animateScale 10s ease-in-out infinite, movingShadow 10s ease-in-out infinite;
 }
 
+@keyframes spin-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-fast {
+  animation: spin-fast 5s linear infinite reverse; /* Fast rotation */
+}
+
+.group-hover\:animate-spin-slow:hover {
+  animation: spin-slow 15s linear infinite reverse !important; /* Slows down on hover */
+}
+
+
 
 body {
 

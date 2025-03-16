@@ -34,6 +34,7 @@ import jesko from '../assests/DYN/Jejsko.png';
 import flywheel0 from '../assests/flywheel.png';
 import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
+import flywheel3 from '../assests/flywheel4.png';
 
 
 
@@ -141,37 +142,48 @@ const Home = () => {
                     
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
 
-                        <Image src={turbossLogo} alt="" className="absolute object-cover z-50 w-auto  mt-2 lgs:h-[28rem] "/>   
+ 
 
                         
-                    <div className="absolute flex  flex-col bg-transparent items-center justify-start lgs:h-[200vh] w-full">
-                          <h2 className="flex font-primary font-poppins text-primary text-shadow-xl text-center" style={{
-                            fontWeight:'100',
-                            fontSize:'20rem'
-                          }}>
-                            Turboss
-                            </h2>              
-                    </div>    
+                        <div className="absolute flex  flex-col bg-transparent items-center justify-start lgs:h-[200vh] w-full">
+                            <h2 className="flex font-primary font-poppins text-primary text-shadow-xl text-center" style={{
+                                fontWeight:'100',
+                                fontSize:'20rem'
+                            }}>
+                                Turboss
+                                </h2>              
+                        </div>    
 
+                      {/* Cogwheel Setup */}
                         <div className="relative flex bg-transparent items-center justify-center lgs:h-[200vh] w-full">
-                          <div className="flex bg-primary h-[25rem] w-[25rem] rounded-full z-40" style={{
-                            boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9)'
-                          }}/>             
+           
 
                             {/* Middle Cogwheel */}
-                          <Image src={flywheel0} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
-                            animationDuration:'10s'
-                          }}/>   
-#
+                            <div className="absolute flex bg-transparent h-auto w-auto lgs:h-[40rem] lgs:w-[40rem]  items-center justify-center z-40">
+
+                            
+                                    <Image src={flywheel0} alt="" className="absolute object-cover z-10 lgs:h-[35rem] lgs:w-[35rem] animate-spin" style={{
+                                    animationDuration:'10s'
+                                    }}/>   
+
+                                        <div className="flex bg-primary lgs:h-[20rem] lgs:w-[20rem] rounded-full items-center overflow-hidden justify-center z-20" style={{
+                                        boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                    }}> 
+                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 lgs:h-[20rem] lgs:w-[20rem]"/>
+                                    
+                                    </div> 
+
+                            </div>
+
                             {/* 1rd Cogwheel */}
                             <div className="absolute flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
 
-                          }}>
-                           <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
-                            animationDuration:'10s',
-                            animationDirection:'reverse'
-                          }}/>   
-                            </div>
+                                }}>
+                                <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
+                                    animationDuration:'10s',
+                                    animationDirection:'reverse'
+                                }}/>   
+                           </div>
 
                             {/* 3rd Cogwheel */}
                             <div className="absolute flex bg-transparent justify-end items-center lgs:h-[50rem] lgs:w-[80rem] z-10">
@@ -190,7 +202,7 @@ const Home = () => {
                                     }}>
 
                                     
-                                         <Image src={flywheel0} alt="" className="flex object-cover z-30 w-[20rem] lgs:h-[20rem] animate-spin" style={{
+                                         <Image src={flywheel0} alt="" className="flex object-cover z-50 w-[25rem] lgs:h-[25rem] animate-spin" style={{
                                         animationDuration:'10s',
                                         animationDirection:'reverse'
                                         }}/>
@@ -200,6 +212,53 @@ const Home = () => {
                                 </div>        
 
                             </div>
+
+                            {/* 4th blue Cogwheel */}
+                            <div className="absolute flex bg-transparent justify-start items-start lgs:h-[50rem] lgs:w-[80rem] z-20">
+
+                                <div className="absolute flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mt-12 justify-center z-10">
+
+
+                                    
+                                    <Image src={flywheel3} alt="" className="absolute object-cover z-20 w-[20rem] lgs:h-[20rem] animate-spin" style={{
+                                    animationDuration:'20s'
+                                    }}/>   
+
+
+
+
+                                </div>        
+
+                            </div>
+
+                            {/* 5th blue Cogwheel */}
+                            <div className="absolute flex bg-transparent justify-start items-end lgs:h-[50rem] lgs:w-[80rem] z-40">
+
+                            <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mb-24  justify-center z-10">
+
+
+                                
+                                <Image src={flywheel2} alt="" className="absolute object-cover z-40 w-[20rem] lgs:h-[20rem] animate-spin-fast group-hover:animate-spin-slow" style={{
+                                animationDirection:'reverse',
+
+                                }}/>   
+
+                                <div className="flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[10rem] w-[10rem] group-hover:scale-125 duration-700 transition-all ease-in-out rounded-full z-50"
+                                style={{
+                                    boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                }}>
+                                    </div>
+                                
+                                     
+
+
+
+
+                            </div>        
+
+                            </div>
+
+
                        </div>
 
                     </div>
