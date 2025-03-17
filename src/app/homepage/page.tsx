@@ -157,7 +157,7 @@ const Home = () => {
         <div className="relative h-auto w-full">
 
             {/* First Section */}           
-            <div className='relative lgs:h-[200vh] w-full overflow-hidden'>
+            <div className='relative lgs:h-[200vh] w-full bg-transparent overflow-hidden'>
 
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
 
