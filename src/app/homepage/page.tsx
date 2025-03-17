@@ -30,13 +30,25 @@ import turbossLogo from "../assests/turbossLogo.png";
 import birthaBenz from '../assests/DYN/birthaBenz.png';
 import jesko from '../assests/DYN/Jejsko.png';
 
+//navigationImages
+import engine from '../assests/navigation/engine.png';
+import lab from '../assests/navigation/Labs.png';
+import tools from '../assests/navigation/Tools.png';
+import aboutUs from '../assests/navigation/AboutUs.png';
+import auto from '../assests/navigation/auto.png';
+
 //flywheel images
 import flywheel0 from '../assests/flywheel.png';
 import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
 import flywheel3 from '../assests/flywheel4.png';
 
+//files
+import SplitText from  './headingText/page';
 
+const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
 
 
 // Slide data with images
@@ -142,16 +154,31 @@ const Home = () => {
                     
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
 
+
+                        <div className="absolute flex items-start justify-center lgs:h-[200vh] w-full">
+                            <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
+                                  fontWeight: '100',
+                                  fontSize:'22rem'
+                                  }}>  
+                              Tur<span className="text-orange-600" style={{
+                                fontWeight:'200'
+                              }}>boss</span>
+                            </h2>     
+                         </div>   
+
  
 
-                        
-                        <div className="absolute flex  flex-col bg-transparent items-center justify-start lgs:h-[200vh] w-full">
-                            <h2 className="flex font-primary font-poppins text-primary text-shadow-xl text-center" style={{
-                                fontWeight:'100',
-                                fontSize:'20rem'
-                            }}>
-                                Turboss
-                                </h2>              
+                        {/* Text Data set */}
+                        <div className="absolute flex  flex-col bg-transparent items-center justify-start  lgs:h-[200vh] w-full">
+                            <SplitText
+                                text="Turboss"
+                                className="flex lgs:mt-0 font-bricolagegrotesque opacity-5 lgs:text-[45rem] animate-movingText text-primary font-thin text-center"
+                                delay={150}
+                                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                                threshold={0.2}
+                                rootMargin="-50px"
+                                onLetterAnimationComplete={handleAnimationComplete}
+                                />          
                         </div>    
 
                       {/* Cogwheel Setup */}
@@ -169,7 +196,14 @@ const Home = () => {
                                         <div className="flex bg-primary lgs:h-[20rem] lgs:w-[20rem] rounded-full items-center overflow-hidden justify-center z-20" style={{
                                         boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
                                     }}> 
-                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 lgs:h-[20rem] lgs:w-[20rem]"/>
+                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 lgs:h-[22rem] lgs:w-[22rem]"/>
+                                        <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                                style={{
+                                                    boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.4)'
+                                                }}/>
+
                                     
                                     </div> 
 
@@ -196,18 +230,7 @@ const Home = () => {
                                     animationDuration:'20s'
                                     }}/>   
 
-                                    <div className="absolute flex bg-primary hover:bg-purple-600 cursor-pointer items-center justify-start h-[28rem] w-[28rem] rounded-full z-20"
-                                    style={{
-                                        boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9)'
-                                    }}>
 
-                                    
-                                         <Image src={flywheel0} alt="" className="flex object-cover z-50 w-[25rem] lgs:h-[25rem] animate-spin" style={{
-                                        animationDuration:'10s',
-                                        animationDirection:'reverse'
-                                        }}/>
-
-                                    </div>
 
                                 </div>        
 
@@ -243,7 +266,43 @@ const Home = () => {
 
                                 }}/>   
 
-                                <div className="flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[10rem] w-[10rem] group-hover:scale-125 duration-700 transition-all ease-in-out rounded-full z-50"
+                                <div className=" group flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[12rem] w-[12rem] overflow-hidden group-hover:scale-110 duration-700 transition-all ease-in-out rounded-full z-50"
+                                style={{
+                                    boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                }}>
+
+                                        <Image src={auto} alt="" className="flex object-cover z-50 w-[12rem] lgs:h-[12rem] lgs:scale-125 duration-700 transform-all ease-in-out"/>
+                                        <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                                style={{
+                                                    boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.4)'
+                                                }}/>
+
+                                    </div>
+                                
+                                     
+
+
+
+
+                            </div>        
+
+                            </div>
+
+                           {/* 6th blue Cogwheel */}
+                            <div className="absolute flex bg-transparent justify-end items-end lgs:h-[50rem] lgs:w-[80rem] z-30">
+
+                            <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:mr-64 lgs:mb-48  justify-center z-10">
+
+
+                                
+                                <Image src={flywheel2} alt="" className="absolute object-cover z-40 w-[20rem] lgs:h-[20rem] animate-spin duration-700 transform-all ease-in-out" style={{
+                                animationDuration:'20s'
+
+                                }}/>   
+
+                                <div className=" group flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[10rem] w-[10rem] group-hover:scale-125 duration-700 transition-all ease-in-out rounded-full z-50"
                                 style={{
                                     boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
                                 }}>
@@ -256,7 +315,162 @@ const Home = () => {
 
                             </div>        
 
+                           </div>
+
+                            {/* 7th Navigation Cogwheel */}
+                            <div className="relative bg-transparent lgs:h-auto lgs:w-[80rem] z-50">
+
+    
+                                {/* 1st Navigation Cogwheel */}
+                                <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] left-32 lgs:-top-24 items-center justify-center z-10">
+
+
+                                    
+                                            <Image src={flywheel0} alt="" className="absolute object-cover z-40 w-[20rem] lgs:h-[20rem] animate-spin duration-700 transform-all ease-in-out" style={{
+                                            animationDuration:'20s'
+
+                                            }}/>   
+
+                                            <div className=" group flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 transition-all ease-in-out overflow-hidden rounded-full z-50"
+                                            style={{
+                                                boxShadow:'inset 0px 20px 25px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                            }}>
+
+                                                <Image src={lab} alt="" className="flex object-cover z-50 w-[12rem] lgs:h-[12rem] lgs:scale-125 duration-700 transform-all ease-in-out"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                                style={{
+                                                    boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.4)'
+                                                }}/>
+                                                <div className="absolute flex items-center justify-center w-[12rem] lgs:h-[12rem]">
+                                                    <h2 className="absolute flex font-poppins text-4xl text-primary text-shadow-xl text-center z-50"
+                                                    style={{fontWeight:'100'}}>
+                                                        Enignes
+                                                    </h2>
+                                                </div>
+
+
+                                                </div>
+
+                            
+                                </div>  
+                                    
+                                {/* 2st Navigation Cogwheel */}
+                                <div className="absolute group flex lgs:w-[15rem] lgs:h-[15rem] bottom-12 left-48 items-center justify-center z-10">
+
+
+                                    
+                                            <Image src={flywheel1} alt="" className="absolute object-cover z-40 w-[15rem] lgs:h-[15rem] animate-spin duration-700 transform-all ease-in-out" style={{
+                                            animationDuration:'20s'
+
+                                            }}/>   
+
+                                            <div className=" group flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[8rem] w-[8rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                            style={{
+                                                boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                            }}>
+
+                                                <Image src={tools} alt="" className="flex object-cover z-50 w-[10rem] lgs:h-[10rem] lgs:scale-125 duration-700 transform-all ease-in-out"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[8rem] w-[8rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[8rem] w-[8rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex cursor-pointer items-center justify-start h-[8rem] w-[8rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                                style={{
+                                                    boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.4)'
+                                                }}/>
+                                                <div className="absolute flex items-center justify-center w-[8rem] lgs:h-[8rem]">
+                                                    <h2 className="absolute flex font-poppins text-xl text-primary text-shadow-xl text-center z-50"
+                                                    style={{fontWeight:'100'}}>
+                                                        Tools
+                                                    </h2>
+                                                </div>
+
+                                            </div>
+
+                            
+                                </div>
+
+                                {/* 3rd Navigation Cogwheel */}
+                                <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem]  right-48 items-center justify-center z-10">
+
+
+                                    
+                                            <Image src={flywheel0} alt="" className="absolute object-cover z-40 w-[20rem] lgs:h-[20rem] animate-spin duration-700 transform-all ease-in-out" style={{
+                                            animationDuration:'8s',
+                                            animationDirection:'reverse'
+
+                                            }}/>   
+
+                                            <div className=" group flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[12rem] w-[12rem] overflow-hidden group-hover:scale-110 duration-700 transition-all ease-in-out rounded-full z-50"
+                                            style={{
+                                                boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                            }}>
+
+
+                                                <Image src={aboutUs} alt="" className="flex object-cover z-50 w-[12rem] lgs:h-[12rem] lgs:scale-110 duration-700 transform-all ease-in-out"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                                style={{
+                                                    boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.4)'
+                                                }}/>
+                                                <div className="absolute flex items-center justify-center w-[12rem] lgs:h-[12rem]">
+                                                    <h2 className="absolute flex font-poppins lgs:text-2xl text-primary text-shadow-xl text-center z-50"
+                                                    style={{fontWeight:'100'}}>
+                                                        Turboss???
+                                                    </h2>
+                                                </div>
+
+
+
+
+                                            </div>
+
+                            
+                                </div>   
+
+                                 {/* 4th Navigation Cogwheel */}
+                                <div className="absolute group flex lgs:w-[25rem] lgs:h-[25rem] right-48 -bottom-10 items-center justify-center z-10">
+
+
+                                    
+                                    <Image src={flywheel3} alt="" className="absolute object-cover z-40 w-[25rem] lgs:h-[25rem] animate-spin duration-700 transform-all ease-in-out" style={{
+                                    animationDuration:'10s',
+                                    animationDirection:'reverse'
+
+                                    }}/>   
+
+                                    <div className=" group flex bg-primary group-hover:bg-purple-600 cursor-pointer items-center justify-start h-[12rem] w-[12rem] overflow-hidden group-hover:scale-110 duration-700 transition-all ease-in-out rounded-full z-50"
+                                    style={{
+                                        boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
+                                    }}>
+
+                                        <Image src={engine} alt="" className="flex object-cover z-50 w-[12rem] lgs:h-[12rem] lgs:scale-125 duration-700 transform-all ease-in-out"/>
+                                        <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
+                                                <div className="absolute flex cursor-pointer items-center justify-start h-[12rem] w-[12rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
+                                                style={{
+                                                    boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.4)'
+                                                }}/>
+
+                                                <div className="absolute flex items-center justify-center w-[12rem] lgs:h-[12rem]">
+                                                    <h2 className="absolute flex font-poppins lgs:text-4xl text-primary text-shadow-xl text-center z-50"
+                                                    style={{fontWeight:'100'}}>
+                                                        Labs
+                                                    </h2>
+                                                </div>
+
+
+                                        </div>
+
+
+                                </div>  
+
+
+
+
                             </div>
+
 
 
                        </div>

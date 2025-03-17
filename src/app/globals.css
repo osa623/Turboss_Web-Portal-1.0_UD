@@ -233,6 +233,18 @@
   animation: spin-slow 15s linear infinite reverse !important; /* Slows down on hover */
 }
 
+/* Moving Animation 05 for text*/
+@keyframes movingText {
+
+  0% { transform: translateX(20px); }
+  50% { transform: translateX(500px); }
+  100% { transform: translateX(20px); }
+
+}
+
+.animate-movingText {
+  animation: movingText 25s infinite ease-in-out forwards;
+}
 
 
 body {
