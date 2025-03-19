@@ -95,7 +95,7 @@
 }
 
 .animate-moving02 {
-  animation: moving02 20s ease-in-out forwards;
+  animation: moving02 20s ease-in-out forwards infinite;
 }
 
 /* Moving Animation 03*/
