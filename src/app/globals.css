@@ -247,6 +247,17 @@
 }
 
 
+/* Scaling Animation 01*/
+@keyframes textScaling01 {
+  0% { transform: scale(1); }
+  50% { transform: scale(2); }
+  100% { transform: scale(1); }
+}
+
+.animate-textScaling01 {
+  animation: 20s ease-in-out infinite textScaling01;
+}
+
 body {
 
           

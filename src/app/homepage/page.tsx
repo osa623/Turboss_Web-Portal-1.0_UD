@@ -30,6 +30,10 @@ import carbonFiber from "../assests/carbonFiber.jpg";
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
 import jesko from '../assests/DYN/Jejsko.png';
+import dropTail from '../assests/DYN/droptail.png';
+import carSpeed from '../assests/DYN/carSpeed.png';
+import windShield from '../assests/DYN/windShieldWipers.png';
+
 
 //navigationImages
 import engine from '../assests/navigation/engine.png';
@@ -43,6 +47,9 @@ import flywheel0 from '../assests/flywheel.png';
 import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
 import flywheel3 from '../assests/flywheel4.png';
+
+//Sounds
+import sound from '../assests/sounds/backgroundAudio.mp3';
 
 //files
 import SplitText from  './headingText/page';
@@ -64,9 +71,9 @@ const DYN = [
 
     { id: 1, name: 'Bertha Benzs historic drive?', image: birthaBenz, statement: 'In 1888, Bertha Benz completed the first long-distance car journey, driving 106 km in Germany, showcasing the automobile potential.' },
     { id: 2, name: 'the fastest car in the world?', image: jesko, statement: 'The Koenigsegg Jesko Absolut set a record by reaching 412.72 km/h (256.6 mph) in June 2024.' },
-    { id: 3, name: 'the worlds most expensive car?', image: jesko, statement: 'The Rolls-Royce Droptail, limited to four units, is estimated to cost between $25-30 million.' },
-    { id: 4, name: 'the invention of windshield wipers?', image: birthaBenz, statement: 'Mary Anderson patented the first windshield wiper in 1903 after observing drivers struggle to clear their windshields.' },
-    { id: 5, name: 'the first speeding ticket?', image: birthaBenz, statement: 'In 1896, a driver in England received the first speeding ticket for going 8 mph, exceeding the 2 mph limit in towns.' }
+    { id: 3, name: 'the worlds most expensive car?', image: dropTail, statement: 'The Rolls-Royce Droptail, limited to four units, is estimated to cost between $25-30 million.' },
+    { id: 4, name: 'the invention of windshield wipers?', image: windShield, statement: 'Mary Anderson patented the first windshield wiper in 1903 after observing drivers struggle to clear their windshields.' },
+    { id: 5, name: 'the first speeding ticket?', image: carSpeed, statement: 'In 1896, a driver in England received the first speeding ticket for going 8 mph, exceeding the 2 mph limit in towns.' }
 ];
 
 const Home = () => {
@@ -94,7 +101,10 @@ const Home = () => {
 
     const router = useRouter();
 
-
+   //useEffect for the audio
+   useEffect(()=> {
+    const audio = new Audio(sound);
+   })
 
 
 
@@ -122,7 +132,7 @@ const Home = () => {
     useEffect(()=> {
         const interval =  setInterval(()=> {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % DYN.length);
-        }, 100000);
+        }, 50000);
 
         return () => clearInterval(interval);
     } ,[]);
@@ -156,9 +166,9 @@ const Home = () => {
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
 
                         {/* Turboss Main Topic */}
-                        <div className="absolute flex items-start justify-center top-0 lgs:h-[50vh] w-full">
+                        <div className="absolute flex flex-col items-start justify-center top-0 lgs:h-auto w-full">
 
-                            <div className="flex flex-col w-auto h-auto justify-center items-center">
+                            <div className="flex flex-col w-full h-auto justify-center items-center">
 
                             <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
                                   fontWeight: '100',
@@ -171,12 +181,40 @@ const Home = () => {
                               </span>
                             </h2> 
 
+
+
                             </div>
-                            
- 
-                             
-                              
+                          
                          </div>   
+
+                        {/* Sub Paragrapgh Main Topic */}
+                        <div className="absolute flex flex-col items-center justify-center lgs:bottom-0 lgs:h-[60vh] w-full">
+
+                            <div className="flex flex-col w-auto h-auto justify-center items-center">
+
+                            <h2 className="font-dmsans text-primary text-shadow-xl lg:text-2xl text-nowrap text-center" style={{ 
+                                  fontWeight: '100',
+                                  }}>  
+                            Scroll down to step into the garage and ignite the experience
+                            </h2> 
+
+
+
+                            </div>
+                            <div className="absolute  flex-col w-auto h-auto justify-center opacity-15 blur-sm items-center">
+
+                            <h2 className="font-dmsans text-primary text-shadow-xl animate-textScaling01 lg:text-3xl mt-4 text-nowrap text-center" style={{ 
+                                fontWeight: '100',
+                                }}>  
+                            Scroll down to step into the garage and ignite the experience
+                            </h2> 
+
+
+
+                            </div>
+                          
+                         </div>   
+
 
                         {/* Sub Upper Topic */}
                          <div className="absolute flex items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-full">
@@ -228,7 +266,7 @@ const Home = () => {
 
 
                       {/* Cogwheel Setup */}
-                        <div className="relative flex bg-transparent items-center justify-center lgs:mt-48 lgs:h-[200vh] w-full">
+                        <div className="relative flex bg-transparent items-center justify-center lgs:mt-12 lgs:h-auto w-full">
            
                             <div className="absolute bg-orange-600 h-[30rem] w-[70vw] opacity-20 blur-3xl z-0"/>
 
@@ -747,7 +785,7 @@ const Home = () => {
                                         {"\u0022"}
                                     </span>Explore <span className="lgs:mr-2 lgs:text-2xl text-baseprimary lgs:p-1"
                               style={{
-                                fontWeight:'900'
+                                fontWeight:'300'
                               }}>
                               Baos Wheels 
                                  </span>for expert car reviews, in-depth articles, and the latest auto industry updates. Stay informed with insights, tips, and engaging videos.
@@ -776,7 +814,7 @@ const Home = () => {
             {/* Lab Section */}
             <div className='relative flex flex-col lgs:h-[55rem] items-center justify-start w-full overflow-hidden'>
 
-                <div className="absolute bg-gradient-to-b lgs:h-[5rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
+                <div className="absolute bg-gradient-to-b lgs:h-[15rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
                     src={herobackground4} 
                     alt='turbo' 
@@ -814,14 +852,17 @@ const Home = () => {
 
                             <div className="flex w-auto h-auto lgs:space-x-8">
                             {Lab.slice(0,3).map((tool, index) => (
-                                <div key={tool.id} className={`group relative w-auto   ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  transition-all duration-700 ease-in-out   h-auto cursor-pointer`}
+                                <div key={tool.id} className={`group relative w-auto   ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  transition-all duration-700 ease-in-out   h-auto cursor-pointer`
+                            }  
                                 onMouseEnter={() => setHover(index)}
                                 onMouseLeave={() => setHover(null)}
                                 >
 
-                                    <div  className={`relative group flex-col lgs:w-[20rem] drop-shadow-2xl sms:w-[22rem] mds:w-[20rem] bg-transparent cursor-pointer items-center justify-start rounded-lg lgs:h-[25rem]`} data-aos='fade-up'
+                                    <div  className={`relative group flex-col lgs:w-[20rem] drop-shadow-2xl sms:w-[22rem] mds:w-[20rem] bg-transparent cursor-pointer items-center justify-start rounded-lg lgs:h-[25rem]`}
+                                      
+                                    data-aos='fade-up'
                                             data-aos-delay={`${200 + tool.id * 50}`} style={{
-                                    
+                                        
                                 }}
 
                                 >
@@ -840,8 +881,10 @@ const Home = () => {
 
                                 <div className="absolute flex flex-col bg-gradient-to-t from-secondary rounded-xl items-end justify-center to-transparent z-40 w-full lgs:h-[25rem] bottom-0"
                                                                     style={{
+                                                                        boxShadow:' inset 0px 5px 10px 8px rgba(255,255,255,0.4)',
                                                                         transform: `translateY(${parallex1 * 0.8}px)`,
                                                                         transition: "transform 0.4s ease-out",
+                                                                        
                                                                     }}>
 
                                             <div className="flex lgs:w-[20rem] lgs:h-[25rem] items-start justify-start lgs:p-5">
@@ -898,12 +941,15 @@ const Home = () => {
                             </div>
 
                             <div className="flex w-auto h-auto lgs:space-x-8">
-                            {Lab.slice(0,3).map((tool) => (
-                                <div key={tool.id} className="group relative lgs:mt-32 w-auto h-auto cursor-pointer">
+                            {Lab.slice(0,3).map((tool, index) => (
+                                <div key={tool.id} className={`group relative ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  lgs:mt-32 w-auto transition-all duration-700 ease-in-out  h-auto cursor-pointer`}
+                                  onMouseEnter={() => setHover(index)}
+                                    onMouseLeave={() => setHover(null)}
+                                >
 
 
 
-                                <div className="flex flex-col bg-gradient-to-b from-secondary rounded-xl blur-xl items-end justify-center to-transparent z-40 w-full lgs:h-[5rem] bottom-0"
+                                <div className="flex flex-col bg-gradient-to-b from-secondary rounded-xl blur-lg items-end justify-center to-transparent z-40 w-full lgs:h-[4rem] bottom-0"
                                                                     style={{
                                                                         transform: `translateY(${parallex1 * 0.8}px)`,
                                                                         transition: "transform 0.4s ease-out",
@@ -938,6 +984,18 @@ const Home = () => {
           
             {/* Sub Secondary Section */}
             <div className="relative w-auto h-auto overflow-hidden">
+
+            <div className="absolute flex lgs:w-[25vw] lgs:h-[4rem] lgs:rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
+                        style={{
+                            boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
+                        }}>
+
+                            <h2 className="font-dmsans lgs:text-2xl text-primary text-center" style={{
+                                fontWeight:'200'
+                            }}>
+                                #SlideIntoAutoWise
+                            </h2>
+                     </div>
                 
             <div
                 className="w-[100vw] h-auto flex transition-transform duration-1000 ease-in-out"
@@ -955,21 +1013,12 @@ const Home = () => {
                                 <div className="flex absolute bg-gradient-to-t lgs:h-[5rem] lgs:w-[60vw] bottom-0  from-secondary to-transparent z-40"/>
                                 <div className="flex absolute bg-gradient-to-b lgs:h-[10rem] lgs:w-[80vw] top-0 from-secondary to-transparent z-40"/>
                                 
+                                
 
                         
                         </div>
 
-                        <div className="absolute flex w-[30vw] lgs:h-[4rem] lgs:rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
-                        style={{
-                            boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
-                        }}>
 
-                            <h2 className="font-dmsans lgs:text-2xl text-primary text-center" style={{
-                                fontWeight:'200'
-                            }}>
-                                #SlideIntoAutoWise
-                            </h2>
-                     </div>
 
        
                         <div className="absolute flex lgs:w-[100vw] lgs:h-[25rem]  items-center justify-center z-50">
@@ -1004,6 +1053,44 @@ const Home = () => {
 
         
                         </div>
+
+                        <div className="absolute flex lgs:w-[100vw] lgs:h-[25rem]  items-center justify-center z-50">
+                        
+                       
+                        <div key={currentIndex} className="flex flex-col lgs:h-[25rem]    lgs:w-[100vw] items-center justify-center">
+                            <div
+                              className="flex w-auto h-auto  lgs:p-5 animate-moving04">
+    
+                                    <h2 className="flex lgs:text-md font-dmsans text-shadow-xl text-center items-start lgs:pt-5 text-primary" style={{
+                                        fontWeight:'100'
+                                    }}>
+                                    Do You Know About
+                                    </h2>
+    
+                                    <span className="flex lgs:text-5xl font-dmsans text-center items-center p-2 text-primary"
+                                        style={{
+                                            fontWeight:'100'
+                                        }}>
+                                        {tool.name}
+                                    </span>
+                            </div>
+    
+                                <p className="font-dmsans lgs:w-[40vw] text-xl text-center animate-moving03 border-2 border-gray-400 lgs:p-5 lgs:mt-8 text-primary h-auto items-center"
+                                style={{
+                                    fontWeight:'100'
+                                }}>
+                                   {tool.statement}
+                                       </p>
+                        </div>
+                        
+
+    
+                       </div>
+
+
+                       
+
+
                         
         
                     </div>
