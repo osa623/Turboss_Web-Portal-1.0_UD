@@ -48,8 +48,7 @@ import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
 import flywheel3 from '../assests/flywheel4.png';
 
-//Sounds
-import sound from '../assests/sounds/backgroundAudio.mp3';
+
 
 //files
 import SplitText from  './headingText/page';
@@ -102,9 +101,16 @@ const Home = () => {
     const router = useRouter();
 
    //useEffect for the audio
-   useEffect(()=> {
-    const audio = new Audio(sound);
-   })
+useEffect(() => {
+    const audio = new Audio('/sounds/backgroundAudio.WAV');
+    audio.loop = true;
+    audio.play();
+
+    return () => {
+        audio.pause();
+        audio.currentTime = 0;
+    };
+}, []);
 
 
 
