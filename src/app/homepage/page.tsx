@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
@@ -48,10 +48,14 @@ import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
 import flywheel3 from '../assests/flywheel4.png';
 
-
-
 //files
 import SplitText from  './headingText/page';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+
+
+
+
 
 const handleAnimationComplete = () => {
     console.log('All letters have animated!');
@@ -81,6 +85,16 @@ const Home = () => {
     const [parallex1 , setParallex1] = useState(0);
     const [currentIndex , setCurrentIndex] = useState(0);
     const [hover, setHover] = useState<number | null>(null);
+    const [isMuted, setIsMuted] = useState(false);
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    const toggleMute = () => {
+        setIsMuted(!isMuted);
+        if (audioRef.current) {
+            audioRef.current.muted = !audioRef.current.muted;
+        }
+    };
+    
     
     //craete an interface of that dataset from the json file
 
@@ -99,21 +113,6 @@ const Home = () => {
     //navigation
 
     const router = useRouter();
-
-   //useEffect for the audio
-useEffect(() => {
-    const audio = new Audio('/sounds/backgroundAudio.WAV');
-    audio.loop = true;
-    audio.play();
-
-    return () => {
-        audio.pause();
-        audio.currentTime = 0;
-    };
-}, []);
-
-
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -157,7 +156,7 @@ useEffect(() => {
 
         <div className="relative h-auto w-full">
 
-            {/* First Section */}
+            {/* First Section */}           
             <div className='relative lgs:h-[200vh] w-full overflow-hidden'>
 
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
@@ -579,8 +578,23 @@ useEffect(() => {
 
             </div>
 
+            {/* Sound Check Section */}   
+            <div className="fixed flex items-center justify-center text-center  bg-secondary lgs:w-[3rem] lgs:h-[3rem] rounded-full z-50 top-4 left-4"
+            style={{
+                boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
+            }}>
+            
+            <audio ref={audioRef} autoPlay loop>
+                <source src="/backgroundAudio.wav" type="audio/wav" />
+                Your browser does not support the audio element.
+            </audio>
+            <button onClick={toggleMute}>
+                {isMuted ? <FontAwesomeIcon className="text-primary" icon={faVolumeDown}/>: <FontAwesomeIcon className="text-primary" icon={faVolumeHigh}/>}
+            </button>
+            </div>
+
             {/* Second Section */}
-            <div className='relative flex lgs:h-[35rem] w-full overflow-hidden'>
+            <div className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
                 <Image 
                     src={herobackground3} 
                     alt='turbo' 
@@ -620,7 +634,7 @@ useEffect(() => {
             </div>
 
              {/* DNA Section */}
-            <div className="relative flex  justify-center items-center bg-transparent">
+            <div className="relative flex  justify-center items-center bg-transparent z-40">
                 {/* Background Image */}
 
                 <div className="relative flex flex-col h-auto w-full bg-transparent overflow-hidden z-40">
@@ -745,7 +759,7 @@ useEffect(() => {
             </div>
 
             {/* Secondary Section */}
-            <div className="flex lgs:h-[25rem] w-full bg-secondary" >
+            <div className="flex lgs:h-[25rem] w-full bg-secondary z-40" >
                 <div className="flex lgs:h-[25rem] lgs:w-[40vw] items-center justify-center"/>
                 <div className="relative flex lgs:h-[25rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
                         <Image src = {subHeroSec1} alt="fwef" className="object-cover animate-moving02  lgs:h-[30rem] lgs:w-[60vw] z-30"/>
@@ -818,7 +832,7 @@ useEffect(() => {
             </div>
 
             {/* Lab Section */}
-            <div className='relative flex flex-col lgs:h-[55rem] items-center justify-start w-full overflow-hidden'>
+            <div className='relative flex flex-col lgs:h-[55rem] items-center justify-start w-full z-40 overflow-hidden'>
 
                 <div className="absolute bg-gradient-to-b lgs:h-[15rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
@@ -989,7 +1003,7 @@ useEffect(() => {
 
           
             {/* Sub Secondary Section */}
-            <div className="relative w-auto h-auto overflow-hidden">
+            <div className="relative w-auto h-auto overflow-hidden z-40">
 
             <div className="absolute flex lgs:w-[25vw] lgs:h-[4rem] lgs:rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
                         style={{
@@ -1110,7 +1124,7 @@ useEffect(() => {
 
           
             {/* Tools Section */}
-            <div className='relative flex flex-col lgs:h-[60rem] w-full overflow-hidden'>
+            <div className='relative flex flex-col lgs:h-[60rem] w-full overflow-hidden z-40'>
                 <div className="absolute bg-gradient-to-b lgs:h-[20rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
                     src={herobackground5} 
@@ -1154,7 +1168,7 @@ useEffect(() => {
             </div>
 
              {/* Axila Section */}
-            <div className="relative flex lgs:h-[20rem] w-full bg-secondary" >
+            <div className="relative flex lgs:h-[20rem] w-full bg-secondary z-40" >
                 
                 
 
