@@ -14,6 +14,9 @@ import "swiper/css/navigation";
 import "../homepage/base.css";
 import Axila from '../compo/pixelcard/page';
 
+
+
+
 // Images
 import image1 from "../assests/background.png";
 import subHeroSec1 from '../assests/subherosec1.png';
@@ -27,12 +30,16 @@ import mainBackground from "../assests/mainBackground.jpg";
 import turbossLogo from "../assests/turbossLogo.png";
 import carbonFiber from "../assests/carbonFiber.jpg";
 
+
+
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
 import jesko from '../assests/DYN/Jejsko.png';
 import dropTail from '../assests/DYN/droptail.png';
 import carSpeed from '../assests/DYN/carSpeed.png';
 import windShield from '../assests/DYN/windShieldWipers.png';
+
+
 
 
 //navigationImages
@@ -42,11 +49,16 @@ import tools from '../assests/navigation/Tools.png';
 import aboutUs from '../assests/navigation/AboutUs.png';
 import auto from '../assests/navigation/auto.png';
 
+
+
+
 //flywheel images
 import flywheel0 from '../assests/flywheel.png';
 import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
 import flywheel3 from '../assests/flywheel4.png';
+
+
 
 //files
 import SplitText from  './headingText/page';
@@ -85,8 +97,10 @@ const Home = () => {
     const [parallex1 , setParallex1] = useState(0);
     const [currentIndex , setCurrentIndex] = useState(0);
     const [hover, setHover] = useState<number | null>(null);
-    const [isMuted, setIsMuted] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
     const audioRef = useRef<HTMLAudioElement>(null);
+    const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const sectionAudioRefs = useRef<(HTMLAudioElement | null)[]>([]);
 
     const toggleMute = () => {
         setIsMuted(!isMuted);
@@ -94,6 +108,19 @@ const Home = () => {
             audioRef.current.muted = !audioRef.current.muted;
         }
     };
+
+    const fadeVolume = (audio: HTMLAudioElement, targetVolume: number, duration: number) => {
+        const step = (audio.volume - targetVolume) / (duration / 50);
+        const fadeInterval = setInterval(() => {
+            if ((step > 0 && audio.volume <= targetVolume) || (step < 0 && audio.volume >= targetVolume)) {
+                clearInterval(fadeInterval);
+                audio.volume = targetVolume;
+            } else {
+                audio.volume -= step;
+            }
+        }, 50);
+    };
+
     
     
     //craete an interface of that dataset from the json file
@@ -150,6 +177,48 @@ const Home = () => {
 
     } ,[]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const index = sectionRefs.current.indexOf(entry.target as HTMLDivElement);
+                    if (entry.isIntersecting) {
+                        if (audioRef.current) {
+                            fadeVolume(audioRef.current, 0.2, 1000); // Fade out to 0.2 volume over 1 second
+                        }
+                        if (sectionAudioRefs.current[index]) {
+                            sectionAudioRefs.current[index]!.play();
+                        }
+                    } else {
+                        if (sectionAudioRefs.current[index]) {
+                            sectionAudioRefs.current[index]!.pause();
+                        }
+                        if (audioRef.current) {
+                            fadeVolume(audioRef.current, 1, 1000); // Fade in to 1 volume over 1 second
+                        }
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        sectionRefs.current.forEach((section) => {
+            if (section) {
+                observer.observe(section);
+            }
+        });
+
+        return () => {
+            sectionRefs.current.forEach((section) => {
+                if (section) {
+                    observer.unobserve(section);
+                }
+            });
+        };
+    }, []);
+
+    
+
 
     return (
 
@@ -157,7 +226,7 @@ const Home = () => {
         <div className="relative h-auto w-full">
 
             {/* First Section */}           
-            <div className='relative lgs:h-[200vh] w-full bg-transparents overflow-hidden'>
+            <div className='relative lgs:h-[200vh] w-full  overflow-hidden'>
 
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
 
@@ -591,10 +660,15 @@ const Home = () => {
             <button onClick={toggleMute}>
                 {isMuted ? <FontAwesomeIcon className="text-primary" icon={faVolumeDown}/>: <FontAwesomeIcon className="text-primary" icon={faVolumeHigh}/>}
             </button>
+            
             </div>
 
             {/* Second Section */}
-            <div className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
+            <div ref={(el) => { sectionRefs.current[0] = el; }} className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
+                 <audio ref={(el) => { sectionAudioRefs.current[0] = el; }} loop>
+                    <source src="/welcomingSection.wav" type="audio/wav" />
+                    Your browser does not support the audio element.
+                </audio>
                 <Image 
                     src={herobackground3} 
                     alt='turbo' 
