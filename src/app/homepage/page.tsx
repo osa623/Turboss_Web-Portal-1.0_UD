@@ -97,7 +97,7 @@ const Home = () => {
     const [parallex1 , setParallex1] = useState(0);
     const [currentIndex , setCurrentIndex] = useState(0);
     const [hover, setHover] = useState<number | null>(null);
-    const [isMuted, setIsMuted] = useState(true);
+    const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
     const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
     const sectionAudioRefs = useRef<(HTMLAudioElement | null)[]>([]);
