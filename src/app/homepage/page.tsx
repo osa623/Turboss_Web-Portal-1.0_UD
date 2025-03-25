@@ -187,7 +187,9 @@ const Home = () => {
                             fadeVolume(audioRef.current, 0.2, 1000); // Fade out to 0.2 volume over 1 second
                         }
                         if (sectionAudioRefs.current[index]) {
-                            sectionAudioRefs.current[index]!.play();
+                            sectionAudioRefs.current[index]!.play().catch(error => {
+                                console.error('Error playing section audio:', error);
+                            });
                         }
                     } else {
                         if (sectionAudioRefs.current[index]) {
@@ -216,6 +218,24 @@ const Home = () => {
             });
         };
     }, []);
+
+    useEffect(() => {
+        const handleUserInteraction = () => {
+            if (audioRef.current) {
+                audioRef.current.play().catch(error => {
+                    console.error('Error playing background audio:', error);
+                });
+            }
+            document.removeEventListener('click', handleUserInteraction);
+        };
+
+        document.addEventListener('click', handleUserInteraction);
+
+        return () => {
+            document.removeEventListener('click', handleUserInteraction);
+        };
+    }, []);
+
 
     
 
@@ -665,10 +685,10 @@ const Home = () => {
 
             {/* Second Section */}
             <div ref={(el) => { sectionRefs.current[0] = el; }} className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
-                 <audio ref={(el) => { sectionAudioRefs.current[0] = el; }} loop>
+                 {/*<audio ref={(el) => { sectionAudioRefs.current[0] = el; }} >
                     <source src="/welcomingSection.wav" type="audio/wav" />
                     Your browser does not support the audio element.
-                </audio>
+                </audio> */}
                 <Image 
                     src={herobackground3} 
                     alt='turbo' 

@@ -239,51 +239,155 @@
       "name": "Suspension",
       "image": "/assets/suspension.png",
       "shadow": "/assets/suspensionShadow.png",
-      "description": "Suspension systems are responsible for...",
+      "description": "Suspension systems are responsible for maximizing tire contact with the road surface, absorbing shocks, and providing vehicle stability during cornering and braking.",
+      "subTopic1": "Suspension Dynamics",
+      "subTopic2": "Components | Types | Geometry | Damping",
+      "subSection": [
+        {
+          "subName1": "Components",
+          "subImage1": "/assets/suspension/subset/sub1.png"
+        },
+        {
+          "subName1": "Suspension Types",
+          "subImage1": "/assets/suspension/subset/sub2.png"
+        },
+        {
+          "subName1": "Wheel Geometry",
+          "subImage1": "/assets/suspension/subset/sub3.png"
+        },
+        {
+          "subName1": "Damping Systems",
+          "subImage1": "/assets/suspension/subset/sub4.png"
+        }
+      ],
       "partset1": [
         {
-          "name" : "CamShaft",
-          "image": "/assets/engineParts/camshaft.png"
+          "name": "Shock Absorbers",
+          "image": "/assets/suspensionParts/shocks.png",
+          "description": "Hydraulic or gas-filled dampers that control spring oscillations and maintain tire contact with the road surface."
         },
         {
-          "name" : "CrankShaft",
-          "image": "/assets/engineParts/crankshaft.png"
+          "name": "Coil Springs",
+          "image": "/assets/suspensionParts/springs.png",
+          "description": "Elastic components that absorb and store kinetic energy from road impacts while supporting vehicle weight."
         },
         {
-          "name" : "Connecting Rods",
-          "image": "/assets/engineParts/connectingRods.png"
+          "name": "Control Arms",
+          "image": "/assets/suspensionParts/controlArms.png",
+          "description": "Pivoting links that connect suspension components to the chassis while allowing vertical wheel movement."
         },
         {
-          "name" : "Pistons",
-          "image": "/assets/engineParts/pistons.png"
+          "name": "Anti-Roll Bar",
+          "image": "/assets/suspensionParts/swayBar.png",
+          "description": "Torsion bar that reduces body roll during cornering by transferring force between left/right wheels."
         },
         {
-          "name" : "Spark Plugs",
-          "image": "/assets/engineParts/plugs.png"
+          "name": "Knuckle Assembly",
+          "image": "/assets/suspensionParts/knuckle.png",
+          "description": "Structural hub connecting wheel bearings, brakes, and suspension components while enabling steering rotation."
         },
         {
-          "name" : "Engine Block",
-          "image": "/assets/engineParts/engineBlock.png"
-        },
-        {
-          "name" : "Cylinder Head",
-          "image": "/assets/engineParts/headCylinder.png"
+          "name": "Bushings",
+          "image": "/assets/suspensionParts/bushings.png",
+          "description": "Vibration-dampening rubber or polyurethane mounts that isolate noise while allowing controlled movement."
         }
-
-
-            ],
+      ],
+      "variations": [
+        {
+          "name": "MacPherson Strut",
+          "image": "/assets/suspension/macpherson.png",
+          "sound": "/assets/records/suspensionSound.mp3"
+        },
+        {
+          "name": "Double Wishbone",
+          "image": "/assets/suspension/doubleWishbone.png",
+          "sound": "/assets/records/suspensionSound.mp3"
+        },
+        {
+          "name": "Multi-Link",
+          "image": "/assets/suspension/multiLink.png",
+          "sound": "/assets/records/suspensionSound.mp3"
+        },
+        {
+          "name": "Air Suspension",
+          "image": "/assets/suspension/airSystem.png",
+          "sound": "/assets/records/suspensionSound.mp3"
+        },
+        {
+          "name": "Solid Axle",
+          "image": "/assets/suspension/solidAxle.png",
+          "sound": "/assets/records/suspensionSound.mp3"
+        }
+      ],
+      "maindetailset1": {
+        "topic": "The Evolution of Suspension Systems",
+        "Description": "From horse-drawn carriage leaf springs to computer-controlled adaptive dampers, suspension technology has undergone radical transformation. Early 20th century vehicles used rigid axles and lever-arm shock absorbers, while modern systems employ precision-engineered kinematics and real-time electronic control. Key milestones include the introduction of independent suspension (1934 Citroën Traction Avant), air suspension (1958 Cadillac Brougham), and adaptive magnetic dampers (2002 Audi TT)."
+      },
       "detailset1": [
         {
-          "topic": "Suspension Engineering Fundamentals",
-          "Description": "Suspension geometry (camber, caster, toe) dictates tire contact and stability. MacPherson struts (common in front-wheel drives) combine shock/spring into a compact unit, while multi-link designs (Mercedes E-Class) enable precise wheel control. Spring rates (measured in lbs/in) and damping coefficients determine ride stiffness—sports cars use 400+ lbs/in springs vs. 150 lbs/in in sedans. Anti-roll bars reduce body lean by 30-50% during cornering, enhancing driver confidence."
+          "topic": "Leaf Springs to Coil Springs: The First Revolution",
+          "Description": "Early automotive suspensions (1890s-1920s) adapted carriage leaf spring designs, providing durability but poor ride quality. The 1934 Citroën Traction Avant introduced torsion bar suspension, while the 1949 Oldsmobile 88 pioneered modern coil spring setups. By the 1960s, coil springs became standard, offering better packaging and progressive spring rates."
         },
         {
-          "topic": "Advanced Suspension Technologies",
-          "Description": "Adaptive dampers (GM’s MagneRide) use magnetorheological fluid to adjust firmness in 1ms. Air suspension (Audi A8) auto-levels the vehicle and lowers at speed for aerodynamics. Active rear steering (Porsche 911 GT3) turns rear wheels up to 5° for tighter turns. Track-focused systems like Ferrari’s SCM-E integrate accelerometers and GPS to predict road surfaces, optimizing damping in real time."
+          "topic": "Rise of Computer-Controlled Systems",
+          "Description": "The 1980s saw the first electronic suspensions with Lotus' active hydropneumatic system. Modern systems like Mercedes MAGIC BODY CONTROL (2013) use stereo cameras to scan road surfaces and adjust damping in milliseconds. Formula 1-inspired technologies like FRIC (Front-Rear Inter-Connected) suspension now trickle down to production cars."
+        }
+      ],
+      "maindetailset2": {
+        "topic": "Advanced Suspension Technologies",
+        "Description": "Modern suspension systems blend mechanical engineering with cutting-edge electronics to achieve conflicting goals of comfort and performance. From predictive active dampers to hydraulic anti-roll systems, these technologies redefine vehicle dynamics."
+      },
+      "detailset2": [
+        {
+          "topic": "Adaptive Air Suspension",
+          "Description": "Pneumatic suspension system using rubber-bladder air springs (typically 8-12 psi operating pressure) controlled by ECU-managed compressors. Features continuous height adjustment (±75mm range) and dynamic rate changes through multi-chamber air springs (Mercedes ABC System). Modern versions integrate GPS topography mapping to pre-adjust for inclines (Land Rover Terrain Response 2). Critical components include WABCO-supplied axial piston compressors (flow rate: 180 liters/min) and silicone-impregnated polyurethane bellows rated for 500,000 compression cycles.",
+          "image": "/assets/suspension/airSystem.png",
+          "Advantages": [
+            "• Auto-leveling maintains 0.5° chassis attitude under 1,000kg payload variations",
+            "• Speed-sensitive lowering (Audi S8 reduces height 25mm at 120km/h for 3.8% Cd improvement)",
+            "• Offroad articulation modes (Range Rover extends travel 115mm with cross-linked dampers)",
+            "• Load-compensated stability (Mercedes Sprinter maintains handling with 4,000lb payload)"
+          ],
+          "Issues": [
+            "• Compressor failures in sub -25°C due to moisture freezing (common in Nordic climates)",
+            "• $4,200 average repair cost for valve block replacements (dealer-only programming)",
+            "• 35% reduced spring rate consistency after 5 years/150k miles (bladder fatigue)",
+            "• Limited compatibility with aggressive wheel setups (stretched sidewalls risk pinch flats)"
+          ]
         },
         {
-          "topic": "Application-Specific Designs",
-          "Description": "Off-road suspensions (Jeep Wrangler) prioritize articulation (20+ inches) via solid axles and long-travel shocks. Luxury cars (Lexus LS) employ frequency-reactive dampers to isolate cabin from road noise. Motorsport suspensions use pushrod/pullrod layouts (F1 cars) to lower centers of gravity. Autonomous vehicles require tunable suspensions to compensate for sensor latency during evasive maneuvers."
+          "topic": "Magnetorheological Dampers",
+          "Description": "Delphi-developed shock absorbers using iron particle-infused hydrocarbon fluid (20-40% volumetric concentration). When subjected to 12-24V/5A electromagnetic fields (1.2 Tesla max), particles form fibrous structures altering viscosity in 0.002s. Used in Corvette ZR1's Performance Traction Management with 1000Hz adjustment rate. Current gen systems (GM MagneRide 4.0) feature twin-wire coils reducing latency to 0.8ms and power draw to 2.3A.",
+          "image": "/assets/suspension/magneRide.png",
+          "Advantages": [
+            "• 60% reduction in body roll vs passive dampers (Ferrari 488 Pista achieves 1.3g lateral)",
+            "• Track mode increases damping force 400% (Lamborghini ALA system integration)",
+            "• Fail-safe mineral oil base maintains function during electrical faults",
+            "• 0.5mm precision in wheel control (Cadillac CT5-V Blackwing Nürburgring setup)"
+          ],
+          "Issues": [
+            "• $380/liter MR fluid replacement every 50k miles (specialized flushing required)",
+            "• 8.5kg weight penalty per corner vs conventional shocks",
+            "• Eddy current heating reduces consistency during 25min+ track sessions",
+            "• Incompatible with aftermarket lowering springs (piston rod travel limits)"
+          ]
+        },
+        {
+          "topic": "Hydraulic Interconnection Systems",
+          "Description": "Citroën's Hydractive 3+ system links front/rear suspension via LDS mineral oil (70 bar operating pressure) through 6mm diameter pipelines. Uses 12-way proportional valves to manage fluid flow between 7 hydraulic spheres (4 suspension, 1 accumulator, 2 anti-sink). Advanced versions (DS7 Crossback) employ 14 pressure sensors and AI to predict road inputs 200ms in advance. Provides both 'flying carpet' comfort and 25% roll stiffness increase in Sport mode.",
+          "image": "/assets/suspension/hydraulic.png",
+          "Advantages": [
+            "• Eliminates anti-roll bars saving 11kg unsprung mass",
+            "• Progressive roll resistance from 500Nm/° to 2200Nm/° dynamically",
+            "• Self-leveling maintains ride height with 0.05mm accuracy under load shifts",
+            "• 400W power consumption vs 2kW+ in air suspension systems"
+          ],
+          "Issues": [
+            "• $6,000+ repair costs for pump failures (requires full system bleeding)",
+            "• 0.5mm/year pipeline erosion in salt-heavy environments",
+            "• 15% efficiency loss after 100k miles due to fluid shear breakdown",
+            "• Specialized LDS fluid ($120/liter) incompatible with standard ATF"
+          ]
         }
       ]
     },
@@ -292,51 +396,136 @@
       "name": "Cooler",
       "image": "/assets/cooler.png",
       "shadow": "/assets/coolerShadow.png",
-      "description": "Coolers help regulate engine temperatures...",
+      "description": "Thermal management systems maintain optimal operating temperatures (195-230°F coolant, 180-245°F oil) through precise heat exchange. Modern systems dissipate 500,000+ BTU/hour while maintaining 12-18 psi pressure for efficient boiling point elevation.",
+      "subTopic1": "Thermal Dynamics",
+      "subTopic2": "Heat Transfer | Pressure Management | Fluid Dynamics | Material Science",
+      "subSection": [
+        {
+          "subName1": "Heat Transfer",
+          "subImage1": "/assets/cooler/subset/heatTransfer.png",
+          "description": "Aluminum radiators achieve 150 W/m·K conductivity with 0.2mm fin spacing. Nano-surfaced coatings boost thermal rejection by 18% through increased turbulent flow."
+        },
+        {
+          "subName1": "Pressure Management",
+          "subImage1": "/assets/cooler/subset/pressure.png",
+          "description": "16-22 psi caps maintain liquid phase stability, raising coolant boiling point to 265°F. Dual-stage relief valves prevent system overpressure during thermal shocks."
+        },
+        {
+          "subName1": "Fluid Dynamics",
+          "subImage1": "/assets/cooler/subset/fluid.png",
+          "description": "Centrifugal pumps flow 150-250 gpm against 15psi head pressure. Coolant velocity optimized at 4-8 ft/s through 5mm diameter microtubes."
+        },
+        {
+          "subName1": "Material Science",
+          "subImage1": "/assets/cooler/subset/materials.png",
+          "description": "Vacuum-brazed aluminum cores (AA3003 alloy) withstand 500+ thermal cycles. Silicone hoses rated for 350°F continuous/500°F peak temps."
+        }
+      ],
       "partset1": [
         {
-          "name" : "CamShaft",
-          "image": "/assets/engineParts/camshaft.png"
+          "name": "Crossflow Radiator",
+          "image": "/assets/coolerParts/crossflow.png",
+          "description": "Horizontal-tank design with 32mm core depth enables 25% better airflow efficiency. Features 1.25 oval tubes for reduced pressure drop (Mercedes-AMG GT)."
         },
         {
-          "name" : "CrankShaft",
-          "image": "/assets/engineParts/crankshaft.png"
+          "name": "Variable Speed Pump",
+          "image": "/assets/coolerParts/pump.png",
+          "description": "ECU-controlled impeller with 3,000-6,500 RPM range. PWM modulation reduces parasitic loss by 40% vs fixed-speed pumps (BMW B58)."
         },
         {
-          "name" : "Connecting Rods",
-          "image": "/assets/engineParts/connectingRods.png"
+          "name": "Plate-Type Intercooler",
+          "image": "/assets/coolerParts/intercooler.png",
+          "description": "Bar-and-plate design with 600 cells/in² density. Reduces charge air temps from 300°F to 120°F at 25psi boost (Ford EcoBoost)."
         },
         {
-          "name" : "Pistons",
-          "image": "/assets/engineParts/pistons.png"
-        },
-        {
-          "name" : "Spark Plugs",
-          "image": "/assets/engineParts/plugs.png"
-        },
-        {
-          "name" : "Engine Block",
-          "image": "/assets/engineParts/engineBlock.png"
-        },
-        {
-          "name" : "Cylinder Head",
-          "image": "/assets/engineParts/headCylinder.png"
+          "name": "Thermal Control Valve",
+          "image": "/assets/coolerParts/valve.png",
+          "description": "Wax-element thermostat with 5-stage opening (88-105°C). Maintains 0.5°C temperature stability through PID-controlled bypass."
         }
-
-
-            ],
+      ],
+      "variations": [
+        {
+          "name": "Air-to-Liquid",
+          "image": "/assets/cooler/airLiquid.png",
+          "sound": "/assets/records/coolerSound.mp3",
+          "description": "Combines front-mount radiator with cabin heat exchanger. Achieves 65% thermal efficiency in ICE applications (Porsche 911 GT3)."
+        },
+        {
+          "name": "Dual Zone",
+          "image": "/assets/cooler/dualZone.png",
+          "sound": "/assets/records/coolerSound.mp3",
+          "description": "Separate low/high temp circuits for battery/engine cooling. Manages 50kW thermal loads in hybrids (Toyota THS II)."
+        },
+        {
+          "name": "Cryogenic",
+          "image": "/assets/cooler/cryo.png",
+          "sound": "/assets/records/coolerSound.mp3",
+          "description": "Liquid nitrogen-assisted intercooling for drag racing. Drops intake temps to -50°F for 300ms bursts (Top Fuel dragsters)."
+        }
+      ],
+      "maindetailset1": {
+        "topic": "Evolution of Automotive Cooling",
+        "Description": "From 1912 thermosiphon systems to modern triple-loop designs, cooling technology has advanced to manage 800+ hp thermal loads. Key milestones include pressurized systems (1937 Nash), aluminum radiators (1960s Jaguar), and variable coolant pumps (2004 BMW N52). Emerging technologies include magnetocaloric pumps and graphene-enhanced nanofluids."
+      },
       "detailset1": [
         {
-          "topic": "Thermodynamics of Cooling Systems",
-          "Description": "Cooling systems manage 30-40% of engine heat via convection and conduction. Radiators use aluminum cores (95% conductivity) with 100+ microtubes to maximize surface area. Coolant mixtures (50% ethylene glycol) raise boiling points to 265°F and prevent freezing. Oil coolers maintain viscosity by stabilizing temps between 190-220°F—critical for turbocharged engines (e.g., Subaru WRX) where oil degrades rapidly under high thermal loads."
+          "topic": "Early Cooling Solutions",
+          "Description": "Model T's 4-gallon thermosiphon system relied on natural convection (1.5 gpm flow). Brass/copper radiators weighed 85+ lbs with 0.5 m² surface area. Modern equivalents achieve 3 m² in 15 lbs through vacuum-brazed aluminum."
         },
         {
-          "topic": "High-Performance Cooling Solutions",
-          "Description": "Track cars employ dual-pass radiators with 30% greater flow rates. Auxiliary oil coolers (BMW M3) add 2-3 quarts of capacity. Intercoolers (Volvo’s Charge Air Cooler) reduce intake temps by 100°F, increasing air density for combustion. Liquid-to-air systems (Ford GT) cool both transmission and differential fluids via shared heat exchangers. Formula 1 cars use 10-layer carbon fiber oil tanks with integrated cooling fins."
+          "topic": "Turbocharging Revolution",
+          "Description": "1980s Saab 900 Turbo pioneered liquid-cooled turbos with 50/50 water-glycol mix. Modern electric turbos (Audi SQ7) integrate 48V cooling circuits maintaining 150,000 RPM bearing temps below 250°F."
+        }
+      ],
+      "maindetailset2": {
+        "topic": "Advanced Cooling Technologies",
+        "Description": "Current R&D focuses on phase-change materials and predictive thermal management. Systems like GM's Active Thermal Control use 25+ sensors to anticipate cooling needs based on GPS, traffic, and engine load."
+      },
+      "detailset2": [
+        {
+          "topic": "Electro-Viscous Coolant",
+          "Description": "3M's Fluorinert-based smart fluid changes viscosity when electrified (0-50,000 cP range). Enables on-demand flow control without mechanical valves.",
+          "image": "/assets/cooler/electroFluid.png",
+          "Advantages": [
+            "• 90% faster response than thermostats",
+            "• Eliminates water pump parasitics",
+            "• Self-bleeding bubble rejection"
+          ],
+          "Issues": [
+            "• $300/gallon fluid cost",
+            "• Requires 200V electrical system",
+            "• Polymer degradation above 150°C"
+          ]
         },
         {
-          "topic": "Failure Prevention & Diagnostics",
-          "Description": "Common failures: corroded cores (pH imbalance), cracked tanks (vibration stress), or clogged passages (contaminated coolant). Infrared thermography identifies hotspots, while pressure tests (15 psi) detect leaks. Preventative measures include biannual coolant flushes and additive packages (Water Wetter) to enhance heat transfer."
+          "topic": "Additive-Manufactured Cores",
+          "Description": "3D-printed titanium radiators with gyroid lattice structures. 50% lighter than aluminum with 130% surface area density.",
+          "image": "/assets/cooler/3dCore.png",
+          "Advantages": [
+            "• 35 psi burst pressure rating",
+            "• Integrated oil/water channels",
+            "• Custom aerodynamic shaping"
+          ],
+          "Issues": [
+            "• $8,000+ production cost",
+            "• Limited repairability",
+            "• Certification challenges"
+          ]
+        },
+        {
+          "topic": "Solar Loading Compensation",
+          "Description": "Infrared-reflective coolant (BASF Glysantin S3) with 0.2 emissivity coating. Reduces cabin soak temps by 25°F through radiative rejection.",
+          "image": "/assets/cooler/solar.png",
+          "Advantages": [
+            "• 15% A/C load reduction",
+            "• Prevents vapor lock",
+            "• UV-resistant polymer tanks"
+          ],
+          "Issues": [
+            "• $75/gallon premium",
+            "• Requires special disposal",
+            "• Incompatible with brass components"
+          ]
         }
       ]
     },
