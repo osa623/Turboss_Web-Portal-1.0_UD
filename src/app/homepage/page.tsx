@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -75,11 +76,7 @@ const handleAnimationComplete = () => {
 
 
 // Slide data with images
-const Lab = [
-    { id: 1, name: 'Engine Tuning', image: tuning, subName:'I' },
-    { id: 2, name: 'Wheel Alignments ', image: wheelAlignments, subName:'II'},
-    { id: 3, name: 'Suspension Alignments', image: TransissonAlignments, subName:'III' }
-];
+
 
 // Slide data with images
 const DYN = [
@@ -135,7 +132,17 @@ const Home = () => {
         details: string[];
     }
 
+    interface LabData {
+        
+        id: number;
+        name: string;
+        image: string;
+        subname: string;
+
+    }
+
     const [dnaData, setDnaData] = useState<Tools[]>([]);
+    const [labData, setLabData] = useState<LabData[]>([]);
 
     //navigation
 
@@ -170,12 +177,16 @@ const Home = () => {
     } ,[]);
 
     //hook for fetch DNA data Section
-
     useEffect(()=> {
 
         fetch('/data/DnaData.json').then((response) => response.json()).then((json) => setDnaData(json));
 
     } ,[]);
+
+    //hook for the lab data section
+    useEffect(()=> {
+        fetch('data/LabData.json').then((response) => response.json()).then((json) => setLabData(json));
+    })
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -935,7 +946,7 @@ const Home = () => {
                     className='object-cover w-full h-full' 
                     layout='fill' 
                     style={{
-                        transform: `translateY(${parallex1}px)`, // Adjust the multiplier for the intensity of the effect
+                        transform: `translateY(${parallex1}px)`,
                         transition: "transform 0.2s ease-out",
                     }}
                 />
@@ -965,8 +976,11 @@ const Home = () => {
                         <div className="aboslute flex flex-col items-center justify-center  w-full h-auto z-40">
 
                             <div className="flex w-auto h-auto lgs:space-x-8">
-                            {Lab.slice(0,3).map((tool, index) => (
-                                <div key={tool.id} className={`group relative w-auto   ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  transition-all duration-700 ease-in-out   h-auto cursor-pointer`
+                            {labData.slice(0,3).map((tool, index) => (
+
+                                <div 
+                                onClick={() => router.push(`/labsection/${tool.id}`)}
+                                key={tool.id} className={`group relative w-auto   ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  transition-all duration-700 ease-in-out h-auto cursor-pointer`
                             }  
                                 onMouseEnter={() => setHover(index)}
                                 onMouseLeave={() => setHover(null)}
@@ -982,7 +996,7 @@ const Home = () => {
                                 >
                                         <div className='relative flex flex-col  lgs:w-[20rem] lgs:h-[25rem]  mds:w-[15rem] sms:w-[22rem] bg-transparent justify-center rounded-t-md  items-center '>
                                         <div className='flex lgs:w-[20rem] sms:w-[22rem] mds:w-[20rem] lgs:h-[25rem]   z-50'> 
-                                            <Image src={tool.image} alt='' className='object-cover rounded-xl lgs:scale-150 mds:h-20'
+                                            <Image src={tool.image} alt='' width={500} height={500} className='object-cover rounded-xl lgs:scale-150 mds:h-20'
                                             style={{
                                                 transform: `translateY(${parallex1 * 0.8}px)`,
                                                 transition: "transform 0.4s ease-out",
@@ -1009,7 +1023,7 @@ const Home = () => {
                                                 Garage Section
                                                 </h2>
                                                 <span className="font-bricolagegrotesque text-orange-600 text-sm bg-primary lgs:p-2">
-                                                    {tool.subName}
+                                                    {tool.subname}
                                                 </span>
 
                                                 </div>
@@ -1055,7 +1069,7 @@ const Home = () => {
                             </div>
 
                             <div className="flex w-auto h-auto lgs:space-x-8">
-                            {Lab.slice(0,3).map((tool, index) => (
+                            {labData.slice(0,3).map((tool, index) => (
                                 <div key={tool.id} className={`group relative ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  lgs:mt-32 w-auto transition-all duration-700 ease-in-out  h-auto cursor-pointer`}
                                   onMouseEnter={() => setHover(index)}
                                     onMouseLeave={() => setHover(null)}

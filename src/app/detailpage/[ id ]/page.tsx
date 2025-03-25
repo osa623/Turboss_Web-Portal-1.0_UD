@@ -124,7 +124,7 @@ const Detailpage = () => {
     }
 
 
-    //navigati
+    //naviga
     useEffect(() => {
         const handleScroll = () => {
             setOffsetY(window.scrollY * 0.05);
