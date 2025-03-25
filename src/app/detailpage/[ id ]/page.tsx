@@ -96,7 +96,7 @@ const Detailpage = () => {
     const [expandSection , setExpandSection] = useState(false);
     const [hover, setHover] = useState<number | null>(null);
     const [click, setClick] = useState(false);     
-    const [dnaData, setDnaData] = useState<ToolData[]>([]);
+
   
     const handleAudioToggle = (index: number, sound: string) => {
       if (playingIndex === index) {
@@ -146,13 +146,7 @@ const Detailpage = () => {
 
 
 
-    //hook for fetch DNA data Section
 
-    useEffect(()=> {
-
-        fetch('/data/DnaData.json').then((response) => response.json()).then((json) => setDnaData(json));
-
-    } ,[]);
 
 
   //handle expands 001

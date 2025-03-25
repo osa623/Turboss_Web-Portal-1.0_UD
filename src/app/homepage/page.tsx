@@ -106,19 +106,6 @@ const Home = () => {
         }
     };
 
-    const fadeVolume = (audio: HTMLAudioElement, targetVolume: number, duration: number) => {
-        const step = (audio.volume - targetVolume) / (duration / 50);
-        const fadeInterval = setInterval(() => {
-            if ((step > 0 && audio.volume <= targetVolume) || (step < 0 && audio.volume >= targetVolume)) {
-                clearInterval(fadeInterval);
-                audio.volume = targetVolume;
-            } else {
-                audio.volume -= step;
-            }
-        }, 50);
-    };
-
-    
     
     //craete an interface of that dataset from the json file
 
@@ -138,6 +125,7 @@ const Home = () => {
         name: string;
         image: string;
         subname: string;
+        subTopic: string
 
     }
 

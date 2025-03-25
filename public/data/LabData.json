@@ -1,8 +1,8 @@
 [
     
   
-        { "id": 1, "name": "Engine Tuning", "image": "/assets/labSection/engineTuning.png", "subName": "I" },
-        { "id": 2, "name": "Wheel Alignments", "image": "/assets/labSection/TransissonAlignments.png", "subName": "II" },
-        { "id": 3, "name": "Suspension Alignments", "image": "/assets/labSection/WheelAlignments.png", "subName": "III" }
+        { "id": 1, "name": "Engine Tuning", "image": "/assets/labSection/engineTuning.png", "subName": "I", "subTopic": "ABCD" },
+        { "id": 2, "name": "Wheel Alignments", "image": "/assets/labSection/TransissonAlignments.png", "subName": "II", "subTopic": "ABCD" },
+        { "id": 3, "name": "Suspension Alignments", "image": "/assets/labSection/WheelAlignments.png", "subName": "III", "subTopic": "ABCD" }
    
 ]
