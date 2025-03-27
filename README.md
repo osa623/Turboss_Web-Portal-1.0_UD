@@ -8,6 +8,9 @@ This is a [Next.js](https://nextjs.org) project created to explore modern web de
 
 ![Screen Shot](./public/assets/readMe/screenshot.jpeg)
 
+![Screen Shot](./public/assets/readMe/screenshot1.jpeg)
+
+
 
 The "Turboss" platform is a cutting-edge web application designed to showcase advanced tools and technologies. It provides users with detailed insights, interactive visualizations, and a rich user interface to explore various topics. The platform emphasizes performance, accessibility, and modern design principles.
 
