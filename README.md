@@ -2,11 +2,11 @@
 
 # TURBOSS Digital Garage
 
-![Turboss Logo](./public/readMe/turbossLogo.png)
+![Turboss Logo](./public/assets/readMe/turbossLogo.png)
 
 This is a [Next.js](https://nextjs.org) project created to explore modern web development with React and server-side rendering. The website is currently under development and aims to provide a seamless user experience with optimized performance.
 
-![Screen Shot](./public/readMe/screenshot.jpeg)
+![Screen Shot](./public/assets/readMe/screenshot.jpeg)
 
 
 The "Turboss" platform is a cutting-edge web application designed to showcase advanced tools and technologies. It provides users with detailed insights, interactive visualizations, and a rich user interface to explore various topics. The platform emphasizes performance, accessibility, and modern design principles.
