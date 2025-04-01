@@ -131,39 +131,39 @@ useEffect(() => {
 
                   <div className='absolute flex  top-0 left-0 lgs:w-[50vw] z-30 h-full items-center justify-center bg-transparent'>
 
-                  <div className="absolute top-0  items-start justify-start lgs:p-5">
-                                                
-                                                <div className="flex w-auto h-auto">
+                        <div className="absolute top-0  items-start justify-start lgs:p-5">
+                                                      
+                                                      <div className="flex w-auto h-auto">
 
-                                                <h2 className="flex font-bricolagegrotesque text-primary lgs:text-2xl bg-orange-600 lgs:p-2">
-                                                Garage Section
-                                                </h2>
-                                                <span className="font-bricolagegrotesque text-orange-600 lgs:text-2xl bg-primary lgs:p-2">
-                                                    {data?.subname}
-                                                </span>
+                                                      <h2 className="flex font-bricolagegrotesque text-primary lgs:text-2xl bg-orange-600 lgs:p-2">
+                                                      Garage Section
+                                                      </h2>
+                                                      <span className="font-bricolagegrotesque text-orange-600 lgs:text-2xl bg-primary lgs:p-2">
+                                                          {data?.subname}
+                                                      </span>
 
-                                                </div>
+                                                      </div>
 
-                                                
-                  </div> 
-                    
+                                                      
+                        </div> 
+                        
+                        <h2 className='flex font-dmsans z-30 lgs:text-9xl text-orange-600'>
+                            {data?.name}
+                        </h2>
 
-                   <h2 className='flex font-dmsans z-30 lgs:text-9xl text-orange-600'>
-                       {data?.name}
-                    </h2>
+                        <h2 className='absolute font-dmsans z-30 lgs:text-9xl text-orange-600'>
+                          {data?.name}
+                        </h2>
 
-                    <h2 className='absolute font-dmsans z-30 lgs:text-9xl text-orange-600'>
-                       {data?.name}
-                    </h2>
-                    
-                    <h2 className='absolute font-dmsans z-20 lgs:ml-3 lgs:text-9xl text-primary'>
-                       {data?.name}
-                    </h2>
-                    <h2 className='absolute z-20 font-dmsans lgs:text-nowrap  lgs:mt-16 text-gray-500 blur-sm opacity-30'style={{
-                      fontSize:'150px'
-                    }}>
-                       {data?.name}
-                    </h2>
+                        <h2 className='absolute font-dmsans z-20 lgs:ml-3 lgs:text-9xl text-primary'>
+                          {data?.name}
+                        </h2>
+
+                        <h2 className='absolute z-20 font-dmsans lgs:text-nowrap  lgs:mt-16 text-gray-500 blur-sm opacity-30'style={{
+                          fontSize:'150px'
+                        }}>
+                          {data?.name}
+                        </h2>
 
                   </div>
 
