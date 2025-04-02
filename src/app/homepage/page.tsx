@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -24,9 +25,6 @@ import subHeroSec1 from '../assests/subherosec1.png';
 import herobackground3 from '../assests/herosec3.png';
 import herobackground4 from '../assests/herosec4.png';
 import herobackground5 from '../assests/herosec5.jpg';
-import tuning from "../assests/engineTuning.png";
-import wheelAlignments from "../assests/WheelAlignments.png";
-import TransissonAlignments from "../assests/TransissonAlignments.png";
 import mainBackground from "../assests/mainBackground.jpg";
 import turbossLogo from "../assests/turbossLogo.png";
 import carbonFiber from "../assests/carbonFiber.jpg";
@@ -97,7 +95,7 @@ const Home = () => {
     const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
     const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const sectionAudioRefs = useRef<(HTMLAudioElement | null)[]>([]);
+
 
     const toggleMute = () => {
         setIsMuted(!isMuted);
@@ -129,8 +127,20 @@ const Home = () => {
 
     }
 
+    interface toolsData {
+        
+        id: number;
+        name: string;
+        description: string;
+        equipment: string[];
+        images: string[];
+        image: string;
+
+    }
+
     const [dnaData, setDnaData] = useState<Tools[]>([]);
     const [labData, setLabData] = useState<LabData[]>([]);
+    const [toolsData, setToolsData] = useState<toolsData[]>([]);
 
     //navigation
 
@@ -164,59 +174,26 @@ const Home = () => {
         return () => clearInterval(interval);
     } ,[]);
 
-    //hook for fetch DNA data Section
-    useEffect(()=> {
+        //hook for fetch DNA data Section
+        useEffect(()=> {
+            fetch('/data/DnaData.json').then((response) => response.json()).then((json) => setDnaData(json));
+        } ,[]);
 
-        fetch('/data/DnaData.json').then((response) => response.json()).then((json) => setDnaData(json));
 
-    } ,[]);
+        //hook for the lab data section
+        useEffect(()=> {
+            fetch('data/LabData.json').then((response) => response.json()).then((json) => setLabData(json));
+        }, []);
 
-    //hook for the lab data section
-    useEffect(()=> {
-        fetch('data/LabData.json').then((response) => response.json()).then((json) => setLabData(json));
-    })
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const index = sectionRefs.current.indexOf(entry.target as HTMLDivElement);
-                    if (entry.isIntersecting) {
-                        if (audioRef.current) {
-                            fadeVolume(audioRef.current, 0.2, 1000); // Fade out to 0.2 volume over 1 second
-                        }
-                        if (sectionAudioRefs.current[index]) {
-                            sectionAudioRefs.current[index]!.play().catch(error => {
-                                console.error('Error playing section audio:', error);
-                            });
-                        }
-                    } else {
-                        if (sectionAudioRefs.current[index]) {
-                            sectionAudioRefs.current[index]!.pause();
-                        }
-                        if (audioRef.current) {
-                            fadeVolume(audioRef.current, 1, 1000); // Fade in to 1 volume over 1 second
-                        }
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
 
-        sectionRefs.current.forEach((section) => {
-            if (section) {
-                observer.observe(section);
-            }
-        });
+        //hook for the lab data section
+        useEffect(()=> {
+            fetch('data/toolsData.json').then((response) => response.json()).then((json) => setToolsData(json));
+        }, []);
 
-        return () => {
-            sectionRefs.current.forEach((section) => {
-                if (section) {
-                    observer.unobserve(section);
-                }
-            });
-        };
-    }, []);
+    
+
 
     useEffect(() => {
         const handleUserInteraction = () => {
@@ -896,7 +873,7 @@ const Home = () => {
                             }}>
                                     <span className="lgs:mr-2 lgs:text-2xl font-russoone lgs:p-1" style={{ fontWeight: '400' }}>
                                         {"\u0022"}
-                                    </span>Explore <span className="lgs:mr-2 lgs:text-2xl text-baseprimary lgs:p-1"
+                                    </span>Explore <span className="lgs:mr-2 lgs:text-2xl text-primary lgs:p-1"
                               style={{
                                 fontWeight:'300'
                               }}>
@@ -1220,12 +1197,12 @@ const Home = () => {
 
           
             {/* Tools Section */}
-            <div className='relative flex flex-col lgs:h-[60rem] w-full overflow-hidden z-40'>
+            <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-40'>
                 <div className="absolute bg-gradient-to-b lgs:h-[20rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
                     src={herobackground5} 
                     alt='turbo' 
-                    className='object-cover w-full h-full' 
+                    className='object-cover w-full h-full blur-md bg-gradient-to-t from-secondary to-transparent' 
                     layout='fill' 
                     style={{
                         transform: `translateY(${parallex1}px)`, // Adjust the multiplier for the intensity of the effect
@@ -1255,11 +1232,91 @@ const Home = () => {
 
                 </div>
 
-                <div className="aboslute flex flex-col items-center justify-center  w-full h-auto z-40">
+                <div className="aboslute flex flex-col items-center justify-center lgs:mt-24  w-full h-auto z-40">
+
+                        <div className='hidden lgs:flex  w-auto h-auto items-center justify-center'>
+
+                            <div className="flex flex-col w-auto h-auto items-center justify-center">
+                            {toolsData.slice(0, 6).map((tool, index) => (
+                                <div key={index} className={`flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
+                                {index === 0 || index === 2 || index === 4 ? (
+                                    <div
+                                    className={`flex flex-col bg-primary-400 w-[30rem] bg-primary  h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
+                                    style={{
+                                        boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                                    }}
+                                    >
+
+                                    <p
+                                        className={`flex font-dmsans lgs:mt-4 text-sm`}
+                                        style={{ fontWeight: "200" }}
+                                    >
+                                        {tool.description}
+                                    </p>
+                                    </div>
+                                ) : (
+                                    <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
+                                )}
+                                </div>
+                            ))}
+                            </div>
+
+                            <div className='flex flex-col w-auto h-auto items-center justify-center'>
+                            {toolsData.slice(0,6).map((tool, index)=> (     
+
+                            <div key={index} className='relative flex bg-transparent w-auto h-[25rem] items-center justify-center'>
+
+                            <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-30  overflow-hidden'>
+                                <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
+                                boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
+                                }}>
+                                <Image src={tool.image} width={'1200'} height={'1200'} alt='tree' className='rounded-full border-4 border-blue-500 object-cover w-[5rem] h-[5rem]' />
+                                </div>
+                                <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
+                                { index !== 5 && (
+                                <div className={`absolute flex bg-orange-600   w-[0.05rem] h-screen items-center justify-center z-20`} style={{
+
+                                }}/>
+                                )}
+                                
+
+                            </div>
+
+
+                            </div>
+
+                            ))}  
+                            </div>   
+
+                            <div className="flex flex-col w-auto h-auto items-center justify-center">
+                            {toolsData.slice(0, 6).map((tool, index) => (
+                            <div key={index} className="flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-right">
+                                {index === 1 || index === 3 || index === 5 ? (
+                                <div
+                                    className={`flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
+                                    style={{
+                                        boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                                    }}
+                                    >
+                                    <p
+                                        className={`flex font-dmsans lgs:mt-4 text-sm`}
+                                        style={{ fontWeight: "200" }}
+                                    >
+                                        {tool.description}
+                                    </p>
+                                    </div>
+                                ) : (
+                                <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
+                                )}
+                            </div>
+                            ))}
+                            </div> 
+
+                        </div>
 
 
 
-                    </div>
+                </div>
 
             </div>
 

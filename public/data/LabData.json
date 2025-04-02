@@ -1,8 +1,109 @@
 [
     
   
-        { "id": 1, "name": "Engine Tuning", "image": "/assets/labSection/engineTuning.png", "subName": "I", "subTopic": "ABCD" },
-        { "id": 2, "name": "Wheel Alignments", "image": "/assets/labSection/TransissonAlignments.png", "subName": "II", "subTopic": "ABCD" },
-        { "id": 3, "name": "Suspension Alignments", "image": "/assets/labSection/WheelAlignments.png", "subName": "III", "subTopic": "ABCD" }
+        { "id": 1,
+         "name": "Engine Tuning",
+          "image": "/assets/labSection/engineTuning.png",
+           "subName": "I",
+                "mainTopic": "Engine Tuning",
+                "Introduction": "Engine tuning refers to the process of modifying an internal combustion engine to optimize performance, efficiency, or reliability. It involves adjusting or upgrading hardware and software components to enhance power output, throttle response, fuel economy, and overall drivability. Engine tuning is critical for automotive enthusiasts, racers, and everyday drivers seeking to unlock their vehicle's full potential. Benefits include increased horsepower and torque, improved throttle response, and better adaptability to aftermarket parts. However, improper tuning can lead to mechanical stress, reduced engine lifespan, or compliance issues with emissions regulations. When executed correctly, engine tuning transforms vehicle performance, enabling faster acceleration, higher top speeds, and greater towing capabilities.",
+                "Images": [],
+                "subTopics": [
+                  {
+                    "subTopicTitle": "ECU Remapping",
+                    "subIntro": "ECU (Engine Control Unit) remapping involves modifying the software that governs engine parameters such as fuel injection timing, air-fuel ratio, ignition timing, and turbocharger boost pressure. By recalibrating these settings, tuners can extract additional power or improve efficiency. Advantages include up to 30% more horsepower, smoother power delivery, and better fuel economy under optimal conditions. Risks include voiding manufacturer warranties, potential engine knocking from aggressive tuning, or incompatibility with low-quality fuel. Real-world applications range from daily drivers seeking efficiency gains to race cars requiring precise control over engine behavior."
+                  },
+                  {
+                    "subTopicTitle": "Turbocharging",
+                    "subIntro": "Turbocharging forces compressed air into the combustion chamber, allowing more fuel to be burned and significantly increasing power output. This is achieved via a turbine-driven by exhaust gases. Advantages include dramatic horsepower gains (often 40-100% over naturally aspirated engines) and improved high-altitude performance. Risks include turbo lag (delayed throttle response), increased engine heat, and potential reliability issues from excessive boost pressure. Turbocharging is widely used in motorsports, diesel engines, and modern gasoline cars to balance power and emissions compliance."
+                  },
+                  {
+                    "subTopicTitle": "Fuel System Upgrades",
+                    "subIntro": "Upgrading the fuel system involves installing high-flow injectors, pumps, or regulators to deliver more fuel efficiently. This supports higher horsepower levels, especially in forced-induction or high-revving engines. Advantages include stabilized fuel pressure, reduced risk of lean conditions, and compatibility with ethanol blends. Risks include fuel leaks, injector clogging from poor-quality fuel, and increased costs for premium components. Applications include turbocharged builds, drag racing, and flex-fuel conversions."
+                  },
+                  {
+                    "subTopicTitle": "Intake/Exhaust Modifications",
+                    "subIntro": "Cold air intakes and high-flow exhaust systems improve airflow into and out of the engine. By reducing restrictions, these mods enhance volumetric efficiency, allowing the engine to 'breathe' better. Advantages include a 5-15% power increase, sharper throttle response, and a more aggressive exhaust note. Risks include drone noise in the cabin, potential loss of low-end torque, or legal issues with emissions non-compliance. These upgrades are common in both street and track setups."
+                  },
+                  {
+                    "subTopicTitle": "Ignition System Enhancements",
+                    "subIntro": "Upgrading spark plugs, coils, and ignition wires ensures consistent spark delivery, which is critical for efficient combustion. High-performance ignition systems reduce misfires and allow for tighter timing control. Advantages include improved idle stability, better fuel burn, and support for higher compression ratios. Risks involve premature component wear if incompatible with the engine's requirements. Applications include high-revving engines, forced-induction setups, and vehicles running alternative fuels."
+                  },
+                  {
+                    "subTopicTitle": "Cooling System Improvements",
+                    "subIntro": "Enhanced cooling systems, such as larger radiators, intercoolers, or oil coolers, manage heat generated by tuned engines. Efficient cooling prevents detonation, reduces thermal stress, and maintains consistent performance. Advantages include prolonged engine life, stable power output during sustained loads, and support for higher boost levels. Risks include added weight, complexity, and cost. This is essential for turbocharged engines, track cars, and vehicles operating in hot climates."
+                  }
+                ]
+              },
+
+        { "id": 2, 
+          "name": "Wheel Alignments", 
+          "image": "/assets/labSection/TransissonAlignments.png", 
+          "subName": "II", 
+          "mainTopic": "Engine Tuning",
+                "Introduction": "Engine tuning refers to the process of modifying an internal combustion engine to optimize performance, efficiency, or reliability. It involves adjusting or upgrading hardware and software components to enhance power output, throttle response, fuel economy, and overall drivability. Engine tuning is critical for automotive enthusiasts, racers, and everyday drivers seeking to unlock their vehicle's full potential. Benefits include increased horsepower and torque, improved throttle response, and better adaptability to aftermarket parts. However, improper tuning can lead to mechanical stress, reduced engine lifespan, or compliance issues with emissions regulations. When executed correctly, engine tuning transforms vehicle performance, enabling faster acceleration, higher top speeds, and greater towing capabilities.",
+                "Images": [],
+                "subTopics": [
+                  {
+                    "subTopicTitle": "ECU Remapping",
+                    "subIntro": "ECU (Engine Control Unit) remapping involves modifying the software that governs engine parameters such as fuel injection timing, air-fuel ratio, ignition timing, and turbocharger boost pressure. By recalibrating these settings, tuners can extract additional power or improve efficiency. Advantages include up to 30% more horsepower, smoother power delivery, and better fuel economy under optimal conditions. Risks include voiding manufacturer warranties, potential engine knocking from aggressive tuning, or incompatibility with low-quality fuel. Real-world applications range from daily drivers seeking efficiency gains to race cars requiring precise control over engine behavior."
+                  },
+                  {
+                    "subTopicTitle": "Turbocharging",
+                    "subIntro": "Turbocharging forces compressed air into the combustion chamber, allowing more fuel to be burned and significantly increasing power output. This is achieved via a turbine-driven by exhaust gases. Advantages include dramatic horsepower gains (often 40-100% over naturally aspirated engines) and improved high-altitude performance. Risks include turbo lag (delayed throttle response), increased engine heat, and potential reliability issues from excessive boost pressure. Turbocharging is widely used in motorsports, diesel engines, and modern gasoline cars to balance power and emissions compliance."
+                  },
+                  {
+                    "subTopicTitle": "Fuel System Upgrades",
+                    "subIntro": "Upgrading the fuel system involves installing high-flow injectors, pumps, or regulators to deliver more fuel efficiently. This supports higher horsepower levels, especially in forced-induction or high-revving engines. Advantages include stabilized fuel pressure, reduced risk of lean conditions, and compatibility with ethanol blends. Risks include fuel leaks, injector clogging from poor-quality fuel, and increased costs for premium components. Applications include turbocharged builds, drag racing, and flex-fuel conversions."
+                  },
+                  {
+                    "subTopicTitle": "Intake/Exhaust Modifications",
+                    "subIntro": "Cold air intakes and high-flow exhaust systems improve airflow into and out of the engine. By reducing restrictions, these mods enhance volumetric efficiency, allowing the engine to 'breathe' better. Advantages include a 5-15% power increase, sharper throttle response, and a more aggressive exhaust note. Risks include drone noise in the cabin, potential loss of low-end torque, or legal issues with emissions non-compliance. These upgrades are common in both street and track setups."
+                  },
+                  {
+                    "subTopicTitle": "Ignition System Enhancements",
+                    "subIntro": "Upgrading spark plugs, coils, and ignition wires ensures consistent spark delivery, which is critical for efficient combustion. High-performance ignition systems reduce misfires and allow for tighter timing control. Advantages include improved idle stability, better fuel burn, and support for higher compression ratios. Risks involve premature component wear if incompatible with the engine's requirements. Applications include high-revving engines, forced-induction setups, and vehicles running alternative fuels."
+                  },
+                  {
+                    "subTopicTitle": "Cooling System Improvements",
+                    "subIntro": "Enhanced cooling systems, such as larger radiators, intercoolers, or oil coolers, manage heat generated by tuned engines. Efficient cooling prevents detonation, reduces thermal stress, and maintains consistent performance. Advantages include prolonged engine life, stable power output during sustained loads, and support for higher boost levels. Risks include added weight, complexity, and cost. This is essential for turbocharged engines, track cars, and vehicles operating in hot climates."
+                  }
+                ]
+              },
+
+        { "id": 3, 
+          "name": "Suspension Alignments", 
+          "image": "/assets/labSection/WheelAlignments.png", 
+          "subName": "III", 
+          "mainTopic": "Engine Tuning",
+                "Introduction": "Engine tuning refers to the process of modifying an internal combustion engine to optimize performance, efficiency, or reliability. It involves adjusting or upgrading hardware and software components to enhance power output, throttle response, fuel economy, and overall drivability. Engine tuning is critical for automotive enthusiasts, racers, and everyday drivers seeking to unlock their vehicle's full potential. Benefits include increased horsepower and torque, improved throttle response, and better adaptability to aftermarket parts. However, improper tuning can lead to mechanical stress, reduced engine lifespan, or compliance issues with emissions regulations. When executed correctly, engine tuning transforms vehicle performance, enabling faster acceleration, higher top speeds, and greater towing capabilities.",
+                "Images": [],
+                "subTopics": [
+                  {
+                    "subTopicTitle": "ECU Remapping",
+                    "subIntro": "ECU (Engine Control Unit) remapping involves modifying the software that governs engine parameters such as fuel injection timing, air-fuel ratio, ignition timing, and turbocharger boost pressure. By recalibrating these settings, tuners can extract additional power or improve efficiency. Advantages include up to 30% more horsepower, smoother power delivery, and better fuel economy under optimal conditions. Risks include voiding manufacturer warranties, potential engine knocking from aggressive tuning, or incompatibility with low-quality fuel. Real-world applications range from daily drivers seeking efficiency gains to race cars requiring precise control over engine behavior."
+                  },
+                  {
+                    "subTopicTitle": "Turbocharging",
+                    "subIntro": "Turbocharging forces compressed air into the combustion chamber, allowing more fuel to be burned and significantly increasing power output. This is achieved via a turbine-driven by exhaust gases. Advantages include dramatic horsepower gains (often 40-100% over naturally aspirated engines) and improved high-altitude performance. Risks include turbo lag (delayed throttle response), increased engine heat, and potential reliability issues from excessive boost pressure. Turbocharging is widely used in motorsports, diesel engines, and modern gasoline cars to balance power and emissions compliance."
+                  },
+                  {
+                    "subTopicTitle": "Fuel System Upgrades",
+                    "subIntro": "Upgrading the fuel system involves installing high-flow injectors, pumps, or regulators to deliver more fuel efficiently. This supports higher horsepower levels, especially in forced-induction or high-revving engines. Advantages include stabilized fuel pressure, reduced risk of lean conditions, and compatibility with ethanol blends. Risks include fuel leaks, injector clogging from poor-quality fuel, and increased costs for premium components. Applications include turbocharged builds, drag racing, and flex-fuel conversions."
+                  },
+                  {
+                    "subTopicTitle": "Intake/Exhaust Modifications",
+                    "subIntro": "Cold air intakes and high-flow exhaust systems improve airflow into and out of the engine. By reducing restrictions, these mods enhance volumetric efficiency, allowing the engine to 'breathe' better. Advantages include a 5-15% power increase, sharper throttle response, and a more aggressive exhaust note. Risks include drone noise in the cabin, potential loss of low-end torque, or legal issues with emissions non-compliance. These upgrades are common in both street and track setups."
+                  },
+                  {
+                    "subTopicTitle": "Ignition System Enhancements",
+                    "subIntro": "Upgrading spark plugs, coils, and ignition wires ensures consistent spark delivery, which is critical for efficient combustion. High-performance ignition systems reduce misfires and allow for tighter timing control. Advantages include improved idle stability, better fuel burn, and support for higher compression ratios. Risks involve premature component wear if incompatible with the engine's requirements. Applications include high-revving engines, forced-induction setups, and vehicles running alternative fuels."
+                  },
+                  {
+                    "subTopicTitle": "Cooling System Improvements",
+                    "subIntro": "Enhanced cooling systems, such as larger radiators, intercoolers, or oil coolers, manage heat generated by tuned engines. Efficient cooling prevents detonation, reduces thermal stress, and maintains consistent performance. Advantages include prolonged engine life, stable power output during sustained loads, and support for higher boost levels. Risks include added weight, complexity, and cost. This is essential for turbocharged engines, track cars, and vehicles operating in hot climates."
+                  }
+                ]
+               }
    
 ]
