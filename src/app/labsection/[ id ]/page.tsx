@@ -201,9 +201,11 @@ useEffect(() => {
                                 {/* Main Topic and Description */}
                                 <div className='flex flex-col lgs:w-[45vw] h-auto justify-start items-start bg-transparent'>
 
+                                <div className='flex w-auto h-auto'>
                                  <h2 className='font-dmsans text-lg text-shadow-xl bg-orange-600 text-primary lgs:p-2'>
                                   Introduction
                                   </h2>
+                                </div>  
 
                                   <p className='font-dmsans lgs:w-[45vw] lgs:mt-2 text-md text-secondary bg-transparent lgs:p-2'
                                   style={{
@@ -214,13 +216,21 @@ useEffect(() => {
                                 </div>  
 
                                 {/* Main Topic and Description */}
-                                <div className='flex flex-col lgs:w-[45vw] h-[20rem] justify-start items-start bg-transparent'>
+                                <div className='flex flex-col lgs:w-[45vw] lgs:h-[30rem] justify-start items-start bg-transparent'>
 
                                 
                                 </div>  
 
                                  {/* Sub Topic and Sub Description */}
                                    <div className='flex flex-col lgs:w-[45vw] h-auto justify-start items-start bg-transparent'>
+
+                                 <div className='flex w-auto h-auto lgs:p-8'>
+
+                                  <h2 className='font-dmsans text-lg text-shadow-xl bg-orange-600 text-primary lgs:p-2'>
+                                     {data?.name} Sections
+                                    </h2>
+                                </div>    
+
                                     {data?.subTopics.map((subTopic, index) => (
 
                                       <div key={index} className='relative flex bg-transparent w-full h-[25rem] items-center justify-center'>
@@ -257,7 +267,8 @@ useEffect(() => {
 
                                       </div>
 
-                                    ))  
+                                    )) 
+
                                     }
                                  
                                   </div>  

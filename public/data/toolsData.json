@@ -1,242 +1,322 @@
 [
-    {
-      "id": 1,
-      "name": "Essential Garage Starter Kit",
-      "description": "A basic yet versatile toolkit for everyday repairs and DIY projects. Perfect for homeowners tackling simple tasks like assembling furniture, hanging décor, or tightening loose fixtures.",
-      "equipment": [
-        "Claw hammer",
-        "Screwdrivers (Phillips/flathead)",
-        "Adjustable wrench",
-        "Tape measure (25-foot)",
-        "Utility knife",
-        "Needle-nose pliers",
-        "Hex key set (Allen wrenches)",
-        "Torpedo level",
-        "Work gloves",
-        "Toolbox (plastic or metal)"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"   
-    },
-    {
-        "id": 2,
-      "name": "Pro-Grade Socket & Wrench Set",
-      "description": "A professional-grade set for automotive or mechanical work, featuring durable sockets and wrenches in both metric and SAE sizes. Ideal for engine repairs, bike maintenance, or machinery adjustments.",
-      "equipment": [
-        "1/4-inch and 3/8-inch drive ratchets",
-        "Metric/SAE socket set (6mm–24mm, 1/4–1 inch)",
-        "Combination wrench set",
-        "Torque wrench",
-        "Socket extensions (3-inch, 6-inch)",
-        "Spark plug socket",
-        "Universal joint adapter"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"   
-    },
-    {
-        "id": 3,
-      "name": "Heavy-Duty Cordless Drill & Driver Combo",
-      "description": "A power-tool duo for drilling, driving screws, and assembling materials. Lithium-ion batteries ensure long runtime, making it ideal for woodworking, metalworking, or construction.",
-      "equipment": [
-        "Cordless drill (18V–20V)",
-        "Impact driver",
-        "Drill bit set (wood/metal)",
-        "Driver bits (Phillips, Torx, flathead)",
-        "Lithium-ion battery (2-pack)",
-        "Fast charger",
-        "Carrying case"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"  
-    },
-    {
-        "id": 4,
-      "name": "Automotive Repair Master Set",
-      "description": "Specialized tools for car maintenance, including diagnostics, oil changes, tire rotations, and brake repairs. A must-have for DIY mechanics.",
-      "equipment": [
-        "Floor jack (3-ton)",
-        "Jack stands (pair)",
-        "Lug wrench",
-        "Oil filter wrench",
-        "Funnel set",
-        "OBD-II scanner",
-        "Brake bleeder kit"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"    
-    },
-    {
-        "id": 5,
-      "name": "Precision Screwdriver & Bit Set",
-      "description": "A compact kit for electronics, appliances, or delicate repairs. Magnetic tips and ergonomic handles ensure precision and control.",
-      "equipment": [
-        "Magnetic screwdrivers (Phillips #0–#3, flathead 2mm–8mm)",
-        "Torx/Tamper-proof bits",
-        "Hex bits",
-        "Spudger tool (for prying)",
-        "Anti-static wrist strap",
-        "Bit storage case"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"    
-    },
-    {
-        "id": 6,
-      "name": "Multi-Purpose Pliers & Cutting Tool Set",
-      "description": "Durable cutting and gripping tools for electrical work, plumbing, or wire management. Built to handle tough materials with ease.",
-      "equipment": [
-        "Lineman’s pliers",
-        "Needle-nose pliers",
-        "Locking pliers (Vise-Grip)",
-        "Diagonal cutters",
-        "Wire strippers",
-        "Cable crimper"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"    
-    },
-    {
-        "id": 7,
-      "name": "Home Improvement Hammer & Pry Bar Kit",
-      "description": "Demolition-focused tools for breaking down walls, removing nails, or prying apart materials. Reinforced for heavy-duty use.",
-      "equipment": [
-        "Claw hammer (20-ounce)",
-        "Flat pry bar (12-inch)",
-        "Nail puller",
-        "Cat’s paw pry bar",
-        "Demolition gloves",
-        "Safety goggles"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-
-      ],
-     "image": "/assets/labSection/WheelAlignments.png"
-    },
-    {
-        "id": 8,
-      "name": "Safety Gear Bundle",
-      "description": "Protective equipment to ensure safety during high-risk tasks like welding, grinding, or chemical handling.",
-      "equipment": [
-        "Safety glasses (anti-fog)",
-        "Ear protection (noise-reducing earmuffs)",
-        "N95 respirator mask",
-        "Fire-resistant gloves",
-        "First-aid kit",
-        "Fire extinguisher (ABC-rated)"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"      
-    },
-    {
-        "id": 9,
-      "name": "Compact Garden Tool Set",
-      "description": "Essential outdoor tools for gardening, landscaping, or yard maintenance. Compact and rust-resistant for durability.",
-      "equipment": [
-        "Pruning shears",
-        "Hand trowel",
-        "Garden rake",
-        "Weeder",
-        "Kneeling pad",
-        "Gardening gloves"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"
-    },
-    {
-        "id": 10,
-      "name": "Workbench & Tool Organizer Combo",
-      "description": "A workspace solution for organizing tools and materials. Portable and sturdy for garage or workshop use.",
-      "equipment": [
-        "Foldable workbench (4-foot)",
-        "Pegboard (24x36-inch)",
-        "Adjustable shelving",
-        "Tool hooks (assorted sizes)",
-        "Storage bins (plastic)",
-        "Magnetic tool strips"
-      ],
-      "images" : [
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png",
-        "/assets/labSection/TransissonAlignments.png"
-
-      ],
-      "image": "/assets/labSection/WheelAlignments.png"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Essential Garage Starter Kit",
+    "description": "A basic yet versatile toolkit for everyday repairs and DIY projects. Perfect for homeowners tackling simple tasks like assembling furniture, hanging décor, or tightening loose fixtures.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Claw hammer"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Screwdrivers (Phillips/flathead)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Adjustable wrench"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Tape measure (25-foot)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Utility knife"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Needle-nose pliers"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 2,
+    "name": "Pro-Grade Socket & Wrench Set",
+    "description": "A professional-grade set for automotive or mechanical work, featuring durable sockets and wrenches in both metric and SAE sizes. Ideal for engine repairs, bike maintenance, or machinery adjustments.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "1/4-inch and 3/8-inch drive ratchets"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Metric/SAE socket set (6mm–24mm, 1/4–1 inch)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Combination wrench set"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Torque wrench"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Socket extensions (3-inch, 6-inch)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Spark plug socket"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 3,
+    "name": "Heavy-Duty Cordless Drill & Driver Combo",
+    "description": "A power-tool duo for drilling, driving screws, and assembling materials. Lithium-ion batteries ensure long runtime, making it ideal for woodworking, metalworking, or construction.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Cordless drill (18V–20V)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Impact driver"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Drill bit set (wood/metal)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Driver bits (Phillips, Torx, flathead)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Lithium-ion battery (2-pack)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Fast charger"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 4,
+    "name": "Automotive Repair Master Set",
+    "description": "Specialized tools for car maintenance, including diagnostics, oil changes, tire rotations, and brake repairs. A must-have for DIY mechanics.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Floor jack (3-ton)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Jack stands (pair)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Lug wrench"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Oil filter wrench"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Funnel set"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "OBD-II scanner"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 5,
+    "name": "Precision Screwdriver & Bit Set",
+    "description": "A compact kit for electronics, appliances, or delicate repairs. Magnetic tips and ergonomic handles ensure precision and control.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Magnetic screwdrivers (Phillips #0–#3, flathead 2mm–8mm)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Torx/Tamper-proof bits"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Hex bits"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Spudger tool (for prying)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Anti-static wrist strap"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Bit storage case"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 6,
+    "name": "Multi-Purpose Pliers & Cutting Tool Set",
+    "description": "Durable cutting and gripping tools for electrical work, plumbing, or wire management. Built to handle tough materials with ease.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Lineman’s pliers"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Needle-nose pliers"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Locking pliers (Vise-Grip)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Diagonal cutters"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Wire strippers"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Cable crimper"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 7,
+    "name": "Home Improvement Hammer & Pry Bar Kit",
+    "description": "Demolition-focused tools for breaking down walls, removing nails, or prying apart materials. Reinforced for heavy-duty use.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Claw hammer (20-ounce)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Flat pry bar (12-inch)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Nail puller"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Cat’s paw pry bar"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Demolition gloves"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Safety goggles"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 8,
+    "name": "Safety Gear Bundle",
+    "description": "Protective equipment to ensure safety during high-risk tasks like welding, grinding, or chemical handling.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Safety glasses (anti-fog)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Ear protection (noise-reducing earmuffs)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "N95 respirator mask"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Fire-resistant gloves"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "First-aid kit"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Fire extinguisher (ABC-rated)"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 9,
+    "name": "Compact Garden Tool Set",
+    "description": "Essential outdoor tools for gardening, landscaping, or yard maintenance. Compact and rust-resistant for durability.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Pruning shears"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Hand trowel"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Garden rake"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Weeder"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Kneeling pad"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Gardening gloves"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  },
+  {
+    "id": 10,
+    "name": "Workbench & Tool Organizer Combo",
+    "description": "A workspace solution for organizing tools and materials. Portable and sturdy for garage or workshop use.",
+    "images": [
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Foldable workbench (4-foot)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Pegboard (24x36-inch)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Adjustable shelving"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Tool hooks (assorted sizes)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Storage bins (plastic)"
+      },
+      {
+        "url": "/assets/labSection/TransissonAlignments.png",
+        "equipment": "Magnetic tool strips"
+      }
+    ],
+    "image": "/assets/labSection/WheelAlignments.png"
+  }
+]

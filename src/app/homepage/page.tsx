@@ -31,6 +31,8 @@ import carbonFiber from "../assests/carbonFiber.jpg";
 
 
 
+
+
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
 import jesko from '../assests/DYN/Jejsko.png';
@@ -93,8 +95,17 @@ const Home = () => {
     const [currentIndex , setCurrentIndex] = useState(0);
     const [hover, setHover] = useState<number | null>(null);
     const [isMuted, setIsMuted] = useState(false);
+    const [expand , setExpand] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
-    const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+
+    useEffect(()=> {
+        
+        const handleExpand =()=> {
+
+            setExpand(!expand);	
+        }
+    })
 
 
     const toggleMute = () => {
@@ -132,8 +143,10 @@ const Home = () => {
         id: number;
         name: string;
         description: string;
-        equipment: string[];
-        images: string[];
+        images: Array<{
+            url: string;
+            equipment: string; 
+          }>
         image: string;
 
     }
@@ -187,7 +200,7 @@ const Home = () => {
 
 
 
-        //hook for the lab data section
+        //hook for the Tool data section
         useEffect(()=> {
             fetch('data/toolsData.json').then((response) => response.json()).then((json) => setToolsData(json));
         }, []);
@@ -660,7 +673,7 @@ const Home = () => {
             </div>
 
             {/* Second Section */}
-            <div ref={(el) => { sectionRefs.current[0] = el; }} className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
+            <div className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
                  {/*<audio ref={(el) => { sectionAudioRefs.current[0] = el; }} >
                     <source src="/welcomingSection.wav" type="audio/wav" />
                     Your browser does not support the audio element.
@@ -1073,8 +1086,7 @@ const Home = () => {
                             </div>
 
             </div>
-
-          
+         
             {/* Sub Secondary Section */}
             <div className="relative w-auto h-auto overflow-hidden z-40">
 
@@ -1194,7 +1206,6 @@ const Home = () => {
             </div>
             
             </div>
-
           
             {/* Tools Section */}
             <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-40'>
@@ -1205,7 +1216,7 @@ const Home = () => {
                     className='object-cover w-full h-full blur-md bg-gradient-to-t from-secondary to-transparent' 
                     layout='fill' 
                     style={{
-                        transform: `translateY(${parallex1}px)`, // Adjust the multiplier for the intensity of the effect
+                        transform: `translateY(${parallex1}px)`,
                         transition: "transform 0.2s ease-out",
                     }}
                 />
@@ -1237,44 +1248,104 @@ const Home = () => {
                         <div className='hidden lgs:flex  w-auto h-auto items-center justify-center'>
 
                             <div className="flex flex-col w-auto h-auto items-center justify-center">
-                            {toolsData.slice(0, 6).map((tool, index) => (
-                                <div key={index} className={`flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
-                                {index === 0 || index === 2 || index === 4 ? (
-                                    <div
-                                    className={`flex flex-col bg-primary-400 w-[30rem] bg-primary  h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
-                                    style={{
-                                        boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                            {toolsData.slice(0, 10).map((tool, index) => (
+                                <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
+
+                                       <div className="absolute flex w-auto h-auto">
+                                        </div>
+                                        {index === 0 || index === 2 || index === 4 || index === 6 || index === 8 || index === 10 ? (
+                                        <div className="flex flex-col items-end w-auto h-auto">
+                                        <h2
+                                    className={`flex font-dmsans lgs:mt-4 text-xl items-center  justify-center  rounded-full rounded-tr-none bg-orange-600 text-primary lgs:p-4`}
+                                    style={{ fontWeight: "500",
+                                             boxShadow: "inset  2px 10px 10px rgba(255,255,255 ,0.5)" 
                                     }}
                                     >
+                                    {tool.name}
+                                    </h2>
 
+
+
+                                     {/* Add a description 1 */}
+                                        <div
+                                    className={`flex flex-col bg-primary-400 lgs:mt-4 lgs:w-[30rem] h-[10rem]  rounded-tr-none items-start bg-secondary rounded-3xl justify-start lgs:p-5`}
+                                    style={{
+                                        boxShadow: "inset  2px 10px 10px rgba(255,255,255,0.2)",
+                                    }}
+                                    >
+                                    
                                     <p
-                                        className={`flex font-dmsans lgs:mt-4 text-sm`}
+                                        className={`flex font-dmsans text-primary lgs:mt-4 text-md`}
+                                        style={{ fontWeight: "200" }}
+                                    >
+                                        {tool.description}
+                                    </p>
+                                       </div>
+
+
+                                     {/* Add a Joint */}
+                                     <div className="flex lgs:w-[30rem] h-auto items-center justify-center">
+                                     <div className="flex bg-gradient-to-b from-transparent to-primary lgs:w-[0.2rem] lgs:h-[2rem]"/>
+                                     </div>
+
+                                     {/* Add a description */}
+                                    <div
+                                    className={`flex flex-col bg-primary-400 lgs:w-[30rem] h-[10rem] rounded-3xl  items-start bg-secondary justify-start lgs:p-5`}
+                                    style={{
+                                        boxShadow: "inset  2px 10px 10px rgba(255,255,255,0.2)",
+                                    }}
+                                    >
+                                    
+                                    <p
+                                        className={`flex font-dmsans text-primary lgs:mt-4 text-md`}
                                         style={{ fontWeight: "200" }}
                                     >
                                         {tool.description}
                                     </p>
                                     </div>
-                                ) : (
-                                    <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
-                                )}
+                                        </div>    
+                                ) : index === 1 || index === 3 || index === 5 || index === 7 || index === 9  ? (
+                                        <div className="grid grid-cols-2 place-content-center bg-primary rounded-3xl rounded-tr-none  gap-6 lgs:p-6 items-center w-auto h-auto">
+                                            {tool.images.map((item, index) => (
+                                                <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">
+                                                    <div className=" flex items-end w-auto h-auto">
+                                                            <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-4 border-orange-600  lgs:w-[8rem] lgs:h-[8rem] mds:w-[4rem] mds:h-[4rem] sms:w-[3rem] sms:h-[3rem]'/>
+                                                    </div>
+                                                    <div className="flex lgs:w-[0.2rem] bg-gradient-to-b from-transparent to-secondary lgs:h-[2rem]"/>
+                                                    <div className="flex bg-orange-600 lgs:w-[10rem] lgs:h-[3rem] items-center rounded-3xl justify-center"
+                                                    style={{
+                                                        boxShadow:'1px 5px 10px 5px rgba(0,0,0, 0.4) , inset 0px 5px 5px 2px rgba(255,255,255, 0.5)'
+                                                    }}>
+                                                            <h2 className="flex font-dmsans text-primary text-center text-xs lgs:p-2">
+                                                            {item.equipment}
+                                                            </h2>
+                                                    </div>   
+                                                </div> 
+                                            ))}
+
+                                        </div> 
+                                ) : null}
                                 </div>
                             ))}
                             </div>
 
                             <div className='flex flex-col w-auto h-auto items-center justify-center'>
-                            {toolsData.slice(0,6).map((tool, index)=> (     
+                            {toolsData.slice(0,10).map((tool, index)=> (     
 
-                            <div key={index} className='relative flex bg-transparent w-auto h-[25rem] items-center justify-center'>
+                            <div key={index} className='relative flex bg-transparent w-auto lgs:h-[50rem] items-center justify-center'>
 
-                            <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-30  overflow-hidden'>
-                                <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
-                                boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
+                            <div className='relative flex  w-[10rem] lgs:h-[50rem] top-0 bg-transparent items-start justify-center z-30  overflow-hidden'>
+                                <div className='absolute flex bg-primary rounded-full w-[6rem] h-[6rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
+                                boxShadow:'inset 0px 5px 5px rgba(0,0,0,0.5)'
                                 }}>
-                                <Image src={tool.image} width={'1200'} height={'1200'} alt='tree' className='rounded-full border-4 border-blue-500 object-cover w-[5rem] h-[5rem]' />
+                                <Image src={tool.image} width={'1200'} height={'1200'} alt='tree' className='rounded-full border-4 border-orange-500 object-cover lgs:w-[5.3rem] lgs:h-[5.3rem]'
+                                       style={{
+                                        boxShadow: 'inset 10px 5px 5px rgba(255,255,255,0.9)'
+                                       }} />
                                 </div>
                                 <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
-                                { index !== 5 && (
-                                <div className={`absolute flex bg-orange-600   w-[0.05rem] h-screen items-center justify-center z-20`} style={{
+                                { index !== 9 && (
+                                <div className={`absolute flex bg-primary  w-[0.1rem] h-[200vh] items-center justify-center z-20`} style={{
 
                                 }}/>
                                 )}
@@ -1289,26 +1360,59 @@ const Home = () => {
                             </div>   
 
                             <div className="flex flex-col w-auto h-auto items-center justify-center">
-                            {toolsData.slice(0, 6).map((tool, index) => (
-                            <div key={index} className="flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-right">
-                                {index === 1 || index === 3 || index === 5 ? (
-                                <div
-                                    className={`flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
+                            {toolsData.slice(0, 10).map((tool, index) => (
+                                <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
+
+                                       <div className="absolute flex w-auto h-auto">
+                                        </div>
+                                        { index === 1 || index === 3 || index === 5 || index === 7 || index === 9 ? (
+                                        <div className="flex flex-col items-start w-auto h-auto">
+                                        <h2
+                                    className={`flex font-dmsans lgs:mt-4 text-xl items-center  justify-center rounded-full rounded-tl-none bg-orange-600 text-primary lgs:p-4`}
+                                    style={{ fontWeight: "500",
+                                             boxShadow: "inset  2px 10px 10px rgba(255,255,255 ,0.5)" ,
+                                     }}
+                                    >
+                                    {tool.name}
+                                    </h2>
+
+                                        <div
+                                    className={`flex flex-col bg-primary-400 lgs:mt-4 lgs:w-[30rem]   rounded-tl-none h-[10rem] items-start bg-secondary rounded-3xl justify-start lgs:p-5`}
                                     style={{
-                                        boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                                        boxShadow: "inset  2px 10px 10px rgba(255,255,255,0.2)",
                                     }}
                                     >
+                                    
                                     <p
-                                        className={`flex font-dmsans lgs:mt-4 text-sm`}
+                                        className={`flex font-dmsans text-primary lgs:mt-4 text-md`}
                                         style={{ fontWeight: "200" }}
                                     >
                                         {tool.description}
                                     </p>
                                     </div>
-                                ) : (
-                                <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
-                                )}
-                            </div>
+                                        </div>    
+                                ) : index === 0 || index === 2 || index === 4 || index === 6 || index === 8  ? (
+                                    <div className="grid grid-cols-2 place-content-center  gap-6 lgs:p-4 items-center w-auto h-auto">
+                                      {tool.images.map((item, index) => (
+                                        <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">
+                                            <div className=" flex items-end w-auto h-auto">
+                                                    <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2  lgs:w-[8rem] lgs:h-[8rem] mds:w-[4rem] mds:h-[4rem] sms:w-[3rem] sms:h-[3rem]'/>
+                                            </div>
+                                            <div className="flex lgs:w-[0.2rem] bg-gradient-to-b from-transparent to-primary lgs:h-[2rem]"/>
+                                            <div className="flex bg-orange-600 lgs:w-[10rem] lgs:h-[3rem] items-center rounded-3xl justify-center"
+                                            style={{
+                                                boxShadow:'1px 5px 10px 5px rgba(0,0,0, 0.4) , inset 0px 5px 5px 2px rgba(255,255,255, 0.5)'
+                                            }}>
+                                                    <h2 className="flex font-dmsans text-primary text-center text-xs lgs:p-2">
+                                                    {item.equipment}
+                                                    </h2>
+                                            </div>   
+                                         </div> 
+                                      ))}
+
+                                    </div> 
+                            )  : null}
+                                </div>
                             ))}
                             </div> 
 
