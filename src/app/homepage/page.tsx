@@ -1206,6 +1206,95 @@ const Home = () => {
             </div>
             
             </div>
+
+              {/* Axila Section */}
+           <div className="relative flex lgs:h-[20rem] w-full bg-secondary z-40" >
+                
+
+           <div className="relative flex flex-col lgs:h-[20rem] lgs:w-[60vw] bg-transparent items-center justify-center overflow-hidden">
+
+            <h2 className="flex font-poppins  text-center text-5xl text-primary z-30" style={{
+                fontWeight:'100'
+            }}>
+                Your AI Mechanic is on the Way
+            </h2>
+
+
+            <h2 className="flex font-poppins  text-center lgs:mt-2 text-2xl text-orange-600 z-30" style={{
+                fontWeight:'100'
+            }}>
+                Axila will be in the garage soon
+            </h2>
+
+            <div className="absolute flex lgs:h-[2rem] lgs:w-[30vw] animate-coloring blur-3xl items-center justify-center z-20"/>
+
+            <div className="absolute flex flex-col blur-sm lgs:h-[20rem] lgs:p-5 lgs:w-full items-center justify-start z-40">
+                
+                        <h2 className="flex font-poppins animate-moving05 text-nowrap opacity-10 lgs:mt-8 text-center lgs:text-8xl text-primary"
+                        style={{
+                            fontWeight:'100'
+                        }}>
+                        Your AI Mechanic is on the Way
+                        </h2>
+
+                        <h2 className="flex font-poppins animate-moving06 text-nowrap opacity-10 lgs:mt-6 text-center lgs:text-8xl text-primary"
+                        style={{
+                            fontWeight:'100'
+                        }}>
+                        Axila will be in the garage soon
+                        </h2>
+
+            </div>    
+
+            <div className="absolute flex flex-col  lgs:h-[20rem] lgs:w-full items-center justify-start z-40">
+                
+                    <div className="absolute left-0 bg-gradient-to-r lgs:h-[20rem] from-secondary to-transparent lgs:w-[15vw]"/>
+
+                    <div className="absolute right-0 bg-gradient-to-l lgs:h-[20rem] from-secondary to-transparent lgs:w-[15vw]"/>
+
+            </div>    
+
+
+            </div>
+                
+
+                <div className="flex relative lgs:h-[20rem] lgs:w-[40vw] items-center justify-center overflow-hidden">
+
+                    <div className="absolute  lgs:h-[20rem] items-center justify-center z-40">
+
+                       <Axila/>
+            
+            
+
+                    </div>
+                    <div className="absolute flex lgs:h-[20rem] items-center justify-center z-30">
+
+                        <h2 className="flex font-kanit text-primary text-5xl text-center" style={{
+                            fontWeight:'100'
+                        }}>
+                            Axila
+                        </h2>
+
+
+
+                    </div>
+
+                    <div className="absolute flex lgs:h-[10rem] w-full bg-gradient-to-t from-secondary  bottom-0 to-transparent items-center justify-center z-40"/>
+
+
+                    <div className="absolute flex lgs:h-[10rem] w-full bg-gradient-to-b from-secondary  top-0 to-transparent items-center justify-center z-40"/>
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
           
             {/* Tools Section */}
             <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-40'>
@@ -1243,12 +1332,12 @@ const Home = () => {
 
                 </div>
 
-                <div className="aboslute flex flex-col items-center justify-center lgs:mt-24  w-full h-auto z-40">
+                <div className={`aboslute flex flex-col items-center justify-center lgs:mt-24  w-full h-auto z-40`}>
 
                         <div className='hidden lgs:flex  w-auto h-auto items-center justify-center'>
 
                             <div className="flex flex-col w-auto h-auto items-center justify-center">
-                            {toolsData.slice(0, 10).map((tool, index) => (
+                            {toolsData.slice(0, 5).map((tool, index) => (
                                 <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
 
                                        <div className="absolute flex w-auto h-auto">
@@ -1305,13 +1394,19 @@ const Home = () => {
                                     </div>
                                         </div>    
                                 ) : index === 1 || index === 3 || index === 5 || index === 7 || index === 9  ? (
-                                        <div className="grid grid-cols-2 place-content-center bg-primary rounded-3xl rounded-tr-none  gap-6 lgs:p-6 items-center w-auto h-auto">
+                                        <div className="grid grid-cols-2 place-content-center border-2 rounded-3xl  gap-6 lgs:p-6 items-center w-auto h-auto"
+                                        style={{
+                                            boxShadow:'inset 0px 5px 10px 5px rgba(255,255,255,0.5)'
+                                        }}>
                                             {tool.images.map((item, index) => (
                                                 <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">
                                                     <div className=" flex items-end w-auto h-auto">
-                                                            <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-4 border-orange-600  lgs:w-[8rem] lgs:h-[8rem] mds:w-[4rem] mds:h-[4rem] sms:w-[3rem] sms:h-[3rem]'/>
+                                                            <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2 border-primary  lgs:w-[8rem] lgs:h-[8rem] mds:w-[4rem] mds:h-[4rem] sms:w-[3rem] sms:h-[3rem]'
+                                                            style={{
+                                                                 boxShadow: '0px 5px 10px 5px rgba(0,0,0,0.4)'
+                                                            }}/>
                                                     </div>
-                                                    <div className="flex lgs:w-[0.2rem] bg-gradient-to-b from-transparent to-secondary lgs:h-[2rem]"/>
+                                                    <div className="flex lgs:w-[0.2rem] bg-gradient-to-b from-transparent to-primary lgs:h-[2rem]"/>
                                                     <div className="flex bg-orange-600 lgs:w-[10rem] lgs:h-[3rem] items-center rounded-3xl justify-center"
                                                     style={{
                                                         boxShadow:'1px 5px 10px 5px rgba(0,0,0, 0.4) , inset 0px 5px 5px 2px rgba(255,255,255, 0.5)'
@@ -1330,7 +1425,7 @@ const Home = () => {
                             </div>
 
                             <div className='flex flex-col w-auto h-auto items-center justify-center'>
-                            {toolsData.slice(0,10).map((tool, index)=> (     
+                            {toolsData.slice(0,5).map((tool, index)=> (     
 
                             <div key={index} className='relative flex bg-transparent w-auto lgs:h-[50rem] items-center justify-center'>
 
@@ -1344,7 +1439,7 @@ const Home = () => {
                                        }} />
                                 </div>
                                 <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
-                                { index !== 9 && (
+                                { index !== 4 && (
                                 <div className={`absolute flex bg-primary  w-[0.1rem] h-[200vh] items-center justify-center z-20`} style={{
 
                                 }}/>
@@ -1360,7 +1455,7 @@ const Home = () => {
                             </div>   
 
                             <div className="flex flex-col w-auto h-auto items-center justify-center">
-                            {toolsData.slice(0, 10).map((tool, index) => (
+                            {toolsData.slice(0, 5).map((tool, index) => (
                                 <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
 
                                        <div className="absolute flex w-auto h-auto">
@@ -1376,8 +1471,31 @@ const Home = () => {
                                     {tool.name}
                                     </h2>
 
-                                        <div
-                                    className={`flex flex-col bg-primary-400 lgs:mt-4 lgs:w-[30rem]   rounded-tl-none h-[10rem] items-start bg-secondary rounded-3xl justify-start lgs:p-5`}
+                                     {/* Add a description 1 */}
+                                     <div
+                                    className={`flex flex-col bg-primary-400 lgs:mt-4 lgs:w-[30rem] h-[10rem]  rounded-tr-none items-start bg-secondary rounded-3xl justify-start lgs:p-5`}
+                                    style={{
+                                        boxShadow: "inset  2px 10px 10px rgba(255,255,255,0.2)",
+                                    }}
+                                    >
+                                    
+                                    <p
+                                        className={`flex font-dmsans text-primary lgs:mt-4 text-md`}
+                                        style={{ fontWeight: "200" }}
+                                    >
+                                        {tool.description}
+                                    </p>
+                                       </div>
+
+
+                                     {/* Add a Joint */}
+                                     <div className="flex lgs:w-[30rem] h-auto items-center justify-center">
+                                     <div className="flex bg-gradient-to-b from-transparent to-primary rounded-t-full lgs:w-[0.2rem] lgs:h-[2rem]"/>
+                                     </div>
+
+                                     {/* Add a description */}
+                                    <div
+                                    className={`flex flex-col bg-primary-400 lgs:w-[30rem] h-[10rem] rounded-3xl  items-start bg-secondary justify-start lgs:p-5`}
                                     style={{
                                         boxShadow: "inset  2px 10px 10px rgba(255,255,255,0.2)",
                                     }}
@@ -1392,11 +1510,17 @@ const Home = () => {
                                     </div>
                                         </div>    
                                 ) : index === 0 || index === 2 || index === 4 || index === 6 || index === 8  ? (
-                                    <div className="grid grid-cols-2 place-content-center  gap-6 lgs:p-4 items-center w-auto h-auto">
+                                    <div className="grid grid-cols-2 place-content-center border-2 rounded-3xl  gap-6 lgs:p-4 items-center w-auto h-auto"
+                                    style={{
+                                        boxShadow:'inset 0px 5px 10px 5px rgba(255,255,255,0.5)'
+                                    }}>
                                       {tool.images.map((item, index) => (
                                         <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">
                                             <div className=" flex items-end w-auto h-auto">
-                                                    <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2  lgs:w-[8rem] lgs:h-[8rem] mds:w-[4rem] mds:h-[4rem] sms:w-[3rem] sms:h-[3rem]'/>
+                                                    <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2  lgs:w-[8rem] lgs:h-[8rem] mds:w-[4rem] mds:h-[4rem] sms:w-[3rem] sms:h-[3rem]'
+                                                    style={{
+                                                        boxShadow: '0px 5px 10px 5px rgba(0,0,0,0.4)'
+                                                    }}/>
                                             </div>
                                             <div className="flex lgs:w-[0.2rem] bg-gradient-to-b from-transparent to-primary lgs:h-[2rem]"/>
                                             <div className="flex bg-orange-600 lgs:w-[10rem] lgs:h-[3rem] items-center rounded-3xl justify-center"
@@ -1418,98 +1542,15 @@ const Home = () => {
 
                         </div>
 
+                        
+ 
 
 
                 </div>
 
             </div>
 
-             {/* Axila Section */}
-            <div className="relative flex lgs:h-[20rem] w-full bg-secondary z-40" >
-                
-                
 
-                    <div className="flex relative lgs:h-[20rem] lgs:w-[40vw] items-center justify-center overflow-hidden">
-
-                        <div className="absolute  lgs:h-[20rem] items-center justify-center z-40">
-
-                           <Axila/>
-                
-                
-
-                        </div>
-                        <div className="absolute flex lgs:h-[20rem] items-center justify-center z-30">
-
-                            <h2 className="flex font-kanit text-primary text-5xl text-center" style={{
-                                fontWeight:'100'
-                            }}>
-                                Axila
-                            </h2>
-
-
-
-                        </div>
-
-                        <div className="absolute flex lgs:h-[10rem] w-full bg-gradient-to-t from-secondary  bottom-0 to-transparent items-center justify-center z-40"/>
-
-
-                        <div className="absolute flex lgs:h-[10rem] w-full bg-gradient-to-b from-secondary  top-0 to-transparent items-center justify-center z-40"/>
-
-
-
-
-
-                    </div>
-
-                    <div className="relative flex flex-col lgs:h-[20rem] lgs:w-[60vw] bg-transparent items-center justify-center overflow-hidden">
-
-                        <h2 className="flex font-poppins  text-center text-5xl text-primary z-30" style={{
-                            fontWeight:'100'
-                        }}>
-                              Your AI Mechanic is on the Way
-                        </h2>
-
-
-                        <h2 className="flex font-poppins  text-center lgs:mt-2 text-2xl text-orange-600 z-30" style={{
-                            fontWeight:'100'
-                        }}>
-                              Axila will be in the garage soon
-                        </h2>
-
-                        <div className="absolute flex lgs:h-[2rem] lgs:w-[30vw] animate-coloring blur-3xl items-center justify-center z-20"/>
-
-                        <div className="absolute flex flex-col blur-sm lgs:h-[20rem] lgs:p-5 lgs:w-full items-center justify-start z-40">
-                            
-                                    <h2 className="flex font-poppins animate-moving05 text-nowrap opacity-10 lgs:mt-8 text-center lgs:text-8xl text-primary"
-                                    style={{
-                                        fontWeight:'100'
-                                    }}>
-                                    Your AI Mechanic is on the Way
-                                    </h2>
-
-                                    <h2 className="flex font-poppins animate-moving06 text-nowrap opacity-10 lgs:mt-6 text-center lgs:text-8xl text-primary"
-                                    style={{
-                                        fontWeight:'100'
-                                    }}>
-                                    Axila will be in the garage soon
-                                    </h2>
-
-                        </div>    
-
-                        <div className="absolute flex flex-col  lgs:h-[20rem] lgs:w-full items-center justify-start z-40">
-                            
-                                <div className="absolute left-0 bg-gradient-to-r lgs:h-[20rem] from-secondary to-transparent lgs:w-[15vw]"/>
-
-                                <div className="absolute right-0 bg-gradient-to-l lgs:h-[20rem] from-secondary to-transparent lgs:w-[15vw]"/>
-
-                       </div>    
-                        
-
-                    </div>
-
-
-
-            </div>
                                         
             
         </div>
