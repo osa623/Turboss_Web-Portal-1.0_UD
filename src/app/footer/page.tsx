@@ -4,6 +4,7 @@ import Image from "next/image";
 
 //images
 import logo from "../assests/turbossLogo.png";
+import logoFooter from "../assests/logoFooter.png";
 
 const Footer = () => {
   return (
@@ -20,20 +21,20 @@ const Footer = () => {
                 {/* Footer logo */}
                 <Image src={logo} alt='logo' className='w-[10rem] lgs:mt-12 h-[10rem] lgs:w-[20rem] lgs:h-[20rem]'/>
 
-                <h2 className='flex text-sm lgs:mt-4 lgs:w-[25vw] font-bricolagegrotesque text-primary'
+                <h2 className='flex text-sm lgs:mt-4 lgs:w-[20vw] font-poppins text-primary'
                 style={{
-                  fontWeight:'100'
+                  fontWeight:'200'
                 }}>
                 Discover a digital hub for car enthusiasts featuring the latest tools, gadgets, and garage setups. Stay informed and inspired—whether you’re a mechanic, DIY tuner, or tech lover—and elevate your garage experience
                 </h2>
               
             </div>  
 
-            <div className='flex items-start justify-center lgs:w-[70vw] lgs:p-12'>
+            <div className='flex flex-col items-start justify-start lgs:w-[70vw]'>
 
-  
+              <div className='flex w-auto lgs:mt-12 h-auto'>
                 {/* Footer links 1 */}  
-               <div className='flex flex-col lgs:w-[25vw] h-auto'>
+               <div className='flex flex-col lgs:w-[20vw] h-auto'>
                   <h2 className='font-poppins text-primary lgs:text-2xl'>
                     Platforms
                   </h2>
@@ -74,14 +75,14 @@ const Footer = () => {
                   </div>  
                </div>
 
-                  {/* Footer links 2 */}  
-                  <div className='flex flex-col lgs:w-[25vw] h-auto'>
+                {/* Footer links 2 */}  
+               <div className='flex flex-col lgs:w-[20vw] h-auto'>
                   <h2 className='font-poppins text-primary lgs:text-2xl'>
                     Support
                   </h2>
                   <div className='flex flex-col mt-4 lgs:space-y-3'>
                      <div className='flex w-auto h-auto'>
-                        <h2 className='font-poppins text-primary lgs:text-xl lgs:p-1'
+                        <h2 className='font-poppins text-primary lgs:text-lg lgs:p-1'
                         style={{
                           fontWeight:'200'
                         }}>
@@ -91,7 +92,7 @@ const Footer = () => {
                         </h2>
                      </div>
                      <div className='flex w-auto h-auto'>
-                        <h2 className='font-poppins text-primary lgs:text-xl lgs:p-1'
+                        <h2 className='font-poppins text-primary lgs:text-lg lgs:p-1'
                         style={{
                           fontWeight:'200'
                         }}>
@@ -99,7 +100,7 @@ const Footer = () => {
                         </h2>
                      </div>
                      <div className='flex w-auto h-auto'>
-                        <h2 className='font-poppins text-primary lgs:text-xl lgs:p-1'
+                        <h2 className='font-poppins text-primary lgs:text-lg lgs:p-1'
                         style={{
                           fontWeight:'200'
                         }}>
@@ -107,7 +108,7 @@ const Footer = () => {
                         </h2>
                      </div>
                      <div className='flex w-auto h-auto'>
-                        <h2 className='font-poppins text-primary lgs:text-xl lgs:p-1'
+                        <h2 className='font-poppins text-primary lgs:text-lg lgs:p-1'
                         style={{
                           fontWeight:'200'
                         }}>
@@ -121,10 +122,27 @@ const Footer = () => {
 
                   
                     {/* Footer links 3 */}
-               <div className='flex flex-col lgs:w-[25vw] h-auto'>
+               <div className='flex flex-col lgs:w-[30vw] h-auto'>
                   <h2 className='font-poppins text-primary lgs:text-2xl'>
                     Meet the Dev
                   </h2>
+                  <div className='flex lgs:w-[30vw] h-auto items-start justify-start'>
+                        <div className='relativ flex place-content-center lgs:w-[20vw] h-auto items-start justify-start'>
+                            <Image src={logoFooter} alt='logo' className='object-cover lgs:mt-12 h-[5rem] lgs:h-[10rem] lgs:w-auto'/>
+                        </div>
+                        <div className='flex lgs:w-[10vw] h-auto'>
+
+                        </div>
+                  </div>
+               </div>
+
+               </div>
+               <div className='flex w-auto h-auto lgs:mt-4'>
+
+               <h2 className='font-poppins text-primary lgs:text-2xl'>
+                    Our Social Media
+                  </h2>
+               
                </div>
             
             </div>  

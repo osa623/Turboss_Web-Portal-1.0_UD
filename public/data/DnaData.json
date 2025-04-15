@@ -241,23 +241,23 @@
       "shadow": "/assets/suspensionShadow.png",
       "description": "Suspension systems are responsible for maximizing tire contact with the road surface, absorbing shocks, and providing vehicle stability during cornering and braking.",
       "subTopic1": "Suspension Dynamics",
-      "subTopic2": "Components | Types | Geometry | Damping",
+      "subTopic2": "",
       "subSection": [
         {
-          "subName1": "Components",
-          "subImage1": "/assets/suspension/subset/sub1.png"
+          "subName1": "",
+          "subImage1": ""
         },
         {
-          "subName1": "Suspension Types",
-          "subImage1": "/assets/suspension/subset/sub2.png"
+          "subName1": "",
+          "subImage1": ""
         },
         {
-          "subName1": "Wheel Geometry",
-          "subImage1": "/assets/suspension/subset/sub3.png"
+          "subName1": "",
+          "subImage1": ""
         },
         {
-          "subName1": "Damping Systems",
-          "subImage1": "/assets/suspension/subset/sub4.png"
+          "subName1": "",
+          "subImage1": ""
         }
       ],
       "partset1": [

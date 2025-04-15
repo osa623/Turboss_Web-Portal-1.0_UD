@@ -235,47 +235,65 @@ const Home = () => {
         <div className="relative h-auto w-full">
 
             {/* First Section */}           
-            <div className='relative lgs:h-[200vh] w-full  overflow-hidden'>
+            <div className='relative lgs:h-[200vh] sms:h-[100vh] w-full  overflow-hidden'>
 
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
 
                 <div className="relative bg-transparent z-30 lgs:h-[200vh] w-full">
-                    <div className="absolute lgs:w-1/2 h-[200vh] bg-gradient-to-r left-0 from-secondary to-transparent"/>
-                    <div className="absolute lgs:w-full h-[200vh] bg-gradient-to-l right-0 from-secondary to-transparent"/>
-                    <div className="absolute lgs:w-full h-full bg-gradient-to-b top-0 from-secondary to-transparent"/>
-                    <div className="absolute lgs:w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
+                    <div className="absolute w-1/2 h-[200vh] bg-gradient-to-r left-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-[200vh] bg-gradient-to-l right-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-full bg-gradient-to-b top-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
                     
-                    <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] w-full">
+                    <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] sms:h-[100vh] w-full">
 
                         {/* Turboss Main Topic */}
                         <div className="absolute flex flex-col items-start justify-center top-0 lgs:h-auto w-full">
 
-                            <div className="flex flex-col w-full h-auto justify-center items-center">
 
-                            <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
-                                  fontWeight: '100',
-                                  fontSize:'22rem'
-                                  }}>  
-                              Tur<span className="text-orange-600" style={{
-                                fontWeight:'200'
-                              }}>boss
-                              <div className="absolute w-auto h-auto bg-primary"/>
-                              </span>
-                            </h2> 
+                               {/* Turboss Main Topic for lgs */}
+                            <div className="hidden lgs:flex flex-col w-full h-auto justify-center items-center">
 
-
+                                        <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
+                                            fontWeight: '100',
+                                            fontSize:'22rem'
+                                            }}>  
+                                        Tur<span className="text-orange-600" style={{
+                                            fontWeight:'200'
+                                        }}>boss
+                                        <div className="absolute w-auto h-auto bg-primary"/>
+                                        </span>
+                                        </h2> 
 
                             </div>
+
+                            
+                               {/* Turboss Main Topic for sms */}
+                               <div className="hidden sms:flex flex-col w-full h-auto justify-center items-center">
+
+
+                                        <h2 className="font-bricolagegrotesque text-primary mt-10 text-shadow-xl text-center" style={{ 
+                                            fontWeight: '400',
+                                            fontSize:'7rem'
+                                            }}>  
+                                        Tur<span className="text-orange-600" style={{
+                                            fontWeight:'100'
+                                        }}>boss
+                                        <div className="absolute w-auto h-auto bg-primary"/>
+                                        </span>
+                                        </h2> 
+
+                                </div>
                           
                          </div>   
 
                         {/* Sub Paragrapgh Main Topic */}
-                        <div className="absolute flex flex-col items-center justify-center lgs:bottom-0 lgs:h-[60vh] w-full">
+                        <div className="absolute flex flex-col items-center justify-center bottom-0 lgs:h-[60vh] sms:h-[30vh] w-full">
 
                             <div className="flex flex-col w-auto h-auto justify-center items-center">
 
-                            <h2 className="font-dmsans text-primary text-shadow-xl lg:text-2xl text-nowrap text-center" style={{ 
+                            <h2 className="font-dmsans text-primary text-shadow-xl lg:text-2xl sms:text-md sms:w-[70vw] lgs:text-nowrap text-center" style={{ 
                                   fontWeight: '100',
                                   }}>  
                             Scroll down to step into the garage and ignite the experience
@@ -284,9 +302,9 @@ const Home = () => {
 
 
                             </div>
-                            <div className="absolute  flex-col w-auto h-auto justify-center opacity-15 blur-sm items-center">
+                            <div className="absolute  flex-col w-auto h-auto justify-center opacity-15 sms:opacity-80 blur-sm items-center">
 
-                            <h2 className="font-dmsans text-primary text-shadow-xl animate-textScaling01 lg:text-3xl mt-4 text-nowrap text-center" style={{ 
+                            <h2 className="font-dmsans text-primary text-shadow-xl sms:w-[70vw] animate-textScaling01 lg:text-3xl mt-4 sms:mt-16 lg:text-nowrap text-center" style={{ 
                                 fontWeight: '100',
                                 }}>  
                             Scroll down to step into the garage and ignite the experience
@@ -299,8 +317,8 @@ const Home = () => {
                          </div>   
 
 
-                        {/* Sub Upper Topic */}
-                         <div className="absolute flex items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-full">
+                        {/* Sub Upper Topic for larger screen */}
+                         <div className="hidden absolute lgs:flex items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-full">
 
                                 <div className="flex flex-col w-full h-auto justify-center items-end">
 
@@ -330,13 +348,44 @@ const Home = () => {
                                 
                           </div> 
 
+                        {/* Sub Upper Topic for smaller screen */}
+                         <div className="hidden absolute sms:flex items-start justify-center top-16 lgs:h-[50vh] w-full">
+
+                            <div className="flex flex-col w-full h-auto justify-center items-center">
+
+                                <h2 className="font-bricolagegrotesque text-primary text-sm text-shadow-xl text-center" style={{ 
+                                    fontWeight: '100',
+                                    }}>  
+                                The Ultimate Digital <span className="text-orange-600 font-poppins" style={{
+                                    fontWeight:'100'
+                                }}>Garage Experience</span>
+                                </h2> 
+
+                            {/*                                    <div className="flex bg-transparent space-x-5 items-center justify-center lgs:h-[4rem] lgs:w-[20rem]">
+
+                                    <div className="flex bg-orange-600 h-[3rem] w-[3rem] rounded-full"/>
+                                    <div className="flex bg-orange-600  h-[3rem] w-[3rem] rounded-full"/>
+                                    <div className="flex bg-orange-600  h-[3rem] w-[3rem] rounded-full"/>
+                                    <div className="flex bg-orange-600  h-[3rem] w-[3rem] rounded-full"/>
+
+
+                                </div>
+                            */}
+
+                            </div>
+
+
+
+
+                            </div> 
+
  
 
                         {/* Text Data set */}
                         <div className="absolute flex  flex-col bg-transparent items-center justify-start z-10  lgs:h-[200vh] w-full">
                             <SplitText
                                 text="Turboss"
-                                className="flex lgs:mt-0 font-bricolagegrotesque opacity-10 lgs:text-[45rem] animate-movingText text-primary font-thin text-center"
+                                className="flex lgs:mt-0 font-bricolagegrotesque opacity-10 text-[45rem] animate-movingText text-primary font-thin text-center"
                                 delay={150}
                                 animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                                 threshold={0.2}
@@ -349,22 +398,22 @@ const Home = () => {
 
 
                       {/* Cogwheel Setup */}
-                        <div className="relative flex bg-transparent items-center justify-center lgs:mt-12 lgs:h-auto w-full">
+                        <div className="relative flex bg-transparent items-center justify-center mt-12 lgs:h-auto w-full">
            
                             <div className="absolute bg-orange-600 h-[30rem] w-[70vw] opacity-20 blur-3xl z-0"/>
 
                             {/* Middle Cogwheel */}
-                            <div className="absolute flex bg-transparent h-auto w-auto lgs:h-[40rem] lgs:w-[40rem]  items-center justify-center z-40">
+                            <div className="absolute flex bg-transparent lgs:h-[40rem] lgs:w-[40rem] sms:w-auto sms:h-[30rem]  items-center justify-center z-40">
 
                             
-                                    <Image src={flywheel0} alt="" className="absolute object-cover z-10 lgs:h-[35rem] lgs:w-[35rem] animate-spin" style={{
+                                    <Image src={flywheel0} alt="" className="absolute  object-cover z-10 sms:w-auto sms:h-[20rem] sms:scale-150  lgs:h-[35rem] animate-spin lgs:w-[35rem]  " style={{
                                     animationDuration:'10s'
                                     }}/>   
 
-                                        <div className="flex bg-primary lgs:h-[20rem] lgs:w-[20rem] rounded-full items-center overflow-hidden justify-center z-20" style={{
+                                        <div className="flex bg-primary lgs:h-[20rem] lgs:w-[20rem] sms:w-[20rem] sms:h-[20rem]   rounded-full items-center overflow-hidden justify-center z-20" style={{
                                         boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
                                     }}> 
-                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 lgs:h-[22rem] lgs:w-[22rem]"/>
+                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 lgs:h-[22rem] sms:w-[20rem] lgs:w-[22rem]"/>
                                         <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
                                                 
                                                 <div className="absolute flex cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
@@ -378,7 +427,7 @@ const Home = () => {
                             </div>
 
                             {/* 1rd Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
+                            <div className="hidden absolute lgs:flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
 
                                 }}>
                                 <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
@@ -388,7 +437,7 @@ const Home = () => {
                            </div>
 
                             {/* 3rd Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-end items-center lgs:h-[50rem] lgs:w-[80rem] z-10">
+                            <div className="hidden absolute lgs:flex bg-transparent justify-end items-center lgs:h-[50rem] lgs:w-[80rem] z-10">
 
                                 <div className="absolute flex lgs:w-[40rem] lgs:h=[40rem] items-center justify-center z-10">
 
@@ -405,7 +454,7 @@ const Home = () => {
                             </div>
 
                             {/* 4th blue Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-start items-start lgs:h-[50rem] lgs:w-[80rem] z-20">
+                            <div className="hidden absolute lgs:flex bg-transparent justify-start items-start lgs:h-[50rem] lgs:w-[80rem] z-20">
 
                                 <div className="absolute flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mt-12 justify-center z-10">
 
@@ -657,7 +706,7 @@ const Home = () => {
             </div>
 
             {/* Sound Check Section */}   
-            <div className="fixed flex items-center justify-center text-center  bg-secondary lgs:w-[3rem] lgs:h-[3rem] rounded-full z-50 top-4 left-4"
+            <div className="fixed flex items-center justify-center text-center  bg-secondary w-[3rem] h-[3rem] rounded-full z-50 top-4 left-4"
             style={{
                 boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
             }}>
@@ -673,7 +722,7 @@ const Home = () => {
             </div>
 
             {/* Second Section */}
-            <div className='relative flex lgs:h-[35rem] w-full overflow-hidden z-40'>
+            <div className='relative flex lgs:h-[35rem] sms:h-[45rem] w-full overflow-hidden z-40'>
                  {/*<audio ref={(el) => { sectionAudioRefs.current[0] = el; }} >
                     <source src="/welcomingSection.wav" type="audio/wav" />
                     Your browser does not support the audio element.
@@ -681,34 +730,34 @@ const Home = () => {
                 <Image 
                     src={herobackground3} 
                     alt='turbo' 
-                    className='object-cover w-full animate-scaling01 blur-sm h-full' 
+                    className='object-cover w-full animate-scaling01 blur-sm sms:blur-md h-full' 
                     layout='fill' 
                     style={{
                         transform: `translateY(${parallex1 * 0.2}px)`, 
                         transition: "transform 0.4s ease-out",
                     }}
                 />
-                <div className="aboslute flex flex-col items-center justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
+                <div className="aboslute flex flex-col items-center  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
 
-                     <h2 className="font-bricolagegrotesque lgs:text-7xl text-primary text-shadow-xl text-center" style={{
+                     <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl sms:mt-8 text-primary text-shadow-xl text-center" style={{
                         fontWeight:'200'
                      }}>
-                        Welcome to <span className="bg-orange-600 p-4" style={{
+                        Welcome to <span className="bg-orange-600 p-4 sms:p-2" style={{
                             fontWeight:'800'
                         }}>Turboss</span>
                      </h2>
 
-                     <p className="font-dmsans lgs:text-xl lgs:w-[60vw] lgs:mt-12 text-primary text-shadow-xl text-center" style={{
+                     <p className="font-dmsans lgs:text-xl sms:text-xl w-[60vw] sms:w-[80vw] lgs:mt-12 sms:mt-8 text-primary text-shadow-xl text-center" style={{
                         fontWeight:'200'
                      }}>
                         Where every ride is fueled by passion and power meets accuracy. Explore a world where engineering is at the cutting edge, machines come to life, and every little detail reveals a tale of creativity and performance. This is an experience rather than merely a journey. </p>
 
-                     <p className="font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
+                     <p className="sms:flex flex-col sms:mt-16 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
                         fontWeight:'600'
                      }}>
-                        <span className="bg-orange-600 text-primary lgs:p-3" style={{
+                        <span className="bg-orange-600 text-primary lgs:p-3 sms:p-2" style={{
                             fontWeight:'600'
-                        }}>Explore. Learn. Innovate.</span><span className="lgs:ml-2" style={{
+                        }}>Explore. Learn. Innovate.</span><span className="lgs:ml-2 sms:mt-2" style={{
                             fontWeight:'200'
                         }}> Your Virtual Garage Awaits</span>
                         </p> 
@@ -723,41 +772,37 @@ const Home = () => {
                 <div className="relative flex flex-col h-auto w-full bg-transparent overflow-hidden z-40">
 
                         <div
-                        className="absolute w-full h-auto items-center lgs:mt-12 justify-center z-30"
+                        className="absolute w-full h-auto items-center  lgs:mt-12 justify-center z-30"
                         style={{
                             transform: `translateY(${offsetY}px)`,
                             transition: "transform 0.1s ease-out",
                         }}
                     >
-                        <Image src={image1} alt="background" className="object-cover lgs:h-[65rem] w-full" />
+                        <Image src={image1} alt="background" className="object-cover h-[65rem] w-full" />
                         </div>
 
                         {/* Primary Section */}
-                        <div className="relative flex lgs:h-[15rem] w-full z-40 justify-center items-center">
-                            <div className="absolute flex items-center justify-center w-full lgs:h-[25rem] bg-gradient-to-b from-primary via-primary to-transparent">
+                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full z-40 justify-center items-center">
+                            <div className="absolute flex items-center justify-center w-full h-[25rem] bg-gradient-to-b from-primary via-primary to-transparent">
                                <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 lgs:p-4 text-8xl text-center"
+                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 lgs:text-8xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-bricolagegrotesque text-orange-600 lgs:p-2 text-8xl text-center" style={{
+                                  <h2 className="flex bg-primar p-1 flex-col font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    DNA<span className="lgs:text-sm font-dmsans text-secondary" style={{
-                                        fontWeight:'200'
-                                    }}>
-                                        Turboss Garage Section 01
-                                    </span>
+                                    DNA
                                   </h2>
                                </div>
                             </div>
                         </div>
 
-                        {/* Swiper Container */}
-                        <div className="relative flex w-full items-center justify-center bg-transparent z-30">
+                        {/* Swiper Container for a larger screen */}
+                        <div className="hidden relative lgs:flex w-full items-center justify-center bg-transparent z-30">
                             
                             <Swiper
                                 effect="coverflow"
@@ -835,6 +880,90 @@ const Home = () => {
                             
                         </div>
 
+                        {/* Swiper Container for a smaller screen */}
+                        <div className="hidden relative sms:flex w-full items-center justify-center bg-transparent z-30">
+                            
+                            <Swiper
+                                effect="coverflow"
+                                grabCursor={true}
+                                centeredSlides={true}
+                                loop={true}
+                                slidesPerView="auto"
+                                coverflowEffect={{
+                                    rotate: 0,
+                                    stretch: 0,
+                                    depth: 100,
+                                    modifier: 2.5,
+                                }}
+                                pagination={{ clickable: true }}
+                                navigation={true}
+                                modules={[EffectCoverflow, Pagination, Navigation]}
+                                className="flex h-[55rem]  items-center justify-center p-12"
+                                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                            >
+                                {dnaData.map((tool, index) => {
+                                    let opacity = 0.8;
+
+                                    if (index === activeIndex) {
+                                        opacity = 1;
+                                    } else if (index === activeIndex - 1 || index === activeIndex + 1) {
+                                        opacity = 1;
+                                    }
+
+                                    return (
+                                        <SwiperSlide className="group" key={index}>
+
+                                            <div className="flex lgs:h-[30rem] bg-transparent  items-center justify-center">
+                                                <Image
+                                                    src={tool.image}
+                                                    alt="tool_id"
+                                                    width={450}
+                                                    height={450}
+                                                    className="object-cover animate-floating w-auto h-auto"
+                                                    style={{
+                                                        opacity
+                                                    }}
+                                                />
+                                            </div>
+                                            <div
+                                                className="flex h-[30rem] items-center justify-center w-full transition-opacity duration-500"
+                                                style={{ opacity }}
+                                            >
+                                                <button 
+                                                onClick={() => router.push(`/detailpage/${tool.id}`)}
+                                                className="absolute group flex h-[6rem] w-[15rem] mb-48 rounded-2xl cursor-pointer items-center text-primary justify-center z-50 bg-transparent overflow-hidden"
+                                                style={{
+                                                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1), inset 0px 5px 10px 2px rgba(255, 255, 255, 0.5)",
+                                                    fontWeight:'200'
+                                                }}>
+                                                    <div className="absolute flex z-10 w-auto h-auto bg-transparent items-center justify-center"
+>
+                                                        <Image src={carbonFiber} alt="carbonFiber" className="object-cover lgs:w-[20rem] lgs:h-[6rem]"
+                                                        />                                 
+                                                    </div>   
+                                                    <div className="absolute flex lgs:h-[6rem] lgs:w-[15rem] bg-gradient-to-t from-secondary to-transparent z-20 items-center justify-center"
+                                                                                                        style={{
+                                                                                                            boxShadow:'inset 0px 0px 20px 5px rgba(255,255,255,0.8)'
+                                                                                                        }}/>
+                                                    <div className="absolute flex lgs:h-[6rem] lgs:w-[15rem] bg-gradient-to-r from-secondary to-transparent z-30 items-center justify-center"
+                                                    style={{
+                                                        boxShadow:'inset 0px 0px 10px 2px rgba(255,255,255,0.5)'
+                                                    }}/>
+                                                    <h2 className="font-dmsans text-2xl group-hover:text-2xl transition-all duration-700 ease-in-out text-primary z-20">{tool?.name}</h2>
+                                                    <h2 className="absolute font-dmsans text-5xl group-hover:text-8xl sms:blur-sm  transition-all duration-700 ease-in-out text-nowrap bottom-2 text-primary opacity-15 z-20">{tool?.name}</h2>
+                                                </button>
+                                                <button className="absolute h-[0.8rem] w-[15rem] font-dmsans lgs:mb-0 lgs:mt-12 rounded-full blur-lg items-center justify-center bg-secondary"/>
+                                                <Image src={tool?.shadow}
+                                                     width={450}
+                                                    height={450} alt="turbo shadow" className="object-cover mt-32 animate-floatingRev  justify-center items-center" />
+                                            </div>
+                                        </SwiperSlide>
+                                    );
+                                })}
+                            </Swiper>
+                            
+                        </div>
+
 
                 </div>
 
@@ -842,15 +971,17 @@ const Home = () => {
             </div>
 
             {/* Secondary Section */}
-            <div className="flex lgs:h-[25rem] w-full bg-secondary z-40" >
-                <div className="flex lgs:h-[25rem] lgs:w-[40vw] items-center justify-center"/>
-                <div className="relative flex lgs:h-[25rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
-                        <Image src = {subHeroSec1} alt="fwef" className="object-cover animate-moving02  lgs:h-[30rem] lgs:w-[60vw] z-30"/>
-                        <div className="flex absolute bg-gradient-to-r lgs:h-[30rem] lgs:w-[80vw]  from-secondary to-transparent z-40"/>
-                        <div className="flex absolute bg-gradient-to-l lgs:h-[30rem] lgs:w-[20vw] right-0  from-secondary to-transparent z-40"/>
+            <div className="flex h-[25rem] sms:h-[35rem] w-full bg-secondary z-40" >
+                <div className="flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] items-center justify-center"/>
+
+                <div className="relative flex h-[25rem] sms:h-[35rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
+                        <Image src = {subHeroSec1} alt="fwef" className="object-cover animate-moving02 sms:h-[35rem]  h-[30rem] w-full z-30"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[80vw]  from-secondary to-transparent z-40"/>
+                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[35rem] w-[20vw] right-0  from-secondary to-transparent z-40"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-40"/>
                 </div>
                 
-                <div className="absolute flex w-[30vw] lgs:h-[4rem] lgs:rounded-br-2xl bg-orange-600  items-center justify-center z-50"
+                <div className="absolute flex w-[30vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-50"
                 style={{
                     boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
                 }}>
@@ -862,7 +993,7 @@ const Home = () => {
                     </h2>
                 </div>
 
-                <div className="absolute flex w-full lgs:h-[25rem] items-center justify-center z-50">
+                <div className="absolute flex sms:flex-col w-full h-[25rem] items-center justify-center z-50">
                     <div className="flex flex-col h-[25rem]  lgs:w-[60vw] items-center justify-center">
                         <div className="flex w-auto h-auto">
 
