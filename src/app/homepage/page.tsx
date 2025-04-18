@@ -398,7 +398,7 @@ const Home = () => {
 
 
                       {/* Cogwheel Setup */}
-                        <div className="relative flex bg-transparent items-center justify-center mt-12 lgs:h-auto w-full">
+                        <div className="relative  flex bg-transparent items-center justify-center mt-12 lgs:h-auto w-full">
            
                             <div className="absolute bg-orange-600 h-[30rem] w-[70vw] opacity-20 blur-3xl z-0"/>
 
@@ -406,7 +406,7 @@ const Home = () => {
                             <div className="absolute flex bg-transparent lgs:h-[40rem] lgs:w-[40rem] sms:w-auto sms:h-[30rem]  items-center justify-center z-40">
 
                             
-                                    <Image src={flywheel0} alt="" className="absolute  object-cover z-10 sms:w-auto sms:h-[20rem] sms:scale-150  lgs:h-[35rem] animate-spin lgs:w-[35rem]  " style={{
+                                    <Image src={flywheel0} alt="" className="absolute  object-cover z-10 sms:w-auto sms:h-[20rem] sms:scale-150  lgs:h-[35rem] lgs:animate-spin lgs:w-[35rem]  " style={{
                                     animationDuration:'10s'
                                     }}/>   
 
@@ -427,7 +427,7 @@ const Home = () => {
                             </div>
 
                             {/* 1rd Cogwheel */}
-                            <div className="hidden absolute lgs:flex bg-transparent justify-start items-center lgs:h-[50rem] lgs:w-[80rem] z-20" style={{
+                            <div className=" absolute flex bg-transparent justify-start items-center h-[50rem] sms:ml-24 w-[80rem] z-20" style={{
 
                                 }}>
                                 <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
@@ -437,13 +437,13 @@ const Home = () => {
                            </div>
 
                             {/* 3rd Cogwheel */}
-                            <div className="hidden absolute lgs:flex bg-transparent justify-end items-center lgs:h-[50rem] lgs:w-[80rem] z-10">
+                            <div className=" absolute flex bg-transparent justify-end items-center h-[50rem] w-[80rem] z-10">
 
-                                <div className="absolute flex lgs:w-[40rem] lgs:h=[40rem] items-center justify-center z-10">
+                                <div className="absolute flex w-[40rem] h-[40rem] items-center justify-center z-10">
 
 
                                        
-                                    <Image src={flywheel2} alt="" className="absolute object-cover z-10 w-[40rem] lgs:h-[40rem] animate-spin" style={{
+                                    <Image src={flywheel2} alt="" className="absolute object-cover z-10 w-[40rem] h-[40rem] animate-spin" style={{
                                     animationDuration:'20s'
                                     }}/>   
 
@@ -454,7 +454,7 @@ const Home = () => {
                             </div>
 
                             {/* 4th blue Cogwheel */}
-                            <div className="hidden absolute lgs:flex bg-transparent justify-start items-start lgs:h-[50rem] lgs:w-[80rem] z-20">
+                            <div className="absolute flex bg-transparent justify-start items-start h-[50rem] w-[80rem] z-20">
 
                                 <div className="absolute flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mt-12 justify-center z-10">
 
@@ -472,13 +472,13 @@ const Home = () => {
                             </div>
 
                             {/* 5th blue Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-start items-end lgs:h-[50rem] lgs:w-[80rem] z-40">
+                            <div className="absolute flex bg-transparent justify-start items-end h-[50rem] w-[80rem]  z-40">
 
                             <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mb-24  justify-center z-10">
 
 
                                 
-                                <Image src={flywheel2} alt="" className="absolute object-cover z-40 w-[20rem] lgs:h-[20rem] animate-spin-fast group-hover:animate-spin-slow" style={{
+                                <Image src={flywheel2} alt="" className="absolute object-cover z-40 w-[20rem] h-[20rem] animate-spin-fast group-hover:animate-spin-slow" style={{
                                 animationDirection:'reverse',
 
                                 }}/>   
@@ -506,9 +506,10 @@ const Home = () => {
                             </div>        
 
                             </div>
+                            
 
                            {/* 6th blue Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-end items-end lgs:h-[50rem] lgs:w-[80rem] z-30">
+                            <div className="absolute flex bg-transparent justify-end items-end h-[50rem] w-[80rem] z-30">
 
                             <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:mr-64 lgs:mb-48  justify-center z-10">
 
@@ -535,7 +536,7 @@ const Home = () => {
                            </div>
 
                             {/* 7th Navigation Cogwheel */}
-                            <div className="relative bg-transparent lgs:h-auto lgs:w-[80rem] z-50">
+                            <div className="hidden relative lgs:flex bg-transparent lgs:h-auto lgs:w-[80rem] z-50">
 
     
                                 {/* 1st Navigation Cogwheel */}
@@ -791,7 +792,7 @@ const Home = () => {
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primar p-1 flex-col font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
+                                  <h2 className="flex bg-primar p-4 flex-col font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -972,13 +973,14 @@ const Home = () => {
 
             {/* Secondary Section */}
             <div className="flex h-[25rem] sms:h-[35rem] w-full bg-secondary z-40" >
-                <div className="flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] items-center justify-center"/>
+                <div className="flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] sms:w-[60vw] items-center justify-center"/>
 
                 <div className="relative flex h-[25rem] sms:h-[35rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
                         <Image src = {subHeroSec1} alt="fwef" className="object-cover animate-moving02 sms:h-[35rem]  h-[30rem] w-full z-30"/>
                         <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[80vw]  from-secondary to-transparent z-40"/>
                         <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[35rem] w-[20vw] right-0  from-secondary to-transparent z-40"/>
                         <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-40"/>
+                        <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-40"/>
                 </div>
                 
                 <div className="absolute flex w-[30vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-50"
@@ -993,9 +995,9 @@ const Home = () => {
                     </h2>
                 </div>
 
-                <div className="absolute flex sms:flex-col w-full h-[25rem] items-center justify-center z-50">
-                    <div className="flex flex-col h-[25rem]  lgs:w-[60vw] items-center justify-center">
-                        <div className="flex w-auto h-auto">
+                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-50">
+                    <div className="flex flex-col h-[25rem] lgs:w-[60vw] sms:w-[80vw] items-center justify-center">
+                        <div className="flex sms:flex-col w-auto h-auto sms:items-center">
 
                                 <h2 className="flex lgs:text-lg font-dmsans text-center items-start lgs:pt-5 text-primary" style={{
                                     fontWeight:'100'
@@ -1003,7 +1005,7 @@ const Home = () => {
                                 Want to know
                                 </h2>
 
-                                <span className="flex lgs:text-6xl font-dmsans text-center items-center p-2 text-primary"
+                                <span className="flex lgs:text-6xl font-dmsans sms:text-5xl text-center items-center p-2 text-primary"
                                     style={{
                                         fontWeight:'100'
                                     }}>
@@ -1011,13 +1013,13 @@ const Home = () => {
                                 </span>
                         </div>
 
-                            <p className="font-dmsans lgs:w-[40vw] lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
+                            <p className="font-dmsans lgs:w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
                             style={{
                                 fontWeight:'100'
                             }}>
                                     <span className="lgs:mr-2 lgs:text-2xl font-russoone lgs:p-1" style={{ fontWeight: '400' }}>
                                         {"\u0022"}
-                                    </span>Explore <span className="lgs:mr-2 lgs:text-2xl text-primary lgs:p-1"
+                                    </span>Explore <span className="mr-2 sms:ml-2 lgs:text-2xl text-primary lgs:p-1"
                               style={{
                                 fontWeight:'300'
                               }}>
@@ -1027,7 +1029,7 @@ const Home = () => {
                                         {"\u0022"}
                                     </span></p>
                     </div>
-                        <div className="flex h-[30rem] lgs:w-[40vw]  items-center justify-center overflow-hidden">
+                        <div className="flex lgs:h-[30rem] lgs:w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
                         <video
                                 src='/baoswheels.webm'
                                 autoPlay
@@ -1046,9 +1048,9 @@ const Home = () => {
             </div>
 
             {/* Lab Section */}
-            <div className='relative flex flex-col lgs:h-[55rem] items-center justify-start w-full z-40 overflow-hidden'>
+            <div className='relative flex flex-col lgs:h-[55rem] sms:h-[150vh] items-center justify-start w-full z-40 overflow-hidden'>
 
-                <div className="absolute bg-gradient-to-b lgs:h-[15rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
+                <div className="absolute bg-gradient-to-b h-[15rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
                     src={herobackground4} 
                     alt='turbo' 
@@ -1062,17 +1064,17 @@ const Home = () => {
                 <div className="aboslute flex flex-col items-center justify-center lgs:mt-12  w-full h-auto z-30">
 
                        <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 lgs:p-4 text-8xl text-center"
+                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 lgs:p-4 sms:p-2 lgs:text-8xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-bricolagegrotesque text-orange-600 lgs:p-2 text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-2 flex-col font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    Lab<span className="text-xs font-dmsans text-secondary" style={{
+                                    Lab<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
                                         fontWeight:'200'
                                     }}>
                                         Turboss Garage Lesson 01
@@ -1084,7 +1086,7 @@ const Home = () => {
 
                         <div className="aboslute flex flex-col items-center justify-center  w-full h-auto z-40">
 
-                            <div className="flex w-auto h-auto lgs:space-x-8">
+                            <div className="flex sms:flex-col sms:items-center w-auto h-auto lgs:space-x-8 sms:space-y-8">
                             {labData.slice(0,3).map((tool, index) => (
 
                                 <div 
@@ -1104,7 +1106,7 @@ const Home = () => {
 
                                 >
                                         <div className='relative flex flex-col  lgs:w-[20rem] lgs:h-[25rem]  mds:w-[15rem] sms:w-[22rem] bg-transparent justify-center rounded-t-md  items-center '>
-                                        <div className='flex lgs:w-[20rem] sms:w-[22rem] mds:w-[20rem] lgs:h-[25rem]   z-50'> 
+                                        <div className='flex lgs:w-[20rem] sms:w-[22rem] sms:h-[20rem] mds:w-[20rem] lgs:h-[25rem]   z-50'> 
                                             <Image src={tool.image} alt='' width={500} height={500} className='object-cover rounded-xl lgs:scale-150 mds:h-20'
                                             style={{
                                                 transform: `translateY(${parallex1 * 0.8}px)`,
@@ -1116,7 +1118,7 @@ const Home = () => {
 
                                 </div>
 
-                                <div className="absolute flex flex-col bg-gradient-to-t from-secondary rounded-xl items-end justify-center to-transparent z-40 w-full lgs:h-[25rem] bottom-0"
+                                <div className="absolute flex flex-col bg-gradient-to-t from-secondary rounded-xl lgs:items-end justify-center items-center to-transparent z-40 w-full lgs:h-[25rem] sms:h-[20rem] bottom-0"
                                                                     style={{
                                                                         boxShadow:' inset 0px 5px 10px 8px rgba(255,255,255,0.4)',
                                                                         transform: `translateY(${parallex1 * 0.8}px)`,
@@ -1124,14 +1126,14 @@ const Home = () => {
                                                                         
                                                                     }}>
 
-                                            <div className="flex lgs:w-[20rem] lgs:h-[25rem] items-start justify-start lgs:p-5">
+                                            <div className="flex lgs:w-[20rem] lgs:h-[25rem] sms:h-[20rem] sms:w-full items-start justify-start p-5">
                                                 
                                                 <div className="flex w-auto h-auto">
 
-                                                <h2 className="flex font-bricolagegrotesque text-primary text-sm bg-orange-600 lgs:p-2">
+                                                <h2 className="flex font-bricolagegrotesque text-primary text-sm sms:text-md bg-orange-600 p-2">
                                                 Garage Section
                                                 </h2>
-                                                <span className="font-bricolagegrotesque text-orange-600 text-sm bg-primary lgs:p-2">
+                                                <span className="font-bricolagegrotesque text-orange-600 text-sm sms:text-2xl bg-primary lgs:p-2">
                                                     {tool.subname}
                                                 </span>
 
@@ -1140,9 +1142,9 @@ const Home = () => {
                                                 
                                             </div> 
                                             
-                                            <div className="flex lgs:w-[20rem] lgs:h-[25rem] items-end justify-center ">
+                                            <div className="flex sms:absolute w-[20rem] lgs:h-[25rem] items-end justify-center ">
 
-                                                    <h2 className="absolute font-dmsans text-primary group-hover:scale-125  transition-all duration-700 ease-in-out lgs:text-xl lgs:p-2 lgs:mb-12"
+                                                    <h2 className="absolute font-dmsans text-primary group-hover:scale-125 sms:text-2xl  transition-all duration-700 ease-in-out lgs:text-xl lgs:p-2 lgs:mb-12"
                                                     style={{
                                                         fontWeight:'200'
                                                     }}>
@@ -1151,7 +1153,7 @@ const Home = () => {
 
                                                     <div className="relative flex z-20 items-center opacity-10 justify-center overflow-hidden">
 
-                                                    <h2 className="flex lgs:w-auto text-center text-nowrap group-hover:scale-125  transition-all duration-700 ease-in-out   font-dmsans text-primary lgs:text-6xl lgs:p-2 lgs:mb-4"
+                                                    <h2 className="flex lgs:w-auto text-center text-nowrap group-hover:scale-125  transition-all duration-700 ease-in-out   font-dmsans text-primary text-6xl lgs:p-2 lgs:mb-4"
                                                     style={{
                                                         fontWeight:'200'
                                                     }}>
@@ -1219,9 +1221,9 @@ const Home = () => {
             </div>
          
             {/* Sub Secondary Section */}
-            <div className="relative w-auto h-auto overflow-hidden z-40">
+            <div className="hidden relative lgs:flex w-auto h-auto overflow-hidden z-40">
 
-            <div className="absolute flex lgs:w-[25vw] lgs:h-[4rem] lgs:rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
+            <div className="absolute flex lgs:w-[25vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[50vw] rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
                         style={{
                             boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
                         }}>
@@ -1240,14 +1242,14 @@ const Home = () => {
                         {
                 DYN.map((tool)=>(
                     <div key={tool.id} className="relative w-auto h-auto flex-shrink-1">
-                    <div className="flex lgs:h-[25rem] w-[100vw] bg-secondary" >
+                    <div className="flex  h-[25rem] w-[100vw] bg-secondary" >
 
                         <div className="relative flex lgs:h-[25rem]  lgs:w-[60vw] items-center justify-start overflow-hidden">
                                 <Image key={currentIndex} src = {tool.image} alt="fwef" className="object-cover animate-moving01  lgs:h-[25rem]  lgs:w-[60vw] z-30"/>
-                                <div className="flex absolute bg-gradient-to-r lgs:h-[25rem]  lgs:w-[40vw]  from-secondary to-transparent z-40"/>
-                                <div className="flex absolute bg-gradient-to-l lgs:h-[25rem]  lgs:w-[30vw] right-0  from-secondary via-secondary to-transparent z-40"/>
-                                <div className="flex absolute bg-gradient-to-t lgs:h-[5rem] lgs:w-[60vw] bottom-0  from-secondary to-transparent z-40"/>
-                                <div className="flex absolute bg-gradient-to-b lgs:h-[10rem] lgs:w-[80vw] top-0 from-secondary to-transparent z-40"/>
+                                <div className="flex absolute bg-gradient-to-r h-[25rem]  w-[40vw]  from-secondary to-transparent z-40"/>
+                                <div className="flex absolute bg-gradient-to-l h-[25rem]  w-[30vw] right-0  from-secondary via-secondary to-transparent z-40"/>
+                                <div className="flex absolute bg-gradient-to-t h-[5rem] w-[60vw] bottom-0  from-secondary to-transparent z-40"/>
+                                <div className="flex absolute bg-gradient-to-b h-[10rem] w-[80vw] top-0 from-secondary to-transparent z-40"/>
                                 
                                 
 
@@ -1339,7 +1341,7 @@ const Home = () => {
             </div>
 
               {/* Axila Section */}
-           <div className="relative flex lgs:h-[20rem] w-full bg-secondary z-40" >
+           <div className="hidden relative lgs:flex lgs:h-[20rem] sms:h-auto w-full bg-secondary z-40" >
                 
 
            <div className="relative flex flex-col lgs:h-[20rem] lgs:w-[60vw] bg-transparent items-center justify-center overflow-hidden">
@@ -1428,8 +1430,8 @@ const Home = () => {
             </div>
           
             {/* Tools Section */}
-            <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-40'>
-                <div className="absolute bg-gradient-to-b lgs:h-[20rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
+            <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-40 '>
+                <div className="absolute bg-gradient-to-b h-[20rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
                     src={herobackground5} 
                     alt='turbo' 
@@ -1443,17 +1445,17 @@ const Home = () => {
                 <div className="aboslute flex flex-col items-center justify-start lgs:mt-12  w-full h-auto z-30">
 
                 <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 lgs:p-4 text-8xl text-center"
+                                  <h2 className="font-bricolagegrotesque text-primary sms:text-5xl bg-orange-600 p-4 lgs:text-8xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-bricolagegrotesque text-orange-600 lgs:p-2 text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-4 flex-col font-bricolagegrotesque sms:text-5xl text-orange-600 lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    Tools<span className="text-xs font-dmsans text-secondary" style={{
+                                    Tools<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
                                         fontWeight:'200'
                                     }}>
                                         Turboss Garage Lesson 03
@@ -1463,13 +1465,16 @@ const Home = () => {
 
                 </div>
 
-                <div className={`aboslute flex flex-col items-center justify-center lgs:mt-24  w-full h-auto z-40`}>
+                <div className={`aboslute flex flex-col items-center justify-center lgs:mt-24 sms:mb-12  w-full h-auto z-40`}>
 
+                       
+                       
+                        {/* Large View medium screens*/}
                         <div className='hidden lgs:flex  w-auto h-auto items-center justify-center'>
 
                             <div className="flex flex-col w-auto h-auto items-center justify-center">
                             {toolsData.slice(0, 5).map((tool, index) => (
-                                <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
+                                <div key={index} className={`relative w-[35rem]  h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
 
                                        <div className="absolute flex w-auto h-auto">
                                         </div>
@@ -1670,6 +1675,75 @@ const Home = () => {
                                 </div>
                             ))}
                             </div> 
+
+                        </div>
+
+                              {/* mobile View medium screens*/}
+                        <div className='hidden sms:flex mds:flex w-auto h-auto sms:mt-12 items-center justify-center'>
+                            {/* First One */}
+                                <div className='flex flex-col w-auto h-auto items-center justify-center'>
+                                {toolsData.slice(0,5).map((tool, index)=> (     
+
+                                <div key={index} className='relative flex bg-transparent w-full h-[50rem] items-start justify-center'>
+                                <div className='relative flex  w-[20vw] h-[50rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
+                                    <div className='absolute flex bg-primary rounded-full w-[4rem] h-[4rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
+                                    boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
+                                    }}>
+                                    <Image src={tool.image} alt='tree' width={1200} height={1200} className='rounded-full border-6 border-gray-500 object-cover w-[4rem] h-[4rem]' />
+                                    </div>
+                                    { index !== 4 && (
+                                    <div className={`absolute  w-[0.08rem] bg-primary h-[200vh] items-center justify-center z-20`} data-aos='fade-down' style={{
+
+                                    }}/>
+                                    )}
+                                    
+
+                                </div>
+                                <div className='flex flex-col w-[80vw] h-auto items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2' data-aos='fade-right'>
+                                    <div className={`flex flex-col w-full h-[22rem] border-2  items-start rounded-3xl justify-start p-5`}
+                                    style={{
+                                    boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
+                                    }}>
+                                    <h2 className={`flex bg-orange-600 p-4 rounded-lg text-center text-shadow-xl  font-dmsans text-primary  text-2xl `}
+                                    style={{
+                                        fontWeight:'300'
+                                    }}>
+                                        {tool.name}
+                                    </h2>
+                                    <p
+                                        className={`flex bg-secondary text-center p-4 rounded-xl font-dmsans text-primary mt-4 text-md `}
+                                        style={{ fontWeight: "200" }}
+                                    >
+                                        {tool.description}
+                                    </p>
+                                    
+                                    </div>
+
+                                    <div className={`flex flex-col w-full mt-4 h-[25rem]   items-start rounded-3xl justify-start p-5`}>
+                                    <div className="grid grid-cols-2 place-content-center place-items-center rounded-3xl  gap-6  items-center w-auto h-[25rem]">
+                                      {tool.images.map((item, index) => (
+                                        <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">
+                                            <div className=" flex items-end w-auto h-auto">
+                                                    <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2  sms:w-[7rem] sms:h-[7rem]'
+                                                    style={{
+                                                        boxShadow: '0px 5px 10px 5px rgba(0,0,0,0.4)'
+                                                    }}/>
+                                            </div>
+                                            <div className="flex lgs:w-[0.2rem] bg-gradient-to-b from-transparent to-primary lgs:h-[2rem]"/>
+
+                                         </div> 
+                                      ))}
+
+                                    </div> 
+                                    
+                                    </div>
+                                </div>
+
+                                </div>
+
+                                ))}  
+                                </div>   
+
 
                         </div>
 

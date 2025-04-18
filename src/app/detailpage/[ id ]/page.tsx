@@ -254,15 +254,22 @@ useEffect(() => {
         <Image
           src={background}
           alt='background'
+          className='hidden lgs:flex object-cover w-full h-full'
+          layout='fill'
+        />
+        
+        <Image
+          src={background}
+          alt='background'
           className='object-cover w-full h-full'
           layout='fill'
         />
         
     
        
-        <div className='absolute flex lgs:w-[50vw] right-0 h-full z-30'>
+        <div className='absolute flex w-[50vw] right-0 h-full z-30'>
           {/* Portal Video */}
-          <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] lgs:-bottom-5 left-12 bg-transparent items-center justify-center z-50'>
+          <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] sms:w-[100rem] sms:bottom-0 lgs:-bottom-5 lgs:left-12 bg-transparent items-center justify-center z-50'>
             <video
               src='/portalVideo.webm'
               autoPlay
@@ -275,14 +282,14 @@ useEffect(() => {
           </div>
 
           {/* Engine Image */}
-          <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] lgs:bottom-48 left-12 bg-transparent animate-floating1 items-center justify-center z-40'>
+          <div className='absolute flex lgs:w-[50vw]   lgs:h-[50vh] sms:bottom-12 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-40'>
           {data && data.image && (
               <Image
                 src={data.image}
                 width={'300'}
                 height={'300'}
                 alt={data.name}
-                className='flex object-cover lgs:h-auto lgs:w-[30vw]'
+                className='flex object-cover lgs:h-auto w-[30vw]'
               />
             )}
           </div>
@@ -291,7 +298,7 @@ useEffect(() => {
 
 
 
-        <div className='absolute flex  lgs:w-auto right-0 h-auto bottom-0 z-50'>
+        <div className='hidden absolute lgs:flex  lgs:w-auto right-0 h-auto bottom-0 z-50'>
 
          {/* Topic Section */}
           <div className='flex w-auto h-auto bg-transparent z-50 items-end justify-end'>
@@ -327,7 +334,7 @@ useEffect(() => {
 
         
 
-        <div className={`relative flex flex-col items-center justify-start scrollbar-hide drop-shadow-lgs ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[50vw]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+        <div className={`relative flex flex-col items-center justify-start scrollbar-hide sms:w-[100vw] drop-shadow-lgs ${expandSection ? 'lgs:w-[100vw] sms:h-auto' : 'lgs:w-[50vw] sms:h-[10vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
         style={{
           boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
         }}>
@@ -845,7 +852,7 @@ useEffect(() => {
 
 
         {/*left hanging Topic Section */}
-       <div className='absolute flex w-auto h-auto bg-transparent z-50 lgs:mt-24  items-end justify-end'>
+       <div className='hidden absolute lgs:flex w-auto h-auto bg-transparent z-50 lgs:mt-24  items-end justify-end'>
 
             <div className='flex w-auto h-auto  right-0 transform origin-top-left -rotate-90'>
 
