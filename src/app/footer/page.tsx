@@ -137,13 +137,10 @@ const Footer = () => {
                </div>
 
                </div>
-               <div className='flex w-auto h-auto lgs:mt-4'>
-
-               <h2 className='font-poppins text-primary lgs:text-2xl'>
-                    Our Social Media
-                  </h2>
-               
+               <div className='flex w-full h-auto items-center lgs:mt-12 justify-center'>
+               <div className='flex lgs:w-[65vw] lgs:h-[0.01rem] bg-primary'/>
                </div>
+
             
             </div>  
   
