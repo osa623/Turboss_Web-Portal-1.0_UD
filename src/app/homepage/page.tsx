@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import MouseAnimation from '../components/mouseanimation/page';
 
 
 
@@ -691,6 +692,12 @@ const Home = () => {
 
 
 
+                       </div>
+
+
+                      {/* Scrolling animation for the hero section */}
+                       <div className=" absolute flex w-[10rem] sms:scale-75 items-center justify-center lgs:h-[10rem] bottom-20">
+                         <MouseAnimation />
                        </div>
 
                     </div>

@@ -23,7 +23,7 @@ import background from '../../assests/detailbackground1.jpg';
 import background2 from '../../assests/detailbackground3.jpg';
 import subsetback01 from '../../assests/subSetBack01.png';
 import turbossLOgo from '../../assests/turbossLogo.png';
-import carbonFiber from '../../assests/carbonFiber.jpg'
+import carbonFiberHood from '../../assests/carbonFiberHood.jpg'
 
 //css imports
 import '../../detailpage/base.css';
@@ -121,7 +121,11 @@ const Detailpage = () => {
     
     const handleClick = () => {
 
-      setClick(!click);
+      setClick(true);
+
+      setTimeout(() => {
+        setClick(false);
+      }, 20); 
     }
 
 
@@ -270,7 +274,7 @@ useEffect(() => {
             
               <div className='absolute flex lgs:w-[50vw] sms:w-[100vw] right-0 h-full z-30'>
                 {/* Portal Video */}
-                <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] sms:w-[100vw] sms:scale-125 sms:bottom-0 lgs:-bottom-5 lgs:left-12 bg-transparent items-center justify-center z-50'>
+                <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] sms:w-[100vw] sms:scale-125 sms:bottom-0 lgs:-bottom-5 lgs:left-12 bg-transparent items-center justify-center z-40'>
                   <video
                     src='/portalVideo.webm'
                     autoPlay
@@ -283,7 +287,7 @@ useEffect(() => {
                 </div>
 
                 {/* Engine Image */}
-                <div className='absolute flex lgs:w-[50vw] sms:h-[50vh]   lgs:h-[50vh] sms:bottom-12 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-40'>
+                <div className='absolute flex lgs:w-[50vw] sms:h-[50vh]   lgs:h-[50vh] sms:bottom-16 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-50'>
                 {data && data.image && (
                     <Image
                       src={data.image}
@@ -363,13 +367,32 @@ useEffect(() => {
 
 
                                 {/* Navigation Section */}
-                                  <div className='flex w-full lgs:h-[5rem] bg-primary overflow-hidden z-50 items-center justify-center'>
+                                  <div className='relative lgs:flex w-full lgs:h-[5rem] bg-primary overflow-hidden z-50 items-center justify-center'>
 
-                                  <div onClick={()=> handleExpand() } className= {`absolute flex cursor-pointer lgs:w-[10rem] lgs:h-[5rem] bg-primary right-0 items-center justify-center`}>
+                                     <Image src={carbonFiberHood} alt='' width={1200} className='object-cover lgs:w-full'/>
+                                  <div onClick={()=> handleExpand() } className= {`absolute flex cursor-pointer bg-secondary rounded-3xl lgs:w-[8rem] lgs:h-[3rem] right-6 text-primary font-dmsans items-center justify-center
+                                   ${click ? 'scale-75' : 'scale-100'} transition-all duration-500 ease-in-out`}
+                                    style={{
+                                      boxShadow:'inset 0px 0px 10px 1px rgba(255, 255, 255, 0.6), 0px 0px 10px 5px rgba(0, 0, 0, 0.6)'
+                                    }}>
 
-                                      Sample
+                                      Move
 
                                   </div> 
+                                  <div  className= {`absolute flex cursor-pointer bg-secondary  lgs:w-[15rem] lgs:h-[5rem] left-0 text-primary font-dmsans items-center justify-center`}
+                                    style={{
+                                      boxShadow:'inset 0px 0px 10px 1px rgba(255, 255, 255, 0.3), 0px 0px 10px 5px rgba(0, 0, 0, 0.6)'
+                                    }}>
+                                      <button onClick={handleClick}  className={`absolute flex cursor-pointer  lgs:w-[10rem] lgs:h-[3rem] text-primary bg-gray-600 rounded-3xl font-dmsans items-center justify-center`}
+                                      style={{
+                                        boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.6), 0px 0px 10px 1px rgba(255, 255, 255, 0.2)'
+                                      }}>
+                                           Back
+                                      </button>
+                                      
+
+                                  </div> 
+
 
                                   </div>
                                   
@@ -758,7 +781,7 @@ useEffect(() => {
             </div>
 
       
-            {/* Sub Section for more details */}
+            {/* Sub Section for more details for a larger screen */}
             <div className='hidden lgs:flex bg-secondary w-full  lgs:h-auto'>
 
 
@@ -885,7 +908,7 @@ useEffect(() => {
           <div className={`absolute flex flex-col items-center justify-center ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[100vw]'} bg-primary overflow-auto right-0 h-auto z-30`}/>
   
                     {/* Upper Section */}
-                    <div className={`flex ${expandSection ? 'w-[100vw]' : 'lgs:w-[100vw]'} h-[40rem] bg-orange-600  z-40 items-center`}>
+                    <div className={`flex sms:relative overflow-hidden ${expandSection ? 'w-[100vw]' : 'lgs:w-[100vw]'} h-[40rem] bg-orange-600  z-40 items-center`}>
 
                         <div className='flex w-[100vw] h-[40rem] z-40 bg-transparent items-center justify-center mt-12'>
 

@@ -139,7 +139,7 @@ useEffect(() => {
 
                     <div className='flex flex-col justify-center items-center bg-transparent overflow-hidden'>
 
-                        <div className="absolute lgs:mb-48 lgs:left-12 sms:left-2 sms:p-6 top-0 sms:items-start justify-start lgs:pl-6 overflow-hidden">
+                        <div className="sms:absolute lgs:mb-48 lgs:left-12 sms:left-2 sms:p-6 top-0 sms:items-start justify-start lgs:pl-6 overflow-hidden">
                                                       
                                                       <div className="flex w-auto h-auto  overflow-hidden">
 

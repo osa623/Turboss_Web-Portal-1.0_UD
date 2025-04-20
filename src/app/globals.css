@@ -258,6 +258,20 @@
   animation: 20s ease-in-out infinite textScaling01;
 }
 
+/* Loading Screen with progressive bar */
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.5s infinite linear;
+}
+
 body {
 
           
