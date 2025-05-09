@@ -246,6 +246,33 @@
   animation: movingText 25s infinite ease-in-out forwards;
 }
 
+/* Moving Animation for loading screen 05 for text*/
+@keyframes movingText01 {
+
+  0% { transform: translateX(-20px); }
+  50% { transform: translateX(200px); }
+  100% { transform: translateX(-20px); }
+
+}
+
+.animate-movingText01 {
+  animation: movingText01 40s infinite ease-in-out forwards;
+}
+
+/* Moving Animation for loading screen 05 for text*/
+@keyframes movingText01Reverse {
+
+  0% { transform: translateX(200px); }
+  50% { transform: translateX(-20px); }
+  100% { transform: translateX(200px); }
+
+}
+
+.animate-movingText01Reverse {
+  animation: movingText01Reverse 40s infinite ease-in-out forwards;
+}
+
+
 
 /* Scaling Animation 01*/
 @keyframes textScaling01 {

@@ -29,6 +29,8 @@ import herobackground5 from '../assests/herosec5.jpg';
 import mainBackground from "../assests/mainBackground.jpg";
 import turbossLogo from "../assests/turbossLogo.png";
 import carbonFiber from "../assests/carbonFiber.jpg";
+import toolbackgroundimage from '../assests/toolbackgroundimage.png';
+import toolbackgroundimage10 from '../assests/toolbackgroundimage10.png';
 
 
 
@@ -65,7 +67,7 @@ import flywheel3 from '../assests/flywheel4.png';
 //files
 import SplitText from  './headingText/page';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide, faSearch, faTrafficLight, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -90,23 +92,14 @@ const DYN = [
 ];
 
 const Home = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [offsetY, setOffsetY] = useState(0);
-    const [parallex1 , setParallex1] = useState(0);
-    const [currentIndex , setCurrentIndex] = useState(0);
-    const [hover, setHover] = useState<number | null>(null);
-    const [isMuted, setIsMuted] = useState(false);
-    const [expand , setExpand] = useState(false);
-    const audioRef = useRef<HTMLAudioElement>(null);
 
+
+    //useEffet for the animation
 
     useEffect(()=> {
-        
-        const handleExpand =()=> {
 
-            setExpand(!expand);	
-        }
     })
+
 
 
     const toggleMute = () => {
@@ -152,6 +145,14 @@ const Home = () => {
 
     }
 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [offsetY, setOffsetY] = useState(0);
+    const [parallex1 , setParallex1] = useState(0);
+    const [currentIndex , setCurrentIndex] = useState(0);
+    const [hover, setHover] = useState<number | null>(null);
+    const [isMuted, setIsMuted] = useState(false);
+    const audioRef = useRef<HTMLAudioElement>(null);
+
     const [dnaData, setDnaData] = useState<Tools[]>([]);
     const [labData, setLabData] = useState<LabData[]>([]);
     const [toolsData, setToolsData] = useState<toolsData[]>([]);
@@ -160,45 +161,46 @@ const Home = () => {
 
     const router = useRouter();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setOffsetY(window.scrollY * 0.05);
-        };
+        useEffect(() => {
+            const handleScroll = () => {
+                setOffsetY(window.scrollY * 0.05);
+            };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-
-    useEffect(()=> {
-        const handleScroll = () => {
-            setParallex1(window.scrollY * 0.02);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }, []);
 
 
-    useEffect(()=> {
-        const interval =  setInterval(()=> {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % DYN.length);
-        }, 50000);
+            
 
-        return () => clearInterval(interval);
-    } ,[]);
+
+
+        useEffect(()=> {
+            const handleScroll = () => {
+                setParallex1(window.scrollY * 0.02);
+            };
+
+            window.addEventListener("scroll", handleScroll);
+            return () => window.removeEventListener("scroll", handleScroll);
+        }, []);
+
+        useEffect(()=> {
+            const interval =  setInterval(()=> {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % DYN.length);
+            }, 50000);
+
+            return () => clearInterval(interval);
+        } ,[]);
 
         //hook for fetch DNA data Section
         useEffect(()=> {
             fetch('/data/DnaData.json').then((response) => response.json()).then((json) => setDnaData(json));
         } ,[]);
 
-
         //hook for the lab data section
         useEffect(()=> {
             fetch('data/LabData.json').then((response) => response.json()).then((json) => setLabData(json));
         }, []);
-
 
 
         //hook for the Tool data section
@@ -233,7 +235,7 @@ const Home = () => {
     return (
 
 
-        <div className="relative h-auto w-full">
+        <div className="relative h-auto w-full"> 
 
             {/* First Section */}           
             <div className='relative lgs:h-[200vh] sms:h-[100vh] w-full  overflow-hidden'>
@@ -319,11 +321,44 @@ const Home = () => {
 
 
                         {/* Sub Upper Topic for larger screen */}
-                         <div className="hidden absolute lgs:flex items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-full">
+                         <div className="hidden absolute lgs:flex items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-[100vw]">
 
+                              
                                 <div className="flex flex-col w-full h-auto justify-center items-end">
 
-                                    <h2 className="font-bricolagegrotesque text-primary lgs:text-2xl text-shadow-xl text-center" style={{ 
+
+                                <div className="hidden lgs:flex bg-transparent z-50 w-auto h-auto lgs:space-x-3">
+                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] cursor-pointer rounded-full items-center justify-center"
+                                      style={{
+                                        boxShadow:'inset 0px 0px 5px 2px rgba(255,255,255 ,0.4) , 0px 0px 20px 20px rgba(0,0,0,0.2)'
+                                      }}>
+                                            <FontAwesomeIcon icon={faSearch} className="text-primary" />
+                                     </div>
+
+                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] rounded-full items-center justify-center">
+
+                                      <FontAwesomeIcon icon={faCarSide} className="text-primary" />
+
+                                      </div>
+
+                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] rounded-full items-center justify-center">
+
+                                      <FontAwesomeIcon icon={faTrafficLight} className="text-primary" />
+
+                                      </div>
+
+                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] rounded-full items-center justify-center">
+
+                                      <FontAwesomeIcon icon={faCarSide} className="text-primary" />
+
+
+                                      </div>
+                                </div>
+
+
+
+
+                                    <h2 className="font-bricolagegrotesque text-primary lgs:mt-5 lgs:text-2xl text-shadow-xl text-center" style={{ 
                                         fontWeight: '100',
                                         }}>  
                                     The Ultimate Digital <span className="text-orange-600 font-poppins" style={{
@@ -331,23 +366,17 @@ const Home = () => {
                                     }}>Garage Experience</span>
                                     </h2> 
 
-{/*                                    <div className="flex bg-transparent space-x-5 items-center justify-center lgs:h-[4rem] lgs:w-[20rem]">
-
-                                        <div className="flex bg-orange-600 h-[3rem] w-[3rem] rounded-full"/>
-                                        <div className="flex bg-orange-600  h-[3rem] w-[3rem] rounded-full"/>
-                                        <div className="flex bg-orange-600  h-[3rem] w-[3rem] rounded-full"/>
-                                        <div className="flex bg-orange-600  h-[3rem] w-[3rem] rounded-full"/>
-
-
-                                    </div>
-*/}
+                                
 
                                 </div>
 
+                               
+
+
 
                                 
                                 
-                          </div> 
+                         </div> 
 
                         {/* Sub Upper Topic for smaller screen */}
                          <div className="hidden absolute sms:flex items-start justify-center top-16 lgs:h-[50vh] w-full">
@@ -378,7 +407,7 @@ const Home = () => {
 
 
 
-                            </div> 
+                         </div> 
 
  
 
@@ -826,7 +855,7 @@ const Home = () => {
                                 }}
                                 pagination={{ clickable: true }}
                                 navigation={true}
-                                modules={[EffectCoverflow, Pagination, Navigation]}
+                                modules={[EffectCoverflow, Navigation]}
                                 className="flex lgs:h-[55rem]  items-center justify-center p-12"
                                 onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                             >
@@ -1458,7 +1487,7 @@ const Home = () => {
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-4 flex-col font-bricolagegrotesque sms:text-5xl text-orange-600 lgs:p-2 lgs:text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-4 flex-col font-bricolagegrotesque sms:text-5xl items-center justify-center text-orange-600 lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -1490,7 +1519,7 @@ const Home = () => {
                                         <h2
                                     className={`flex font-dmsans lgs:mt-4 text-xl items-center  justify-center  rounded-full rounded-tr-none bg-orange-600 text-primary lgs:p-4`}
                                     style={{ fontWeight: "500",
-                                             boxShadow: "inset  2px 10px 10px rgba(255,255,255 ,0.5)" 
+                                             boxShadow: "inset  2px 10px 10px rgba(255,255,255 ,0.5) 0px 0px 20px 5px rgba(0,0,0,0.4)" 
                                     }}
                                     >
                                     {tool.name}
@@ -1576,10 +1605,22 @@ const Home = () => {
                                 <div className='absolute flex bg-primary rounded-full w-[6rem] h-[6rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
                                 boxShadow:'inset 0px 5px 5px rgba(0,0,0,0.5)'
                                 }}>
-                                <Image src={tool.image} width={'1200'} height={'1200'} alt='tree' className='rounded-full border-4 border-orange-500 object-cover lgs:w-[5.3rem] lgs:h-[5.3rem]'
+                                <Image src={toolbackgroundimage} width={'1200'} height={'1200'} alt='tree' className='absolute z-30 rounded-full border-4 border-orange-500 object-cover lgs:w-[5.3rem] lgs:h-[5.3rem]'
                                        style={{
                                         boxShadow: 'inset 10px 5px 5px rgba(255,255,255,0.9)'
                                        }} />
+
+
+                                    <Image src={flywheel2} width={'1200'} height={'1200'} alt='tree' className='absolute z-40 rounded-full animate-spin  object-cover lgs:w-[5rem] lgs:h-[5rem]'
+                                       style={{
+                                        animationDuration:'10s'
+                                       }} />    
+
+                                <Image src={toolbackgroundimage10} width={'1200'} height={'1200'} alt='tree' className='absolute z-40 rounded-full border-4 border-orange-500 object-cover lgs:w-[5.3rem] lgs:h-[5.3rem]'
+                                       style={{
+                                        boxShadow: 'inset 10px 5px 5px rgba(255,255,255,0.9)'
+                                       }} />       
+                                       
                                 </div>
                                 <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
                                 { index !== 4 && (
@@ -1655,7 +1696,7 @@ const Home = () => {
                                 ) : index === 0 || index === 2 || index === 4 || index === 6 || index === 8  ? (
                                     <div className="grid grid-cols-2 place-content-center border-2 rounded-3xl  gap-6 lgs:p-4 items-center w-auto h-auto"
                                     style={{
-                                        boxShadow:'inset 0px 5px 10px 5px rgba(255,255,255,0.5)'
+                                        boxShadow:'inset 0px 5px 10px 5px rgba(255,255,255,0.5) 0px 0px 20px 5px rgba(0,0,0,0.4)'
                                     }}>
                                       {tool.images.map((item, index) => (
                                         <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">

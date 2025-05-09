@@ -22,6 +22,7 @@
     "@react-three/fiber": "^8.18.0",
     "@types/gsap": "^3.0.0",
     "@types/three": "^0.173.0",
+    "aos": "^2.3.4",
     "d3-ease": "^3.0.1",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.5.0",

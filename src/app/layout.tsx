@@ -4,6 +4,7 @@ import Footer from "./footer/page";
 import "./globals.css";
 import { useState, useEffect } from "react";
 import Loading from "./components/loading/page.tsx"; // Import the loading component
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
@@ -11,12 +12,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+  
+  // Check if the current path is the registration page
+  // The usePathname() hook returns the current path starting with "/"
+  const isRegistrationPage = pathname === "/auth/registerpage" || 
+                             pathname?.startsWith("/auth/registerpage/");
+
+  const isLoginPage = pathname === "/auth/loginpage" ||
+                      pathname?.startsWith("/auth/loginpage/");
+
+  // For debugging
+  useEffect(() => {
+    console.log("Current pathname:", pathname);
+    console.log("Is registration page:", isRegistrationPage);
+  }, [pathname, isRegistrationPage]);
 
   useEffect(() => {
     // Simulate loading time (e.g., fetching data or assets)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Adjust the duration as needed
+    }, 10000); // Adjust the duration as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -29,7 +45,7 @@ export default function RootLayout({
         ) : (
           <>
             <main>{children}</main>
-            <Footer /> {/* Render footer only when loading is complete */}
+            {!isRegistrationPage && !isLoginPage &&  <Footer />} {/* Render footer only when not on registration page */}
           </>
         )}
       </body>
