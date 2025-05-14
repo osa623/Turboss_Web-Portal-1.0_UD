@@ -4,7 +4,8 @@ import Footer from "./footer/page";
 import "./globals.css";
 import { useState, useEffect } from "react";
 import Loading from "./components/loading/page.tsx"; // Import the loading component
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { AuthProvider } from './context/AuthContext';
 
 export default function RootLayout({
   children,
@@ -13,6 +14,7 @@ export default function RootLayout({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
+  const router = useRouter();
   
   // Check if the current path is the registration page
   // The usePathname() hook returns the current path starting with "/"
@@ -37,17 +39,28 @@ export default function RootLayout({
     return () => clearTimeout(timer);
   }, []);
 
+  // Redirect to registration page if it's the first visit
+  useEffect(() => {
+    // Only perform the redirect when not loading and on the root path
+    if (!isLoading && (pathname === "/" || pathname === "")) {
+      // Directly redirect to registration page without checking localStorage
+      router.replace('/auth/registerpage');
+    }
+  }, [pathname, isLoading, router]);
+
   return (
     <html lang="en">
       <body>
-        {isLoading ? (
-          <Loading /> // Show the loading screen when loading
-        ) : (
-          <>
-            <main>{children}</main>
-            {!isRegistrationPage && !isLoginPage &&  <Footer />} {/* Render footer only when not on registration page */}
-          </>
-        )}
+        <AuthProvider>
+          {isLoading ? (
+            <Loading /> // Show the loading screen when loading
+          ) : (
+            <>
+              <main>{children}</main>
+              {!isRegistrationPage && !isLoginPage &&  <Footer />} {/* Render footer only when not on registration page */}
+            </>
+          )}
+        </AuthProvider>
       </body>
     </html>
   );

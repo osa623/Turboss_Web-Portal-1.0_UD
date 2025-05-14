@@ -1,13 +1,70 @@
 'use client';
 
-
+import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { registerUser } from '../../lib/auth';
 
 //import images
 import backGround from '../../assests/mainBackground.jpg';
 import logo from '../../assests/turbossLogo.png';
 
 export default function RegisterPage() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    
+    // Basic validation
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+    
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters long');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Register user with Firebase Authentication only
+      // We'll store firstName and lastName as the displayName
+      await registerUser(email, password, firstName, lastName);
+      
+      console.log("User registered successfully");
+      
+      // Redirect to login after successful registration
+      router.push('/auth/loginpage'); 
+    } catch (err: any) {
+      console.error("Registration error:", err);
+      
+      // Provide more user-friendly error messages
+      if (err.code === 'auth/email-already-in-use') {
+        setError('Email address is already in use. Please use a different email or try logging in.');
+      } else if (err.code === 'auth/invalid-email') {
+        setError('Invalid email address format.');
+      } else if (err.code === 'auth/weak-password') {
+        setError('Password is too weak. Please choose a stronger password.');
+      } else if (err.code === 'auth/network-request-failed') {
+        setError('Network error. Please check your connection and try again.');
+      } else {
+        setError(err.message || 'Failed to register');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="relative items-center justify-center h-screen w-full overflow-hidden">
@@ -52,7 +109,6 @@ export default function RegisterPage() {
                 <div className='absolute flex w-full inset-0 bg-gradient-to-r from-secondary via-secondary to-transparent  h-screen z-20'/>
 
                   
-
                         {/* Upper layer for info */} 
                         <div className='absolute flex flex-col w-auto h-screen items-center justify-center z-30'> 
 
@@ -88,11 +144,11 @@ export default function RegisterPage() {
                                         fontWeight:'200',
 
                                     }}>
-                                    To explore our full range of automotive specifications, technical details, and model information, you’ll need to register as a member. Registration is quick and gives you uninterrupted access to all available vehicle data on the platform.
+                                    To explore our full range of automotive specifications, technical details, and model information, you will need to register as a member. Registration is quick and gives you uninterrupted access to all available vehicle data on the platform.
                                     </p>
 
                                     <h2 className='font-dmsans py-4 text-primary text-md'>
-                                    Already registered? <span className='font-russoone text-orange-600'>Login here</span>
+                                    Already registered? <Link href="/auth/loginpage" className='font-russoone text-orange-600 hover:underline'>Login here</Link>
                                     </h2>
 
                                 </div>   
@@ -111,7 +167,13 @@ export default function RegisterPage() {
                         Create Your Account
                     </h2>
 
-                    <form className='flex flex-col bg-transparent border-2 p-12 rounded-3xl w-full space-y-4'>
+                    {error && (
+                      <div className="w-full p-3 mb-4 bg-red-100 text-red-700 rounded-lg">
+                        {error}
+                      </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className='flex flex-col bg-transparent border-2 p-12 rounded-3xl w-full space-y-4'>
 
                         <div className='flex flex-row space-x-4'>
                             {/* First Name */}
@@ -123,8 +185,11 @@ export default function RegisterPage() {
                                     type='text'
                                     id='firstname'
                                     name='firstname'
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
                                     placeholder='Enter your first name'
                                     className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary'
+                                    required
                                 />
                             </div>
 
@@ -137,8 +202,11 @@ export default function RegisterPage() {
                                     type='text'
                                     id='lastname'
                                     name='lastname'
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
                                     placeholder='Enter your last name'
                                     className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary'
+                                    required
                                 />
                             </div>
                         </div>
@@ -152,8 +220,11 @@ export default function RegisterPage() {
                                 type='email'
                                 id='email'
                                 name='email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder='Enter your email'
                                 className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary'
+                                required
                             />
                         </div>
 
@@ -166,8 +237,11 @@ export default function RegisterPage() {
                                 type='password'
                                 id='password'
                                 name='password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 placeholder='Enter your password'
                                 className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary'
+                                required
                             />
                         </div>
 
@@ -180,17 +254,21 @@ export default function RegisterPage() {
                                 type='password'
                                 id='repassword'
                                 name='repassword'
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
                                 placeholder='Re-enter your password'
                                 className='p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary'
+                                required
                             />
                         </div>
 
                         {/* Submit Button */}
                         <button
                             type='submit'
-                            className='w-full bg-orange-600 text-white font-dmsans py-3 rounded-lg hover:bg-secondary-dark transition duration-300'
+                            disabled={loading}
+                            className='w-full bg-orange-600 text-white font-dmsans py-3 rounded-lg hover:bg-orange-700 transition duration-300 disabled:bg-orange-400'
                         >
-                            Register
+                            {loading ? 'Registering...' : 'Register'}
                         </button>
                     </form>
 

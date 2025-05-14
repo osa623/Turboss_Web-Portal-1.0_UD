@@ -2,10 +2,14 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { useAuth } from "../context/AuthContext";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import MouseAnimation from '../components/mouseanimation/page';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 
 
@@ -67,7 +71,7 @@ import flywheel3 from '../assests/flywheel4.png';
 //files
 import SplitText from  './headingText/page';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCarSide, faSearch, faTrafficLight, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide, faGear, faGears, faSearch, faSignInAlt, faTachometerAlt, faTrafficLight, faUser, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -92,13 +96,15 @@ const DYN = [
 ];
 
 const Home = () => {
+    // Removed duplicate declaration of showPopup and setShowPopup
 
 
     //useEffet for the animation
-
-    useEffect(()=> {
-
-    })
+      useEffect(() => {
+        AOS.init({
+          duration: 1000, // Animation duration in milliseconds
+        });
+      }, []);
 
 
 
@@ -145,6 +151,10 @@ const Home = () => {
 
     }
 
+    //useContexts
+    const {user} = useAuth();
+
+    const [displayName , setDisplayName] = useState<string | null>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [offsetY, setOffsetY] = useState(0);
     const [parallex1 , setParallex1] = useState(0);
@@ -152,14 +162,25 @@ const Home = () => {
     const [hover, setHover] = useState<number | null>(null);
     const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
+    const [showPopup , setShowPopup] = useState(false);
 
     const [dnaData, setDnaData] = useState<Tools[]>([]);
     const [labData, setLabData] = useState<LabData[]>([]);
     const [toolsData, setToolsData] = useState<toolsData[]>([]);
 
-    //navigation
+    //navigationd
 
     const router = useRouter();
+
+      console.log(user);
+
+        useEffect(()=> {
+            if (user && user.displayName) {
+                setDisplayName(user.displayName);
+            } else {
+                setDisplayName('Guest');
+            }
+        }, [])
 
         useEffect(() => {
             const handleScroll = () => {
@@ -169,11 +190,6 @@ const Home = () => {
             window.addEventListener("scroll", handleScroll);
             return () => window.removeEventListener("scroll", handleScroll);
         }, []);
-
-
-            
-
-
 
         useEffect(()=> {
             const handleScroll = () => {
@@ -208,25 +224,23 @@ const Home = () => {
             fetch('data/toolsData.json').then((response) => response.json()).then((json) => setToolsData(json));
         }, []);
 
-    
 
+        useEffect(() => {
+            const handleUserInteraction = () => {
+                if (audioRef.current) {
+                    audioRef.current.play().catch(error => {
+                        console.error('Error playing background audio:', error);
+                    });
+                }
+                document.removeEventListener('click', handleUserInteraction);
+            };
 
-    useEffect(() => {
-        const handleUserInteraction = () => {
-            if (audioRef.current) {
-                audioRef.current.play().catch(error => {
-                    console.error('Error playing background audio:', error);
-                });
-            }
-            document.removeEventListener('click', handleUserInteraction);
-        };
+            document.addEventListener('click', handleUserInteraction);
 
-        document.addEventListener('click', handleUserInteraction);
-
-        return () => {
-            document.removeEventListener('click', handleUserInteraction);
-        };
-    }, []);
+            return () => {
+                document.removeEventListener('click', handleUserInteraction);
+            };
+        }, []);
 
 
     
@@ -248,15 +262,34 @@ const Home = () => {
                     <div className="absolute w-full h-full bg-gradient-to-b top-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
+                    {/* Profile View Section */}   
+                    <div className="flex items-center p-5 overflow-hidden justify-center text-center  space-x-3  w-full h-auto rounded-full z-40 top-4 right-4"
+                        >
+                            
+                    <div className="flex items-center justify-center lgs:p-5 w-auto h-[3rem] rounded-full z-50 cursor-pointer relative"
+                        style={{
+                            boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
+                        }}>
+                        <h2 className="font-bricolagegrotesque text-md text-primary"style={{
+                            fontWeight:'200'
+                        }}>WelCome to <span className="text-orange-600"> Turboss , </span><span className="text-yellow-200">{displayName}</span></h2>
+                    
+                    </div>
+
+                    
+
+                    
+                    </div>
                     
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] sms:h-[100vh] w-full">
 
+                                
                         {/* Turboss Main Topic */}
-                        <div className="absolute flex flex-col items-start justify-center top-0 lgs:h-auto w-full">
+                        <div className="absolute flex flex-col lgs:mt-0 items-start justify-center top-0 lgs:h-auto w-full" data-aos='fade-up'>
 
 
                                {/* Turboss Main Topic for lgs */}
-                            <div className="hidden lgs:flex flex-col w-full h-auto justify-center items-center">
+                            <div className="hidden lgs:flex flex-col w-full h-auto justify-center items-center" >
 
                                         <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
                                             fontWeight: '100',
@@ -321,7 +354,7 @@ const Home = () => {
 
 
                         {/* Sub Upper Topic for larger screen */}
-                         <div className="hidden absolute lgs:flex items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-[100vw]">
+                         <div className="hidden absolute lgs:flex mt-0 items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-[100vw]">
 
                               
                                 <div className="flex flex-col w-full h-auto justify-center items-end">
@@ -412,7 +445,7 @@ const Home = () => {
  
 
                         {/* Text Data set */}
-                        <div className="absolute flex  flex-col bg-transparent items-center justify-start z-10  lgs:h-[200vh] w-full">
+                        <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10  lgs:h-[200vh] w-full">
                             <SplitText
                                 text="Turboss"
                                 className="flex lgs:mt-0 font-bricolagegrotesque opacity-10 text-[45rem] animate-movingText text-primary font-thin text-center"
@@ -428,7 +461,7 @@ const Home = () => {
 
 
                       {/* Cogwheel Setup */}
-                        <div className="relative  flex bg-transparent items-center justify-center mt-12 lgs:h-auto w-full">
+                        <div className="relative  flex bg-transparent items-center justify-center mt-20 lgs:h-auto w-full">
            
                             <div className="absolute bg-orange-600 h-[30rem] w-[70vw] opacity-20 blur-3xl z-0"/>
 
@@ -742,8 +775,45 @@ const Home = () => {
 
             </div>
 
+            {/* Loggin Section*/}   
+            <div className="fixed flex items-center   justify-center text-center  space-x-3  w-auto h-auto rounded-full z-40 top-4 right-4"
+                        >
+                            
+                    <div className="flex items-center justify-center bg-primary lgs:p-5 w-[3rem] h-[3rem] rounded-full z-40 cursor-pointer relative" onClick={() => setShowPopup(!showPopup)}
+                        style={{
+                            boxShadow: '0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
+                        }}>
+                            <FontAwesomeIcon icon={faGear} className="text-secondary text-2xl" />
+                        {showPopup && (
+                            <>
+                                <div className="fixed top-12 right-20 bg-secondary border-2 p-4 rounded-xl rounded-tr-none shadow-lg z-50 lgs:w-48">
+                                    <ul className="space-y-4">
+                                        <li
+                                        onClick={()=> router.push('/profile')} className="flex items-center space-x-2 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300">
+                                            <FontAwesomeIcon icon={faUser} className="text-primary" />
+                                            <span className="font-dmsans text-primary">Profile</span>
+                                        </li>
+                                        <li 
+                                            className="flex items-center space-x-2 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300"
+                                            onClick={() => router.push('/auth/loginpage')}
+                                        >
+                                            <FontAwesomeIcon icon={faSignInAlt} className="text-primary" />
+                                            <span className="font-dmsans text-primary">Logout</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </>
+                        )}
+                    </div>
+
+                    
+
+                    
+            </div>
+
             {/* Sound Check Section */}   
-            <div className="fixed flex items-center justify-center text-center  bg-secondary w-[3rem] h-[3rem] rounded-full z-50 top-4 left-4"
+            <div className="fixed flex items-center justify-center text-center  bg-secondary lgs:w-[3rem] lgs:h-[3rem] rounded-full z-50 top-4 left-4"
             style={{
                 boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
             }}>
@@ -759,7 +829,7 @@ const Home = () => {
             </div>
 
             {/* Second Section */}
-            <div className='relative flex lgs:h-[35rem] sms:h-[45rem] w-full overflow-hidden z-40'>
+            <div className='relative flex lgs:h-[35rem] sms:h-[45rem] w-full overflow-hidden z-30'>
                  {/*<audio ref={(el) => { sectionAudioRefs.current[0] = el; }} >
                     <source src="/welcomingSection.wav" type="audio/wav" />
                     Your browser does not support the audio element.
@@ -776,10 +846,10 @@ const Home = () => {
                 />
                 <div className="aboslute flex flex-col items-center  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
 
-                     <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl sms:mt-8 text-primary text-shadow-xl text-center" style={{
+                     <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl sms:mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
                         fontWeight:'200'
                      }}>
-                        Welcome to <span className="bg-orange-600 p-4 sms:p-2" style={{
+                        Welcome to <span className="bg-orange-600 p-4 sms:p-2" data-aos='fade-right' data-aos-delay='1200' style={{
                             fontWeight:'800'
                         }}>Turboss</span>
                      </h2>
@@ -803,7 +873,7 @@ const Home = () => {
             </div>
 
              {/* DNA Section */}
-            <div className="relative flex  justify-center items-center bg-transparent z-40">
+            <div className="relative flex  justify-center items-center bg-transparent z-30">
                 {/* Background Image */}
 
                 <div className="relative flex flex-col h-auto w-full bg-transparent overflow-hidden z-40">
@@ -1008,15 +1078,15 @@ const Home = () => {
             </div>
 
             {/* Secondary Section */}
-            <div className="flex h-[25rem] sms:h-[35rem] w-full bg-secondary z-40" >
+            <div className="flex h-[25rem] sms:h-[35rem] w-full bg-secondary z-30" >
                 <div className="flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] sms:w-[60vw] items-center justify-center"/>
 
                 <div className="relative flex h-[25rem] sms:h-[35rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
                         <Image src = {subHeroSec1} alt="fwef" className="object-cover animate-moving02 sms:h-[35rem]  h-[30rem] w-full z-30"/>
-                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[80vw]  from-secondary to-transparent z-40"/>
-                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[35rem] w-[20vw] right-0  from-secondary to-transparent z-40"/>
-                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-40"/>
-                        <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-40"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[80vw]  from-secondary to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[35rem] w-[20vw] right-0  from-secondary to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-43"/>
+                        <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-30"/>
                 </div>
                 
                 <div className="absolute flex w-[30vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-50"
@@ -1031,7 +1101,7 @@ const Home = () => {
                     </h2>
                 </div>
 
-                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-50">
+                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
                     <div className="flex flex-col h-[25rem] lgs:w-[60vw] sms:w-[80vw] items-center justify-center">
                         <div className="flex sms:flex-col w-auto h-auto sms:items-center">
 
@@ -1084,7 +1154,7 @@ const Home = () => {
             </div>
 
             {/* Lab Section */}
-            <div className='relative flex flex-col lgs:h-[55rem] sms:h-[150vh] items-center justify-start w-full z-40 overflow-hidden'>
+            <div className='relative flex flex-col lgs:h-[55rem] sms:h-[150vh] items-center justify-start w-full z-30 overflow-hidden'>
 
                 <div className="absolute bg-gradient-to-b h-[15rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
@@ -1135,8 +1205,7 @@ const Home = () => {
 
                                     <div  className={`relative group flex-col lgs:w-[20rem] drop-shadow-2xl sms:w-[22rem] mds:w-[20rem] bg-transparent cursor-pointer items-center justify-start rounded-lg lgs:h-[25rem]`}
                                       
-                                    data-aos='fade-up'
-                                            data-aos-delay={`${200 + tool.id * 50}`} style={{
+                                    style={{
                                         
                                 }}
 
@@ -1257,7 +1326,7 @@ const Home = () => {
             </div>
          
             {/* Sub Secondary Section */}
-            <div className="hidden relative lgs:flex w-auto h-auto overflow-hidden z-40">
+            <div className="hidden relative lgs:flex w-auto h-auto overflow-hidden z-30">
 
             <div className="absolute flex lgs:w-[25vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[50vw] rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
                         style={{
@@ -1377,7 +1446,7 @@ const Home = () => {
             </div>
 
               {/* Axila Section */}
-           <div className="hidden relative lgs:flex lgs:h-[20rem] sms:h-auto w-full bg-secondary z-40" >
+           <div className="hidden relative lgs:flex lgs:h-[20rem] sms:h-auto w-full15 bg-secondary z-30" >
                 
 
            <div className="relative flex flex-col lgs:h-[20rem] lgs:w-[60vw] bg-transparent items-center justify-center overflow-hidden">
@@ -1466,7 +1535,7 @@ const Home = () => {
             </div>
           
             {/* Tools Section */}
-            <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-40 '>
+            <div className='relative flex flex-col lgs:h-auto w-full overflow-hidden z-30 '>
                 <div className="absolute bg-gradient-to-b h-[20rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
                     src={herobackground5} 
