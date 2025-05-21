@@ -35,6 +35,12 @@ import turbossLogo from "../assests/turbossLogo.png";
 import carbonFiber from "../assests/carbonFiber.jpg";
 import toolbackgroundimage from '../assests/toolbackgroundimage.png';
 import toolbackgroundimage10 from '../assests/toolbackgroundimage10.png';
+import chatBAckground from '../assests/chatBacklground.jpg';
+
+//chat_pupils
+import chatPupil1 from '../assests/pupil01.jpg';
+import chatPupil2 from '../assests/pupil02.jpg';
+import chatPupil3 from '../assests/pupil03.jpg';
 
 
 
@@ -71,7 +77,7 @@ import flywheel3 from '../assests/flywheel4.png';
 //files
 import SplitText from  './headingText/page';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCarSide, faGear, faGears, faSearch, faSignInAlt, faTachometerAlt, faTrafficLight, faUser, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide, faGear, faGears, faHandDots, faList12, faListDots, faSearch, faSignInAlt, faTachometerAlt, faTrafficLight, faUser, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -133,7 +139,7 @@ const Home = () => {
         id: number;
         name: string;
         image: string;
-        subname: string;
+        subName: string;
         subTopic: string
 
     }
@@ -263,7 +269,7 @@ const Home = () => {
                     <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
                     {/* Profile View Section */}   
-                    <div className="flex items-center p-5 overflow-hidden justify-center text-center  space-x-3  w-full h-auto rounded-full z-40 top-4 right-4"
+                    <div className="hidden lgs:flex items-center p-5 overflow-hidden justify-center text-center  space-x-3  w-full h-auto rounded-full z-40 top-4 right-4"
                         >
                             
                     <div className="flex items-center justify-center lgs:p-5 w-auto h-[3rem] rounded-full z-50 cursor-pointer relative"
@@ -776,14 +782,14 @@ const Home = () => {
             </div>
 
             {/* Loggin Section*/}   
-            <div className="fixed flex items-center   justify-center text-center  space-x-3  w-auto h-auto rounded-full z-40 top-4 right-4"
+            <div className="fixed flex items-center   justify-center text-center  space-x-3  w-auto h-auto rounded-full z-50 top-4 right-4"
                         >
                             
-                    <div className="flex items-center justify-center bg-primary lgs:p-5 w-[3rem] h-[3rem] rounded-full z-40 cursor-pointer relative" onClick={() => setShowPopup(!showPopup)}
+                    <div className="flex items-center justify-center border-4 border-primary bg-orange-600 lgs:p-5 w-[3rem] h-[3rem] rounded-full z-40 cursor-pointer relative" onClick={() => setShowPopup(!showPopup)}
                         style={{
                             boxShadow: '0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
                         }}>
-                            <FontAwesomeIcon icon={faGear} className="text-secondary text-2xl" />
+                            <FontAwesomeIcon icon={faListDots} className="text-primary text-xl" />
                         {showPopup && (
                             <>
                                 <div className="fixed top-12 right-20 bg-secondary border-2 p-4 rounded-xl rounded-tr-none shadow-lg z-50 lgs:w-48">
@@ -813,7 +819,7 @@ const Home = () => {
             </div>
 
             {/* Sound Check Section */}   
-            <div className="fixed flex items-center justify-center text-center  bg-secondary lgs:w-[3rem] lgs:h-[3rem] rounded-full z-50 top-4 left-4"
+            <div className="fixed flex items-center border-4 justify-center text-center  bg-secondary w-[3rem] h-[3rem] rounded-full z-50 top-4 left-4"
             style={{
                 boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
             }}>
@@ -844,7 +850,7 @@ const Home = () => {
                         transition: "transform 0.4s ease-out",
                     }}
                 />
-                <div className="aboslute flex flex-col items-center  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
+                <div className="aboslute flex flex-col items-center overflow-hidden  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
 
                      <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl sms:mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
                         fontWeight:'200'
@@ -854,22 +860,223 @@ const Home = () => {
                         }}>Turboss</span>
                      </h2>
 
-                     <p className="font-dmsans lgs:text-xl sms:text-xl w-[60vw] sms:w-[80vw] lgs:mt-12 sms:mt-8 text-primary text-shadow-xl text-center" style={{
+                     <p className="font-dmsans lgs:text-xl sms:text-xl w-[60vw] sms:w-[80vw] lgs:mt-12 sms:mt-8 text-primary text-shadow-xl text-center" data-aos='fade-up' style={{
                         fontWeight:'200'
                      }}>
                         Where every ride is fueled by passion and power meets accuracy. Explore a world where engineering is at the cutting edge, machines come to life, and every little detail reveals a tale of creativity and performance. This is an experience rather than merely a journey. </p>
 
-                     <p className="sms:flex flex-col sms:mt-16 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
+                     <div className="sms:flex flex-col sms:mt-16 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
                         fontWeight:'600'
                      }}>
-                        <span className="bg-orange-600 text-primary lgs:p-3 sms:p-2" style={{
+                        <span className="bg-orange-600 text-primary lgs:p-3 sms:p-2" data-aos='fade-left' style={{
                             fontWeight:'600'
-                        }}>Explore. Learn. Innovate.</span><span className="lgs:ml-2 sms:mt-2" style={{
+                        }}>Explore. Learn. Innovate.</span><span className="lgs:ml-2 sms:mt-2" data-aos='fade-right'  style={{
                             fontWeight:'200'
                         }}> Your Virtual Garage Awaits</span>
-                        </p> 
+                        </div> 
 
                 </div>
+            </div>
+
+             {/* Chat Section */}
+            <div className="flex h-[25rem] sms:flex-col sms:h-[50rem] w-full bg-orange-600 z-30 overflow-hidden" >
+
+
+                <div className="relative flex h-[25rem] sms:h-[50rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
+                        <Image src = {chatBAckground} alt="fwef" className="object-cover sms:h-[50rem]  sms:w-full  h-[30rem] w-full z-30"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] w-[80vw] from  sms:w-full from-secondary to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[50rem] w-[20vw] sms:w-full right-0  from-orange-600 via-orange-600 to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] w-[100vw] sms:w-full right-0  from-secondary to-transparent z-43"/>
+                        <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] sms:w-full w-[100vw] right-0  from-secondary to-transparent z-30"/>
+                </div>
+
+                <div className="hidden lgs:flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] sms:w-[60vw] items-center justify-center"/>
+
+                {/* floating text */}
+                <div className="absolute overflow-hidden  flex flex-col w-full lgs:h-[50rem] p-0 sms:h-[3rem] sms:w-[60vw] bg-transparent items-start justify-center z-30">
+
+                    <h2 className="flex font-dmsans animate-movingText01 text-primary opacity-20 text-center" style={{
+                        fontSize:'50rem'
+                    }}>
+                        COMMUNITY
+                    </h2>
+
+                    <h2 className="flex font-dmsans text-primary text-center" style={{
+                        fontSize:'15rem'
+                    }}>
+                        CommunityHub
+                    </h2>
+
+                </div>
+
+                
+                <div className="absolute flex right-0 w-[20vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-bl-full bg-primary items-center justify-center z-30"
+                style={{
+                    boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
+                }}>
+
+                    <h2 className="font-dmsans lgs:text-2xl text-orange-600 text-center" style={{
+                        fontWeight:'200'
+                    }}>
+                        #ComingSoon
+                    </h2>
+                </div>
+
+                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
+
+                        <div className="flex lgs:h-[30rem] lgs:w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
+  
+                        
+                        </div>
+
+                        <div className="flex flex-col h-[25rem] lgs:w-[60vw] sms:w-[80vw] items-center justify-center">
+                        <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
+
+                                <h2 className="flex lgs:text-lg font-dmsans text-center items-center  text-primary" data-aos='fade-right' style={{
+                                    fontWeight:'100'
+                                }}>
+                                Join the Turbos<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
+                                </h2>
+
+                                <span className="flex lgs:text-6xl font-dmsans bg-primary sms:text-5xl text-center items-center p-4 rounded-lg text-orange-700"
+                                data-aos='fade-up' data-aos-delay='200'
+                                    style={{
+                                        fontWeight:'800'
+                                    }}>
+                                     Community Chat
+                                </span>
+                        </div>
+
+                            <p className="font-dmsans lgs:w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
+                            data-aos='zoom-in' data-aos-delay='300'
+                            style={{
+                                fontWeight:'200'
+                            }}>
+                                    Whether you love cars, work in a garage, or are just starting to explore the world of automobiles — this is your place to connect, share, and chat with others.</p>
+                       </div>
+
+                </div>
+
+                {/* Chat Sections */}
+                <div className="absolute z-30 flex sms:flex-col w-[60%] sms:w-full bg-transparent sms:mt-12 h-[25rem] items-center justify-center overflow-hidden">
+                        
+                        <div className="flex flex-col lgs:h-auto lgs:w-full items-start lgs:space-y-8 lgs:p-12 justify-center overflow-hidden">
+
+                            <div className="flex lgs:w-auto lgs:scale-90 lgs:ml-12 items-start justify-center overflow-hidden">
+                                
+                                <div className="flex bg-primary overflow-hidden border-4 lgs:w-[4rem] lgs:h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='350'>
+                                    <Image src={chatPupil2} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
+                                </div>
+
+                                <div className="flex flex-col bg-gray-900 rounded-2xl lgs:ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='400'
+                                style={{
+                                    boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
+                                }}>
+                                    <h2 className="flex font-dmsans text-orange-600 lgs:text-sm"
+                                    style={{
+                                        fontWeight:'800'
+                                    }}>
+                                        Jessica Anderson<span className="lgs:ml-2 text-primary"
+                                        style={{
+                                            fontWeight:'200'
+                                        }}>
+                                            Tue 03:01
+                                        </span>
+                                    </h2>
+                                    <p className="flex font-dmsans text-primary lgs:text-lg"
+                                    style={{
+                                        fontWeight:'100'
+                                    }}>
+                                        Why does my car make a ticking noise when I start it, and then the sound goes away after a few minutes?
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div className="flex lgs:w-auto  lgs:scale-110 items-start justify-center">
+                                
+                                <div className="flex bg-primary overflow-hidden border-4 lgs:w-[4rem] lgs:h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='450'>
+                                    <Image src={chatPupil1} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
+                                </div>
+
+                                <div className="flex flex-col bg-blue-950 rounded-2xl lgs:ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='500'
+                                style={{
+                                    boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
+                                }}>
+
+                                    <div className="flex bg-transparent items-center justify-start w-full h-auto">
+                                    <h2 className="flex font-dmsans text-orange-600 lgs:text-sm"
+                                    style={{
+                                        fontWeight:'800'
+                                    }}>
+                                        Jhon Dewik<span className="lgs:ml-2 text-primary"
+                                        style={{
+                                            fontWeight:'200'
+                                        }}>
+                                            Tue 03:15
+                                        </span>
+                                    </h2>
+                                    <h2 className="flex font-dmsans lgs:ml-2 text-primary bg-orange-600 p-1 rounded-full"
+                                    style={{
+                                        fontWeight:'800',
+                                        fontSize:'0.5rem'
+                                    }}>
+                                        Auto Expert
+                                    </h2>
+                                    </div>
+                                    <p className="flex font-dmsans lgs:mt-1 text-primary lgs:text-sm"
+                                    style={{
+                                        fontWeight:'100'
+                                    }}>
+                                        A ticking noise at startup that fades after a few minutes is often due to low oil levels, cold engine parts, or worn valve lifters. It’s usually harmless if it stops quickly, but if it continues, it’s best to get it checked to avoid engine damage
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            
+                            <div className="flex lgs:w-auto lgs:scale-90 lgs:ml-2 items-start justify-center">
+                                
+                                <div className="flex bg-primary overflow-hidden border-4 lgs:w-[4rem] lgs:h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='550'>
+                                    <Image src={chatPupil3} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
+                                </div>
+
+                                <div className="flex flex-col bg-gray-900 rounded-2xl lgs:ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='600'
+                                style={{
+                                    boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
+                                }}>
+                                    <h2 className="flex font-dmsans text-orange-600 lgs:text-sm"
+                                    style={{
+                                        fontWeight:'800'
+                                    }}>
+                                        David Jhohanson<span className="lgs:ml-2 text-primary"
+                                        style={{
+                                            fontWeight:'200'
+                                        }}>
+                                            Wed 08:01
+                                        </span>
+                                    </h2>
+                                    <p className="flex font-dmsans text-primary lgs:text-lg"
+                                    style={{
+                                        fontWeight:'100'
+                                    }}>
+                                        When I brake at high speeds, my car starts shaking. What could be the cause?
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                </div>
+
+
+                {/*  Sections */}
+                <div className="absolute z-30 flex sms:flex-col w-[20%] bg-gradient-to-r from-secondary via-transparent to-transparent sms:mt-12 h-[25rem] items-center justify-center overflow-hidden"/>
+
+
             </div>
 
              {/* DNA Section */}
@@ -898,11 +1105,15 @@ const Home = () => {
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primar p-4 flex-col font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-4 flex-col items-center font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    DNA
+                                    DNA<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
+                                        fontWeight:'200'
+                                    }}>
+                                        Turboss Garage Lesson 01
+                                    </span>
                                   </h2>
                                </div>
                             </div>
@@ -1089,7 +1300,7 @@ const Home = () => {
                         <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-30"/>
                 </div>
                 
-                <div className="absolute flex w-[30vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-50"
+                <div className="absolute flex w-[30vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-40"
                 style={{
                     boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
                 }}>
@@ -1103,18 +1314,20 @@ const Home = () => {
 
                 <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
                     <div className="flex flex-col h-[25rem] lgs:w-[60vw] sms:w-[80vw] items-center justify-center">
-                        <div className="flex sms:flex-col w-auto h-auto sms:items-center">
+                        <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
 
-                                <h2 className="flex lgs:text-lg font-dmsans text-center items-start lgs:pt-5 text-primary" style={{
+                                <h2 className="flex lgs:text-lg font-dmsans text-center items-start lgs:pt-2 text-primary" style={{
                                     fontWeight:'100'
-                                }}>
+                                }}
+                                data-aos='fade-right' data-aos-delay='200'>
                                 Want to know
                                 </h2>
 
                                 <span className="flex lgs:text-6xl font-dmsans sms:text-5xl text-center items-center p-2 text-primary"
                                     style={{
                                         fontWeight:'100'
-                                    }}>
+                                    }}
+                                    data-aos='fade-right' data-aos-delay='250'>
                                     About Automobiles?
                                 </span>
                         </div>
@@ -1122,7 +1335,8 @@ const Home = () => {
                             <p className="font-dmsans lgs:w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
                             style={{
                                 fontWeight:'100'
-                            }}>
+                            }}
+                            data-aos='zoom-in' data-aos-delay='300'>
                                     <span className="lgs:mr-2 lgs:text-2xl font-russoone lgs:p-1" style={{ fontWeight: '400' }}>
                                         {"\u0022"}
                                     </span>Explore <span className="mr-2 sms:ml-2 lgs:text-2xl text-primary lgs:p-1"
@@ -1183,7 +1397,7 @@ const Home = () => {
                                     Lab<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
                                         fontWeight:'200'
                                     }}>
-                                        Turboss Garage Lesson 01
+                                        Turboss Garage Lesson 02
                                     </span>
                                   </h2>
                         </div>
@@ -1239,7 +1453,7 @@ const Home = () => {
                                                 Garage Section
                                                 </h2>
                                                 <span className="font-bricolagegrotesque text-orange-600 text-sm sms:text-2xl bg-primary lgs:p-2">
-                                                    {tool.subname}
+                                                    {tool.subName}
                                                 </span>
 
                                                 </div>
@@ -1451,14 +1665,14 @@ const Home = () => {
 
            <div className="relative flex flex-col lgs:h-[20rem] lgs:w-[60vw] bg-transparent items-center justify-center overflow-hidden">
 
-            <h2 className="flex font-poppins  text-center text-5xl text-primary z-30" style={{
+            <h2 className="flex font-poppins  text-center text-5xl text-primary z-30" data-aos='zoom-in' data-aos-delay='250' style={{
                 fontWeight:'100'
             }}>
                 Your AI Mechanic is on the Way
             </h2>
 
 
-            <h2 className="flex font-poppins  text-center lgs:mt-2 text-2xl text-orange-600 z-30" style={{
+            <h2 className="flex font-poppins  text-center lgs:mt-2 text-2xl text-orange-600 z-30" data-aos='zoom-in' data-aos-delay='300' style={{
                 fontWeight:'100'
             }}>
                 Axila will be in the garage soon
@@ -1709,7 +1923,7 @@ const Home = () => {
 
                             <div className="flex flex-col w-auto h-auto items-center justify-center">
                             {toolsData.slice(0, 5).map((tool, index) => (
-                                <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
+                                <div key={index} className={`relative lgs:w-[35rem]  lgs:h-[50rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-right">
 
                                        <div className="absolute flex w-auto h-auto">
                                         </div>

@@ -1,0 +1,11 @@
+// This file is for reference only and not used by Next.js
+// The actual configuration is in next.config.js
+
+// types/next-videos.d.ts
+declare module 'next-videos' {
+  import { NextConfig } from 'next';
+
+  function withVideos(nextConfig: NextConfig): NextConfig;
+
+  export = withVideos;
+}

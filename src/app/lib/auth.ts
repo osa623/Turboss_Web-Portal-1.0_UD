@@ -1,57 +1,74 @@
-import {
-  createUserWithEmailAndPassword,
+import { 
+  createUserWithEmailAndPassword, 
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
-  User,
   updateProfile,
+  onAuthStateChanged,
   sendPasswordResetEmail,
   updateEmail,
   updatePassword,
   EmailAuthProvider,
   reauthenticateWithCredential,
+  User
 } from "firebase/auth";
 import { auth } from "./firebase";
+import { addUserToFirestore, updateUserInFirestore } from "./firestore";
 
-// Registration - simplified to only use Firebase Authentication
-export const registerUser = async (email: string, password: string, firstName: string, lastName: string) => {
+// Register a new user
+export const registerUser = async (
+  email: string, 
+  password: string,
+  firstName: string,
+  lastName: string
+) => {
   try {
-    // First, create the user with email/password
+    // Create the user in Firebase Auth
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
     
-    // Then set their display name to combine first and last name
-    if (userCredential.user) {
-      const displayName = `${firstName} ${lastName}`;
-      
-      try {
-        await updateProfile(userCredential.user, {
-          displayName: displayName
-        });
-        console.log("Display name set successfully");
-      } catch (profileError) {
-        console.error("Error setting display name:", profileError);
-        // Continue even if setting display name fails
-      }
-    }
+    // Set display name in Auth profile
+    const displayName = `${firstName} ${lastName}`;
+    await updateProfile(user, { displayName });
     
-    return userCredential;
+    // Store additional user data in Firestore
+    await addUserToFirestore(user.uid, {
+      firstName,
+      lastName,
+      displayName,
+      email: user.email,
+      photoURL: user.photoURL || '/placeholders/default-avatar.jpg',
+      createdAt: new Date().toISOString(),
+      reputation: 0,
+      badgeLevel: 'Member'
+    });
+    
+    return user;
   } catch (error) {
-    console.error("Registration error:", error);
+    console.error("Error during registration:", error);
     throw error;
   }
 };
 
-// Login
-export const loginUser = (email: string, password: string) =>
-  signInWithEmailAndPassword(auth, email, password);
-
-// Logout
-export const logoutUser = async () => {
-  // Clear the auth cookie when logging out
-  if (typeof window !== 'undefined') {
-    document.cookie = 'authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+// Login an existing user
+export const loginUser = async (email: string, password: string) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    return userCredential.user;
+  } catch (error) {
+    console.error("Error during login:", error);
+    throw error;
   }
-  return signOut(auth);
+};
+
+// Logout the current user
+export const logoutUser = async () => {
+  try {
+    await signOut(auth);
+    return true;
+  } catch (error) {
+    console.error("Error during logout:", error);
+    throw error;
+  }
 };
 
 // Authentication state observer
@@ -59,14 +76,35 @@ export const onAuthChange = (callback: (user: User | null) => void) =>
   onAuthStateChanged(auth, callback);
 
 // Update user profile
-export const updateUserProfile = (displayName: string, photoURL?: string) => {
-  const user = auth.currentUser;
-  if (!user) throw new Error("No user is currently signed in");
-  
-  return updateProfile(user, {
-    displayName,
-    photoURL: photoURL || user.photoURL,
-  });
+export const updateUserProfile = async (
+  userId: string,
+  updates: {
+    displayName?: string;
+    photoURL?: string;
+    specialty?: string;
+    [key: string]: any;
+  }
+) => {
+  try {
+    // If the current user is logged in and it's the same user
+    if (auth.currentUser && auth.currentUser.uid === userId) {
+      // Update Auth profile if needed
+      if (updates.displayName || updates.photoURL) {
+        await updateProfile(auth.currentUser, {
+          displayName: updates.displayName,
+          photoURL: updates.photoURL
+        });
+      }
+    }
+    
+    // Update Firestore user document
+    await updateUserInFirestore(userId, updates);
+    
+    return true;
+  } catch (error) {
+    console.error("Error updating user profile:", error);
+    throw error;
+  }
 };
 
 // Reset password

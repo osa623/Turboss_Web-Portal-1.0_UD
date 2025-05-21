@@ -24,6 +24,7 @@
     "@types/three": "^0.173.0",
     "aos": "^2.3.4",
     "d3-ease": "^3.0.1",
+    "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.2",
     "firebase": "^11.7.1",
     "framer-motion": "^12.5.0",
