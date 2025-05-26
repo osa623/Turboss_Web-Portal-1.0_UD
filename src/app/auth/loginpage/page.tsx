@@ -84,7 +84,7 @@ export default function LoginPage() {
         <div className='absolute flex bg-transparent inset-0 items-center justify-center z-30 h-screen w-full'>
 
                 {/* Upper layer for Login Page */} 
-                <div className='flex flex-col w-[50%] p-12 bg-opacity-90 h-auto rounded-lg shadow-lg items-center justify-center'>
+                <div className='flex flex-col w-[50%] sms:w-full lgs:p-12 sms:p-5  bg-opacity-90 h-auto rounded-lg shadow-lg items-center justify-center'>
 
                     <h2 className='font-dmsans text-primary text-3xl mb-6 font-semibold'>
                         Login to Your Account
@@ -96,7 +96,7 @@ export default function LoginPage() {
                       </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className='flex flex-col bg-transparent border-2 p-12 rounded-3xl w-full space-y-4'>
+                    <form onSubmit={handleSubmit} className='flex flex-col bg-transparent border-2 lgs:p-12 sms:p-5 lgs:rounded-3xl w-full space-y-4'>
 
                       {/* Email */}
                       <div className='flex flex-col'>
@@ -142,10 +142,14 @@ export default function LoginPage() {
                       </button>
                     </form>
 
+                    <h2 className='hidden w-full items-center mt-8 sms:flex flex-col font-dmsans py-4 text-primary text-md'>
+                        Not a member yet? <Link href="/auth/registerpage" className='font-russoone text-orange-600 hover:underline'>Register here</Link>
+                    </h2>
+
                 </div>
 
                 {/* Upper layer for Design */} 
-                <div className='relative w-[50%] bg-transparent h-screen'>
+                <div className='relative hidden lgs:flex w-[50%] bg-transparent h-screen'>
 
                         {/* Upper layer for info */} 
                         <div className='absolute flex w-full inset-0 bg-gradient-to-l from-secondary via-secondary to-transparent  h-screen z-20'/>

@@ -36,14 +36,12 @@ import carbonFiber from "../assests/carbonFiber.jpg";
 import toolbackgroundimage from '../assests/toolbackgroundimage.png';
 import toolbackgroundimage10 from '../assests/toolbackgroundimage10.png';
 import chatBAckground from '../assests/chatBacklground.jpg';
+import toolset from '../assests/toolSet.jpg';
 
 //chat_pupils
 import chatPupil1 from '../assests/pupil01.jpg';
 import chatPupil2 from '../assests/pupil02.jpg';
 import chatPupil3 from '../assests/pupil03.jpg';
-
-
-
 
 
 //DYN Images
@@ -52,8 +50,6 @@ import jesko from '../assests/DYN/Jejsko.png';
 import dropTail from '../assests/DYN/droptail.png';
 import carSpeed from '../assests/DYN/carSpeed.png';
 import windShield from '../assests/DYN/windShieldWipers.png';
-
-
 
 
 //navigationImages
@@ -77,7 +73,7 @@ import flywheel3 from '../assests/flywheel4.png';
 //files
 import SplitText from  './headingText/page';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCarSide, faGear, faGears, faHandDots, faList12, faListDots, faSearch, faSignInAlt, faTachometerAlt, faTrafficLight, faUser, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide,  faListDots, faSearch, faSignInAlt, faTrafficLight, faUser, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -258,14 +254,14 @@ const Home = () => {
         <div className="relative h-auto w-full"> 
 
             {/* First Section */}           
-            <div className='relative lgs:h-[200vh] sms:h-[100vh] w-full  overflow-hidden'>
+            <div className='relative h-[200vh] mds:h-[250vh]   sms:h-[100vh] w-full  overflow-hidden'>
 
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
 
-                <div className="relative bg-transparent z-30 lgs:h-[200vh] w-full">
-                    <div className="absolute w-1/2 h-[200vh] bg-gradient-to-r left-0 from-secondary to-transparent"/>
-                    <div className="absolute w-full h-[200vh] bg-gradient-to-l right-0 from-secondary to-transparent"/>
-                    <div className="absolute w-full h-full bg-gradient-to-b top-0 from-secondary to-transparent"/>
+                <div className="relative bg-transparent z-30 h-[200vh] w-full">
+                    <div className="absolute w-1/2 h-[200vh] mds:h-[250vh]  bg-gradient-to-r left-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-[200vh] mds:h-[250vh]  bg-gradient-to-l right-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-full mds:h-[250vh]  bg-gradient-to-b top-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
                     {/* Profile View Section */}   
@@ -287,28 +283,44 @@ const Home = () => {
                     
                     </div>
                     
-                    <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] sms:h-[100vh] w-full">
+                    <div className="relative flex bg-transparent items-center justify-center z-50 h-[200vh] mds:h-[300vh]   sms:h-[100vh] w-full">
 
                                 
                         {/* Turboss Main Topic */}
                         <div className="absolute flex flex-col lgs:mt-0 items-start justify-center top-0 lgs:h-auto w-full" data-aos='fade-up'>
 
 
-                               {/* Turboss Main Topic for lgs */}
-                            <div className="hidden lgs:flex flex-col w-full h-auto justify-center items-center" >
+                                {/* Turboss Main Topic for lgs */}
+                                <div className="hidden lgs:flex flex-col w-full h-auto justify-center items-center" >
 
-                                        <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
-                                            fontWeight: '100',
-                                            fontSize:'22rem'
-                                            }}>  
-                                        Tur<span className="text-orange-600" style={{
-                                            fontWeight:'200'
-                                        }}>boss
-                                        <div className="absolute w-auto h-auto bg-primary"/>
-                                        </span>
-                                        </h2> 
+                                            <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
+                                                fontWeight: '100',
+                                                fontSize:'22rem'
+                                                }}>  
+                                            Tur<span className="text-orange-600" style={{
+                                                fontWeight:'200'
+                                            }}>boss
+                                            <div className="absolute w-auto h-auto bg-primary"/>
+                                            </span>
+                                            </h2> 
 
-                            </div>
+                                </div>
+
+                                {/* Turboss Main Topic for mds */}
+                                <div className="hidden mds:flex flex-col w-full h-auto justify-center items-center" >
+
+                                            <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
+                                                fontWeight: '100',
+                                                fontSize:'15rem'
+                                                }}>  
+                                            Tur<span className="text-orange-600" style={{
+                                                fontWeight:'200'
+                                            }}>boss
+                                            <div className="absolute w-auto h-auto bg-primary"/>
+                                            </span>
+                                            </h2> 
+
+                                </div>
 
                             
                                {/* Turboss Main Topic for sms */}
@@ -331,7 +343,7 @@ const Home = () => {
                          </div>   
 
                         {/* Sub Paragrapgh Main Topic */}
-                        <div className="absolute flex flex-col items-center justify-center bottom-0 lgs:h-[60vh] sms:h-[30vh] w-full">
+                        <div className="absolute flex flex-col items-center justify-center bottom-0 h-[60vh] sms:h-[30vh] w-full">
 
                             <div className="flex flex-col w-auto h-auto justify-center items-center">
 
@@ -360,7 +372,7 @@ const Home = () => {
 
 
                         {/* Sub Upper Topic for larger screen */}
-                         <div className="hidden absolute lgs:flex mt-0 items-start justify-center lgs:top-20 lgs:right-48 lgs:h-[50vh] w-[100vw]">
+                         <div className="hidden absolute lgs:flex mds:flex mt-0 items-start justify-center top-20 right-48 lgs:h-[50vh] w-[100vw]">
 
                               
                                 <div className="flex flex-col w-full h-auto justify-center items-end">
@@ -451,7 +463,7 @@ const Home = () => {
  
 
                         {/* Text Data set */}
-                        <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10  lgs:h-[200vh] w-full">
+                        <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10 mds:h-[250vh]  h-[200vh] w-full">
                             <SplitText
                                 text="Turboss"
                                 className="flex lgs:mt-0 font-bricolagegrotesque opacity-10 text-[45rem] animate-movingText text-primary font-thin text-center"
@@ -467,22 +479,22 @@ const Home = () => {
 
 
                       {/* Cogwheel Setup */}
-                        <div className="relative  flex bg-transparent items-center justify-center mt-20 lgs:h-auto w-full">
+                        <div className="relative  flex bg-transparent items-center justify-center mt-20 mds:mt-0  lgs:h-auto w-full">
            
                             <div className="absolute bg-orange-600 h-[30rem] w-[70vw] opacity-20 blur-3xl z-0"/>
 
                             {/* Middle Cogwheel */}
-                            <div className="absolute flex bg-transparent lgs:h-[40rem] lgs:w-[40rem] sms:w-auto sms:h-[30rem]  items-center justify-center z-40">
+                            <div className="absolute flex bg-transparent lgs:h-[40rem] mds:w-[35rem] mds:h-[35rem] lgs:w-[40rem] sms:w-auto sms:h-[30rem]  items-center justify-center z-40">
 
                             
                                     <Image src={flywheel0} alt="" className="absolute  object-cover z-10 sms:w-auto sms:h-[20rem] sms:scale-150  lgs:h-[35rem] lgs:animate-spin lgs:w-[35rem]  " style={{
                                     animationDuration:'10s'
                                     }}/>   
 
-                                        <div className="flex bg-primary lgs:h-[20rem] lgs:w-[20rem] sms:w-[20rem] sms:h-[20rem]   rounded-full items-center overflow-hidden justify-center z-20" style={{
+                                        <div className="flex bg-primary h-[20rem] w-[20rem] sms:w-[20rem] sms:h-[20rem]   rounded-full items-center overflow-hidden justify-center z-20" style={{
                                         boxShadow:'inset 0px 0px 20px 5px rgba(0,0,0,0.9) , 0px 0px 20px 20px rgba(0,0,0,0.9)'
                                     }}> 
-                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 lgs:h-[22rem] sms:w-[20rem] lgs:w-[22rem]"/>
+                                        <Image src={turbossLogo} alt="" className="flex object-cover z-50 h-[22rem] sms:w-[20rem] w-[22rem]"/>
                                         <div className="absolute flex bg-gradient-to-t from-secondary to-transparent cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"/>
                                                 
                                                 <div className="absolute flex cursor-pointer items-center justify-start h-[20rem] w-[20rem] group-hover:scale-110 duration-700 overflow-hidden transition-all ease-in-out rounded-full z-50"
@@ -523,7 +535,7 @@ const Home = () => {
                             </div>
 
                             {/* 4th blue Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-start items-start h-[50rem] w-[80rem] z-20">
+                            <div className="hidden absolute lgs:flex mds:flex bg-transparent justify-start items-start h-[50rem] w-[80rem] z-20">
 
                                 <div className="absolute flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mt-12 justify-center z-10">
 
@@ -541,7 +553,7 @@ const Home = () => {
                             </div>
 
                             {/* 5th blue Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-start items-end h-[50rem] w-[80rem]  z-40">
+                            <div className="absolute hidden lgs:flex bg-transparent justify-start items-end h-[50rem] w-[80rem]  z-40">
 
                             <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:ml-64 lgs:mb-24  justify-center z-10">
 
@@ -578,7 +590,7 @@ const Home = () => {
                             
 
                            {/* 6th blue Cogwheel */}
-                            <div className="absolute flex bg-transparent justify-end items-end h-[50rem] w-[80rem] z-30">
+                            <div className="absolute hidden lgs:flex bg-transparent justify-end items-end h-[50rem] w-[80rem] z-30">
 
                             <div className="absolute group flex lgs:w-[20rem] lgs:h-[20rem] items-center lgs:mr-64 lgs:mb-48  justify-center z-10">
 
@@ -782,7 +794,7 @@ const Home = () => {
             </div>
 
             {/* Loggin Section*/}   
-            <div className="fixed flex items-center   justify-center text-center  space-x-3  w-auto h-auto rounded-full z-50 top-4 right-4"
+            <div className="fixed flex items-center justify-center text-center sms:right-4  space-x-3  w-auto h-auto rounded-full z-50 top-4 right-4"
                         >
                             
                     <div className="flex items-center justify-center border-4 border-primary bg-orange-600 lgs:p-5 w-[3rem] h-[3rem] rounded-full z-40 cursor-pointer relative" onClick={() => setShowPopup(!showPopup)}
@@ -795,17 +807,20 @@ const Home = () => {
                                 <div className="fixed top-12 right-20 bg-secondary border-2 p-4 rounded-xl rounded-tr-none shadow-lg z-50 lgs:w-48">
                                     <ul className="space-y-4">
                                         <li
-                                        onClick={()=> router.push('/profile')} className="flex items-center space-x-2 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300">
+                                        onClick={()=> router.push('/profile')} className="flex items-center space-x-4 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300">
                                             <FontAwesomeIcon icon={faUser} className="text-primary" />
                                             <span className="font-dmsans text-primary">Profile</span>
                                         </li>
                                         <li 
-                                            className="flex items-center space-x-2 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300"
+                                            className="flex items-center space-x-4 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300"
                                             onClick={() => router.push('/auth/loginpage')}
                                         >
                                             <FontAwesomeIcon icon={faSignInAlt} className="text-primary" />
                                             <span className="font-dmsans text-primary">Logout</span>
                                         </li>
+                                        <div className="">
+                                            
+                                        </div>
                                     </ul>
                                 </div>
 
@@ -835,7 +850,7 @@ const Home = () => {
             </div>
 
             {/* Second Section */}
-            <div className='relative flex lgs:h-[35rem] sms:h-[45rem] w-full overflow-hidden z-30'>
+            <div className='relative flex lgs:h-[35rem] mds:h-[30rem] sms:h-[45rem] w-full overflow-hidden z-30'>
                  {/*<audio ref={(el) => { sectionAudioRefs.current[0] = el; }} >
                     <source src="/welcomingSection.wav" type="audio/wav" />
                     Your browser does not support the audio element.
@@ -852,7 +867,7 @@ const Home = () => {
                 />
                 <div className="aboslute flex flex-col items-center overflow-hidden  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
 
-                     <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl sms:mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
+                     <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
                         fontWeight:'200'
                      }}>
                         Welcome to <span className="bg-orange-600 p-4 sms:p-2" data-aos='fade-right' data-aos-delay='1200' style={{
@@ -860,15 +875,15 @@ const Home = () => {
                         }}>Turboss</span>
                      </h2>
 
-                     <p className="font-dmsans lgs:text-xl sms:text-xl w-[60vw] sms:w-[80vw] lgs:mt-12 sms:mt-8 text-primary text-shadow-xl text-center" data-aos='fade-up' style={{
+                     <p className="font-dmsans text-xl sms:text-xl w-[60vw] overflow-hidden sms:w-[80vw] lgs:mt-12  mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
                         fontWeight:'200'
                      }}>
                         Where every ride is fueled by passion and power meets accuracy. Explore a world where engineering is at the cutting edge, machines come to life, and every little detail reveals a tale of creativity and performance. This is an experience rather than merely a journey. </p>
 
-                     <div className="sms:flex flex-col sms:mt-16 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
+                     <div className="sms:flex flex-col sms:mt-16 mds:mt-8 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
                         fontWeight:'600'
                      }}>
-                        <span className="bg-orange-600 text-primary lgs:p-3 sms:p-2" data-aos='fade-left' style={{
+                        <span className="bg-orange-600 text-primary p-3 sms:p-2" data-aos='fade-left' style={{
                             fontWeight:'600'
                         }}>Explore. Learn. Innovate.</span><span className="lgs:ml-2 sms:mt-2" data-aos='fade-right'  style={{
                             fontWeight:'200'
@@ -879,23 +894,23 @@ const Home = () => {
             </div>
 
              {/* Chat Section */}
-            <div className="flex h-[25rem] sms:flex-col sms:h-[50rem] w-full bg-orange-600 z-30 overflow-hidden" >
+            <div className="flex h-[25rem] sms:flex-col sms:h-[50rem] w-full bg-orange-600 z-40" >
 
 
-                <div className="relative flex h-[25rem] sms:h-[50rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
+                <div className="relative flex h-[25rem] sms:h-[50rem] w-[60vw] sms:w-full items-center justify-start overflow-hidden">
                         <Image src = {chatBAckground} alt="fwef" className="object-cover sms:h-[50rem]  sms:w-full  h-[30rem] w-full z-30"/>
                         <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] w-[80vw] from  sms:w-full from-secondary to-transparent z-30"/>
-                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[50rem] w-[20vw] sms:w-full right-0  from-orange-600 via-orange-600 to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-l sms:bg-gradient-to-b h-[30rem] sms:h-[50rem] w-[20vw] sms:w-full right-0  from-orange-600 via-orange-600 to-transparent z-30"/>
                         <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] w-[100vw] sms:w-full right-0  from-secondary to-transparent z-43"/>
                         <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] sms:w-full w-[100vw] right-0  from-secondary to-transparent z-30"/>
                 </div>
 
-                <div className="hidden lgs:flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] sms:w-[60vw] items-center justify-center"/>
+                <div className="hidden lgs:flex h-[25rem] sms:h-[50rem] w-[40vw] sms:w-[60vw] items-center justify-center"/>
 
                 {/* floating text */}
-                <div className="absolute overflow-hidden  flex flex-col w-full lgs:h-[50rem] p-0 sms:h-[3rem] sms:w-[60vw] bg-transparent items-start justify-center z-30">
+                <div className="absolute overflow-hidden  flex flex-col w-full h-[50rem] p-0 sms:h-[50rem] sms:w-full bg-transparent items-start justify-center z-30">
 
-                    <h2 className="flex font-dmsans animate-movingText01 text-primary opacity-20 text-center" style={{
+                    <h2 className="flex font-dmsans animate-movingText02 text-primary opacity-20 text-center" style={{
                         fontSize:'50rem'
                     }}>
                         COMMUNITY
@@ -909,36 +924,38 @@ const Home = () => {
 
                 </div>
 
-                
-                <div className="absolute flex right-0 w-[20vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-bl-full bg-primary items-center justify-center z-30"
+                {/* Upper corner text */}
+                <div className="absolute flex right-0 w-[20vw] lgs:h-[4rem] h-[3rem] sms:w-[60vw] rounded-bl-full bg-primary items-center justify-center z-30"
                 style={{
                     boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
                 }}>
 
-                    <h2 className="font-dmsans lgs:text-2xl text-orange-600 text-center" style={{
+                    <h2 className="font-dmsans lgs:text-2xl sms:text-xl text-orange-600 text-center" style={{
                         fontWeight:'200'
                     }}>
                         #ComingSoon
                     </h2>
                 </div>
 
-                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
 
-                        <div className="flex lgs:h-[30rem] lgs:w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
+                {/* text Sections */}
+                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem]  items-center justify-center z-40">
+
+                        <div className="flex lgs:h-[30rem] w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
   
                         
                         </div>
 
-                        <div className="flex flex-col h-[25rem] lgs:w-[60vw] sms:w-[80vw] items-center justify-center">
+                        <div className="flex flex-col lgs:h-[25rem] w-[60vw] sms:w-[80vw] items-center justify-center">
                         <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
 
-                                <h2 className="flex lgs:text-lg font-dmsans text-center items-center  text-primary" data-aos='fade-right' style={{
+                                <h2 className="flex lgs:text-lg sms:text-xl mds:text-xl font-dmsans text-center items-center  text-primary" data-aos='fade-right' style={{
                                     fontWeight:'100'
                                 }}>
                                 Join the Turbos<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
                                 </h2>
 
-                                <span className="flex lgs:text-6xl font-dmsans bg-primary sms:text-5xl text-center items-center p-4 rounded-lg text-orange-700"
+                                <span className="flex lgs:text-6xl mds:text-5xl font-dmsans bg-primary sms:text-5xl text-center items-center p-4 rounded-lg text-orange-700"
                                 data-aos='fade-up' data-aos-delay='200'
                                     style={{
                                         fontWeight:'800'
@@ -947,7 +964,7 @@ const Home = () => {
                                 </span>
                         </div>
 
-                            <p className="font-dmsans lgs:w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
+                            <p className="font-dmsans w-[40vw] sms:w-[60vw] mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
                             data-aos='zoom-in' data-aos-delay='300'
                             style={{
                                 fontWeight:'200'
@@ -958,17 +975,17 @@ const Home = () => {
                 </div>
 
                 {/* Chat Sections */}
-                <div className="absolute z-30 flex sms:flex-col w-[60%] sms:w-full bg-transparent sms:mt-12 h-[25rem] items-center justify-center overflow-hidden">
+                <div className="absolute z-40 sms:mt-8 overflow-hidden flex sms:flex-col sms:h-[70rem] w-[60%] mds:w-[70%] sms:scale-90 sms:w-full bg-transparent h-[25rem] items-center justify-center">
                         
-                        <div className="flex flex-col lgs:h-auto lgs:w-full items-start lgs:space-y-8 lgs:p-12 justify-center overflow-hidden">
+                        <div className="flex flex-col sms:mt-12 lgs:h-auto lgs:w-full items-start lgs:space-y-8 lgs:p-12 justify-center overflow-hidden">
 
-                            <div className="flex lgs:w-auto lgs:scale-90 lgs:ml-12 items-start justify-center overflow-hidden">
+                            <div className="flex lgs:w-auto lgs:scale-90 scale-75 sms:scale-75 lgs:ml-12 items-start justify-center">
                                 
-                                <div className="flex bg-primary overflow-hidden border-4 lgs:w-[4rem] lgs:h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='350'>
-                                    <Image src={chatPupil2} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
+                                <div className="flex bg-primary overflow-hidden border-4 w-[4rem] h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='350'>
+                                    <Image src={chatPupil2} alt="" className="flex object-cover z-50 h-[4rem] sms:w-[4rem] w-[4rem]"/>
                                 </div>
 
-                                <div className="flex flex-col bg-gray-900 rounded-2xl lgs:ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='400'
+                                <div className="flex flex-col bg-gray-900 rounded-2xl ml-2 items-start p-5 justify-center w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='400'
                                 style={{
                                     boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
                                 }}>
@@ -976,7 +993,7 @@ const Home = () => {
                                     style={{
                                         fontWeight:'800'
                                     }}>
-                                        Jessica Anderson<span className="lgs:ml-2 text-primary"
+                                        Jessica Anderson<span className="ml-2 text-primary"
                                         style={{
                                             fontWeight:'200'
                                         }}>
@@ -993,13 +1010,14 @@ const Home = () => {
 
                             </div>
 
-                            <div className="flex lgs:w-auto  lgs:scale-110 items-start justify-center">
+                            <div className="flex lgs:w-auto sms:ml-12  lgs:scale-110 items-start scale-90 justify-center">
                                 
-                                <div className="flex bg-primary overflow-hidden border-4 lgs:w-[4rem] lgs:h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='450'>
+                                <div className="flex bg-primary overflow-hidden border-4 w-[4rem] h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='450'>
                                     <Image src={chatPupil1} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
                                 </div>
 
-                                <div className="flex flex-col bg-blue-950 rounded-2xl lgs:ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='500'
+                                <div className="flex flex-col bg-blue-950 rounded-2xl ml-2 items-start p-5 justify-center w-[30rem] sms:w-[25rem] lgs:h-[8rem]" 
+                                data-aos='fade-left' data-aos-delay='500'
                                 style={{
                                     boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
                                 }}>
@@ -1009,14 +1027,14 @@ const Home = () => {
                                     style={{
                                         fontWeight:'800'
                                     }}>
-                                        Jhon Dewik<span className="lgs:ml-2 text-primary"
+                                        Jhon Dewik<span className="ml-2 text-primary"
                                         style={{
                                             fontWeight:'200'
                                         }}>
                                             Tue 03:15
                                         </span>
                                     </h2>
-                                    <h2 className="flex font-dmsans lgs:ml-2 text-primary bg-orange-600 p-1 rounded-full"
+                                    <h2 className="flex font-dmsans ml-2 text-primary bg-orange-600 p-1 rounded-full"
                                     style={{
                                         fontWeight:'800',
                                         fontSize:'0.5rem'
@@ -1024,7 +1042,7 @@ const Home = () => {
                                         Auto Expert
                                     </h2>
                                     </div>
-                                    <p className="flex font-dmsans lgs:mt-1 text-primary lgs:text-sm"
+                                    <p className="flex font-dmsans lgs:mt-1 text-primary text-sm"
                                     style={{
                                         fontWeight:'100'
                                     }}>
@@ -1035,13 +1053,13 @@ const Home = () => {
                             </div>
 
                             
-                            <div className="flex lgs:w-auto lgs:scale-90 lgs:ml-2 items-start justify-center">
+                            <div className="flex lgs:w-auto lgs:scale-90 lgs:ml-2 scale-75 s  items-start justify-center">
                                 
-                                <div className="flex bg-primary overflow-hidden border-4 lgs:w-[4rem] lgs:h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='550'>
+                                <div className="flex bg-primary overflow-hidden border-4 w-[4rem] h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='550'>
                                     <Image src={chatPupil3} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
                                 </div>
 
-                                <div className="flex flex-col bg-gray-900 rounded-2xl lgs:ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='600'
+                                <div className="flex flex-col bg-gray-900 rounded-2xl ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='600'
                                 style={{
                                     boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
                                 }}>
@@ -1049,7 +1067,7 @@ const Home = () => {
                                     style={{
                                         fontWeight:'800'
                                     }}>
-                                        David Jhohanson<span className="lgs:ml-2 text-primary"
+                                        David Jhohanson<span className="ml-2 text-primary"
                                         style={{
                                             fontWeight:'200'
                                         }}>
@@ -1074,7 +1092,7 @@ const Home = () => {
 
 
                 {/*  Sections */}
-                <div className="absolute z-30 flex sms:flex-col w-[20%] bg-gradient-to-r from-secondary via-transparent to-transparent sms:mt-12 h-[25rem] items-center justify-center overflow-hidden"/>
+                <div className="absolute z-30 flex sms:flex-col w-[20%] bg-gradient-to-r sms:h-[50rem] from-secondary via-transparent to-transparent sms:mt-12 h-[25rem] items-center justify-center overflow-hidden"/>
 
 
             </div>
@@ -1086,7 +1104,7 @@ const Home = () => {
                 <div className="relative flex flex-col h-auto w-full bg-transparent overflow-hidden z-40">
 
                         <div
-                        className="absolute w-full h-auto items-center  lgs:mt-12 justify-center z-30"
+                        className="absolute w-full h-auto items-center  mt-12 justify-center z-30"
                         style={{
                             transform: `translateY(${offsetY}px)`,
                             transition: "transform 0.1s ease-out",
@@ -1096,20 +1114,20 @@ const Home = () => {
                         </div>
 
                         {/* Primary Section */}
-                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full z-40 justify-center items-center">
+                        <div className="relative flex h-[15rem] sms:h-[10rem] w-full z-40 justify-center items-center">
                             <div className="absolute flex items-center justify-center w-full h-[25rem] bg-gradient-to-b from-primary via-primary to-transparent">
                                <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 lgs:text-8xl sms:text-5xl text-center"
+                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 lgs:text-8xl text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-4 flex-col items-center font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-4 flex-col items-center font-bricolagegrotesque text-orange-600 text-5xl lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    DNA<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
+                                    DNA<span className="hidden lgs:flex mds:flex text-xs font-dmsans text-secondary" style={{
                                         fontWeight:'200'
                                     }}>
                                         Turboss Garage Lesson 01
@@ -1120,7 +1138,7 @@ const Home = () => {
                         </div>
 
                         {/* Swiper Container for a larger screen */}
-                        <div className="hidden relative lgs:flex w-full items-center justify-center bg-transparent z-30">
+                        <div className="hidden relative lgs:flex mds:flex w-full items-center justify-center bg-transparent z-30">
                             
                             <Swiper
                                 effect="coverflow"
@@ -1137,7 +1155,7 @@ const Home = () => {
                                 pagination={{ clickable: true }}
                                 navigation={true}
                                 modules={[EffectCoverflow, Navigation]}
-                                className="flex lgs:h-[55rem]  items-center justify-center p-12"
+                                className="flex h-[55rem]  items-center justify-center p-12"
                                 onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                             >
                                 {dnaData.map((tool, index) => {
@@ -1170,20 +1188,20 @@ const Home = () => {
                                             >
                                                 <button 
                                                 onClick={() => router.push(`/detailpage/${tool.id}`)}
-                                                className="absolute group flex lgs:h-[6rem] lgs:w-[15rem] lgs:mb-48 rounded-2xl cursor-pointer items-center text-primary justify-center z-50 bg-transparent overflow-hidden"
+                                                className="absolute group flex h-[6rem] w-[15rem] mb-48  rounded-2xl cursor-pointer items-center text-primary justify-center z-50 bg-transparent overflow-hidden"
                                                 style={{
                                                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.1), inset 0px 5px 10px 2px rgba(255, 255, 255, 0.5)",
                                                     fontWeight:'200'
                                                 }}>
                                                     <div className="absolute flex z-10 w-auto h-auto bg-transparent items-center justify-center">
-                                                        <Image src={carbonFiber} alt="carbonFiber" className="object-cover lgs:w-[20rem] lgs:h-[6rem]"/>                                 
+                                                        <Image src={carbonFiber} alt="carbonFiber" className="object-cover w-[20rem] h-[6rem]"/>                                 
                                                     </div>   
                                                     <div className="absolute flex lgs:h-[6rem] lgs:w-[15rem] bg-gradient-to-t from-secondary to-transparent z-20 items-center justify-center"/>
                                                     <div className="absolute flex lgs:h-[6rem] lgs:w-[15rem] bg-gradient-to-r from-secondary to-transparent z-30 items-center justify-center"
                                                     style={{
                                                         boxShadow:'inset 0px 0px 10px 2px rgba(255,255,255,0.5)'
                                                     }}/>
-                                                    <h2 className="font-dmsans lgs:text-lg group-hover:text-2xl transition-all duration-700 ease-in-out text-primary z-20">{tool?.name}</h2>
+                                                    <h2 className="font-dmsans lgs:text-lg mds:text-2xl group-hover:text-2xl transition-all duration-700 ease-in-out text-primary z-20">{tool?.name}</h2>
                                                     <h2 className="absolute font-dmsans lgs:text-5xl group-hover:text-8xl  transition-all duration-700 ease-in-out text-nowrap bottom-2 text-primary opacity-15 z-20">{tool?.name}</h2>
                                                 </button>
                                                 <button className="absolute h-[0.8rem] w-[15rem] font-dmsans lgs:mb-0 lgs:mt-12 rounded-full blur-lg items-center justify-center bg-secondary"/>
@@ -1215,7 +1233,7 @@ const Home = () => {
                                 }}
                                 pagination={{ clickable: true }}
                                 navigation={true}
-                                modules={[EffectCoverflow, Pagination, Navigation]}
+                                modules={[EffectCoverflow, Navigation]}
                                 className="flex h-[55rem]  items-center justify-center p-12"
                                 onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                             >
@@ -1292,15 +1310,15 @@ const Home = () => {
             <div className="flex h-[25rem] sms:h-[35rem] w-full bg-secondary z-30" >
                 <div className="flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] sms:w-[60vw] items-center justify-center"/>
 
-                <div className="relative flex h-[25rem] sms:h-[35rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
+                <div className="relative flex h-[25rem] sms:h-[35rem] lgs:w-[60vw] mds:w-full items-center justify-start overflow-hidden">
                         <Image src = {subHeroSec1} alt="fwef" className="object-cover animate-moving02 sms:h-[35rem]  h-[30rem] w-full z-30"/>
-                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[80vw]  from-secondary to-transparent z-30"/>
-                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[35rem] w-[20vw] right-0  from-secondary to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] mds:w-full  w-[80vw]  from-secondary to-transparent z-30"/>
+                        <div className="flex absolute bg-gradient-to-l h-[30rem] sms:h-[35rem] mds:w-full  w-[20vw] right-0  from-secondary to-transparent z-30"/>
                         <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-43"/>
                         <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[35rem] w-[100vw] right-0  from-secondary to-transparent z-30"/>
                 </div>
                 
-                <div className="absolute flex w-[30vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-40"
+                <div className="absolute flex w-[30vw] lgs:h-[4rem] h-[3rem] sms:w-[60vw] rounded-br-2xl bg-orange-600  items-center justify-center z-40"
                 style={{
                     boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
                 }}>
@@ -1313,17 +1331,17 @@ const Home = () => {
                 </div>
 
                 <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
-                    <div className="flex flex-col h-[25rem] lgs:w-[60vw] sms:w-[80vw] items-center justify-center">
+                    <div className="flex flex-col h-[25rem] w-[60vw] sms:w-[80vw] items-center justify-center">
                         <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
 
-                                <h2 className="flex lgs:text-lg font-dmsans text-center items-start lgs:pt-2 text-primary" style={{
+                                <h2 className="flex lgs:text-lg mds:text-xl font-dmsans text-center items-start lgs:pt-2 text-primary" style={{
                                     fontWeight:'100'
                                 }}
                                 data-aos='fade-right' data-aos-delay='200'>
                                 Want to know
                                 </h2>
 
-                                <span className="flex lgs:text-6xl font-dmsans sms:text-5xl text-center items-center p-2 text-primary"
+                                <span className="flex lgs:text-6xl font-dmsans text-5xl text-center items-center p-2 text-primary"
                                     style={{
                                         fontWeight:'100'
                                     }}
@@ -1332,7 +1350,7 @@ const Home = () => {
                                 </span>
                         </div>
 
-                            <p className="font-dmsans lgs:w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
+                            <p className="font-dmsans w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
                             style={{
                                 fontWeight:'100'
                             }}
@@ -1349,7 +1367,7 @@ const Home = () => {
                                         {"\u0022"}
                                     </span></p>
                     </div>
-                        <div className="flex lgs:h-[30rem] lgs:w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
+                        <div className="flex lgs:h-[30rem] w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
                         <video
                                 src='/baoswheels.webm'
                                 autoPlay
@@ -1368,7 +1386,7 @@ const Home = () => {
             </div>
 
             {/* Lab Section */}
-            <div className='relative flex flex-col lgs:h-[55rem] sms:h-[150vh] items-center justify-start w-full z-30 overflow-hidden'>
+            <div className='relative flex flex-col h-[55rem] mds:h-[45rem] sms:h-[150vh] items-center justify-start w-full z-30 overflow-hidden'>
 
                 <div className="absolute bg-gradient-to-b h-[15rem] w-full from-primary via-primary to-transparent top-0 z-20"/>
                 <Image 
@@ -1381,20 +1399,20 @@ const Home = () => {
                         transition: "transform 0.2s ease-out",
                     }}
                 />
-                <div className="aboslute flex flex-col items-center justify-center lgs:mt-12  w-full h-auto z-30">
+                <div className="aboslute flex flex-col items-center justify-center mt-12  w-full h-auto z-30">
 
-                       <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 lgs:p-4 sms:p-2 lgs:text-8xl sms:text-5xl text-center"
+                       <div className="flex w-auto h-auto lgs:mt-12">
+                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 sms:p-2 lgs:text-8xl text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-2 flex-col font-bricolagegrotesque text-orange-600 sms:text-5xl lgs:text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-2 flex-col font-bricolagegrotesque text-orange-600 text-5xl lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    Lab<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
+                                    Lab<span className="hidden lgs:flex mds:flex text-xs font-dmsans text-secondary" style={{
                                         fontWeight:'200'
                                     }}>
                                         Turboss Garage Lesson 02
@@ -1404,9 +1422,9 @@ const Home = () => {
 
                 </div>
 
-                        <div className="aboslute flex flex-col items-center justify-center  w-full h-auto z-40">
+                        <div className="aboslute flex flex-col items-center justify-center mds:mt-6  w-full h-auto z-40">
 
-                            <div className="flex sms:flex-col sms:items-center w-auto h-auto lgs:space-x-8 sms:space-y-8">
+                            <div className="flex sms:flex-col sms:items-center w-auto h-auto lgs:space-x-8 mds:space-x-4 sms:space-y-8">
                             {labData.slice(0,3).map((tool, index) => (
 
                                 <div 
@@ -1417,16 +1435,16 @@ const Home = () => {
                                 onMouseLeave={() => setHover(null)}
                                 >
 
-                                    <div  className={`relative group flex-col lgs:w-[20rem] drop-shadow-2xl sms:w-[22rem] mds:w-[20rem] bg-transparent cursor-pointer items-center justify-start rounded-lg lgs:h-[25rem]`}
+                                    <div  className={`relative group flex-col lgs:w-[20rem] drop-shadow-2xl sms:w-[22rem] mds:w-[15rem] bg-transparent cursor-pointer mds:h-[20rem] items-center justify-start rounded-lg lgs:h-[25rem]`}
                                       
                                     style={{
                                         
                                 }}
 
                                 >
-                                        <div className='relative flex flex-col  lgs:w-[20rem] lgs:h-[25rem]  mds:w-[15rem] sms:w-[22rem] bg-transparent justify-center rounded-t-md  items-center '>
-                                        <div className='flex lgs:w-[20rem] sms:w-[22rem] sms:h-[20rem] mds:w-[20rem] lgs:h-[25rem]   z-50'> 
-                                            <Image src={tool.image} alt='' width={500} height={500} className='object-cover rounded-xl lgs:scale-150 mds:h-20'
+                                        <div className='relative flex flex-col  lgs:w-[20rem] lgs:h-[25rem]  mds:w-[15rem] mds:h-[20rem] sms:w-[22rem] bg-transparent justify-center rounded-t-md  items-center '>
+                                        <div className='flex lgs:w-[20rem] sms:w-[22rem] sms:h-[20rem] mds:w-[15rem] mds:h-[20rem] lgs:h-[25rem]  z-50'> 
+                                            <Image src={tool.image} alt='' width={500} height={500} className='object-cover mds:w-[40rem] rounded-xl lgs:scale-150 mds:h-[20rem]'
                                             style={{
                                                 transform: `translateY(${parallex1 * 0.8}px)`,
                                                 transition: "transform 0.4s ease-out",
@@ -1437,7 +1455,7 @@ const Home = () => {
 
                                 </div>
 
-                                <div className="absolute flex flex-col bg-gradient-to-t from-secondary rounded-xl lgs:items-end justify-center items-center to-transparent z-40 w-full lgs:h-[25rem] sms:h-[20rem] bottom-0"
+                                <div className="absolute flex flex-col bg-gradient-to-t from-secondary rounded-xl lgs:items-end justify-center items-center to-transparent z-40 w-full h-[25rem] sms:h-[20rem] mds:h-[20rem] bottom-0"
                                                                     style={{
                                                                         boxShadow:' inset 0px 5px 10px 8px rgba(255,255,255,0.4)',
                                                                         transform: `translateY(${parallex1 * 0.8}px)`,
@@ -1445,14 +1463,14 @@ const Home = () => {
                                                                         
                                                                     }}>
 
-                                            <div className="flex lgs:w-[20rem] lgs:h-[25rem] sms:h-[20rem] sms:w-full items-start justify-start p-5">
+                                            <div className="flex lgs:w-[20rem] lgs:h-[25rem] sms:h-[20rem] mds:w-[15rem] mds:h-[20rem] sms:w-full items-start justify-start p-5">
                                                 
                                                 <div className="flex w-auto h-auto">
 
                                                 <h2 className="flex font-bricolagegrotesque text-primary text-sm sms:text-md bg-orange-600 p-2">
                                                 Garage Section
                                                 </h2>
-                                                <span className="font-bricolagegrotesque text-orange-600 text-sm sms:text-2xl bg-primary lgs:p-2">
+                                                <span className="font-bricolagegrotesque text-orange-600 text-sm sms:text-2xl bg-primary p-2">
                                                     {tool.subName}
                                                 </span>
 
@@ -1461,7 +1479,7 @@ const Home = () => {
                                                 
                                             </div> 
                                             
-                                            <div className="flex sms:absolute w-[20rem] lgs:h-[25rem] items-end justify-center ">
+                                            <div className="flex sms:absolute w-[20rem] lgs:h-[25rem] mds:h-[20rem] mds:w-[15rem] items-end justify-center ">
 
                                                     <h2 className="absolute font-dmsans text-primary group-hover:scale-125 sms:text-2xl  transition-all duration-700 ease-in-out lgs:text-xl lgs:p-2 lgs:mb-12"
                                                     style={{
@@ -1498,23 +1516,23 @@ const Home = () => {
                                 ))}    
                             </div>
 
-                            <div className="flex w-auto h-auto lgs:space-x-8">
+                            <div className="flex w-auto h-auto lgs:space-x-8 mds:space-x-4">
                             {labData.slice(0,3).map((tool, index) => (
-                                <div key={tool.id} className={`group relative ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  lgs:mt-32 w-auto transition-all duration-700 ease-in-out  h-auto cursor-pointer`}
+                                <div key={tool.id} className={`group relative ${hover === index ? "scale-110" : hover !== null ? "scale-95" : "scale-100"}  mt-32 w-auto transition-all duration-700 ease-in-out  h-auto cursor-pointer`}
                                   onMouseEnter={() => setHover(index)}
                                     onMouseLeave={() => setHover(null)}
                                 >
 
 
 
-                                <div className="flex flex-col bg-gradient-to-b from-secondary rounded-xl blur-lg items-end justify-center to-transparent z-40 w-full lgs:h-[4rem] bottom-0"
+                                <div className="flex flex-col bg-gradient-to-b from-secondary rounded-xl blur-lg items-end justify-center to-transparent z-40 w-full h-[4rem] bottom-0"
                                                                     style={{
                                                                         transform: `translateY(${parallex1 * 0.8}px)`,
                                                                         transition: "transform 0.4s ease-out",
                                                                         boxShadow:'0px 1px 20px 5px rgba(0,0,0,0.4) , inset 0px 5px 10px 5px rgba(0,0,0,0.4)'
                                                                     }}>
 
-                                            <div className="flex lgs:w-[20rem] lgs:h-[5rem] items-start justify-start lgs:p-5"/>
+                                            <div className="flex w-[20rem] h-[5rem] items-start justify-start lgs:p-5"/>
                                             
 
 
@@ -1540,9 +1558,9 @@ const Home = () => {
             </div>
          
             {/* Sub Secondary Section */}
-            <div className="hidden relative lgs:flex w-auto h-auto overflow-hidden z-30">
+            <div className="hidden relative  lgs:flex w-auto h-auto overflow-hidden z-30">
 
-            <div className="absolute flex lgs:w-[25vw] lgs:h-[4rem] sms:h-[3rem] sms:w-[50vw] rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
+            <div className="absolute flex w-[25vw] lgs:h-[4rem] h-[3rem] sms:w-[50vw] rounded-bl-2xl bg-orange-600 right-0  items-center justify-center z-50"
                         style={{
                             boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
                         }}>
@@ -1563,10 +1581,10 @@ const Home = () => {
                     <div key={tool.id} className="relative w-auto h-auto flex-shrink-1">
                     <div className="flex  h-[25rem] w-[100vw] bg-secondary" >
 
-                        <div className="relative flex lgs:h-[25rem]  lgs:w-[60vw] items-center justify-start overflow-hidden">
+                        <div className="relative flex lgs:h-[25rem]  lgs:w-[60vw] mds:w-[100vw] items-center justify-start overflow-hidden">
                                 <Image key={currentIndex} src = {tool.image} alt="fwef" className="object-cover animate-moving01  lgs:h-[25rem]  lgs:w-[60vw] z-30"/>
                                 <div className="flex absolute bg-gradient-to-r h-[25rem]  w-[40vw]  from-secondary to-transparent z-40"/>
-                                <div className="flex absolute bg-gradient-to-l h-[25rem]  w-[30vw] right-0  from-secondary via-secondary to-transparent z-40"/>
+                                <div className="flex absolute bg-gradient-to-l h-[25rem]  w-[30vw] mds:w-[70vw] right-0  from-secondary via-secondary to-transparent z-40"/>
                                 <div className="flex absolute bg-gradient-to-t h-[5rem] w-[60vw] bottom-0  from-secondary to-transparent z-40"/>
                                 <div className="flex absolute bg-gradient-to-b h-[10rem] w-[80vw] top-0 from-secondary to-transparent z-40"/>
                                 
@@ -1581,9 +1599,9 @@ const Home = () => {
                         <div className="absolute flex lgs:w-[100vw] lgs:h-[25rem]  items-center justify-center z-50">
                         
                        
-                            <div key={currentIndex} className="flex flex-col lgs:h-[25rem]    lgs:w-[100vw] items-center justify-center">
+                            <div key={currentIndex} className="flex flex-col lgs:h-[25rem] mds:h-[40rem]    lgs:w-[100vw] items-center justify-center">
                                 <div
-                                  className="flex w-auto h-auto  lgs:p-5 animate-moving04">
+                                  className="flex sms:flex-col w-auto h-auto  p-5 animate-moving04">
         
                                         <h2 className="flex lgs:text-md font-dmsans text-shadow-xl text-center items-start lgs:pt-5 text-primary" style={{
                                             fontWeight:'100'
@@ -1599,7 +1617,7 @@ const Home = () => {
                                         </span>
                                 </div>
         
-                                    <p className="font-dmsans lgs:w-[40vw] text-xl text-center animate-moving03 border-2 border-gray-400 lgs:p-5 lgs:mt-8 text-primary h-auto items-center"
+                                    <p className="font-dmsans w-[40vw] text-xl text-center animate-moving03 border-2 border-gray-400 lgs:p-5 lgs:mt-8 text-primary h-auto items-center"
                                     style={{
                                         fontWeight:'100'
                                     }}>
@@ -1660,10 +1678,10 @@ const Home = () => {
             </div>
 
               {/* Axila Section */}
-           <div className="hidden relative lgs:flex lgs:h-[20rem] sms:h-auto w-full15 bg-secondary z-30" >
+           <div className="hidden relative lgs:flex mds:flex h-[20rem] sms:h-auto w-full bg-secondary z-30" >
                 
 
-           <div className="relative flex flex-col lgs:h-[20rem] lgs:w-[60vw] bg-transparent items-center justify-center overflow-hidden">
+           <div className="relative flex flex-col h-[20rem] lgs:w-[60vw] mds:w-full bg-transparent items-center justify-center overflow-hidden">
 
             <h2 className="flex font-poppins  text-center text-5xl text-primary z-30" data-aos='zoom-in' data-aos-delay='250' style={{
                 fontWeight:'100'
@@ -1678,7 +1696,7 @@ const Home = () => {
                 Axila will be in the garage soon
             </h2>
 
-            <div className="absolute flex lgs:h-[2rem] lgs:w-[30vw] animate-coloring blur-3xl items-center justify-center z-20"/>
+            <div className="absolute flex lgs:h-[2rem] lgs:w-[30vw] mds:h-[5rem] mds:w-full animate-coloring blur-3xl items-center justify-center z-20"/>
 
             <div className="absolute flex flex-col blur-sm lgs:h-[20rem] lgs:p-5 lgs:w-full items-center justify-start z-40">
                 
@@ -1764,23 +1782,23 @@ const Home = () => {
                 <div className="aboslute flex flex-col items-center justify-start lgs:mt-12  w-full h-auto z-30">
 
                 <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary sms:text-5xl bg-orange-600 p-4 lgs:text-8xl text-center"
+                                  <h2 className="font-bricolagegrotesque text-primary text-5xl bg-orange-600 p-4 lgs:text-8xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Turboss
                                   </h2>
-                                  <h2 className="flex bg-primary p-4 flex-col font-bricolagegrotesque sms:text-5xl items-center justify-center text-orange-600 lgs:p-2 lgs:text-8xl text-center" style={{
+                                  <h2 className="flex bg-primary p-4 flex-col font-bricolagegrotesque text-5xl items-center justify-center text-orange-600 lgs:p-2 lgs:text-8xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    Tools<span className="hidden lgs:flex text-xs font-dmsans text-secondary" style={{
+                                    Tools<span className="hidden lgs:flex mds:flex text-xs font-dmsans text-secondary" style={{
                                         fontWeight:'200'
                                     }}>
                                         Turboss Garage Lesson 03
                                     </span>
                                   </h2>
-                        </div>
+                </div>
 
                 </div>
 
@@ -1905,7 +1923,7 @@ const Home = () => {
                                        }} />       
                                        
                                 </div>
-                                <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
+                                <div className='absolute flex rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
                                 { index !== 4 && (
                                 <div className={`absolute flex bg-primary  w-[0.1rem] h-[200vh] items-center justify-center z-20`} style={{
 
@@ -2009,7 +2027,7 @@ const Home = () => {
 
                         </div>
 
-                              {/* mobile View medium screens*/}
+                         {/* mobile View medium screens*/}
                         <div className='hidden sms:flex mds:flex w-auto h-auto sms:mt-12 items-center justify-center'>
                             {/* First One */}
                                 <div className='flex flex-col w-auto h-auto items-center justify-center'>
@@ -2017,11 +2035,26 @@ const Home = () => {
 
                                 <div key={index} className='relative flex bg-transparent w-full h-[50rem] items-start justify-center'>
                                 <div className='relative flex  w-[20vw] h-[50rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
-                                    <div className='absolute flex bg-primary rounded-full w-[4rem] h-[4rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
-                                    boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
-                                    }}>
-                                    <Image src={tool.image} alt='tree' width={1200} height={1200} className='rounded-full border-6 border-gray-500 object-cover w-[4rem] h-[4rem]' />
-                                    </div>
+                                <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
+                                boxShadow:'inset 0px 5px 5px rgba(0,0,0,0.5)'
+                                }}>
+                                <Image src={toolbackgroundimage} width={'1200'} height={'1200'} alt='tree' className='absolute z-30 rounded-full border-4 border-orange-500 object-cover lgs:w-[5.3rem] lgs:h-[5.3rem]'
+                                       style={{
+                                        boxShadow: 'inset 10px 5px 5px rgba(255,255,255,0.9)'
+                                       }} />
+
+
+                                    <Image src={flywheel2} width={'1200'} height={'1200'} alt='tree' className='absolute z-40 rounded-full animate-spin  object-cover lgs:w-[5rem] lgs:h-[5rem]'
+                                       style={{
+                                        animationDuration:'10s'
+                                       }} />    
+
+                                <Image src={toolbackgroundimage10} width={'1200'} height={'1200'} alt='tree' className='absolute z-40 rounded-full border-4 border-orange-500 object-cover lgs:w-[5.3rem] lgs:h-[5.3rem]'
+                                       style={{
+                                        boxShadow: 'inset 10px 5px 5px rgba(255,255,255,0.9)'
+                                       }} />       
+                                       
+                                </div>
                                     { index !== 4 && (
                                     <div className={`absolute  w-[0.08rem] bg-primary h-[200vh] items-center justify-center z-20`} data-aos='fade-down' style={{
 
@@ -2047,6 +2080,13 @@ const Home = () => {
                                     >
                                         {tool.description}
                                     </p>
+
+                                                                        <p
+                                        className={`hidden lgs:flex mds:flex bg-secondary text-center p-4 rounded-xl font-dmsans text-primary mt-4 text-md `}
+                                        style={{ fontWeight: "200" }}
+                                    >
+                                        {tool.description}
+                                    </p>
                                     
                                     </div>
 
@@ -2055,7 +2095,7 @@ const Home = () => {
                                       {tool.images.map((item, index) => (
                                         <div key={index}  className="flex flex-col w-auto items-center justify-center h-auto">
                                             <div className=" flex items-end w-auto h-auto">
-                                                    <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2  sms:w-[7rem] sms:h-[7rem]'
+                                                    <Image src={item.url} alt='tool' width={100} height={100} className='object-cover rounded-full border-2  w-[7rem] h-[7rem]'
                                                     style={{
                                                         boxShadow: '0px 5px 10px 5px rgba(0,0,0,0.4)'
                                                     }}/>
@@ -2095,3 +2135,4 @@ const Home = () => {
 };
 
 export default Home;
+

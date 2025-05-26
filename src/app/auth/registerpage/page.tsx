@@ -103,7 +103,7 @@ export default function RegisterPage() {
         {/* Register Form */}
         <div className='absolute flex bg-transparent inset-0 items-center justify-center z-30 h-screen w-full'>
 
-               <div className='relative w-[50%] bg-transparent h-screen'>
+               <div className='hidden lgs:flex relative w-[50%] bg-transparent h-screen'>
 
                  {/* Upper layer for info */} 
                 <div className='absolute flex w-full inset-0 bg-gradient-to-r from-secondary via-secondary to-transparent  h-screen z-20'/>
@@ -161,11 +161,31 @@ export default function RegisterPage() {
                 </div> 
 
                 {/* Upper layer for Registration Page */} 
-                <div className='flex flex-col w-[50%] p-12  bg-opacity-90 h-auto rounded-lg shadow-lg items-center justify-center'>
+                <div className='flex flex-col lgs:w-[50%] sms:w-full lgs:p-12 sms:p-5  bg-opacity-90 h-auto rounded-lg shadow-lg items-center justify-center'>
 
                     <h2 className='font-dmsans text-primary text-3xl mb-6 font-semibold'>
                         Create Your Account
                     </h2>
+
+                    <div className='flex flex-col w-[100%]'>
+
+                    {/* Top Layer Details */}
+                    <div className='hidden sms:flex flex-col w-auto items-center justify-center py-4 h-auto'>
+                                    <h2 className='font-dmsans text-primary text-lg'
+                                    style={{
+                                        fontWeight:'100',
+                                    }}>
+                                        Welcome to <span className='text-orange-600 font-semibold'>Turboss</span>
+                                    </h2>
+                                    <h2 className='font-dmsans text-primary py-2 text-xl'
+                                    style={{
+                                        fontWeight:'100',
+                                    }}>
+                                    The Digital Garage Platform
+                                    </h2>
+                    </div>
+                      
+                 
 
                     {error && (
                       <div className="w-full p-3 mb-4 bg-red-100 text-red-700 rounded-lg">
@@ -173,7 +193,7 @@ export default function RegisterPage() {
                       </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className='flex flex-col bg-transparent border-2 p-12 rounded-3xl w-full space-y-4'>
+                    <form onSubmit={handleSubmit} className='flex flex-col bg-transparent border-2 lgs:p-12 sms:p-8 lgs:rounded-3xl w-full space-y-4'>
 
                         <div className='flex flex-row space-x-4'>
                             {/* First Name */}
@@ -271,6 +291,14 @@ export default function RegisterPage() {
                             {loading ? 'Registering...' : 'Register'}
                         </button>
                     </form>
+
+                    <div className='flex w-full h-auto items-center justify-center'>
+                    <h2 className='hidden sms:flex flex-col font-dmsans py-4 text-center text-primary text-sm'>
+                     Already registered? <Link href="/auth/loginpage" className='font-russoone text-orange-600 hover:underline'>Login here</Link>
+                     </h2>
+                     </div>
+
+                         </div>
 
                 </div>
 

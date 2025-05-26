@@ -259,6 +259,20 @@
   animation: movingText01 40s infinite ease-in-out forwards;
 }
 
+
+/* Moving Animation for chat screen 05 for text*/
+@keyframes movingText02 {
+
+  0% { transform: translateX(-1000px); }
+  50% { transform: translateX(-400px); }
+  100% { transform: translateX(-1000px); }
+
+}
+
+.animate-movingText02 {
+  animation: movingText02 120s infinite ease-in-out forwards;
+}
+
 /* Moving Animation for loading screen 05 for text*/
 @keyframes movingText01Reverse {
 

@@ -169,22 +169,9 @@ const Detailpage = () => {
     }
   }, []);
 
-  const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-      setIsClient(true);
-    }, []);
 
 
-    const [angle, setAngle] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAngle((prev) => prev + 30);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
 
 
   const router = useRouter();
@@ -254,12 +241,12 @@ useEffect(() => {
     
     <div className='w-full bg-transparent transition-none overflow-hidden'>
       
-            <div className='relative flex w-full lgs:h-[100vh] sms:h-[80vh]'>
+            <div className='relative flex w-full h-[100vh] sms:h-[80vh]'>
             
               <Image
                 src={background}
                 alt='background'
-                className='hidden lgs:flex object-cover w-full h-full'
+                className='hidden lgs:flex mds:flex object-cover w-full h-full'
                 layout='fill'
               />
               
@@ -272,9 +259,9 @@ useEffect(() => {
               
           
             
-              <div className='absolute flex lgs:w-[50vw] sms:w-[100vw] right-0 h-full z-30'>
+              <div className='absolute flex w-[50vw] sms:w-[100vw] right-0 h-full z-30'>
                 {/* Portal Video */}
-                <div className='absolute flex lgs:w-[50vw] lgs:h-[50vh] sms:w-[100vw] sms:scale-125 sms:bottom-0 lgs:-bottom-5 lgs:left-12 bg-transparent items-center justify-center z-40'>
+                <div className='absolute flex w-[50vw] h-[50vh] sms:h-[20vh] sms:w-[100vw] sms:scale-125 sms:bottom-0 -bottom-5 lgs:left-12 bg-transparent items-center justify-center z-40'>
                   <video
                     src='/portalVideo.webm'
                     autoPlay
@@ -287,14 +274,14 @@ useEffect(() => {
                 </div>
 
                 {/* Engine Image */}
-                <div className='absolute flex lgs:w-[50vw] sms:h-[50vh]   lgs:h-[50vh] sms:bottom-16 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-50'>
+                <div className='absolute flex w-[50vw] sms:h-[50vh] mds:h-[120vh] lgs:h-[50vh] sms:bottom-16 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-50'>
                 {data && data.image && (
                     <Image
                       src={data.image}
                       width={'300'}
                       height={'300'}
                       alt={data.name}
-                      className='flex object-cover lgs:h-auto sms:w-[100vw] lgs:w-[30vw]'
+                      className='flex object-cover lgs:h-auto sms:w-[100vw] w-[30vw]'
                     />
                   )}
                 </div>
@@ -303,7 +290,7 @@ useEffect(() => {
 
 
 
-              <div className='hidden absolute lgs:flex sms:flex  lgs:w-auto right-0 h-auto bottom-0 sms:bottom-96 z-50'>
+              <div className='hidden absolute lgs:flex sms:flex mds:flex  lgs:w-auto right-0 h-auto bottom-0 sms:bottom-96 z-50'>
 
               {/* Topic Section */}
                 <div className='flex w-auto h-auto bg-transparent z-50 items-end justify-end'>
@@ -311,16 +298,16 @@ useEffect(() => {
                     <div className='flex w-auto h-auto  right-2 transform rotate-90 origin-top-right'>
 
 
-                      <h2 className='flex flex-col font-bricolagegrotesque text-xl sms:text-sm items-center justify-center p-3  bg-secondary text-primary'style={{
+                      <h2 className='flex flex-col font-bricolagegrotesque lgs:text-xl mds:text-md sms:text-sm  items-center justify-center p-3  bg-secondary text-primary'style={{
                         boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
                         fontWeight:'700'
                       }}>
                         <span className='flex font-thin'>Garage</span>
-                        <span className='flex text-6xl sms:text-3xl'>101</span>
+                        <span className='flex lgs:text-6xl mds:text-5xl sms:text-3xl'>101</span>
                         
                       </h2>
 
-                      <h2 className='font-bricolagegrotesque text-6xl sms:text-4xl p-2 place-content-center bg-orange-600 text-primary'style={{
+                      <h2 className='font-bricolagegrotesque lgs:text-6xl mds:text-5xl sms:text-4xl p-2 place-content-center bg-orange-600 text-primary'style={{
                         boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
                         fontWeight:'700'
                       }}>
@@ -339,19 +326,19 @@ useEffect(() => {
 
               
             {/*main detail Section for larger screen */}
-              <div className={`hidden relative lgs:flex flex-col items-center justify-start scrollbar-hide sms:w-[100vw] drop-shadow-lgs ${expandSection ? 'lgs:w-[100vw] sms:h-auto' : 'lgs:w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+              <div className={`hidden relative lgs:flex mds:flex flex-col items-center justify-start scrollbar-hide w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
               style={{
                 boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
               }}>
 
-              <div className={`absolute flex flex-col items-center justify-center ${expandSection ? 'lgs:w-[80vw]' : 'lgs:w-[60vw]'} bg-primary overflow-auto right-0 h-auto z-30`}/>
+              <div className={`absolute flex flex-col items-center justify-center ${expandSection ? 'lgs:w-[80vw] mds:w-[80vw]' : 'lgs:w-[60vw] mds:w-[60vw]'} bg-primary overflow-auto right-0 h-auto z-30`}/>
       
-                      {/* Upper Section */}
-                        <div className={`flex ${expandSection ? 'lgs:w-[50vw]' : 'lgs:w-[50vw]'} lgs:h-[40rem] bg-orange-600  z-40 items-center`}>
+                         {/* Upper Section */}
+                        <div className={`flex ${expandSection ? 'lgs:w-[50vw] mds:w-[100vw]' : 'lgs:w-[50vw] mds:w-[50vw]'} h-[40rem] bg-orange-600  z-40 items-center`}>
 
-                            <div className='flex lgs:w-[50vw] lgs:h-[40rem] z-40 bg-transparent items-center justify-center'>
+                            <div className='flex lgs:w-[50vw] w-full h-[40rem] z-40 bg-transparent items-center justify-center'>
 
-                                <h2 className='font-poppins opacity-20 text-nowrap lgs:p-2 place-content-center z-40 text-primary'style={{
+                                <h2 className='font-poppins opacity-20 text-nowrap p-2 place-content-center z-40 text-primary'style={{
                                   fontWeight:'100',
                                   fontSize:'30rem'
                                 }}>
@@ -360,30 +347,30 @@ useEffect(() => {
                                 }
                                 </h2>
 
-                                <div className='absolute lgs:h-[40rem] lgs:w-full bg-orange-600 z-20'/>
+                                <div className='absolute h-[40rem] w-full bg-orange-600 z-20'/>
                                 
                                 {/* Content Area for upper section */}
-                                <div className='absolute flex flex-col  lgs:h-[40rem] lgs:w-full bg-transparent z-50'>
+                                <div className='absolute flex flex-col  h-[40rem] w-full bg-transparent z-50'>
 
 
                                 {/* Navigation Section */}
-                                  <div className='relative lgs:flex w-full lgs:h-[5rem] bg-primary overflow-hidden z-50 items-center justify-center'>
+                                  <div className='relative flex w-full h-[5rem] bg-primary overflow-hidden z-50 items-center justify-center'>
 
-                                     <Image src={carbonFiberHood} alt='' width={1200} className='object-cover lgs:w-full'/>
-                                  <div onClick={()=> handleExpand() } className= {`absolute flex cursor-pointer bg-secondary rounded-3xl lgs:w-[8rem] lgs:h-[3rem] right-6 text-primary font-dmsans items-center justify-center
-                                   ${click ? 'scale-75' : 'scale-100'} transition-all duration-500 ease-in-out`}
-                                    style={{
-                                      boxShadow:'inset 0px 0px 10px 1px rgba(255, 255, 255, 0.6), 0px 0px 10px 5px rgba(0, 0, 0, 0.6)'
-                                    }}>
+                                     <Image src={carbonFiberHood} alt='' width={'1200'} className='object-cover w-full'/>
+                                        <div onClick={()=> handleExpand() } className= {`absolute flex cursor-pointer bg-secondary rounded-3xl mds:text-sm  w-[8rem] h-[3rem] mds:w-[6rem] mds:h-[2rem]  right-6 text-primary font-dmsans items-center justify-center
+                                        ${click ? 'scale-75' : 'scale-100'} transition-all duration-500 ease-in-out`}
+                                          style={{
+                                            boxShadow:'inset 0px 0px 10px 1px rgba(255, 255, 255, 0.6), 0px 0px 10px 5px rgba(0, 0, 0, 0.6)'
+                                          }}>
 
-                                      Move
+                                            Move
 
-                                  </div> 
-                                  <div  className= {`absolute flex cursor-pointer bg-secondary  lgs:w-[15rem] lgs:h-[5rem] left-0 text-primary font-dmsans items-center justify-center`}
+                                        </div> 
+                                  <div  className= {`absolute flex cursor-pointer bg-secondary  w-[15rem] h-[5rem] left-0 text-primary font-dmsans items-center justify-center`}
                                     style={{
                                       boxShadow:'inset 0px 0px 10px 1px rgba(255, 255, 255, 0.3), 0px 0px 10px 5px rgba(0, 0, 0, 0.6)'
                                     }}>
-                                      <button onClick={handleClick}  className={`absolute flex cursor-pointer  lgs:w-[10rem] lgs:h-[3rem] text-primary bg-gray-600 rounded-3xl font-dmsans items-center justify-center`}
+                                      <button onClick={handleClick}  className={`absolute flex cursor-pointer mds:text-sm  lgs:w-[10rem] lgs:h-[3rem]  mds:w-[6rem] mds:h-[2rem]   text-primary bg-gray-600 rounded-3xl font-dmsans items-center justify-center`}
                                       style={{
                                         boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.6), 0px 0px 10px 1px rgba(255, 255, 255, 0.2)'
                                       }}>
@@ -402,13 +389,13 @@ useEffect(() => {
 
                                   
                                     {/* View Part Section */}
-                                      <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[15vw]' : 'lgs:w-[0vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-secondary opacity-50`}>
+                                      <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'w-[15vw] mds:w-[20vw]' : 'w-[0vw] mds:w-[10vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-secondary opacity-50`}>
 
                                     </div> 
                                     {/* Parts Section */}
                                     <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[25vw]' : 'lgs:w-[20vw]'} transition-all duration-1000 ease-in-out place-content-center z-50 place-items-center scrollbar-hide overflow-y-scroll bg-transparent`}>
 
-                                      <div className='absolute flex sms:flex-col items-center justify-center flex-col lgs:space-y-2 lgs:h-[35rem] lgs:w-[20vw] z-40'>
+                                      <div className='absolute flex sms:flex-col items-center justify-center flex-col space-y-2 h-[35rem] lgs:w-[20vw] z-40'>
                                         {data?.partset1.map((tool, index) => (
 
                                             <div key={index} onClick={() => { setSelectedImage(tool?.image); setSelectedName(tool?.name); setSelectedDescription(tool?.description); }} className='flex flex-col border-2 rounded-lg cursor-pointer w-[4rem] h-[4rem]'>
@@ -417,21 +404,21 @@ useEffect(() => {
                                                 width={'100'}
                                                 height={'100'}
                                                 alt={tool?.name}
-                                                className='object-cover w-[4rem] hover:scale-150 h-[4rem] transition-all duration-500 ease-in-out'
+                                                className='object-cover lgs:w-[4rem] hover:scale-150 lgs:h-[4rem] transition-all duration-500 ease-in-out'
                                               />
                                             </div>
 
                                         ))}
                                         </div>
 
-                                        <div className={`absolute opacity-40  bg-orange-700 lgs:h-[35rem] ${expandSection ? 'lgs:w-[25vw]' : 'lgs:w-[20vw]'} transition-all duration-1000 ease-in-out  z-20`}/>
+                                        <div className={`absolute opacity-40  bg-orange-700 lgs:h-[35rem] ${expandSection ? 'lgs:w-[25vw]' : 'lgs:w-[20vw] mds:w-[100vw]'} transition-all duration-1000 ease-in-out  z-20`}/>
 
                                     </div> 
 
                                       {/* View Part Section */}
-                                      <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[80vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-transparent`}>
+                                      <div className={`flex flex-col h-[35rem] ${expandSection ? 'lgs:w-[60vw] mds:w-[100vw]' : 'lgs:w-[80vw] mds:w-[100vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-transparent`}>
       
-                                          <div className='flex w-full items-center justify-center h-auto lgs:mt-12'>
+                                          <div className='flex w-full items-center justify-center h-auto mt-12'>
 
 
                                             
@@ -444,7 +431,7 @@ useEffect(() => {
                                                             width={400} 
                                                             height={400}
                                                             alt="Selected Image"
-                                                            className="object-cover lgs:w-[20rem] lgs:h-[20rem] lgs:scale-125 z-40"
+                                                            className="object-cover lgs:w-[20rem] lgs:h-[20rem]  mds:w-[15rem] mds:h-[15rem]  scale-125 z-40"
                                                           />
                                                     </div>
 
@@ -464,7 +451,7 @@ useEffect(() => {
                                           </div>
 
                                           <div className='absolute w-auto h-auto items-center justify-center'>
-                                              <div className='absolute flex  lgs:w-[18rem] opacity-25 h-auto items-center justify-center z-20'>
+                                              <div className='absolute flex  w-[18rem] opacity-25 h-auto items-center justify-center z-20'>
                                                         <h2 className='flex  font-bricolagegrotesque text-center text-9xl text-nowrap  z-30  text-primary lgs:p-2 '
                                                       style={{
                                                         fontWeight:'600'
@@ -476,7 +463,7 @@ useEffect(() => {
 
                                           <div className='flex w-full items-center justify-center h-[25rem]'>
                                               
-                                              <p className='flex flex-col font-bricolagegrotesque lgs:w-[30vw] text-center text-shadow-xl lgs:text-lg lgs:p-2 text-primary'style={{
+                                              <p className='flex flex-col font-bricolagegrotesque lgs:w-[30vw] mds:w-[30vw] text-center text-shadow-xl lgs:text-lg lgs:p-2 text-primary'style={{
                                                 fontWeight:'100'
                                               }}>
                                                 {selectedImage ? `${selectedDescription}` : 'Select a Part'}
@@ -505,19 +492,18 @@ useEffect(() => {
 
                         </div>
 
-
                         {/* Content Section */}
                         <div className='flex flex-col w-auto h-auto bg-transparent z-50'>
 
                         {/* Main Topic 01 */}
-                        <div  className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} h-auto lgs:space-y-5 transition-all duration-1000 ease-in-out bg-transparent items-start  lgs:p-8 justify-center`}
+                        <div  className={`flex flex-col ${expandSection ? 'w-[60vw]' : 'w-[45vw]'} h-auto space-y-5 transition-all duration-1000 ease-in-out bg-transparent items-start p-8 justify-center`}
                             style={{
                               
                             }}>
                                 <div className='flex w-auto h-auto'>
 
                                           
-                                <h2 className='flex flex-col font-bricolagegrotesque text-2xl lgs:p-2  bg-orange-600 text-primary'style={{
+                                <h2 className='flex flex-col font-bricolagegrotesque text-2xl p-2  bg-orange-600 text-primary'style={{
                                   boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
                                   fontWeight:'700'
                                 }}>
@@ -531,7 +517,7 @@ useEffect(() => {
                                 <div className='flex w-auto h-auto'>
 
 
-                                  <p className='flex flex-col font-bricolagegrotesque text-lg lgs:p-2  text-secondary'style={{
+                                  <p className='flex flex-col font-bricolagegrotesque text-lg mds:text-md lgs:p-2  text-secondary'style={{
                                     fontWeight:'100'
                                   }}>
                                     {data?.maindetailset1.Description}
@@ -544,7 +530,7 @@ useEffect(() => {
 
 
                         {/* Main Description 01 */}
-                        <div className={`flex flex-col ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[50vw]'} h-auto bg-orange-800 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start lgs:pr-5  lgs:p-8 justify-center`}>
+                        <div className={`flex flex-col ${expandSection ? 'w-[100vw]' : 'w-[50vw]'} h-auto bg-orange-800 space-y-5 transition-all duration-1000 ease-in-out items-start pr-5  p-8 justify-center`}>
 
                           {data?.detailset1.map((tool, index) => (
 
@@ -555,7 +541,7 @@ useEffect(() => {
                                 <div className='flex w-auto h-auto'>
 
                                           
-                                <h2 className='flex flex-col font-bricolagegrotesque text-xl lgs:p-2   text-primary'style={{
+                                <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2   text-primary'style={{
                                 
                                   fontWeight:'900'
                                 }}>
@@ -569,7 +555,7 @@ useEffect(() => {
                                 <div className='flex w-auto h-auto'>
 
 
-                                  <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-primary'style={{
+                                  <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-primary'style={{
                                     fontWeight:'100'
                                   }}>
                                     {tool?.Description}
@@ -589,18 +575,18 @@ useEffect(() => {
                         </div>
 
                         {/* Main Topic 02 */}                 
-                        <div  className={`flex flex-col ${expandSection ? 'lgs:w-[100vw] items-start' : 'lgs:w-[50vw] items-start'} h-auto lgs:space-y-5 transition-all duration-1000 ease-in-out bg-transparent   lgs:p-8 justify-center`}
+                        <div  className={`flex flex-col ${expandSection ? 'w-[100vw] items-start' : 'w-[50vw] items-start'} h-auto space-y-5 transition-all duration-1000 ease-in-out bg-transparent p-8 justify-center`}
                             style={{
                               
                             }}>
-                              <div className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} transition-all duration-1000 ease-in-out h-auto`}
+                              <div className={`flex flex-col ${expandSection ? 'w-[60vw]' : 'w-[45vw]'} transition-all duration-1000 ease-in-out h-auto`}
                             style={{
                             
                             }}>
                                 <div className='flex w-auto h-auto'>
 
                                           
-                                <h2 className='flex flex-col font-bricolagegrotesque text-2xl lgs:p-2  bg-orange-600 text-primary'style={{
+                                <h2 className='flex flex-col font-bricolagegrotesque text-2xl p-2  bg-orange-600 text-primary'style={{
                                   boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
                                   fontWeight:'700'
                                 }}>
@@ -614,7 +600,7 @@ useEffect(() => {
                                 <div className='flex w-auto h-auto'>
 
 
-                                  <p className='flex flex-col font-bricolagegrotesque text-lg lgs:p-2  text-secondary'style={{
+                                  <p className='flex flex-col font-bricolagegrotesque text-lg p-2  text-secondary'style={{
                                     fontWeight:'100'
                                   }}>
                                     {data?.maindetailset2.Description}
@@ -628,9 +614,9 @@ useEffect(() => {
 
 
                         {/* Main Description 02 */}
-                        <div className={`relative flex flex-col ${expandSection ? 'lgs:w-[100vw] items-end justify-end' : 'lgs:w-[50vw] items-start justify-start'} h-auto bg-orange-850 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
+                        <div className={`relative flex flex-col ${expandSection ? 'w-[100vw] items-end justify-end' : 'w-[50vw] items-start justify-start'} h-auto bg-orange-850 space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
 
-                              <div className='flex flex-col w-auto h-auto lgs:pr-5  lgs:p-8 z-40'>
+                              <div className='flex flex-col w-auto h-auto lgs:pr-5 p-8 z-40'>
 
                               {data?.detailset2.map((tool, index) => (
 
@@ -656,13 +642,13 @@ useEffect(() => {
                                   </div>  
 
                                   {/* other Section */}
-                                  <div className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} `}>
+                                  <div className={`flex flex-col ${expandSection ? 'w-[60vw]' : 'w-[45vw]'} `}>
                                     
                                     {/* Main Topic and Description */}
-                                    <div className='flex w-auto h-auto lgs:mt-5'>
+                                    <div className='flex w-auto h-auto mt-5'>
 
                                               
-                                    <h2 className='flex flex-col font-bricolagegrotesque w-full text-xl lgs:p-2 bg-orange-600   text-primary'style={{
+                                    <h2 className='flex flex-col font-bricolagegrotesque w-full text-xl p-2 bg-orange-600   text-primary'style={{
                                     
                                       fontWeight:'900'
                                     }}>
@@ -681,10 +667,10 @@ useEffect(() => {
                                   </div>  
 
                                     {/*  Description */}
-                                    <div className='flex w-auto h-auto lgs:mt-5'>
+                                    <div className='flex w-auto h-auto mt-5'>
 
 
-                                      <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                                      <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
                                         fontWeight:'100'
                                       }}>
                                         {tool?.Description}
@@ -695,9 +681,9 @@ useEffect(() => {
                                     </div> 
 
                                     {/* Advantages */}
-                                    <div className='flex flex-col w-auto h-auto lgs:mt-5'>
+                                    <div className='flex flex-col w-auto h-auto mt-5'>
 
-                                          <h2 className='flex flex-col font-bricolagegrotesque text-xl lgs:p-2  text-orange-600'style={{
+                                          <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2  text-orange-600'style={{
                                           
                                           fontWeight:'900'
                                         }}>
@@ -706,7 +692,7 @@ useEffect(() => {
                                         </h2>
 
 
-                                        <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                                        <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
                                           fontWeight:'100'
                                         }}>
                                           {tool?.Advantages}
@@ -717,9 +703,9 @@ useEffect(() => {
                                     </div> 
 
                                     {/* Issues */}
-                                    <div className='flex flex-col w-auto h-auto lgs:mt-5'>
+                                    <div className='flex flex-col w-auto h-auto mt-5'>
 
-                                    <h2 className='flex flex-col font-bricolagegrotesque text-xl lgs:p-2 text-secondary'style={{
+                                    <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2 text-secondary'style={{
                                     
                                     fontWeight:'900'
                                   }}>
@@ -728,7 +714,7 @@ useEffect(() => {
                                   </h2>
 
 
-                                    <p className='flex flex-col font-bricolagegrotesque text-md lgs:p-2  text-secondary'style={{
+                                    <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
                                       fontWeight:'100'
                                     }}>
                                       {tool?.Issues}
@@ -782,26 +768,26 @@ useEffect(() => {
 
       
             {/* Sub Section for more details for a larger screen */}
-            <div className='hidden lgs:flex bg-secondary w-full  lgs:h-auto'>
+            <div className='hidden lgs:flex mds:flex bg-secondary w-full  lgs:h-auto'>
 
 
-                    <div className="relative flex lgs:h-[25rem] lgs:w-[60vw] items-center justify-start overflow-hidden">
+                    <div className="relative flex h-[25rem] w-[60vw] items-center justify-start overflow-hidden">
                             <Image src={subsetback01} alt='turbo' className='object-cover w-full h-full' layout='fill' />
-                            <div className="flex absolute bg-gradient-to-r lgs:h-[30rem] lgs:w-[80vw]  from-secondary to-transparent z-40"/>
-                            <div className="flex absolute bg-gradient-to-l lgs:h-[30rem] lgs:w-[20vw] right-0  from-secondary to-transparent z-40"/>
+                            <div className="flex absolute bg-gradient-to-r h-[30rem] w-[80vw]  from-secondary to-transparent z-40"/>
+                            <div className="flex absolute bg-gradient-to-l h-[30rem] w-[20vw] right-0  from-secondary to-transparent z-40"/>
                     </div>
 
 
-                    <div className="flex lgs:h-[25rem] lgs:w-[40vw] items-center justify-center">
+                    <div className="flex h-[25rem] w-[40vw] items-center justify-center">
 
                     </div>
 
 
-                    <div className="absolute flex w-full lgs:h-[25rem] items-center justify-center z-50">
+                    <div className="absolute flex w-full h-[25rem] items-center justify-center z-50">
 
-                            <div className="flex flex-col h-[25rem] lgs:w-[60vw]  items-center justify-center overflow-hidden">
+                            <div className="flex flex-col h-[25rem] w-[60vw]  items-center justify-center overflow-hidden">
 
-                                <h2 className='flex flex-col font-poppins lgs:w-[40vw] lgs:text-5xl text-primary' style={{
+                                <h2 className='flex flex-col font-poppins w-[40vw] text-5xl text-primary' style={{
                                   fontWeight:'100'
                                 }}>
                                 Analyze and optimize key <span>{data?.subTopic1} parameters,</span><span className='flex flex-col text-orange-600 text-lg' style={{ fontWeight:'400'}}>including<span className='flex flex-col text-primary lgs:text-nowrap'>{data?.subTopic2}
@@ -815,7 +801,7 @@ useEffect(() => {
                             
                             </div>
                             
-                            <div className="flex h-[25rem]  lgs:w-[40vw] items-center justify-center">
+                            <div className="flex h-[25rem]  w-[40vw] items-center justify-center">
 
                               {data?.subSection.map((tool, index)=> (
                                       
@@ -824,7 +810,7 @@ useEffect(() => {
                                     onMouseLeave={()=> setHover(null)}
                                     >
                                           
-                                      <div className='relative h-[25rem] lgs:w-[10vw] bg-orange-400 overflow-hidden'>
+                                      <div className='relative h-[25rem] w-[10vw] bg-orange-400 overflow-hidden'>
                                           <Image src={tool?.subImage1} alt='turbo' className='flex object-cover group-hover:scale-125 w-full h-full transition-all border-2 duration-700 ease-in-out' layout='fill' />
                                           <div className='absolute flex w-full h-1/4 items-center justify-center bg-gradient-to-b top-0 from-secondary to-transparent z-30'/>
                                           <div className='absolute flex w-full h-3/4 items-center justify-center bg-gradient-to-t bottom-0 from-secondary to-transparent z-30'/>
@@ -838,7 +824,7 @@ useEffect(() => {
 
     
                                           <div className='absolute flex w-full h-full items-end justify-center bg-transparent z-40'>
-                                              <h2 className='font-poppins lgs:w-[8vw] lgs:h-[5rem] group-hover:scale-125 transition-all duration-700 ease-in-out  text-md text-center text-primary'
+                                              <h2 className='font-poppins w-[8vw] h-[5rem] group-hover:scale-125 transition-all duration-700 ease-in-out  text-md text-center text-primary'
                                               style={{
                                                 fontWeight:'100'
                                               }}>
@@ -870,21 +856,21 @@ useEffect(() => {
 
 
            {/*left hanging Topic Section */}
-           <div className='hidden absolute lgs:flex w-auto h-auto bg-transparent z-50 lgs:mt-24  items-end justify-end'>
+           <div className='hidden absolute lgs:flex mds:flex w-auto h-auto bg-transparent z-50 mt-24  items-end justify-end'>
 
             <div className='flex w-auto h-auto  right-0 transform origin-top-left -rotate-90'>
 
 
-              <h2 className='flex flex-col font-bricolagegrotesque text-xl items-center justify-center lgs:p-3  bg-secondary text-primary'style={{
+              <h2 className='flex flex-col font-bricolagegrotesque text-xl mds:text-sm items-center justify-center p-3  bg-secondary text-primary'style={{
                 boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
                 fontWeight:'700'
               }}>
                 <span className='flex font-thin'>Garage</span>
-                <span className='flex text-6xl'>101</span>
+                <span className='flex text-6xl mds:text-2xl'>101</span>
                 
               </h2>
 
-              <h2 className='font-bricolagegrotesque text-6xl lgs:p-2 place-content-center bg-orange-600 text-primary'style={{
+              <h2 className='font-bricolagegrotesque text-6xl mds:text-4xl p-2 place-content-center bg-orange-600 text-primary'style={{
                 boxShadow:'0px 0px 10px 1px rgba(0, 0, 0, 0.2)',
                 fontWeight:'700'
               }}>
@@ -1389,35 +1375,32 @@ useEffect(() => {
 
 
 
-        
-
-
-
-
-
+    
               {/* Variation Section */}
          {
 
             data?.variations && (
-              <div className='relative lgs:h-auto sms:h-screen w-full'>
+              <div className='relative lgs:h-auto sms:h-screen mds:h-[200vh] w-full'>
 
               <Image src={background2} alt='turbo' className='object-cover w-full h-full' layout='fill' />
 
                             <div className='flex w-full h-[10rem] bg-transparent'>
     
+
+                              {/* title text area */}
                             <div className="absolute flex items-start justify-center w-full h-[20rem] bg-gradient-to-b from-primary via-primary to-transparent">
                                <div className="flex w-auto h-auto mt-12">
-                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 lgs:text-6xl sms:text-4xl text-center"
+                                  <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 lgs:text-6xl text-4xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     Engine
                                   </h2>
-                                  <h2 className="flex items-center justify-center bg-primary p-1 flex-col font-bricolagegrotesque sms:text-4xl text-orange-600 lgs:p-2 text-5xl text-center" style={{
+                                  <h2 className="flex items-center justify-center bg-primary p-1 flex-col font-bricolagegrotesque text-4xl text-orange-600 lgs:p-2 lgs:text-5xl text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    VARIATIONS<span className="hidden lgs:flex text-xs font-dmsans  text-secondary" style={{
+                                    VARIATIONS<span className="hidden lgs:flex mds:flex text-xs font-dmsans  text-secondary" style={{
                                         fontWeight:'100'
                                     }}>
                                         Turboss Garage Lesson 01
@@ -1428,8 +1411,8 @@ useEffect(() => {
 
                              </div>
 
-                            {/* Swiper Container */}
-                            <div className="hidden relative lgs:flex w-full items-center justify-center bg-transparent z-30">
+                            {/* Swiper Container for large and medium */}
+                            <div className="hidden relative lgs:flex mds:flex w-full items-center justify-center bg-transparent z-30">
                                 
                                     <Swiper
                                         effect="coverflow"
@@ -1446,7 +1429,7 @@ useEffect(() => {
                                         pagination={{ clickable: true }}
                                         navigation={true}
                                         modules={[EffectCoverflow, Pagination, Navigation]}
-                                        className="flex lgs:h-[55rem]  items-center justify-center p-12"
+                                        className="flex lgs:h-[55rem] mds:h-[50rem]  items-center justify-center p-12"
                                         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                                     >
                                         {data?.variations.map((tool, index) => {
@@ -1461,29 +1444,29 @@ useEffect(() => {
                                             return (
                                                 <SwiperSlide key={index}>
     
-                                                    <div className="flex lgs:h-[30rem] bg-transparent  items-center justify-center">
+                                                    <div className="flex lgs:h-[30rem] mds:h-[30rem] bg-transparent  items-center justify-center">
                                                         <Image
                                                             src={tool?.image}
                                                             alt="tool_id"
-                                                            width={400}
-                                                            height={400}
-                                                            className="object-cover animate-floating w-auto h-auto"
+                                                            width={'400'}
+                                                            height={'400'}
+                                                            className="object-cover mds:h-[20rem] animate-floating w-auto h-auto"
                                                             style={{
                                                                 opacity
                                                             }}
                                                         />
                                                     </div>
                                                     <div
-                                                        className=" flex flex-col lgs:h-[30rem] items-center justify-start w-full transition-opacity duration-500"
+                                                        className=" flex flex-col h-[30rem] items-center justify-start w-full transition-opacity duration-500"
                                                         style={{ opacity }}
                                                     >
                                                         
-                                                        <div className='relative lgs:w-[20rem] lgs:h-[10rem] rounded-2xl bg-secondary items-center justify-center overflow-hidden'
+                                                        <div className='relative w-[20rem] h-[10rem] rounded-2xl bg-secondary items-center justify-center overflow-hidden'
                                                         style={{
                                                           boxShadow:'inset 0px 0px 10px 5px rgba(255, 255, 255, 0.2)'
                                                         }}>
                                                             {/* Turboss Layer */}
-                                                            <div className='absolute flex z-20  lgs:w-[20rem] lgs:h-[10rem] items-end justify-end lgs:mt-4 '>
+                                                            <div className='absolute flex z-20  w-[20rem] h-[10rem] items-end justify-end mt-4 '>
                                                                 <h2 className='font-poppins bottom  text-8xl text-primary opacity-10'
                                                                 style={{
                                                                   fontWeight:'100'
@@ -1492,8 +1475,8 @@ useEffect(() => {
                                                                 </h2>
                                                             </div>
                                                             {/* Garage Layer */}
-                                                            <div className='absolute flex z-20  lgs:w-[20rem] lgs:h-[10rem] items-end justify-end'>
-                                                                <h2 className='font-bricolagegrotesque bottom  text-md text-primary opacity-40 lgs:mr-2'
+                                                            <div className='absolute flex z-20  w-[20rem] h-[10rem] items-end justify-end'>
+                                                                <h2 className='font-bricolagegrotesque bottom  text-md text-primary opacity-40 mr-2'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
@@ -1501,12 +1484,12 @@ useEffect(() => {
                                                                 </h2>
                                                             </div>
                                                              {/* Upper Layer */}
-                                                            <div className='absolute flex z-30  lgs:w-[20rem] lgs:h-[10rem] items-start justify-start lgs:p-6'>
+                                                            <div className='absolute flex z-30  w-[20rem] h-[10rem] items-start justify-start p-6'>
                                                                 <h2 className='flex flex-col font-poppins bottom  text-5xl items-center justify-center text-orange-600 opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
-                                                                    {tool?.name}<span className='lgs:text-xl text-primary font-poppins'
+                                                                    {tool?.name}<span className='text-xl text-primary font-poppins'
                                                                     style={{
                                                                       fontWeight:'100'
                                                                     }}>
@@ -1515,18 +1498,18 @@ useEffect(() => {
                                                                 </h2>
                                                             </div>
                                                              {/* Sound wave Layer */}
-                                                            <div className='absolute flex z-50  lgs:w-[20rem] lgs:h-[10rem] items-start justify-end lgs:p-6'>
-                                                                <div className='flex bottom lgs:w-[10rem] lgs:h-[4rem] text-5xl justify-end bg-secondary opacity-90'
+                                                            <div className='absolute flex z-50  w-[20rem] h-[10rem] items-start justify-end p-6'>
+                                                                <div className='flex bottom w-[10rem] h-[4rem] text-5xl justify-end bg-secondary opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
 
                                                                       <div                 
-                                                                                className=" flex z-50 bottom-0 lgs:left-6 items-center justify-center cursor-pointer lgs:p-2"
+                                                                                className=" flex z-50 bottom-0 left-6 items-center justify-center cursor-pointer p-2"
                                                                                 onClick={() => { handleAudioToggle(index, tool?.sound); handleClick(); }}
                                                                               >
-                                                                                <div className="flex items-center justify-center rounded-full lgs:w-[3rem] lgs:h-[3rem] bg-primary opacity-90">
-                                                                                  <FontAwesomeIcon icon={playingIndex === index ? faVolumeHigh : faVolumeDown} className='lgs:h-5'/>
+                                                                                <div className="flex items-center justify-center rounded-full w-[3rem] h-[3rem] bg-primary opacity-90">
+                                                                                  <FontAwesomeIcon icon={playingIndex === index ? faVolumeHigh : faVolumeDown} className='h-5'/>
                                                                                 </div>
                                                                               </div>
                                                                     
@@ -1534,12 +1517,12 @@ useEffect(() => {
                                                             </div>
                                                             {/* Button Layer */}
                                                             <div
-                                                              className="absolute flex z-50 lgs:bottom-2 lgs:left-6 items-center justify-center lgs:space-x-2 cursor-pointer lgs:p-2"
+                                                              className="absolute flex z-50 bottom-2 left-6 items-center justify-center space-x-2 cursor-pointer p-2"
                                                               
                                                             > 
-                                                              <div className={`flex items-center justify-center rounded-full ${activeIndex === index && click ? 'bg-green-600' : 'bg-primary'} lgs:w-[1rem] lgs:h-[1rem]  opacity-90`}/>
+                                                              <div className={`flex items-center justify-center rounded-full ${activeIndex === index && click ? 'bg-green-600' : 'bg-primary'} w-[1rem] h-[1rem]  opacity-90`}/>
 
-                                                              <div className={`flex items-center justify-center rounded-full ${activeIndex === index && click ? 'bg-primary' : 'bg-red-700'} lgs:w-[1rem] lgs:h-[1rem] opacity-90`}/>
+                                                              <div className={`flex items-center justify-center rounded-full ${activeIndex === index && click ? 'bg-primary' : 'bg-red-700'} w-[1rem] h-[1rem] opacity-90`}/>
                                   
                                                          
                                                             </div>
@@ -1702,6 +1685,9 @@ useEffect(() => {
 
 
     </div>
+   
+   
+
   );
 } ;
 
