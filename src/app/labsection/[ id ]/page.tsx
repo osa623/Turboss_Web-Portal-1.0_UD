@@ -54,7 +54,7 @@ const Detailpage = () => {
     } , []);
 
   const params = useParams();
-  const id = typeof params[' id '] === 'string' ? params[' id '].trim() : null;
+  const id = params && typeof params[' id '] === 'string' ? params[' id '].trim() : null;
 
   console.log("Paramas:" , params); // Debugging
   console.log("ID:" , id); // Debugging

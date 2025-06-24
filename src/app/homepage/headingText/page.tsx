@@ -4,6 +4,7 @@ import { useSprings, animated, SpringConfig } from '@react-spring/web';
 import { useEffect, useRef, useState } from 'react';
 
 
+
 interface SplitTextProps {
     text?: string;
     className?: string;
@@ -29,6 +30,7 @@ const SplitText: React.FC<SplitTextProps> = ({
     textAlign = 'center',
     onLetterAnimationComplete,
 }) => {
+    const AnimatedSpan = animated('span');
     const words = text.split(' ').map(word => word.split(''));
     const letters = words.flat();
     const [inView, setInView] = useState(false);
@@ -60,7 +62,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         letters.map((_, i) => ({
             from: animationFrom,
             to: inView
-                ? async (next: (props: any) => Promise<void>) => {
+                ? async (next: (props: typeof animationTo) => Promise<void>) => {
                     await next(animationTo);
                     animatedCount.current += 1;
                     if (animatedCount.current === letters.length && onLetterAnimationComplete) {
@@ -87,13 +89,13 @@ const SplitText: React.FC<SplitTextProps> = ({
                             .reduce((acc, w) => acc + w.length, 0) + letterIndex;
 
                         return (
-                            <animated.span
+                            <AnimatedSpan
                                 key={index}
                                 style={springs[index]}
                                 className="inline-block transform transition-opacity will-change-transform"
                             >
                                 {letter}
-                            </animated.span>
+                            </AnimatedSpan>
                         );
                     })}
                     <span style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>

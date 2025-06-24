@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 //import images
@@ -8,22 +7,7 @@ import backGround from '../../assests/mainBackground.jpg';
 import logo from '../../assests/turbossLogo.png';
 
 export default function Loading() {
-  const [progress, setProgress] = useState(0);
-  
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 10; // Increment progress by 10% every 100ms
-      });
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="relative items-center justify-center h-screen w-full overflow-hidden">

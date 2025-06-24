@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { EffectCoverflow, Navigation } from "swiper/modules";
 import MouseAnimation from '../components/mouseanimation/page';
 import AOS from "aos";
 import "aos/dist/aos.css";

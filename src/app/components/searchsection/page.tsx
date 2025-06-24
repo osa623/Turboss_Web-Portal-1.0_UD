@@ -2,7 +2,7 @@
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState, useEffect, useRef, use } from "react";
+import { useState } from "react";
 
 const Page = () => {
 

@@ -85,8 +85,6 @@ const Detailpage = () => {
 
     //hooks
     const [activeIndex, setActiveIndex] = useState(0);
-    const [offsetY, setOffsetY] = useState(0);
-    const [parallex1 , setParallex1] = useState(0);
     const [playingIndex, setPlayingIndex] = useState<number | null>(null);
     const [audioInstance, setAudioInstance] = useState<HTMLAudioElement | null>(null);
     const [data, setData] = useState<ToolData | null>(null);
@@ -133,25 +131,6 @@ const Detailpage = () => {
     }
 
 
-    //naviga
-    useEffect(() => {
-        const handleScroll = () => {
-            setOffsetY(window.scrollY * 0.05);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-
-    useEffect(()=> {
-        const handleScroll = () => {
-            setParallex1(window.scrollY * 0.02);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
 
 
@@ -185,7 +164,7 @@ const Detailpage = () => {
     } , []);
 
   const params = useParams();
-  const id = typeof params[' id '] === 'string' ? params[' id '].trim() : null;
+  const id = params && typeof params[' id '] === 'string' ? params[' id '].trim() : null;
 
   console.log("Paramas:" , params); // Debugging
   console.log("ID:" , id); // Debugging

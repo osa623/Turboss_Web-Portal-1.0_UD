@@ -3,7 +3,7 @@
 import Footer from "./footer/page";
 import "./globals.css";
 import { useState, useEffect } from "react";
-import Loading from "./components/loading/page.tsx";
+import Loading from "./components/loading/page";
 
 export default function RootLayout({
   children,
