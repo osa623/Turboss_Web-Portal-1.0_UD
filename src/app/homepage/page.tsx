@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
-import { useAuth } from "../context/AuthContext";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
@@ -26,7 +25,7 @@ import Axila from '../compo/pixelcard/page';
 
 // Images
 import image1 from "../assests/background.png";
-import subHeroSec1 from '../assests/subherosec1.png';
+import subHeroSec1 from '../assests/subherosec2.png';
 import herobackground3 from '../assests/herosec3.png';
 import herobackground4 from '../assests/herosec4.png';
 import herobackground5 from '../assests/herosec5.jpg';
@@ -36,7 +35,7 @@ import carbonFiber from "../assests/carbonFiber.jpg";
 import toolbackgroundimage from '../assests/toolbackgroundimage.png';
 import toolbackgroundimage10 from '../assests/toolbackgroundimage10.png';
 import chatBAckground from '../assests/chatBacklground.jpg';
-import toolset from '../assests/toolSet.jpg';
+//import toolset from '../assests/toolSet.jpg';
 
 //chat_pupils
 import chatPupil1 from '../assests/pupil01.jpg';
@@ -73,7 +72,8 @@ import flywheel3 from '../assests/flywheel4.png';
 //files
 import SplitText from  './headingText/page';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCarSide,  faListDots, faSearch, faSignInAlt, faTrafficLight, faUser, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide,  faSearch, faTrafficLight, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 
 
@@ -153,10 +153,7 @@ const Home = () => {
 
     }
 
-    //useContexts
-    const {user} = useAuth();
-
-    const [displayName , setDisplayName] = useState<string | null>(null);
+   
     const [activeIndex, setActiveIndex] = useState(0);
     const [offsetY, setOffsetY] = useState(0);
     const [parallex1 , setParallex1] = useState(0);
@@ -164,7 +161,6 @@ const Home = () => {
     const [hover, setHover] = useState<number | null>(null);
     const [isMuted, setIsMuted] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
-    const [showPopup , setShowPopup] = useState(false);
 
     const [dnaData, setDnaData] = useState<Tools[]>([]);
     const [labData, setLabData] = useState<LabData[]>([]);
@@ -174,15 +170,7 @@ const Home = () => {
 
     const router = useRouter();
 
-      console.log(user);
 
-        useEffect(()=> {
-            if (user && user.displayName) {
-                setDisplayName(user.displayName);
-            } else {
-                setDisplayName('Guest');
-            }
-        }, [])
 
         useEffect(() => {
             const handleScroll = () => {
@@ -264,24 +252,7 @@ const Home = () => {
                     <div className="absolute w-full h-full mds:h-[250vh]  bg-gradient-to-b top-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
-                    {/* Profile View Section */}   
-                    <div className="hidden lgs:flex items-center p-5 overflow-hidden justify-center text-center  space-x-3  w-full h-auto rounded-full z-40 top-4 right-4"
-                        >
-                            
-                    <div className="flex items-center justify-center lgs:p-5 w-auto h-[3rem] rounded-full z-50 cursor-pointer relative"
-                        style={{
-                            boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
-                        }}>
-                        <h2 className="font-bricolagegrotesque text-md text-primary"style={{
-                            fontWeight:'200'
-                        }}>WelCome to <span className="text-orange-600"> Turboss , </span><span className="text-yellow-200">{displayName}</span></h2>
-                    
-                    </div>
-
-                    
-
-                    
-                    </div>
+  
                     
                     <div className="relative flex bg-transparent items-center justify-center z-50 h-[200vh] mds:h-[300vh]   sms:h-[100vh] w-full">
 
@@ -793,45 +764,6 @@ const Home = () => {
 
             </div>
 
-            {/* Loggin Section*/}   
-            <div className="fixed flex items-center justify-center text-center sms:right-4  space-x-3  w-auto h-auto rounded-full z-50 top-4 right-4"
-                        >
-                            
-                    <div className="flex items-center justify-center border-4 border-primary bg-orange-600 lgs:p-5 w-[3rem] h-[3rem] rounded-full z-40 cursor-pointer relative" onClick={() => setShowPopup(!showPopup)}
-                        style={{
-                            boxShadow: '0px 0px 20px 5px rgba(0,0,0,0.3) , inset 0px 0px 5px 1px rgba(255,255,255,0.3)'
-                        }}>
-                            <FontAwesomeIcon icon={faListDots} className="text-primary text-xl" />
-                        {showPopup && (
-                            <>
-                                <div className="fixed top-12 right-20 bg-secondary border-2 p-4 rounded-xl rounded-tr-none shadow-lg z-50 lgs:w-48">
-                                    <ul className="space-y-4">
-                                        <li
-                                        onClick={()=> router.push('/profile')} className="flex items-center space-x-4 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300">
-                                            <FontAwesomeIcon icon={faUser} className="text-primary" />
-                                            <span className="font-dmsans text-primary">Profile</span>
-                                        </li>
-                                        <li 
-                                            className="flex items-center space-x-4 cursor-pointer hover:bg-orange-600 hover:text-secondary p-2 rounded-md transition-all duration-300"
-                                            onClick={() => router.push('/auth/loginpage')}
-                                        >
-                                            <FontAwesomeIcon icon={faSignInAlt} className="text-primary" />
-                                            <span className="font-dmsans text-primary">Logout</span>
-                                        </li>
-                                        <div className="">
-                                            
-                                        </div>
-                                    </ul>
-                                </div>
-
-                            </>
-                        )}
-                    </div>
-
-                    
-
-                    
-            </div>
 
             {/* Sound Check Section */}   
             <div className="fixed flex items-center border-4 justify-center text-center  bg-secondary w-[3rem] h-[3rem] rounded-full z-50 top-4 left-4"
@@ -933,13 +865,13 @@ const Home = () => {
                     <h2 className="font-dmsans lgs:text-2xl sms:text-xl text-orange-600 text-center" style={{
                         fontWeight:'200'
                     }}>
-                        #ComingSoon
+                        #ChatCommunity
                     </h2>
                 </div>
 
 
                 {/* text Sections */}
-                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem]  items-center justify-center z-40">
+                <div className="absolute overflow-hidden flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem]  items-center justify-center z-40">
 
                         <div className="flex lgs:h-[30rem] w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
   
@@ -970,6 +902,10 @@ const Home = () => {
                                 fontWeight:'200'
                             }}>
                                     Whether you love cars, work in a garage, or are just starting to explore the world of automobiles — this is your place to connect, share, and chat with others.</p>
+                             <Link href="https://www.baoswheels.com/community" className="flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
+                             data-aos='fade-up' data-aos-delay='400'>
+                                Join Now
+                             </Link>
                        </div>
 
                 </div>
@@ -1307,7 +1243,7 @@ const Home = () => {
             </div>
 
             {/* Secondary Section */}
-            <div className="flex h-[25rem] sms:h-[35rem] w-full bg-secondary z-30" >
+            <div className="flex h-[25rem] sms:h-[35rem] overflow-hidden w-full bg-secondary z-30" >
                 <div className="flex h-[25rem] sms:h-[35rem] lgs:w-[40vw] sms:w-[60vw] items-center justify-center"/>
 
                 <div className="relative flex h-[25rem] sms:h-[35rem] lgs:w-[60vw] mds:w-full items-center justify-start overflow-hidden">
@@ -1330,9 +1266,9 @@ const Home = () => {
                     </h2>
                 </div>
 
-                <div className="absolute flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
+                <div className="absolute overflow-hidden flex sms:flex-col w-full sms:h-auto sms:mt-12 h-[25rem] items-center justify-center z-40">
                     <div className="flex flex-col h-[25rem] w-[60vw] sms:w-[80vw] items-center justify-center">
-                        <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
+                        <div className="flex flex-col w-auto h-auto lgs:mt-8 sms:items-center overflow-hidden">
 
                                 <h2 className="flex lgs:text-lg mds:text-xl font-dmsans text-center items-start lgs:pt-2 text-primary" style={{
                                     fontWeight:'100'
@@ -1350,7 +1286,7 @@ const Home = () => {
                                 </span>
                         </div>
 
-                            <p className="font-dmsans w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
+                            <p className="font-dmsans w-[40vw] sms:w-[60vw] sms:mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-2 text-primary h-auto items-center"
                             style={{
                                 fontWeight:'100'
                             }}
@@ -1366,6 +1302,10 @@ const Home = () => {
                                  <span className="lgs:mr-2 lgs:text-2xl font-russoone lgs:p-1" style={{ fontWeight: '400' }}>
                                         {"\u0022"}
                                     </span></p>
+                                    <Link href="https://www.baoswheels.com" className="flex bg-orange-600 mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-primary font-dmsans text-lg"
+                                    data-aos='fade-up' data-aos-delay='400'>
+                                        Visit Now
+                                    </Link>
                     </div>
                         <div className="flex lgs:h-[30rem] w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
                         <video
@@ -1925,7 +1865,7 @@ const Home = () => {
                                 </div>
                                 <div className='absolute flex rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
                                 { index !== 4 && (
-                                <div className={`absolute flex bg-primary  w-[0.1rem] h-[200vh] items-center justify-center z-20`} style={{
+                                <div className={`absolute flex bg-primary animate-water-dropping rounded-b-full  w-[0.2rem] h-[200vh] items-center justify-center z-20`} style={{
 
                                 }}/>
                                 )}

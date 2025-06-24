@@ -312,6 +312,43 @@
 .animate-loading-bar {
   animation: loading-bar 1.5s infinite linear;
 }
+/* Set the animation for a bar */
+@keyframes water-dropping {
+  0% {
+    transform: scaleY(0);
+    opacity: 0.7;
+    box-shadow: 0 0 0px rgba(0, 195, 255, 0);
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+    box-shadow: 0 0 15px rgb(255, 106, 0);
+  }
+  65% {
+    transform: scaleY(0.92);
+    box-shadow: 0 0 20px rgb(255, 106, 0);
+  }
+  80% {
+    transform: scaleY(1.05);
+    box-shadow: 0 0 25px rgb(255, 106, 0);
+  }
+  90% {
+    transform: scaleY(0.98);
+    box-shadow: 0 0 20px rgb(255, 106, 0);
+  }
+  100% {
+    transform: scaleY(1);
+    box-shadow: 0 0 15px rgb(255, 106, 0);
+  }
+}
+
+.animate-water-dropping {
+  animation: water-dropping 10s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  transform-origin: top;
+  filter: saturate(2.2) brightness(1.1);
+}
+
+
 
 body {
 

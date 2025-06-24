@@ -128,6 +128,10 @@ const Detailpage = () => {
       }, 20); 
     }
 
+    const handleClickNavigate = () => {
+      router.push(`/homepage`);
+    }
+
 
     //naviga
     useEffect(() => {
@@ -326,7 +330,7 @@ useEffect(() => {
 
               
             {/*main detail Section for larger screen */}
-              <div className={`hidden relative lgs:flex mds:flex flex-col items-center justify-start scrollbar-hide w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+              <div className={`hidden relative lgs:flex mds:flex overflow-scroll flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
               style={{
                 boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
               }}>
@@ -370,7 +374,7 @@ useEffect(() => {
                                     style={{
                                       boxShadow:'inset 0px 0px 10px 1px rgba(255, 255, 255, 0.3), 0px 0px 10px 5px rgba(0, 0, 0, 0.6)'
                                     }}>
-                                      <button onClick={handleClick}  className={`absolute flex cursor-pointer mds:text-sm  lgs:w-[10rem] lgs:h-[3rem]  mds:w-[6rem] mds:h-[2rem]   text-primary bg-gray-600 rounded-3xl font-dmsans items-center justify-center`}
+                                      <button onClick={handleClickNavigate}  className={`absolute flex cursor-pointer mds:text-sm  lgs:w-[10rem] lgs:h-[3rem]  mds:w-[6rem] mds:h-[2rem]   text-primary bg-gray-600 rounded-3xl font-dmsans items-center justify-center`}
                                       style={{
                                         boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.6), 0px 0px 10px 1px rgba(255, 255, 255, 0.2)'
                                       }}>
@@ -491,6 +495,8 @@ useEffect(() => {
                             </div>  
 
                         </div>
+
+                        
 
                         {/* Content Section */}
                         <div className='flex flex-col w-auto h-auto bg-transparent z-50'>
@@ -1394,7 +1400,7 @@ useEffect(() => {
                                   style={{
                                     fontWeight:'200'
                                   }}>
-                                    Engine
+                                    {data?.name}
                                   </h2>
                                   <h2 className="flex items-center justify-center bg-primary p-1 flex-col font-bricolagegrotesque text-4xl text-orange-600 lgs:p-2 lgs:text-5xl text-center" style={{
                                     fontWeight:'900',
@@ -1493,12 +1499,14 @@ useEffect(() => {
                                                                     style={{
                                                                       fontWeight:'100'
                                                                     }}>
-                                                                      Engine
+                                                                      {data?.name}
                                                                     </span>
                                                                 </h2>
                                                             </div>
                                                              {/* Sound wave Layer */}
                                                             <div className='absolute flex z-50  w-[20rem] h-[10rem] items-start justify-end p-6'>
+                                                                
+                                                                {data?.name === 'Engine' || data?.name === 'engine' ? (
                                                                 <div className='flex bottom w-[10rem] h-[4rem] text-5xl justify-end bg-secondary opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
@@ -1514,6 +1522,10 @@ useEffect(() => {
                                                                               </div>
                                                                     
                                                                 </div>
+                                                                ) : (
+                                                                  <div className='flex'/>
+                                                                )}
+
                                                             </div>
                                                             {/* Button Layer */}
                                                             <div
@@ -1622,7 +1634,7 @@ useEffect(() => {
                                                                     style={{
                                                                       fontWeight:'100'
                                                                     }}>
-                                                                      Engine
+                                                                      {data?.name}
                                                                     </span>
                                                                 </h2>
                                                             </div>
@@ -1632,7 +1644,7 @@ useEffect(() => {
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
-
+                                                                      {data?.name === 'Engine' || data?.name === 'engine' ? (
                                                                       <div                 
                                                                                 className=" flex z-50 bottom-0 left-6 items-center justify-center cursor-pointer p-2"
                                                                                 onClick={() => { handleAudioToggle(index, tool?.sound); handleClick(); }}
@@ -1640,7 +1652,9 @@ useEffect(() => {
                                                                                 <div className="flex items-center justify-center rounded-full w-[3rem] h-[3rem] bg-primary opacity-90">
                                                                                   <FontAwesomeIcon icon={playingIndex === index ? faVolumeHigh : faVolumeDown} className='h-5'/>
                                                                                 </div>
-                                                                              </div>
+                                                                              </div> ) : (
+                                                                                  <div className='hiddne'/>
+                                                                              )}
                                                                     
                                                                 </div>
                                                             </div>

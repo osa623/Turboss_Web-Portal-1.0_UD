@@ -242,23 +242,23 @@
       "shadow": "/assets/suspensionShadow.png",
       "description": "Suspension systems are responsible for maximizing tire contact with the road surface, absorbing shocks, and providing vehicle stability during cornering and braking.",
       "subTopic1": "Suspension Dynamics",
-      "subTopic2": "",
+      "subTopic2": null,
       "subSection": [
         {
-          "subName1": "",
-          "subImage1": ""
+          "subName1": null,
+          "subImage1": null
         },
         {
-          "subName1": "",
-          "subImage1": ""
+          "subName1": null,
+          "subImage1": null
         },
         {
-          "subName1": "",
-          "subImage1": ""
+          "subName1": null,
+          "subImage1": null
         },
         {
-          "subName1": "",
-          "subImage1": ""
+          "subName1": null,
+          "subImage1": null
         }
       ],
       "partset1": [
@@ -588,51 +588,97 @@
       "name": "ECU",
       "image": "/assets/ecu.png",
       "shadow": "/assets/ecuShadow.png",
-      "description": "The Engine Control Unit (ECU) is...",
-      "partset1": [
-        {
-          "name" : "CamShaft",
-          "image": "/assets/engineParts/camshaft.png"
-        },
-        {
-          "name" : "CrankShaft",
-          "image": "/assets/engineParts/crankshaft.png"
-        },
-        {
-          "name" : "Connecting Rods",
-          "image": "/assets/engineParts/connectingRods.png"
-        },
-        {
-          "name" : "Pistons",
-          "image": "/assets/engineParts/pistons.png"
-        },
-        {
-          "name" : "Spark Plugs",
-          "image": "/assets/engineParts/plugs.png"
-        },
-        {
-          "name" : "Engine Block",
-          "image": "/assets/engineParts/engineBlock.png"
-        },
-        {
-          "name" : "Cylinder Head",
-          "image": "/assets/engineParts/headCylinder.png"
+      "description": "The Engine Control Unit (ECU) is the brain of the engine, managing various functions such as fuel injection, ignition timing, and emissions control. It uses data from various sensors to optimize engine performance, efficiency, and reliability. Modern ECUs are highly sophisticated, often featuring adaptive learning algorithms that adjust parameters in real-time based on driving conditions and driver behavior.",
+      "subTopic1" : null,
+      "subTopic2" : null,
+      "subSection": [
+       {
+       "subName1": null,
+       "subImage1": null
         }
 
-
-            ],
+          ],
+      "partset1": [
+          {
+            "name": "Microcontroller",
+            "image": "/assets/ECUParts/microController.png",
+            "description": "The microcontroller is the central processing unit of the ECU, executing control algorithms and processing sensor data."
+          },
+          {
+            "name": "Sensor Interface",
+            "image": "/assets/ECUParts/SensorInterface.png",
+            "description": "The sensor interface collects data from various engine sensors, providing crucial information to the ECU for optimal performance."
+          },
+          {
+            "name": "Actuator Drivers",
+            "image": "/assets/ECUParts/ActuvatorDrivers.png",
+            "description": "Actuator drivers control the movement of various engine components, ensuring precise operation and response to driver inputs."
+          },
+          {
+            "name": "Memory Units",
+            "image": "/assets/ECUParts/microController.png",
+            "description": "Memory units store data and instructions for the ECU, enabling it to make real-time decisions based on sensor inputs."
+          }
+        ],
+      "maindetailset1": {
+        "topic": "The Evolution of ECUs",
+        "Description": "An Electronic Control Unit (ECU), often called an Engine Control Module (ECM), is essentially a small embedded computer that manages a vehicle’s subsystems—most notably fuel injection, ignition timing, idle speed, emissions, and increasingly, drivetrain and safety systems.It processes inputs from sensors, runs control algorithms, and sends commands to actuators"
+      },
       "detailset1": [
         {
-          "topic": "ECU Architecture & Functionality",
-          "Description": "Modern ECUs (Bosch Motronic) use 32-bit microprocessors processing 250+ sensor inputs. Maps (fuel, ignition, boost) are stored in EEPROM chips. OBD-II protocols (CAN bus) enable real-time monitoring of parameters like AFR (14.7:1 stoichiometric) or knock sensor voltages. Flex-fuel ECUs (Ford EcoBoost) auto-adjust for E85 ethanol’s 30% lower energy density."
+          "topic": "1939 – Mechanical-Hydraulic Beginnings",
+          "Description": "BMW’s Kommandogerät was introduced in 1939 on the BMW 801 aircraft engine, most notably in the Fw 190. It centralized multiple engine controls—fuel flow, ignition timing, supercharger settings, propeller pitch—into a single throttle lever. As an electro‑hydraulic “control unit,” it is often considered the first ancestor of modern ECUs."
         },
         {
-          "topic": "Performance Tuning & Calibration",
-          "Description": "Stage 1 tunes (COBB Accessport) remap boost tables for +50HP while retaining OEM reliability. Dyno tuning (Mustang Dyno) customizes ignition advance curves for specific octane ratings. Anti-lag systems (rally cars) inject fuel into exhaust manifolds to maintain turbo spool between shifts. ECU cloning (BMW FEMTO) bypasses immobilizers for engine swaps."
+          "topic": "1957–1967 – Analog EFI Emerge",
+          "Description": "The Bendix Electrojector debuted in 1957 as the first electronic fuel-injection (EFI) system for passenger cars (AMC, Chrysler). It used transistors and vacuum sensors for pulse-width fuel control but was marred by cold-start issues and underhood fragility.Bosch later acquired patents and in 1967 launched D‑Jetronic, an analog EFI system using manifold pressure sensors and about 25 transistors for closed-loop fuel control in vehicles like VW, Mercedes, Porsche, and Jaguar"
         },
         {
-          "topic": "Integration with Vehicle Systems",
-          "Description": "ECUs network with TCU (transmission control) for rev-matching downshifts. Hybrid ECUs (Toyota Hybrid Synergy) manage power split between ICE and electric motors. Cybersecurity: Tesla’s ECU firmware uses SHA-256 encryption to prevent unauthorized tuning access."
+          "topic": "1975–1979 – Dawn of Microprocessor ECUs",
+          "Description": "The shift to digital began with Ford’s EEC I in 1975, powered by a Toshiba TLCS-12 microprocessor and marking the first mass-market ECU implementation.Just four years later, Bosch’s Motronic 1.0 arrived on the 1979 BMW 7‑Series, integrating fuel and ignition controls in a digital unit based on a Siemens 8051 platform"
+        },
+        {
+          "topic": "1980s – Digital Diagnostics & System Integration",
+          "Description": "The 1980s brought digital maturity and onboard diagnostics. GM’s Delco units introduced closed-loop carburetor control, while VW’s Digifant in 1986 merged fuel injection with ignition, adding knock control and idle stability."
+        },
+        {
+          "topic": "1989–1990s – Modular ECUs & Standardized Diagnostics",
+          "Description": "Rover’s MEMS in 1989 featured a Motorola 8096 microcontroller and modular design for expanded functionality.The 1990s saw digital ECUs controlling diesel engines, transmissions, ABS, and body electronics, culminating in OBD-II standards that significantly advanced diagnostics and monitoring."
+        },
+         {
+          "topic": "2000s – Networked Control & Emissions Management",
+          "Description": "In the 2000s, drive-by-wire throttles, EGR, DPF, turbo management, and hybrid functions were centralized under ECUs networked via high-speed CAN bus systems. Advanced sensor integration, like MAF replacing MAP sensors, became widespread, and direct injection systems began appearing."
+        },
+        {
+          "topic": "2010s–2025 – Centralized AI-Driven ECUs",
+          "Description": "Contemporary vehicles feature domain controllers, each overseeing powertrain, chassis, luxury, ADAS, EV, and battery systems, often communicating via CAN-FD and automotive Ethernet . ECUs now manage tens of thousands of calibration parameters and support AI-driven adaptive tuning and predictive maintenance. Diagnostics have moved to UDS/DCM standards, with cybersecurity and OTA software updates becoming essential."
+        }
+      ],
+      "maindetailset2": {
+        "topic": "The Latest Innovations in Turbocharger Technology",
+        "Description": "Turbocharger technology continues to evolve, driven by the need for greater efficiency, reduced emissions, and improved performance. Recent advancements include electric turbochargers, advanced materials, and integration with hybrid and electric powertrains. These innovations are shaping the future of automotive and industrial engines, making turbochargers more versatile and environmentally friendly than ever before."
+      },
+      "detailset2": [
+        {
+          "topic": "Engine Control Module (ECM / Engine ECU)",
+          "Description": "Electric turbochargers, also known as e-turbos, are one of the most significant recent advancements in turbocharging technology. These systems use an electric motor to spin the turbocharger's compressor wheel, eliminating turbo lag and providing instant boost. Electric turbochargers are particularly beneficial in hybrid and performance vehicles, where rapid response and efficiency are critical. Companies like Garrett Motion and BorgWarner are leading the development of e-turbos, with applications in both passenger cars and commercial vehicles.",
+          "image": "/assets/turbochargers/e-turbo.png",
+          "Advantages": "Instant Boost: Electric motors provide immediate power, eliminating turbo lag.Improved Efficiency: E-turbos can operate independently of exhaust gases, optimizing performance.Integration with Hybrid Systems: Electric turbochargers work seamlessly with hybrid powertrains, enhancing overall efficiency.",
+          "Issues": "Cost: Electric turbochargers are more expensive to produce than traditional systems.Complexity: Integrating electric motors and control systems adds complexity to the design.Power Requirements: E-turbos require additional electrical power, which can strain vehicle electrical systems."
+        },
+        {
+          "topic": "Variable Geometry Turbochargers (VGT): Precision and Flexibility",
+          "Description": "Variable Geometry Turbochargers (VGTs) use adjustable vanes to control the flow of exhaust gases, optimizing performance across a wide range of engine speeds. This technology reduces turbo lag at low RPMs and improves efficiency at high RPMs. VGTs are widely used in diesel engines and are increasingly being adopted in gasoline engines. Recent advancements in materials and design have made VGTs more durable and cost-effective.",
+          "image": "/assets/turbochargers/vgt.png",
+          "Advantages": "Reduced Turbo Lag: Adjustable vanes provide better low-end performance.Improved Efficiency: VGTs optimize exhaust gas flow, enhancing fuel economy.Versatility: Suitable for both diesel and gasoline engines.",
+          "Issues": "Complexity: VGTs require precise control systems and durable materials.Cost: The additional components and engineering make VGTs more expensive.Maintenance: VGTs may require more frequent maintenance due to moving parts."
+        },
+        {
+          "topic": "Turbochargers in Hybrid and Electric Vehicles",
+          "Description": "Turbochargers are playing an increasingly important role in hybrid and electric vehicles. In hybrids, turbochargers improve the efficiency of internal combustion engines, while in electric vehicles, they can be used in range-extender applications. Recent developments include integrated turbo-generator systems that generate electricity from exhaust gases, further enhancing the efficiency of hybrid powertrains.",
+          "image": "/assets/turbochargers/hybrid-turbo.png",
+          "Advantages": "Enhanced Efficiency: Turbochargers improve the performance of hybrid engines.Range Extension: Turbo-generator systems can extend the range of electric vehicles.Reduced Emissions: Optimized combustion reduces greenhouse gas emissions.",
+          "Issues": "Integration Challenges: Combining turbochargers with hybrid systems requires advanced engineering.Cost: Hybrid and electric turbo systems are more expensive to develop and produce.Weight: Additional components can increase vehicle weight, affecting efficiency."
         }
       ]
     }
