@@ -25,6 +25,7 @@ import Axila from '../compo/pixelcard/page';
 
 // Images
 import image1 from "../assests/background.png";
+import bwlogo from '../assests/bwlogo.png';
 import subHeroSec1 from '../assests/subherosec2.png';
 import herobackground3 from '../assests/herosec3.png';
 import herobackground4 from '../assests/herosec4.png';
@@ -262,7 +263,7 @@ const Home = () => {
 
 
                                 {/* Turboss Main Topic for lgs */}
-                                <div className="hidden lgs:flex flex-col w-full h-auto justify-center items-center" >
+                                <div className="hidden lgs:flex relative flex-col w-full h-auto justify-center items-center" >
 
                                             <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
                                                 fontWeight: '100',
@@ -274,6 +275,15 @@ const Home = () => {
                                             <div className="absolute w-auto h-auto bg-primary"/>
                                             </span>
                                             </h2> 
+                                            <h2 className="font-bricolagegrotesque flex items-center absolute bottom-28 left-60 text-primary text-shadow-xl text-center" style={{ 
+                                                fontWeight: '100',
+
+                                                }}>  
+                                            Concept By<Image src={bwlogo} className="object-contain mx-2 w-6 h-6" alt="BW logo" />
+                                            <div className="absolute w-auto h-auto bg-primary"/>
+                                            
+                                            </h2> 
+
 
                                 </div>
 

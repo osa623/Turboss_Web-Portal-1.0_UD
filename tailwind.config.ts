@@ -30,8 +30,8 @@ export default {
         kanit:['Kanit', 'sans-serif'],
         dmsans:['DM Sans', 'sans-serif'],
         londrina:['Londrina Solid', 'sans-serif'],
-        atma:['Atma', 'sans serif'],
-        alfaSlabOne: ['Alfa Slab One', 'cursive'],
+        atma:['Atma', 'sans-serif'],
+        alfaSlabOne: ['Alfa Slab One', 'serif'],
         bubblerOne: ['Bubbler One', 'sans-serif'],
   
       },

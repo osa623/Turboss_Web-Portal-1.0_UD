@@ -655,30 +655,30 @@
         }
       ],
       "maindetailset2": {
-        "topic": "The Latest Innovations in Turbocharger Technology",
-        "Description": "Turbocharger technology continues to evolve, driven by the need for greater efficiency, reduced emissions, and improved performance. Recent advancements include electric turbochargers, advanced materials, and integration with hybrid and electric powertrains. These innovations are shaping the future of automotive and industrial engines, making turbochargers more versatile and environmentally friendly than ever before."
+        "topic": "ECU Types in Modern Vehicles",
+        "Description": "An Electronic Control Unit (ECU) is an embedded system that controls one or more of the electrical systems or subsystems in a vehicle. Modern vehicles contain 30 to over 100 ECUs, each managing different aspects of operation—ranging from engine performance to climate control, safety, infotainment, and advanced driver assistance systems (ADAS). ECUs have become essential to achieving efficiency, safety, automation, and connectivity in automobiles.."
       },
       "detailset2": [
         {
           "topic": "Engine Control Module (ECM / Engine ECU)",
-          "Description": "Electric turbochargers, also known as e-turbos, are one of the most significant recent advancements in turbocharging technology. These systems use an electric motor to spin the turbocharger's compressor wheel, eliminating turbo lag and providing instant boost. Electric turbochargers are particularly beneficial in hybrid and performance vehicles, where rapid response and efficiency are critical. Companies like Garrett Motion and BorgWarner are leading the development of e-turbos, with applications in both passenger cars and commercial vehicles.",
-          "image": "/assets/turbochargers/e-turbo.png",
-          "Advantages": "Instant Boost: Electric motors provide immediate power, eliminating turbo lag.Improved Efficiency: E-turbos can operate independently of exhaust gases, optimizing performance.Integration with Hybrid Systems: Electric turbochargers work seamlessly with hybrid powertrains, enhancing overall efficiency.",
-          "Issues": "Cost: Electric turbochargers are more expensive to produce than traditional systems.Complexity: Integrating electric motors and control systems adds complexity to the design.Power Requirements: E-turbos require additional electrical power, which can strain vehicle electrical systems."
-        },
+          "Description": "The ECM is the powerhouse of engine performance control. By continuously monitoring sensors like crankshaft or cam position, oxygen, mass airflow, manifold pressure, and knock detectors, it calculates the optimal fuel injection timing, ignition angle, and idle control to maximize power, efficiency, and emissions compliance. It also manages auxiliary systems like variable valve timing, turbocharging, exhaust gas recirculation (EGR), cooling fans, and even thermal protection during cold starts or engine warm-up. All control decisions are based on digital maps and algorithms stored in its memory, replacing older mechanical fuel metering systems .",
+          "image": "/assets/ecu.png",
+          "Advantages": null,
+          "Issues": null
+             },
         {
-          "topic": "Variable Geometry Turbochargers (VGT): Precision and Flexibility",
-          "Description": "Variable Geometry Turbochargers (VGTs) use adjustable vanes to control the flow of exhaust gases, optimizing performance across a wide range of engine speeds. This technology reduces turbo lag at low RPMs and improves efficiency at high RPMs. VGTs are widely used in diesel engines and are increasingly being adopted in gasoline engines. Recent advancements in materials and design have made VGTs more durable and cost-effective.",
-          "image": "/assets/turbochargers/vgt.png",
-          "Advantages": "Reduced Turbo Lag: Adjustable vanes provide better low-end performance.Improved Efficiency: VGTs optimize exhaust gas flow, enhancing fuel economy.Versatility: Suitable for both diesel and gasoline engines.",
-          "Issues": "Complexity: VGTs require precise control systems and durable materials.Cost: The additional components and engineering make VGTs more expensive.Maintenance: VGTs may require more frequent maintenance due to moving parts."
-        },
+          "topic": "Transmission Control Unit (TCU / TCM)",
+          "Description": "The TCU manages gear shifting in automatic, CVT, dual-clutch, and semi-automatic transmissions. Using inputs such as similar engine data plus vehicle and turbine speeds, gear position, throttle input, and transmission fluid temperature, it executes shift logic via solenoids that engage clutches and control torque converter lock-up . By adapting shift timing to driving style or mode (e.g., Sport or Eco), the TCU improves power delivery, fuel efficiency, and shift smoothness — outweighing mechanical linkage systems from earlier erase.",
+          "image": "/assets/ecu.png",
+          "Advantages": null,
+          "Issues": null
+                },
         {
-          "topic": "Turbochargers in Hybrid and Electric Vehicles",
-          "Description": "Turbochargers are playing an increasingly important role in hybrid and electric vehicles. In hybrids, turbochargers improve the efficiency of internal combustion engines, while in electric vehicles, they can be used in range-extender applications. Recent developments include integrated turbo-generator systems that generate electricity from exhaust gases, further enhancing the efficiency of hybrid powertrains.",
-          "image": "/assets/turbochargers/hybrid-turbo.png",
-          "Advantages": "Enhanced Efficiency: Turbochargers improve the performance of hybrid engines.Range Extension: Turbo-generator systems can extend the range of electric vehicles.Reduced Emissions: Optimized combustion reduces greenhouse gas emissions.",
-          "Issues": "Integration Challenges: Combining turbochargers with hybrid systems requires advanced engineering.Cost: Hybrid and electric turbo systems are more expensive to develop and produce.Weight: Additional components can increase vehicle weight, affecting efficiency."
+          "topic": "Climate Control ECU (HVAC Module)",
+          "Description": "The Climate Control ECU manages the heating, ventilation, and air conditioning (HVAC) systems in a vehicle. It ensures passenger comfort by regulating temperature, humidity, and air quality. The ECU uses data from various sensors, such as cabin temperature, outside temperature, and solar radiation, to optimize HVAC performance. Advanced systems may also integrate with navigation data to precondition the cabin based on route and traffic conditions.",
+          "image": "/assets/ecu.png",
+          "Advantages": null,
+          "Issues": null
         }
       ]
     }

@@ -309,7 +309,7 @@ useEffect(() => {
 
               
             {/*main detail Section for larger screen */}
-              <div className={`hidden relative lgs:flex mds:flex overflow-scroll flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+              <div className={`hidden relative lgs:flex mds:flex overflow-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
               style={{
                 boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
               }}>
@@ -372,7 +372,7 @@ useEffect(() => {
 
                                   
                                     {/* View Part Section */}
-                                      <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'w-[15vw] mds:w-[20vw]' : 'w-[0vw] mds:w-[10vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-secondary opacity-50`}>
+                                    <div className={`flex flex-col lgs:h-[35rem] ${expandSection ? 'w-[15vw] mds:w-[20vw]' : 'w-[0vw] mds:w-[10vw]'} transition-all duration-1000 ease-in-out items-start justify-start bg-secondary opacity-50`}>
 
                                     </div> 
                                     {/* Parts Section */}
@@ -420,14 +420,14 @@ useEffect(() => {
 
                                             </div>
                                             ) : (
-                                              <div className="p-10">
-                                              <Image
-                                                src={data?.partset1[0].image || '/path/to/default/image.jpg'}
-                                                width={300} 
-                                                height={300}
-                                                alt="Selected Image"
-                                                className="object-cover lgs:w-[15rem] lgs:h-[15rem]"
-                                              />
+                                              <div className="py-40 flex flex-col items-center justify-center">
+                                              <h2 className='flex font-bricolagegrotesque text-4xl text-primary lgs:p-2'
+                                                style={{
+                                                  fontWeight: 200   
+                                                }}>
+                                                Select a Part
+                                              </h2>
+                                               <div className="h-20 flex items-center w-20 mt-6 rounded-full border-4 border-white animate-spin border-t-orange-600 relative"></div>
                                               </div>
                                             )
                                           }
@@ -449,7 +449,7 @@ useEffect(() => {
                                               <p className='flex flex-col font-bricolagegrotesque lgs:w-[30vw] mds:w-[30vw] text-center text-shadow-xl lgs:text-lg lgs:p-2 text-primary'style={{
                                                 fontWeight:'100'
                                               }}>
-                                                {selectedImage ? `${selectedDescription}` : 'Select a Part'}
+                                                {selectedImage ? `${selectedDescription}` : ''}
                                                 
                                                 </p>
 
@@ -519,36 +519,44 @@ useEffect(() => {
 
                           {data?.detailset1.map((tool, index) => (
 
-                            <div key={index}  className={`flex flex-col ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} transition-all duration-1000 ease-in-out h-auto`}
+                            <div key={index}  className={`flex ${expandSection ? 'lgs:w-[60vw]' : 'lgs:w-[45vw]'} transition-all mt-6 duration-1000 ease-in-out h-auto`}
                             style={{
-                              marginTop:`${index}rem`
+                       
                             }}>
-                                <div className='flex w-auto h-auto'>
+                                <div className=' flex flex-col'>
+                                    <div className='flex w-[1rem] h-[1rem] mt-3 bg-primary rounded-full'>
 
-                                          
-                                <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2   text-primary'style={{
-                                
-                                  fontWeight:'900'
-                                }}>
-                                  <span className='flex'>{tool?.topic}</span>
-                                  
-                                </h2>
+                                    </div>  
+                                </div>
 
+                               <div className='flex flex-col'>
+                                    <div className='flex w-auto h-auto'>
 
-                                </div>  
-
-                                <div className='flex w-auto h-auto'>
-
-
-                                  <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-primary'style={{
-                                    fontWeight:'100'
-                                  }}>
-                                    {tool?.Description}
+                                              
+                                    <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2   text-primary'style={{
                                     
-                                  </p>
+                                      fontWeight:'900'
+                                    }}>
+                                      <span className='flex'>{tool?.topic}</span>
+                                      
+                                    </h2>
 
 
-                                </div> 
+                                    </div>  
+
+                                    <div className='flex w-auto h-auto'>
+
+
+                                      <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-primary'style={{
+                                        fontWeight:'100'
+                                      }}>
+                                        {tool?.Description}
+                                        
+                                      </p>
+
+
+                                    </div> 
+                                </div>
                             </div>    
 
                           ))}
@@ -666,48 +674,67 @@ useEffect(() => {
                                     </div> 
 
                                     {/* Advantages */}
-                                    <div className='flex flex-col w-auto h-auto mt-5'>
-
-                                          <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2  text-orange-600'style={{
-                                          
-                                          fontWeight:'900'
-                                        }}>
-                                          <span className='flex'>Advantages</span>
-                                          
-                                        </h2>
-
-
-                                        <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
-                                          fontWeight:'100'
-                                        }}>
-                                          {tool?.Advantages}
-                                          
-                                        </p>
-
-
-                                    </div> 
+                                    {tool?.Advantages ? (
+    
+                                        <div className='flex flex-col w-auto h-auto mt-5'>
+    
+                                              <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2  text-orange-600'style={{
+                                              
+                                              fontWeight:'900'
+                                            }}>
+                                              <span className='flex'>Advantages</span>
+                                              
+                                            </h2>
+    
+    
+                                            <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
+                                              fontWeight:'100'
+                                            }}>
+                                              {tool?.Advantages}
+                                              
+                                            </p>
+    
+    
+                                        </div> 
+                                        
+                                        ) : (
+                                          <div className='flex'>
+    
+                                          </div>
+    
+                                        )}
 
                                     {/* Issues */}
-                                    <div className='flex flex-col w-auto h-auto mt-5'>
+                                    {/* Advantages */}
+                                    {tool?.Issues ? (
+    
+                                        <div className='flex flex-col w-auto h-auto mt-5'>
+    
+                                              <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2  text-orange-600'style={{
+                                              
+                                              fontWeight:'900'
+                                            }}>
+                                              <span className='flex'>Issues</span>
 
-                                    <h2 className='flex flex-col font-bricolagegrotesque text-xl p-2 text-secondary'style={{
-                                    
-                                    fontWeight:'900'
-                                  }}>
-                                    <span className='flex'>Issues</span>
-                                    
-                                  </h2>
+                                            </h2>
+    
+    
+                                            <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
+                                              fontWeight:'100'
+                                            }}>
+                                              {tool?.Issues}
 
-
-                                    <p className='flex flex-col font-bricolagegrotesque text-md p-2  text-secondary'style={{
-                                      fontWeight:'100'
-                                    }}>
-                                      {tool?.Issues}
-                                      
-                                    </p>
-
-
-                                    </div> 
+                                            </p>
+    
+    
+                                        </div> 
+                                        
+                                        ) : (
+                                          <div className='flex'>
+    
+                                          </div>
+    
+                                        )}
 
                                     <div className='lgs:h-[5rem] bg-transparent'/>
 
@@ -753,6 +780,8 @@ useEffect(() => {
 
       
             {/* Sub Section for more details for a larger screen */}
+
+            
             <div className='hidden lgs:flex mds:flex bg-secondary w-full  lgs:h-auto'>
 
 
@@ -772,8 +801,8 @@ useEffect(() => {
 
                             <div className="flex flex-col h-[25rem] w-[60vw]  items-center justify-center overflow-hidden">
 
-                                <h2 className='flex flex-col font-poppins w-[40vw] text-5xl text-primary' style={{
-                                  fontWeight:'100'
+                                <h2 className='flex flex-col font-bricolagegrotesque w-[40vw] text-5xl text-primary' style={{
+                                  fontWeight: '200'
                                 }}>
                                 Analyze and optimize key <span>{data?.subTopic1} parameters,</span><span className='flex flex-col text-orange-600 text-lg' style={{ fontWeight:'400'}}>including<span className='flex flex-col text-primary lgs:text-nowrap'>{data?.subTopic2}
                                   <span className='text-start italic'
@@ -786,7 +815,8 @@ useEffect(() => {
                             
                             </div>
                             
-                            <div className="flex h-[25rem]  w-[40vw] items-center justify-center">
+                            {data?.name === 'Engine' || data?.name === 'Turbo' ? (
+                            <div className="flex h-[25rem]  w-[40vw] items-end justify-end">
 
                               {data?.subSection.map((tool, index)=> (
                                       
@@ -831,7 +861,13 @@ useEffect(() => {
                               ))}
                                 
 
-                            </div>
+                            </div> ) : (
+                              <div className="flex h-[25rem]  w-[40vw] items-center justify-center">
+                                <h2 className='font-poppins text-3xl text-center text-primary'>
+                                  No Tools Available
+                                </h2>
+                              </div>
+                            )}
 
                     </div>
 
@@ -1377,7 +1413,7 @@ useEffect(() => {
                                <div className="flex w-auto h-auto mt-12">
                                   <h2 className="font-bricolagegrotesque text-primary bg-orange-600 p-4 lgs:text-6xl text-4xl text-center"
                                   style={{
-                                    fontWeight:'200'
+                                    fontWeight: 200
                                   }}>
                                     {data?.name}
                                   </h2>
@@ -1386,7 +1422,7 @@ useEffect(() => {
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
                                     VARIATIONS<span className="hidden lgs:flex mds:flex text-xs font-dmsans  text-secondary" style={{
-                                        fontWeight:'100'
+                                        fontWeight: 100
                                     }}>
                                         Turboss Garage Lesson 01
                                     </span>
@@ -1411,7 +1447,7 @@ useEffect(() => {
                                             depth: 100,
                                             modifier: 2.5,
                                         }}
-                                        pagination={{ clickable: true }}
+                                        
                                         navigation={true}
                                         modules={[EffectCoverflow, Pagination, Navigation]}
                                         className="flex lgs:h-[55rem] mds:h-[50rem]  items-center justify-center p-12"
@@ -1470,11 +1506,11 @@ useEffect(() => {
                                                             </div>
                                                              {/* Upper Layer */}
                                                             <div className='absolute flex z-30  w-[20rem] h-[10rem] items-start justify-start p-6'>
-                                                                <h2 className='flex flex-col font-poppins bottom  text-5xl items-center justify-center text-orange-600 opacity-90'
+                                                                <h2 className='flex flex-col font-poppins bottom  text-2xl items-start justify-center text-orange-600 opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
-                                                                    {tool?.name}<span className='text-xl text-primary font-poppins'
+                                                                    {tool?.name}<span className='text-lg text-primary font-poppins'
                                                                     style={{
                                                                       fontWeight:'100'
                                                                     }}>
