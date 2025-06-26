@@ -18,7 +18,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../homepage/base.css";
-import Axila from '../compo/pixelcard/page';
+import Axila from '@/app/compo/pixelcard/page';
 
 
 

@@ -3,20 +3,9 @@
 import { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Triangle, Vec3 } from "ogl";
 
-interface OrbProps {
-  hue?: number;
-  hoverIntensity?: number;
-  rotateOnHover?: boolean;
-  forceHoverState?: boolean;
-}
-
-export default function Orb({
-  hue = 0,
-  hoverIntensity = 0.2,
-  rotateOnHover = true,
-  forceHoverState = false,
-}: OrbProps) {
+export default function PixelCardPage() {
   const ctnDom = useRef<HTMLDivElement>(null);
+  const rotateOnHover = true; // Control whether card rotates on hover
 
   const vert = /* glsl */ `
     precision highp float;
@@ -199,10 +188,10 @@ export default function Orb({
             gl.canvas.width / gl.canvas.height
           ),
         },
-        hue: { value: hue },
+        hue: { value: 0 },
         hover: { value: 0 },
         rot: { value: 0 },
-        hoverIntensity: { value: hoverIntensity },
+        hoverIntensity: { value: 0.2 },
       },
     });
 
@@ -262,10 +251,10 @@ export default function Orb({
       const dt = (t - lastTime) * 0.001;
       lastTime = t;
       program.uniforms.iTime.value = t * 0.001;
-      program.uniforms.hue.value = hue;
-      program.uniforms.hoverIntensity.value = hoverIntensity;
+      program.uniforms.hue.value = 0;
+      program.uniforms.hoverIntensity.value = 0.2;
 
-      const effectiveHover = forceHoverState ? 1 : targetHover;
+      const effectiveHover = targetHover;
       program.uniforms.hover.value += (effectiveHover - program.uniforms.hover.value) * 0.1;
 
       if (rotateOnHover && effectiveHover > 0.5) {
@@ -285,7 +274,8 @@ export default function Orb({
       container.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [hue, hoverIntensity, rotateOnHover, forceHoverState, frag, vert]);
+  }, [frag, vert]);
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }
+    
