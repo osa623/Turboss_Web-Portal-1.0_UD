@@ -161,7 +161,7 @@ const Detailpage = () => {
 
     useEffect(() => {
       router.replace(window.location.href);
-    } , []);
+    }, [router]); // Added router to the dependency array
 
   const params = useParams();
   const id = params && typeof params[' id '] === 'string' ? params[' id '].trim() : null;
@@ -1149,7 +1149,7 @@ useEffect(() => {
 
 
                     {/* Main Description 02 */}
-                    <div className={`relative flex flex-col ${expandSection ? 'lgs:w-[100vw] items-end justify-end' : 'lgs:w-[50vw] items-start justify-start'} h-auto bg-orange-850 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
+                    <div className={`relative flex flex-col ${expandSection ? 'w-[100vw] items-end justify-end' : 'w-[50vw] items-start justify-start'} h-auto bg-orange-850 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
 
                           <div className='flex flex-col w-auto h-auto lgs:pr-5  p-8 z-40'>
 
