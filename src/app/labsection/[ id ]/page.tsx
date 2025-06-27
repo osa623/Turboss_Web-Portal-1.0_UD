@@ -51,7 +51,7 @@ const Detailpage = () => {
 
     useEffect(() => {
       router.replace(window.location.href);
-    } , []);
+    }, [router]); // Added router to dependency array
 
   const params = useParams();
   const id = params && typeof params[' id '] === 'string' ? params[' id '].trim() : null;

@@ -274,8 +274,8 @@ export default function PixelCardPage() {
       container.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [frag, vert]);
+  }, [frag, vert, rotateOnHover]);
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }
-    
+

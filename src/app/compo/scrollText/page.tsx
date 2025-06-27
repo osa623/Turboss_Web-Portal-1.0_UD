@@ -153,7 +153,7 @@ function ScrollTextPage() {
           </ScrollReveal>
 
           <ScrollReveal baseOpacity={0.3} baseRotation={5}>
-            Here's another example with different opacity and rotation settings.
+            Here&apos;s another example with different opacity and rotation settings.
           </ScrollReveal>
 
           <div className="h-screen flex items-center justify-center">
