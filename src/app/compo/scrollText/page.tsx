@@ -38,7 +38,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     return text.split(/(\s+)/).map((word, index) => {
       if (word.match(/^\s+$/)) return word;
       return (
-        <span className="inline-block" key={index}>
+        <span className="inline-block word" key={index}>
           {word}
         </span>
       );
@@ -132,4 +132,39 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   );
 };
 
-export default ScrollReveal;
+// Default page component
+function ScrollTextPage() {
+  return (
+    <div className="min-h-screen p-8">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-center">
+          Scroll Text Animation Demo
+        </h1>
+
+        <div className="space-y-16">
+          <ScrollReveal>
+            This text will animate as you scroll down the page with smooth opacity
+            and rotation effects.
+          </ScrollReveal>
+
+          <ScrollReveal enableBlur={false}>
+            This example shows the animation without blur effects for a cleaner
+            look.
+          </ScrollReveal>
+
+          <ScrollReveal baseOpacity={0.3} baseRotation={5}>
+            Here's another example with different opacity and rotation settings.
+          </ScrollReveal>
+
+          <div className="h-screen flex items-center justify-center">
+            <ScrollReveal containerClassName="text-center">
+              Keep scrolling to see more animated text reveal effects in action.
+            </ScrollReveal>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ScrollTextPage;
