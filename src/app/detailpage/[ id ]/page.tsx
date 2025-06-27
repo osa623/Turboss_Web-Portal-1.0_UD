@@ -652,11 +652,16 @@ useEffect(() => {
 
                                     </div>  
 
-                                    <div className={`flex flex-col ${expandSection ? 'lgs:w-[0vw] opacity-0 lgs:h-[0rem]' : 'lgs:w-[45vw] opacity-100 lgs:h-[20rem]'} items-center lgs:mt-4 h-auto`}>
-                                    <div className='relative lgs:h-[20rem] lgs:w-[20vw]'>
+                                    <div className={`flex flex-col ${expandSection ? 'lgs:w-[0vw] opacity-0 lgs:h-[0rem]' : 'lgs:w-[45vw] opacity-100'} items-center lgs:mt-4 h-auto`}>
+                                   
+                                   {tool?.image ? (
+                                    <div className='relative lgs:h-[20rem] lgs:w-[20vw]'>                    
                                         <Image src={tool?.image} alt='turbo' layout='fill' objectFit='cover' className='scale-100' />
-
-                                    </div>
+                                     </div>
+                                      ) : (
+                                        <div className='flex py-2'/>
+                                      )}
+                                      
                                   </div>  
 
                                     {/*  Description */}
@@ -934,7 +939,7 @@ useEffect(() => {
                             <div className='absolute flex flex-col  h-[40rem] lgs:w-full bg-transparent z-50'>
 
 
-                            {/* Navigation Section */}
+                          
 
                               
                               
@@ -1189,9 +1194,14 @@ useEffect(() => {
 
                                 </div>  
 
-                                <div className={`flex flex-col sms:mt-4 ${expandSection ? 'lgs:w-[0vw] opacity-0 lgs:h-[0rem]' : 'lgs:w-[45vw] opacity-100 lgs:h-[20rem]'} items-center lgs:mt-4 h-auto`}>
+                                <div className={`flex flex-col sms:mt-4 ${expandSection ? 'lgs:w-[0vw] opacity-0' : 'lgs:w-[45vw] opacity-100'} items-center lgs:mt-4 h-auto`}>
                                 <div className='relative lgs:h-[20rem] lgs:w-[20vw]'>
+
+                                  {tool?.image ? (
                                     <Image src={tool?.image} alt='turbo' layout='fill' objectFit='cover' className='scale-100' />
+                                  ) : (
+                                    <div className='flex py-2'/>
+                                  )}
 
                                 </div>
                               </div>  

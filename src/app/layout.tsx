@@ -13,10 +13,9 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time (e.g., fetching data or assets)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 10000); // Adjust the duration as needed
+    }, 10000); 
 
     return () => clearTimeout(timer);
   }, []);

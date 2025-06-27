@@ -125,6 +125,19 @@ useEffect(() => {
                       <Image src={data?.image || '/default-image.jpg'} alt={data?.name || 'Default Alt Text'} width={2400} height={2400}  className='object-cover' />
                     </div> 
 
+                    <div className='absolute z-50 flex top-0 w-[40%] h-20 left-0 bg-transparent'>
+                      <button 
+                        onClick={() => router.back()} 
+                        className="flex items-center justify-center p-1 px-8 border-2 m-4 bg-transparent text-primary rounded-full hover:bg-transparent transition-colors shadow-lg"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        <span className="ml-2 font-dmsans">Back</span>
+                      </button>
+                    </div>
+
+
 
                               <div className='absolute top-0 left-0 lgs:w-[50vw] sms:w-[50vw] z-30 h-full bg-gradient-to-r from-secondary to-transparent opacity-50'/>
                               <div className='absolute top-0 left-0 lgs:w-[50vw] sms:w-[100vw] lgs:h-[5rem] z-30 h-full bg-gradient-to-b from-secondary to-transparent opacity-50'/>
@@ -216,7 +229,7 @@ useEffect(() => {
                                 </div>  
 
                                 {/* Main Topic and Description */}
-                                <div className='flex flex-col lgs:w-[45vw] lgs:h-[30rem] justify-start items-start bg-transparent'>
+                                <div className='flex flex-col lgs:w-[45vw] lgs:h-[1rem] justify-start items-start bg-transparent'>
 
                                 
                                 </div>  
