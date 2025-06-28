@@ -71,7 +71,7 @@ import flywheel3 from '../assests/flywheel4.png';
 
 
 //files
-import SplitText from  './headingText/page';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCarSide,  faSearch, faTrafficLight, faVolumeDown, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -445,15 +445,7 @@ const Home = () => {
 
                         {/* Text Data set */}
                         <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10 mds:h-[250vh]  h-[200vh] w-full">
-                            <SplitText
-                                text="Turboss"
-                                className="flex lgs:mt-0 font-bricolagegrotesque opacity-10 text-[45rem] animate-movingText text-primary font-thin text-center"
-                                delay={150}
-                                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                                threshold={0.2}
-                                rootMargin="-50px"
-                                onLetterAnimationComplete={handleAnimationComplete}
-                                />        
+                                
        
                         </div>    
 
