@@ -80,6 +80,9 @@ import Link from "next/link";
 
 
 
+
+
+
 // Slide data with images
 
 
@@ -440,7 +443,7 @@ const Home = () => {
 
                         {/* Text Data set */}
                         <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10 mds:h-[250vh]  h-[200vh] w-full">
-                                
+   
        
                         </div>    
 
