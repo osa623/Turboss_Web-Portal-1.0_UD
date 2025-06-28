@@ -80,11 +80,6 @@ import Link from "next/link";
 
 
 
-const handleAnimationComplete = () => {
-    console.log('All letters have animated!');
-  };
-
-
 // Slide data with images
 
 
