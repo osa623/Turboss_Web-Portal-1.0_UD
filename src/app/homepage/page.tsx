@@ -246,13 +246,13 @@ const Home = () => {
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
 
                 <div className="relative bg-transparent z-30 h-[200vh] mds:h-[100vh] w-full">
+                    
                     <div className="absolute w-1/2 h-[200vh] mds:h-[100vh] bg-gradient-to-r left-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-[200vh] mds:h-[100vh]  bg-gradient-to-l right-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-full mds:h-[100vh] bg-gradient-to-b top-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
-  
-                    
+                   
                     <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] mds:h-[100vh]   sms:h-[100vh] w-full">
 
                                 
@@ -455,12 +455,7 @@ const Home = () => {
 
  
 
-                        {/* Text Data set */}
-                        <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10  h-[200vh] w-full">
-   
-       
-                        </div>    
-
+                      
 
 
                       {/* Cogwheel Setup */}
