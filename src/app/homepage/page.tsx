@@ -241,19 +241,19 @@ const Home = () => {
         <div className="relative sms:overflow-hidden h-auto w-full"> 
 
             {/* First Section */}           
-            <div className='relative h-[200vh] mds:h-[250vh]   sms:h-[100vh] w-full  overflow-hidden'>
+            <div className='relative lgs:h-[200vh] mds:h-[100vh] sms:h-[100vh] w-full  overflow-hidden'>
 
                 <Image src={mainBackground} alt='turbo' className='object-cover w-full h-full z-20' layout='fill' />
 
-                <div className="relative bg-transparent z-30 h-[200vh] w-full">
-                    <div className="absolute w-1/2 h-[200vh] mds:h-[250vh]  bg-gradient-to-r left-0 from-secondary to-transparent"/>
-                    <div className="absolute w-full h-[200vh] mds:h-[250vh]  bg-gradient-to-l right-0 from-secondary to-transparent"/>
-                    <div className="absolute w-full h-full mds:h-[250vh]  bg-gradient-to-b top-0 from-secondary to-transparent"/>
+                <div className="relative bg-transparent z-30 h-[200vh] mds:h-[100vh] w-full">
+                    <div className="absolute w-1/2 h-[200vh] mds:h-[100vh] bg-gradient-to-r left-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-[200vh] mds:h-[100vh]  bg-gradient-to-l right-0 from-secondary to-transparent"/>
+                    <div className="absolute w-full h-full mds:h-[100vh] bg-gradient-to-b top-0 from-secondary to-transparent"/>
                     <div className="absolute w-full h-1/2 bg-gradient-to-t bottom-0 from-secondary to-transparent"/>
 
   
                     
-                    <div className="relative flex bg-transparent items-center justify-center z-50 h-[200vh] mds:h-[300vh]   sms:h-[100vh] w-full">
+                    <div className="relative flex bg-transparent items-center justify-center z-50 lgs:h-[200vh] mds:h-[100vh]   sms:h-[100vh] w-full">
 
                                 
                         {/* Turboss Main Topic */}
@@ -290,13 +290,21 @@ const Home = () => {
 
                                             <h2 className="font-bricolagegrotesque text-primary text-shadow-xl text-center" style={{ 
                                                 fontWeight: '100',
-                                                fontSize:'15rem'
+                                                fontSize:'12rem'
                                                 }}>  
                                             Tur<span className="text-orange-600" style={{
                                                 fontWeight:'200'
                                             }}>boss
                                             <div className="absolute w-auto h-auto bg-primary"/>
                                             </span>
+                                            </h2> 
+                                             <h2 className="font-bricolagegrotesque flex items-center absolute bottom-12 left-20 text-primary text-shadow-xl text-center" style={{ 
+                                                fontWeight: '100',
+
+                                                }}>  
+                                            Concept By<Image src={bwlogo} className="object-contain mx-2 w-6 h-6" alt="BW logo" />
+                                            <div className="absolute w-auto h-auto bg-primary"/>
+                                            
                                             </h2> 
 
                                 </div>
@@ -328,7 +336,7 @@ const Home = () => {
                          </div>   
 
                         {/* Sub Paragrapgh Main Topic */}
-                        <div className="absolute flex flex-col items-center justify-center bottom-0 h-[60vh] sms:h-[30vh] w-full">
+                        <div className="absolute flex flex-col items-center justify-center bottom-0 lgs:h-[60vh] mds:h-[25vh] sms:h-[30vh] w-full">
 
                             <div className="flex flex-col w-auto h-auto justify-center items-center">
 
@@ -357,33 +365,33 @@ const Home = () => {
 
 
                         {/* Sub Upper Topic for larger screen */}
-                         <div className="hidden absolute lgs:flex mds:flex mt-0 items-start justify-center top-20 right-48 lgs:h-[50vh] w-[100vw]">
+                         <div className="hidden absolute lgs:flex mds:flex mt-0 items-start justify-center mds:top-12 lgs:top-20 lgs:right-48 mds:right-12 lgs:h-[50vh] w-[100vw]">
 
                               
                                 <div className="flex flex-col w-full h-auto justify-center items-end">
 
 
-                                <div className="hidden lgs:flex bg-transparent z-50 w-auto h-auto lgs:space-x-3">
-                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] cursor-pointer rounded-full items-center justify-center"
+                                <div className="hidden lgs:flex mds:flex bg-transparent z-50 w-auto h-auto space-x-3">
+                                      <div className="flex bg-orange-600 mds:h-[2rem] mds:w-[2rem] h-[3rem] w-[3rem] cursor-pointer rounded-full items-center justify-center"
                                       style={{
                                         boxShadow:'inset 0px 0px 5px 2px rgba(255,255,255 ,0.4) , 0px 0px 20px 20px rgba(0,0,0,0.2)'
                                       }}>
                                             <FontAwesomeIcon icon={faSearch} className="text-primary" />
                                      </div>
 
-                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] rounded-full items-center justify-center">
+                                      <div className="flex bg-orange-600 mds:h-[2rem] mds:w-[2rem] h-[3rem] w-[3rem] rounded-full items-center justify-center">
 
                                       <FontAwesomeIcon icon={faCarSide} className="text-primary" />
 
                                       </div>
 
-                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] rounded-full items-center justify-center">
+                                      <div className="flex bg-orange-600 mds:h-[2rem] mds:w-[2rem] h-[3rem] w-[3rem] rounded-full items-center justify-center">
 
                                       <FontAwesomeIcon icon={faTrafficLight} className="text-primary" />
 
                                       </div>
 
-                                      <div className="flex bg-orange-600 lgs:h-[3rem] lgs:w-[3rem] rounded-full items-center justify-center">
+                                      <div className="flex bg-orange-600 mds:h-[2rem] mds:w-[2rem] h-[3rem] w-[3rem] rounded-full items-center justify-center">
 
                                       <FontAwesomeIcon icon={faCarSide} className="text-primary" />
 
@@ -448,7 +456,7 @@ const Home = () => {
  
 
                         {/* Text Data set */}
-                        <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10 mds:h-[250vh]  h-[200vh] w-full">
+                        <div className="absolute flex  flex-col bg-transparent mt-0 items-center justify-start z-10  h-[200vh] w-full">
    
        
                         </div>    
@@ -812,9 +820,9 @@ const Home = () => {
                         transition: "transform 0.4s ease-out",
                     }}
                 />
-                <div className="aboslute flex flex-col items-center overflow-hidden  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
+                <div className="aboslute flex mds:scale-95  flex-col items-center overflow-hidden  justify-center bg-gradient-to-t from-secondary via-transparent to-transparent w-full h-auto z-30">
 
-                     <h2 className="sms:flex flex-col font-bricolagegrotesque text-7xl mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
+                     <h2 className="sms:flex mds:flex flex-col font-bricolagegrotesque text-7xl mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
                         fontWeight:'200'
                      }}>
                         Welcome to <span className="bg-orange-600 p-4 sms:p-2" data-aos='fade-right' data-aos-delay='1200' style={{
@@ -822,12 +830,12 @@ const Home = () => {
                         }}>Turboss</span>
                      </h2>
 
-                     <p className="font-dmsans text-xl sms:text-xl w-[60vw] overflow-hidden sms:w-[80vw] lgs:mt-12  mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
+                     <p className="font-dmsans text-xl sms:text-xl w-[60vw] mds:w-[80vw] overflow-hidden sms:w-[80vw] lgs:mt-12  mt-8 text-primary text-shadow-xl text-center" data-aos='zoom-in' style={{
                         fontWeight:'200'
                      }}>
                         Where every ride is fueled by passion and power meets accuracy. Explore a world where engineering is at the cutting edge, machines come to life, and every little detail reveals a tale of creativity and performance. This is an experience rather than merely a journey. </p>
 
-                     <div className="sms:flex flex-col sms:mt-16 mds:mt-8 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
+                     <div className="sms:flex mds:mb-6 flex-col sms:mt-16 mds:mt-8 font-dmsans text-2xl lgs:w-[40vw] lgs:mt-20 text-orange-500 text-shadow-xl text-center" style={{
                         fontWeight:'600'
                      }}>
                         <span className="bg-orange-600 text-primary p-3 sms:p-2" data-aos='fade-left' style={{
@@ -886,23 +894,23 @@ const Home = () => {
 
 
                 {/* text Sections */}
-                <div className="absolute overflow-hidden flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem]  items-center justify-center z-40">
+                <div className="absolute overflow-hidden flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem] mds:bg-gradient-to-l from-secondary to-transparent  items-center justify-center mds:z-50 z-40">
 
                         <div className="flex lgs:h-[30rem] w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
   
                         
                         </div>
 
-                        <div className="flex flex-col lgs:h-[25rem] w-[60vw] sms:w-[80vw] items-center justify-center">
+                        <div className="flex flex-col lgs:h-[25rem] z-50 w-[60vw] sms:w-[80vw] items-center justify-center">
                         <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
 
                                 <h2 className="flex lgs:text-lg sms:text-xl mds:text-xl font-dmsans text-center items-center  text-primary" data-aos='fade-right' style={{
                                     fontWeight:'100'
                                 }}>
-                                Join the Turbos<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
+                                Join the Turboss<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
                                 </h2>
 
-                                <span className="flex lgs:text-6xl mds:text-5xl font-dmsans bg-primary sms:text-4xl text-center items-center p-4 rounded-lg text-orange-700"
+                                <span className="flex lgs:text-6xl mds:text-5xl font-dmsans sms:bg-orange-600 sms:text-primary bg-primary text-orange-600 sms:text-4xl text-center items-center p-4 rounded-lg "
                                 data-aos='fade-up' data-aos-delay='200'
                                     style={{
                                         fontWeight:'800'
@@ -917,7 +925,7 @@ const Home = () => {
                                 fontWeight:'200'
                             }}>
                                     Whether you love cars, work in a garage, or are just starting to explore the world of automobiles — this is your place to connect, share, and chat with others.</p>
-                             <Link href="https://www.baoswheels.com/community" className="hidden lgs:flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
+                             <Link href="https://www.baoswheels.com/community" className="flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
                              data-aos='fade-up' data-aos-delay='400'>
                                 Join Now
                              </Link>

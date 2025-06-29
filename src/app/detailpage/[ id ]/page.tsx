@@ -257,14 +257,14 @@ useEffect(() => {
                 </div>
 
                 {/* Engine Image */}
-                <div className='absolute flex w-[50vw] sms:h-[50vh] mds:h-[120vh] lgs:h-[50vh] sms:bottom-16 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-50'>
+                <div className='absolute flex w-[50vw] sms:h-[50vh] mds:h-[100vh] lgs:h-[50vh] sms:bottom-16 sms:w-full lgs:bottom-48 lgs:left-12 bg-transparent animate-floating1 items-center justify-center z-50'>
                 {data && data.image && (
                     <Image
                       src={data.image}
                       width={'300'}
                       height={'300'}
                       alt={data.name}
-                      className='flex object-cover lgs:h-auto sms:w-[100vw] w-[30vw]'
+                      className='flex object-cover lgs:h-auto sms:w-[100vw] mds:w-[100vw]  mds:scale-75 mds:h-[30rem]  w-[30vw]'
                     />
                   )}
                 </div>
@@ -309,7 +309,7 @@ useEffect(() => {
 
               
             {/*main detail Section for larger screen */}
-              <div className={`hidden relative lgs:flex mds:flex lgs:overflow-x-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+              <div className={`hidden relative lgs:flex mds:flex lgs:overflow-x-hidden mds:overflow-x-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
               style={{
                 boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
               }}>

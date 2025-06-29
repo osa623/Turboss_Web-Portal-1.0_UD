@@ -13,59 +13,84 @@ const Footer = () => {
 
        <div className='absolute flex sms:flex-col top-0 w-full lgs:h-[80vh] sms:h-auto bg-secondary sms:pb-12'>
          
-            <div className='flex flex-col items-center justify-start lgs:w-[30vw] sms:w-full sms:px-4'>
+            <div className='flex flex-col items-center justify-start lgs:w-[30vw] mds:w-[40vw] sms:w-full sms:px-4'>
 
                 {/* Footer header */}
 
 
                 {/* Footer logo */}
-                <Image src={logo} alt='logo' className='w-[10rem] lgs:mt-12 sms:mt-8 h-[10rem] lgs:w-[20rem] lgs:h-[20rem] sms:w-[8rem] sms:h-[8rem]'/>
+                <div className='flex flex-col items-center mds:py-4'> 
+                <Image src={logo} alt='logo' className='w-[10rem] lgs:mt-12 sms:mt-8 mds:h-[15rem] mds:w-[15rem] lgs:w-[20rem] lgs:h-[20rem] sms:w-[8rem] sms:h-[8rem]'/>
 
-                <h2 className='flex text-sm lgs:mt-4 sms:mt-2 lgs:w-[20vw] sms:w-full sms:text-center sms:px-2 font-poppins text-primary sms:text-sm'
+                <h2 className='flex text-sm lgs:mt-4 sms:mt-2 lgs:w-[20vw] mds:w-[90%] mds:text-center sms:w-full sms:text-center sms:px-2 font-poppins text-primary sms:text-sm'
                 style={{
                   fontWeight:'200'
                 }}>
                 Discover a digital hub for car enthusiasts featuring the latest tools, gadgets, and garage setups. Stay informed and inspired—whether you are a mechanic, DIY tuner, or tech lover—and elevate your garage experience
                 </h2>
+                </div>
+
+                              {/* Footer links 3 */}
+               <div className='hidden mds:flex flex-col w-full h-auto py-2'>
+                  <h2 className='font-poppins text-primary text-md px-4 mb-2'>
+                    Meet the Dev
+                  </h2>
+                  <div className='flex w-full items-center lgs:mt-4 mt-2 h-auto justify-center sms:justify-center'>
+                        <div className='relative flex place-content-center  sms:w-auto h-auto items-start justify-start sms:flex-col sms:items-center'>
+                            <Image src={logoFooter} alt='logo' className='object-cover h-[5rem] w-auto'/>
+                            <div className='flex px-2 w-auto items-center justify-center h-auto'>
+                            <Image src={qrCode} alt='logo' className='object-cover h-[5rem] w-auto sms:w-auto'/>
+                            <h2 className='font-bubblerOne lgs:text-sm sms:text-xs font-bold bg-yellow-500 lgs:p-2 sms:p-1 rounded-2xl text-primary transition-colors duration-200 hover:bg-yellow-400 hover:text-orange-700 cursor-pointer'>
+                              buy me a coffee
+                            </h2>
+                            </div>
+                        </div>
+                        <div className='flex lgs:w-[10vw] sms:hidden h-auto'>
+
+                        </div>
+                  </div>
+               </div>
+
+                
               
             </div>  
 
-            <div className='flex flex-col items-start sms:items-center justify-start lgs:w-[70vw] sms:w-full sms:px-4'>
+            <div className='flex flex-col items-start sms:items-center mds:items-center mds:w-[60vw] justify-start lgs:w-[70vw] sms:w-full sms:px-4'>
 
-              <div className='flex  w-auto lgs:mt-12 mt-12 sms:px-6 h-auto sms:space-x-6'>
+              <div className='flex  w-auto lgs:mt-12 mt-12 sms:px-6 h-auto space-x-6'>
                 {/* Footer links 1 */}  
-                 <div className='flex flex-col lgs:w-[20vw] sms:w-full h-auto'>
+                 <div className='flex flex-col w-[20vw] sms:w-full mds:py-4 h-auto'>
                   <h2 className='font-poppins text-primary lgs:text-2xl sms:text-xl sms:mb-2'>
                   Platforms
                   </h2>
-                  <div className='flex flex-col mt-4 sms:mt-2 lgs:space-y-3 sms:space-y-2'>
-                   <div className='flex w-auto h-auto group cursor-pointer'>
-                    <h2 className='font-bricolagegrotesque text-primary bg-orange-600 font-bold text-shadow-xl lgs:p-3 sms:p-2 lgs:text-xl sms:text-base transition-colors duration-200 group-hover:bg-orange-700 group-hover:text-white'>
+                  <div className='flex flex-col mt-4 sms:mt-2 mds:items-start mds:justify-center lgs:space-y-3 sms:space-y-2'>
+                   <div className='flex w-auto h-auto group mds:space-x-1 cursor-pointer'>
+                    <h2 className='font-bricolagegrotesque text-primary bg-orange-600 font-bold text-shadow-xl lgs:p-3 p-2 lgs:text-xl sms:text-base transition-colors duration-200 group-hover:bg-orange-700 group-hover:text-white'>
                       Turboss
                     </h2>
-                    <h2 className='font-poppins text-primary lgs:text-xl sms:text-base lgs:p-2 sms:p-1 transition-colors duration-200 group-hover:text-orange-700'
+                    <h2 className='font-poppins text-primary lgs:text-xl sms:text-base p-2 sms:p-1 transition-colors duration-200 group-hover:text-orange-700'
                     style={{
                       fontWeight:'200'
                     }}>
                       DNA
                     </h2>
                    </div>
-                   <div className='flex w-auto h-auto group cursor-pointer'>
-                    <h2 className='font-bricolagegrotesque text-orange-600 bg-primary font-bold lgs:p-3 sms:p-2 lgs:text-xl sms:text-base transition-colors duration-200 group-hover:bg-orange-600 group-hover:text-white'>
+                   <div className='flex w-auto h-auto group mds:space-x-1  cursor-pointer'>
+                    <h2 className='font-bricolagegrotesque text-orange-600 bg-primary font-bold lgs:p-3 p-2 lgs:text-xl sms:text-base transition-colors duration-200 group-hover:bg-orange-600 group-hover:text-white'>
                       Turboss
                     </h2>
-                    <h2 className='font-poppins text-primary lgs:text-xl sms:text-base lgs:p-2 sms:p-1 transition-colors duration-200 group-hover:text-orange-700'
+                    <h2 className='font-poppins text-primary lgs:text-xl sms:text-base p-2 sms:p-1 transition-colors duration-200 group-hover:text-orange-700'
                     style={{
                       fontWeight:'200'
                     }}>
                       Lab
                     </h2>
                    </div>
-                   <div className='flex w-auto h-auto group cursor-pointer'>
-                    <h2 className='font-bricolagegrotesque text-primary bg-orange-600 font-bold text-shadow-xl lgs:p-3 sms:p-2 lgs:text-xl sms:text-base transition-colors duration-200 group-hover:bg-orange-700 group-hover:text-white'>
+                   <div className='flex w-auto h-auto group mds:space-x-1  cursor-pointer'>
+                    <h2 className='font-bricolagegrotesque text-primary bg-orange-600 font-bold text-shadow-xl lgs:p-3 p-2 lgs:text-xl sms:text-base transition-colors duration-200 group-hover:bg-orange-700 group-hover:text-white'>
                       Turboss
                     </h2>
-                    <h2 className='font-poppins text-primary lgs:text-xl sms:text-base lgs:p-2 sms:p-1 transition-colors duration-200 group-hover:text-orange-700'
+                    <h2 className='font-poppins text-primary lgs:text-xl sms:text-base p-2 sms:p-1 transition-colors duration-200 group-hover:text-orange-700'
                     style={{
                       fontWeight:'200'
                     }}>
@@ -76,7 +101,7 @@ const Footer = () => {
                  </div>
                  
                {/* Footer links 2 */}  
-               <div className='flex flex-col lgs:w-[20vw] sms:w-full h-auto'>
+               <div className='flex flex-col lgs:w-[20vw] sms:w-full mds:py-4 h-auto'>
                   <h2 className='font-poppins text-primary lgs:text-2xl sms:text-xl sms:mb-2'>
                     Support
                   </h2>
@@ -125,7 +150,7 @@ const Footer = () => {
                </div>
 
               {/* Footer links 3 */}
-               <div className='hidden lgs:flex mds:flex flex-col lgs:w-[30vw] sms:w-full h-auto'>
+               <div className='hidden lgs:flex flex-col lgs:w-[30vw] sms:w-full h-auto'>
                   <h2 className='font-poppins text-primary lgs:text-2xl sms:text-xl sms:mb-2'>
                     Meet the Dev
                   </h2>
@@ -189,7 +214,7 @@ const Footer = () => {
 
        </div>
 
-      <div className='absolute bottom-0 z-50 w-full h-[3rem] sms:h-[2rem] bg-orange-600'/>
+      <div className='absolute bottom-0 z-50 w-full h-[3rem] mds:h-[1rem] sms:h-[2rem] bg-orange-600'/>
       
     </div>
   )

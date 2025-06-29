@@ -171,7 +171,7 @@ useEffect(() => {
                                                       
                         </div> 
 
-                        <div className="absolute lgs:mt-60 right-12  items-start justify-start lgs:p-5">
+                        <div className="absolute lgs:mt-60 right-12  items-start justify-start p-5">
                                                       
                                                       <div className="flex w-2xl h-3xl">
 
@@ -182,11 +182,11 @@ useEffect(() => {
                                                       
                         </div> 
 
-                        <h2 className='absolute text-center font-dmsans w-[80%] z-30 text-8xl text-orange-600'>
+                        <h2 className='absolute text-center sms:text-6xl mds:text-6xl  font-dmsans w-[80%] z-30 text-7xl text-orange-600'>
                           {data?.name}
                         </h2>
 
-                        <h2 className='absolute  text-center  font-dmsans  w-[80%] z-20 ml-2 text-8xl text-primary'>
+                        <h2 className='absolute  text-center sms:text-6xl mds:text-6xl  font-dmsans  w-[80%] z-20 ml-2 text-7xl text-primary'>
                           {data?.name}
                         </h2>
 
@@ -205,14 +205,14 @@ useEffect(() => {
 
                     {/* Section Section */}  
 
-                    <div className='flex h-[50rem] lgs:w-[50vw] sms:w-[100vw] justify-start items-start bg-transparent overflow-hidden overflow-y-scroll'>
+                    <div className='flex h-[50rem] lgs:w-[50vw] mds:w-[50vw] sms:w-[100vw] justify-start items-start bg-transparent overflow-hidden overflow-y-scroll'>
 
-                          <div className='flex h-auto bg-transparent lgs:w-[50vw]'>
+                          <div className='flex h-auto bg-transparent w-[50vw]'>
 
                               <div className='flex flex-col w-auto h-auto justify-center items-center bg-transparent z-50 p-5 sms:p-0'>
 
                                 {/* Main Topic and Description */}
-                                <div className='flex flex-col lgs:w-[45vw] sms:w-[100vw] h-auto justify-start sms:p-5 items-start bg-transparent'>
+                                <div className='flex flex-col lgs:w-[45vw] sms:w-[100vw] h-auto justify-start p-5 items-start bg-transparent'>
 
                                 <div className='flex w-auto h-auto'>
                                  <h2 className='font-dmsans text-lg sms:text-2xl text-shadow-xl bg-orange-600 text-primary p-2'>
@@ -237,7 +237,7 @@ useEffect(() => {
                                  {/* Sub Topic and Sub Description */}
                                    <div className='flex flex-col lgs:w-[45vw] sms:w-auto h-auto justify-start items-start bg-transparent'>
 
-                                 <div className='flex w-auto h-auto sms:mt-12 mds:mt-6 lgs:p-8 sms:mb-12'>
+                                 <div className='flex w-auto h-auto sms:mt-12 mds:mt-6 mds:mb-6 lgs:p-8 sms:mb-12'>
 
                                   <h2 className='font-dmsans text-lg text-shadow-xl bg-orange-600 text-primary p-2'>
                                      {data?.name} Sections
@@ -246,22 +246,23 @@ useEffect(() => {
 
                                     {data?.subTopics.map((subTopic, index) => (
 
-                                      <div key={index} className='relative flex bg-transparent w-full lgs:h-[25rem] sms:h-[40rem] items-start justify-center'>
-                                      <div className='relative flex sms:w-[15vw]  lgs:w-[20vw] h-[25rem] sms:h-[40rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
+                                      <div key={index} className='relative  flex bg-transparent w-full lgs:h-[25rem] sms:h-[40rem] items-start justify-center'>
+                                      <div className='relative flex sms:w-[15vw] mds:w-[10vw] mds:h-[50rem]  lgs:w-[20vw] h-[25rem] sms:h-[40rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
                                         <div className='absolute flex bg-primary rounded-full w-[4rem] h-[4rem] items-center justify-center z-30' style={{
                                           boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
                                         }}>
                                           <Image src={data?.image} alt='tree' width={'1200'} height={'1200'} className='rounded-full border-2 border-gray-500 object-cover w-[4rem] h-[4rem]' />
                                         </div>
                                         { index !== 5 && (
-                                        <div className={`absolute w-[0.05rem] h-screen bg-secondary items-center justify-center z-20`} style={{
+                                        <div className={`absolute w-[0.05rem] h-screen mds:h-[200rem] bg-secondary items-center justify-center z-20`} style={{
 
                                         }}/>
                                         )}
                                         
 
                                       </div>
-                                      <div className='flex w-[80vw] h-[25rem] sms:h-[30rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2'>
+                                      
+                                      <div className='flex w-[80vw] mds:w-full mds:h-auto h-[25rem] sms:h-[30rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2'>
                                         <div className={`flex flex-col w-full h-[22rem] mds:h-auto sms:h-auto items-start rounded-3xl justify-start p-5`}
                                         style={{
                                           boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
