@@ -121,7 +121,7 @@ useEffect(() => {
 
                   <div className='relative lgs:h-[50rem] sms:h-[40rem] lgs:w-[50vw] sms:w-[100vw] justify-center items-center bg-transparent'>
                     
-                    <div className='relative flex lgs:w-[50vw] sms:w-[100vw] h-full bg-transparent z-20'>
+                    <div className='relative flex w-[50vw] sms:w-[100vw] h-full bg-transparent z-20'>
                       <Image src={data?.image || '/default-image.jpg'} alt={data?.name || 'Default Alt Text'} width={2400} height={2400}  className='object-cover' />
                     </div> 
 
@@ -139,20 +139,20 @@ useEffect(() => {
 
 
 
-                              <div className='absolute top-0 left-0 lgs:w-[50vw] sms:w-[50vw] z-30 h-full bg-gradient-to-r from-secondary to-transparent opacity-50'/>
-                              <div className='absolute top-0 left-0 lgs:w-[50vw] sms:w-[100vw] lgs:h-[5rem] z-30 h-full bg-gradient-to-b from-secondary to-transparent opacity-50'/>
-                              <div className='absolute top-0 left-0 lgs:w-[50vw] sms:w-[100vw] lgs:h-[5rem] z-30 h-full bg-gradient-to-t from-secondary to-transparent opacity-50'/>
-                              <div className='absolute top-0 right-0 lgs:w-[50vw] sms:w-[50vw] z-30 h-full bg-gradient-to-l from-secondary to-transparent opacity-50'/>
-                              <div className='absolute top-0 left-0 lgs:w-[50vw] z-30 lgs:h-full sms:w-[100vw] bg-gradient-to-r from-secondary to-transparent opacity-50'/>
-                              <div className='absolute top-0 left-0 lgs:w-[50vw] z-30 lgs:h-full sms:w-[100vw] sms:h-[10rem] bg-gradient-to-b from-secondary to-transparent opacity-50'/>
+                              <div className='absolute top-0 left-0 w-[50vw] sms:w-[50vw] z-30 h-full bg-gradient-to-r from-secondary to-transparent opacity-50'/>
+                              <div className='absolute top-0 left-0 w-[50vw] sms:w-[100vw] lgs:h-[5rem] z-30 h-full bg-gradient-to-b from-secondary to-transparent opacity-50'/>
+                              <div className='absolute top-0 left-0 w-[50vw] sms:w-[100vw] lgs:h-[5rem] z-30 h-full bg-gradient-to-t from-secondary to-transparent opacity-50'/>
+                              <div className='absolute top-0 right-0 w-[50vw] sms:w-[50vw] z-30 h-full bg-gradient-to-l from-secondary to-transparent opacity-50'/>
+                              <div className='absolute top-0 left-0 w-[50vw] z-30 lgs:h-full sms:w-[100vw] bg-gradient-to-r from-secondary to-transparent opacity-50'/>
+                              <div className='absolute top-0 left-0 w-[50vw] z-30 lgs:h-full sms:w-[100vw] sms:h-[10rem] bg-gradient-to-b from-secondary to-transparent opacity-50'/>
 
 
 
-                  <div className='absolute flex  top-0 left-0 lgs:w-[50vw] sms:w-[100vw] z-30 h-full items-center overflow-hidden justify-center bg-transparent'>
+                  <div className='absolute flex  top-0 left-0 w-[50vw] mds:h-[50%]  sms:w-[100vw] z-30 h-full items-center overflow-hidden justify-center bg-transparent'>
 
                     <div className='flex flex-col justify-center items-center bg-transparent overflow-hidden'>
 
-                        <div className="sms:absolute lgs:mb-48 lgs:left-12 sms:left-2 sms:p-6 top-0 sms:items-start justify-start lgs:pl-6 overflow-hidden">
+                        <div className="sms:absolute mds:absolute lgs:mb-48 lgs:left-12 sms:right-2 mds:right-7 mds:top-5 sms:p-6 top-0 sms:items-start justify-start lgs:pl-6 overflow-hidden">
                                                       
                                                       <div className="flex w-auto h-auto  overflow-hidden">
 
@@ -162,7 +162,7 @@ useEffect(() => {
                                                       }}>
                                                       Garage Section
                                                       </h2>
-                                                      <span className="font-bricolagegrotesque text-orange-600 lgs:text-xl bg-primary lgs:p-2">
+                                                      <span className="font-bricolagegrotesque text-orange-600 lgs:text-xl px-2 bg-primary lgs:p-2">
                                                           {data?.subName}
                                                       </span>
 
@@ -182,11 +182,11 @@ useEffect(() => {
                                                       
                         </div> 
 
-                        <h2 className='absolute sms:text-center font-dmsans z-30 text-8xl text-orange-600'>
+                        <h2 className='absolute text-center font-dmsans w-[80%] z-30 text-8xl text-orange-600'>
                           {data?.name}
                         </h2>
 
-                        <h2 className='absolute  sms:text-center  font-dmsans z-20 ml-2 text-8xl text-primary'>
+                        <h2 className='absolute  text-center  font-dmsans  w-[80%] z-20 ml-2 text-8xl text-primary'>
                           {data?.name}
                         </h2>
 
@@ -205,11 +205,11 @@ useEffect(() => {
 
                     {/* Section Section */}  
 
-                    <div className='flex h-[50rem] lgs:w-[50vw] sms:w-[100vw] justify-start items-start bg-transparent overflow-y-scroll'>
+                    <div className='flex h-[50rem] lgs:w-[50vw] sms:w-[100vw] justify-start items-start bg-transparent overflow-hidden overflow-y-scroll'>
 
                           <div className='flex h-auto bg-transparent lgs:w-[50vw]'>
 
-                              <div className='flex flex-col w-auto h-auto justify-center items-center bg-transparent z-50 lgs:p-5'>
+                              <div className='flex flex-col w-auto h-auto justify-center items-center bg-transparent z-50 p-5 sms:p-0'>
 
                                 {/* Main Topic and Description */}
                                 <div className='flex flex-col lgs:w-[45vw] sms:w-[100vw] h-auto justify-start sms:p-5 items-start bg-transparent'>
@@ -237,7 +237,7 @@ useEffect(() => {
                                  {/* Sub Topic and Sub Description */}
                                    <div className='flex flex-col lgs:w-[45vw] sms:w-auto h-auto justify-start items-start bg-transparent'>
 
-                                 <div className='flex w-auto h-auto sms:mt-12 lgs:p-8 sms:mb-12'>
+                                 <div className='flex w-auto h-auto sms:mt-12 mds:mt-6 lgs:p-8 sms:mb-12'>
 
                                   <h2 className='font-dmsans text-lg text-shadow-xl bg-orange-600 text-primary p-2'>
                                      {data?.name} Sections
@@ -262,7 +262,7 @@ useEffect(() => {
 
                                       </div>
                                       <div className='flex w-[80vw] h-[25rem] sms:h-[30rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2'>
-                                        <div className={`flex flex-col w-full h-[22rem] sms:h-auto items-start rounded-3xl justify-start p-5`}
+                                        <div className={`flex flex-col w-full h-[22rem] mds:h-auto sms:h-auto items-start rounded-3xl justify-start p-5`}
                                         style={{
                                           boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
                                         }}>

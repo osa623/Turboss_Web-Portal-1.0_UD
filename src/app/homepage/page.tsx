@@ -306,7 +306,7 @@ const Home = () => {
                                <div className="hidden sms:flex flex-col w-full h-auto justify-center items-center">
 
 
-                                        <h2 className="font-bricolagegrotesque text-primary mt-10 text-shadow-xl text-center" style={{ 
+                                        <h2 className="font-bricolagegrotesque text-primary mt-12 text-shadow-xl text-center" style={{ 
                                             fontWeight: '400',
                                             fontSize:'7rem'
                                             }}>  
@@ -315,6 +315,12 @@ const Home = () => {
                                         }}>boss
                                         <div className="absolute w-auto h-auto bg-primary"/>
                                         </span>
+                                        </h2> 
+                                       <h2 className="font-bricolagegrotesque absolute top-36 flex text-primary left-12 mt-10 text-shadow-xl text-center" style={{ 
+                                            fontWeight: '400',
+                                            fontSize:'1rem'
+                                            }}>  
+                                        Concept By<Image src={bwlogo} className="object-contain mx-2 w-6 h-6" alt="BW logo" />
                                         </h2> 
 
                                 </div>
@@ -458,7 +464,7 @@ const Home = () => {
                             <div className="absolute flex bg-transparent lgs:h-[40rem] mds:w-[35rem] mds:h-[35rem] lgs:w-[40rem] sms:w-auto sms:h-[30rem]  items-center justify-center z-40">
 
                             
-                                    <Image src={flywheel0} alt="" className="absolute  object-cover z-10 sms:w-auto sms:h-[20rem] sms:scale-150  lgs:h-[35rem] lgs:animate-spin lgs:w-[35rem]  " style={{
+                                    <Image src={flywheel0} alt="" className="hidden absolute mds:flex lgs:flex object-cover z-10 sms:w-auto sms:h-[20rem] lgs:h-[35rem] animate-spin lgs:w-[35rem]  " style={{
                                     animationDuration:'10s'
                                     }}/>   
 
@@ -478,11 +484,20 @@ const Home = () => {
 
                             </div>
 
+                            {/* Middle Cogwheel for small */}
+                            <Image src={flywheel0} alt="" className="hidden absolute sms:flex object-cover z-30 sms:w-auto sms:h-[30rem]  animate-spin  lgs:h-[35rem] lgs:w-[35rem]  " style={{
+                                    animationDuration:'10s'
+                            }}/>  
+
                             {/* 1rd Cogwheel */}
                             <div className=" absolute flex bg-transparent justify-start items-center h-[50rem] sms:ml-24 w-[80rem] z-20" style={{
 
                                 }}>
-                                <Image src={flywheel1} alt="" className="absolute object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
+                                <Image src={flywheel1} alt="" className="hidden absolute lgs:flex sms:flex object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
+                                    animationDuration:'10s',
+                                    animationDirection:'reverse'
+                                }}/>   
+                                <Image src={flywheel3} alt="" className="hidden absolute mds:flex object-cover z-30 w-[35rem] lgs:h-[30rem] animate-spin" style={{
                                     animationDuration:'10s',
                                     animationDirection:'reverse'
                                 }}/>   
@@ -887,7 +902,7 @@ const Home = () => {
                                 Join the Turbos<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
                                 </h2>
 
-                                <span className="flex lgs:text-6xl mds:text-5xl font-dmsans bg-primary sms:text-5xl text-center items-center p-4 rounded-lg text-orange-700"
+                                <span className="flex lgs:text-6xl mds:text-5xl font-dmsans bg-primary sms:text-4xl text-center items-center p-4 rounded-lg text-orange-700"
                                 data-aos='fade-up' data-aos-delay='200'
                                     style={{
                                         fontWeight:'800'
