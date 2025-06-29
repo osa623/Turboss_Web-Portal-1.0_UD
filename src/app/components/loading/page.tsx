@@ -44,10 +44,27 @@ export default function Loading() {
          </div>
 
         {/* Logo Set Layout */}
-        <div className=' absolute bg-transparent inset-0 flex items-center justify-center z-30 h-screen w-full'>
-          <div className='flex items-center justify-center sms:w-[50%] sms:h-[50%] w-[20%] h-[20%] bg-transparent'>
+        <div className='absolute bg-transparent inset-0 flex items-center justify-center z-30 h-screen w-full'>
+          <div className='absolute flex  items-center justify-center sms:w-[50%] sms:h-[50%] z-40 w-[20%] h-[20%] bg-transparent'>
                 <Image className='flex  object-cover w-auto' src={logo} alt="Logo" />
           </div>
+          <div className='absolute flex  items-center justify-center sms:w-full sms:h-[60%] w-full h-[100%] bg-transparent'>
+                <div className='flex w-[15rem] h-[15rem] lgs:w-[20rem] lgs:h-[20rem] border-4 bg-transparent border-t-0 animate-spin border-orange-600 rounded-full  object-cover' />
+          </div>
+           <div className='absolute flex  items-center justify-center sms:w-full sms:h-[60%] w-[20%] h-[20%] bg-transparent'>
+                <div className='flex w-[14rem] h-[14rem] lgs:w-[19rem] lgs:h-[19rem] border-4 bg-transparent border-t-0 animate-spin border-white rounded-full  object-cover'
+                style={{
+                  animationDirection: 'reverse',
+                  animationDuration: '2s',
+                }} />
+          </div>
+                     <div className='absolute flex  items-center justify-center sms:w-full sms:h-[60%] w-[20%] h-[20%] bg-transparent'>
+                <div className='flex w-[13rem] h-[13rem] lgs:w-[18rem] lgs:h-[18rem] border-4 bg-transparent border-t-0 animate-spin border-yellow-500 rounded-full  object-cover'
+                style={{
+                  animationDuration: '3s',
+                }} />
+          </div>
+
          </div>
        </div>
 
