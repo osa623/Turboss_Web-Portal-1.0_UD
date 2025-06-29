@@ -8,10 +8,10 @@ import qrCode from '../assests/qrBuyMeACoffee.png';
 
 const Footer = () => {
   return (
-    <div className='relative overflow-hidden bg-secondary z-40 lgs:h-[80vh]  w-full'>
+    <div className='relative bg-secondary z-40 lgs:h-[80vh]  w-full'>
 
 
-       <div className='absolute flex sms:flex-col top-0 w-full lgs:h-[80vh] sms:h-auto bg-secondary sms:pb-12'>
+       <div className='absolute  overflow-x-hidden flex sms:flex-col top-0 w-full lgs:h-[80vh] sms:h-auto bg-secondary sms:pb-12'>
          
             <div className='flex flex-col items-center justify-start lgs:w-[30vw] mds:w-[40vw] sms:w-full sms:px-4'>
 
