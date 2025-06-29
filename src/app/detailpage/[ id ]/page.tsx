@@ -309,7 +309,7 @@ useEffect(() => {
 
               
             {/*main detail Section for larger screen */}
-              <div className={`hidden relative lgs:flex mds:flex lgs:overflow-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+              <div className={`hidden relative lgs:flex mds:flex lgs:overflow-x-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
               style={{
                 boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
               }}>
@@ -919,7 +919,7 @@ useEffect(() => {
 
 
           {/*main detail Section for smaller screen */}
-          <div className={`hidden relative sms:flex flex-col items-center justify-start scrollbar-hide sms:w-[100vw] drop-shadow-lgs ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[50vw]'} overflow-hidden transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+          <div className={`hidden relative sms:flex flex-col items-center justify-start scrollbar-hide sms:w-[100vw] drop-shadow-lgs ${expandSection ? 'lgs:w-[100vw]' : 'lgs:w-[50vw]'} sms:overflow-hidden transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
           style={{
             boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
           }}>
