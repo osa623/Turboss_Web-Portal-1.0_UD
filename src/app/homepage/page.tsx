@@ -2011,7 +2011,7 @@ const Home = () => {
                                        
                                 </div>
                                     { index !== 4 && (
-                                    <div className={`absolute  w-[0.08rem] bg-primary h-[200vh] items-center justify-center z-20`} data-aos='fade-down' style={{
+                                    <div className={`absolute  w-[0.2rem] bg-primary h-[200vh] animate-water-dropping items-center  justify-center z-20`} data-aos='fade-down' style={{
 
                                     }}/>
                                     )}
