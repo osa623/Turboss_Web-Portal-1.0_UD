@@ -885,7 +885,25 @@ const Home = () => {
                     }}>
                         #ChatCommunity
                     </h2>
+
+
                 </div>
+
+                     {/* Upper corner text */}
+                <div className="absolute hidden sms:flex left-0 sms:w-[30vw] h-[3rem] rounded-br-full bg-orange-600 items-center justify-center z-30"
+                style={{
+                    boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
+                }}>
+
+                    <Link href={'https://www.baoswheels.com/community'} className="font-dmsans lgs:text-2xl sms:text-xl text-primary text-center" style={{
+                        fontWeight:'200'
+                    }}>
+                        Go
+                    </Link>
+
+
+                </div>
+
 
 
                 {/* text Sections */}
@@ -920,7 +938,7 @@ const Home = () => {
                                 fontWeight:'200'
                             }}>
                                     Whether you love cars, work in a garage, or are just starting to explore the world of automobiles — this is your place to connect, share, and chat with others.</p>
-                             <Link href="https://www.baoswheels.com/community" className="flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
+                             <Link href="https://www.baoswheels.com/community" className="hidden lgs:flex mds:flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
                              data-aos='fade-up' data-aos-delay='400'>
                                 Join Now
                              </Link>

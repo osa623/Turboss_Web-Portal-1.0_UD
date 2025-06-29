@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "../assests/turbossLogo.png";
 import logoFooter from "../assests/logoFooter.png";
 import qrCode from '../assests/qrBuyMeACoffee.png';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -40,9 +41,9 @@ const Footer = () => {
                             <Image src={logoFooter} alt='logo' className='object-cover h-[5rem] w-auto'/>
                             <div className='flex px-2 w-auto items-center justify-center h-auto'>
                             <Image src={qrCode} alt='logo' className='object-cover h-[5rem] w-auto sms:w-auto'/>
-                            <h2 className='font-bubblerOne lgs:text-sm sms:text-xs font-bold bg-yellow-500 lgs:p-2 sms:p-1 rounded-2xl text-primary transition-colors duration-200 hover:bg-yellow-400 hover:text-orange-700 cursor-pointer'>
-                              buy me a coffee
-                            </h2>
+                            
+                              <Link href={'https://buymeacoffee.com/osandamuthukumarana'}><h2 className='font-bubblerOne lgs:text-sm sms:text-xs font-bold bg-yellow-500 lgs:p-2 sms:p-1 rounded-2xl text-primary transition-colors duration-200 hover:bg-yellow-400 z-50 hover:text-orange-700 cursor-pointer'>buy me a coffee</h2></Link>
+                            
                             </div>
                         </div>
                         <div className='flex lgs:w-[10vw] sms:hidden h-auto'>
@@ -159,9 +160,7 @@ const Footer = () => {
                             <Image src={logoFooter} alt='logo' className='object-cover h-[5rem] lgs:h-[8rem] sms:h-[4rem] lgs:w-auto sms:w-auto'/>
                             <div className='flex flex-col w-auto items-center justify-center h-auto'>
                             <Image src={qrCode} alt='logo' className='object-cover h-[5rem] lgs:h-[8rem] sms:h-[4rem] p-2 lgs:w-auto sms:w-auto'/>
-                            <h2 className='font-bubblerOne lgs:text-sm sms:text-xs font-bold bg-yellow-500 lgs:p-2 sms:p-1 rounded-2xl text-primary transition-colors duration-200 hover:bg-yellow-400 hover:text-orange-700 cursor-pointer'>
-                              buy me a coffee
-                            </h2>
+                            <Link href={'https://buymeacoffee.com/osandamuthukumarana'}><h2 className='font-bubblerOne lgs:text-sm sms:text-xs font-bold bg-yellow-500 lgs:p-2 sms:p-1 rounded-2xl text-primary transition-colors duration-200 hover:bg-yellow-400 z-50 hover:text-orange-700 cursor-pointer'>buy me a coffee</h2></Link>
                             </div>
                         </div>
                         <div className='flex lgs:w-[10vw] sms:hidden h-auto'>
@@ -185,9 +184,7 @@ const Footer = () => {
                             <Image src={logoFooter} alt='logo' className='object-cover h-[15rem]  lgs:w-auto sms:w-auto'/>
                             <div className='flex flex-col w-auto items-center justify-center h-auto'>
                             <Image src={qrCode} alt='logo' className='object-cover h-[8rem] p-2 lgs:w-auto sms:w-auto'/>
-                            <h2 className='font-bubblerOne text-sm font-bold bg-yellow-500 p-4 px-12 rounded-2xl text-secondary transition-colors duration-200 hover:bg-yellow-400 hover:text-orange-700 cursor-pointer'>
-                              buy me a coffee
-                            </h2>
+                              <Link href={'https://buymeacoffee.com/osandamuthukumarana'}><h2 className='font-bubblerOne text-sm font-bold bg-yellow-500 sms:p-4 rounded-2xl text-secondary transition-colors duration-200 hover:bg-yellow-400 z-50 hover:text-orange-700 cursor-pointer'>buy me a coffee</h2></Link>
                             </div>
                         </div>
                         <div className='flex lgs:w-[10vw] sms:hidden h-auto'>
