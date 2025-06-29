@@ -238,7 +238,7 @@ const Home = () => {
     return (
 
 
-        <div className="relative h-auto w-full"> 
+        <div className="relative sms:overflow-hidden h-auto w-full"> 
 
             {/* First Section */}           
             <div className='relative h-[200vh] mds:h-[250vh]   sms:h-[100vh] w-full  overflow-hidden'>
@@ -902,7 +902,7 @@ const Home = () => {
                                 fontWeight:'200'
                             }}>
                                     Whether you love cars, work in a garage, or are just starting to explore the world of automobiles — this is your place to connect, share, and chat with others.</p>
-                             <Link href="https://www.baoswheels.com/community" className="flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
+                             <Link href="https://www.baoswheels.com/community" className="hidden lgs:flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
                              data-aos='fade-up' data-aos-delay='400'>
                                 Join Now
                              </Link>
@@ -911,7 +911,7 @@ const Home = () => {
                 </div>
 
                 {/* Chat Sections */}
-                <div className="absolute z-40 sms:mt-8 overflow-hidden flex sms:flex-col sms:h-[70rem] w-[60%] mds:w-[70%] sms:scale-90 sms:w-full bg-transparent h-[25rem] items-center justify-center">
+                <div className="absolute z-40 sms:mt-8 lgs:overflow-hidden flex sms:flex-col sms:h-[70rem] w-[60%] mds:w-[70%] sms:scale-90 sms:w-full bg-transparent h-[25rem] items-center justify-center">
                         
                         <div className="flex flex-col sms:mt-12 lgs:h-auto lgs:w-full items-start lgs:space-y-8 lgs:p-12 justify-center overflow-hidden">
 

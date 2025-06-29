@@ -273,7 +273,7 @@ useEffect(() => {
 
 
 
-              <div className='hidden absolute lgs:flex sms:flex mds:flex  lgs:w-auto right-0 h-auto bottom-0 sms:bottom-96 z-50'>
+              <div className='hidden absolute lgs:flex sms:flex mds:flex  lgs:w-auto right-0 h-auto bottom-0 sms:bottom-72 z-50'>
 
               {/* Topic Section */}
                 <div className='flex w-auto h-auto bg-transparent z-50 items-end justify-end'>
@@ -309,7 +309,7 @@ useEffect(() => {
 
               
             {/*main detail Section for larger screen */}
-              <div className={`hidden relative lgs:flex mds:flex overflow-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
+              <div className={`hidden relative lgs:flex mds:flex lgs:overflow-hidden flex-col items-center justify-start w-[100vw] drop-shadow-lgs ${expandSection ? 'w-[100vw] sms:h-auto' : 'w-[50vw] sms:h-[5vh]'} transition-all duration-1000 ease-in-out overflow-y-scroll bg-primary h-auto z-40`}
               style={{
                 boxShadow:'inset 0px 0px 10px 1px rgba(0, 0, 0, 0.9)'
               }}>
@@ -782,7 +782,14 @@ useEffect(() => {
 
 
             </div>
-
+            <div className='hidden absolute sms:flex top-2 left-2 border-2 bg-black h-12 w-auto items-center justify-center z-50 rounded-lg shadow-md'>
+              <button 
+              onClick={handleClickNavigate} 
+              className='flex items-center justify-center px-8 py-2 font-bricolagegrotesque text-primary font-bold'
+              >
+              &larr; Back
+              </button>
+            </div>
       
             {/* Sub Section for more details for a larger screen */}
 
@@ -1149,7 +1156,7 @@ useEffect(() => {
 
 
                     {/* Main Description 02 */}
-                    <div className={`relative flex flex-col ${expandSection ? 'w-[100vw] items-end justify-end' : 'w-[50vw] items-start justify-start'} h-auto bg-orange-850 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
+                    <div className={`relative flex flex-col ${expandSection ? 'w-[100vw] items-end justify-end' : 'w-[100vw] items-start justify-start'} h-auto bg-orange-850 lgs:space-y-5 transition-all duration-1000 ease-in-out items-start  justify-center overflow-hidden`}>
 
                           <div className='flex flex-col w-auto h-auto lgs:pr-5  p-8 z-40'>
 
@@ -1374,7 +1381,7 @@ useEffect(() => {
               </div>
 
               {/*left hanging for the small Topic Section */}
-               <div className='hidden absolute sms:flex w-auto h-auto bg-transparent z-50 mt-60  items-end justify-end'>
+               <div className='hidden absolute sms:flex  w-auto h-auto bg-transparent z-50  items-end justify-end'>
 
               <div className='flex w-auto h-auto  transform origin-top-left -rotate-90'>
 
