@@ -1331,6 +1331,7 @@ useEffect(() => {
               <div className=" flex w-full h-[25rem] items-end justify-center z-50">
 
 
+              {data?.name === 'Engine' || data?.name === 'Turbo' ? (
                       <div className="flex flex-col h-[20rem]  w-[40vw] items-center justify-center">
 
                         {data?.subSection.map((tool, index)=> (
@@ -1377,6 +1378,15 @@ useEffect(() => {
                           
 
                       </div>
+              ) : (
+                
+                <div className="flex h-[25rem]  w-[40vw] items-center justify-center">
+                                <h2 className='font-poppins text-3xl text-center text-primary'>
+                                  No Tools Available
+                                </h2>
+                              </div>
+
+              )}
 
               </div>
 
