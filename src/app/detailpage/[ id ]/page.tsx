@@ -1630,10 +1630,11 @@ useEffect(() => {
                                                         }}
                                                     />
                                                 </div>
-                                                <div
-                                                    className="flex flex-col h-[20rem] items-center justify-center w-full transition-opacity duration-500"
-                                                    style={{ opacity }}
-                                                >
+                                                     <div
+                                                        className=" flex flex-col h-[30rem] items-center justify-start w-full transition-opacity duration-500"
+                                                        style={{ opacity }}
+                                                    >
+                                                        
                                                         <div className='relative w-[20rem] h-[10rem] rounded-2xl bg-secondary items-center justify-center overflow-hidden'
                                                         style={{
                                                           boxShadow:'inset 0px 0px 10px 5px rgba(255, 255, 255, 0.2)'
@@ -1648,7 +1649,7 @@ useEffect(() => {
                                                                 </h2>
                                                             </div>
                                                             {/* Garage Layer */}
-                                                            <div className='absolute flex z-20  w-[20rem] h-[10rem] items-end justify-end p-4'>
+                                                            <div className='absolute flex z-20  w-[20rem] h-[10rem] items-end justify-end'>
                                                                 <h2 className='font-bricolagegrotesque bottom  text-md text-primary opacity-40 mr-2'
                                                                 style={{
                                                                   fontWeight:'100'
@@ -1658,11 +1659,11 @@ useEffect(() => {
                                                             </div>
                                                              {/* Upper Layer */}
                                                             <div className='absolute flex z-30  w-[20rem] h-[10rem] items-start justify-start p-6'>
-                                                                <h2 className='flex flex-col font-poppins bottom  text-5xl items-center justify-center text-orange-600 opacity-90'
+                                                                <h2 className='flex flex-col font-poppins bottom  text-2xl items-start justify-center text-orange-600 opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
-                                                                    {tool?.name}<span className='text-xl text-primary font-poppins'
+                                                                    {tool?.name}<span className='text-lg text-primary font-poppins'
                                                                     style={{
                                                                       fontWeight:'100'
                                                                     }}>
@@ -1672,11 +1673,13 @@ useEffect(() => {
                                                             </div>
                                                              {/* Sound wave Layer */}
                                                             <div className='absolute flex z-50  w-[20rem] h-[10rem] items-start justify-end p-6'>
+                                                                
+                                                                {data?.name === 'Engine' || data?.name === 'engine' ? (
                                                                 <div className='flex bottom w-[10rem] h-[4rem] text-5xl justify-end bg-secondary opacity-90'
                                                                 style={{
                                                                   fontWeight:'100'
                                                                 }}>
-                                                                      {data?.name === 'Engine' || data?.name === 'engine' ? (
+
                                                                       <div                 
                                                                                 className=" flex z-50 bottom-0 left-6 items-center justify-center cursor-pointer p-2"
                                                                                 onClick={() => { handleAudioToggle(index, tool?.sound); handleClick(); }}
@@ -1684,11 +1687,13 @@ useEffect(() => {
                                                                                 <div className="flex items-center justify-center rounded-full w-[3rem] h-[3rem] bg-primary opacity-90">
                                                                                   <FontAwesomeIcon icon={playingIndex === index ? faVolumeHigh : faVolumeDown} className='h-5'/>
                                                                                 </div>
-                                                                              </div> ) : (
-                                                                                  <div className='hiddne'/>
-                                                                              )}
+                                                                              </div>
                                                                     
                                                                 </div>
+                                                                ) : (
+                                                                  <div className='flex'/>
+                                                                )}
+
                                                             </div>
                                                             {/* Button Layer */}
                                                             <div
@@ -1704,9 +1709,11 @@ useEffect(() => {
                                                             
 
                                                         </div>  
-                                                    <button className="absolute h-[0.8rem] w-[15rem] font-dmsans lgs:mb-0 lgs:mt-12 rounded-full blur-lg items-center justify-center bg-secondary"/>
-                                                  
-                                                </div>
+
+                                                        <div className='absolute lgs:w-[20rem] lgs:mt-48 blur-xl bg-black lgs:h-[2rem]'/>
+                                                        
+
+                                                    </div>
                                             </SwiperSlide>
                                         );
                                     })}
