@@ -790,7 +790,7 @@ const Home = () => {
             }}>
             
             <audio ref={audioRef} autoPlay loop>
-                <source src="/backgroundAudio.wav" type="audio/wav" />
+                <source src="/backgroundAudio.WAV" type="audio/wav" />
                 Your browser does not support the audio element.
             </audio>
             <button onClick={toggleMute}>
