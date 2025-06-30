@@ -147,38 +147,38 @@
         {
             "name": "V2",
             "image": "/assets/engines/v2.png",
-            "sound": "/assets/records/v2.mp3"
+            "sound": "https://www.turboss.baoswheels.com/assets/records/v2.mp3"
 
         },
         {
             "name": "V6",
             "image": "/assets/engines/v6.png",
-            "sound": "/assets/records/v6.mp3"
+            "sound": "https://www.turboss.baoswheels.com/assets/records/v6.mp3"
         },
         {
             "name": "V8",
             "image": "/assets/engines/v8.png",
-            "sound": "/assets/records/v8.mp3"
+            "sound": "https://www.turboss.baoswheels.com/assets/records/v8.mp3"
         },
         {
             "name": "V10",
             "image": "/assets/engines/v10.png",
-            "sound": "/assets/records/v10.mp3"
+            "sound": "https://www.turboss.baoswheels.com/assets/records/v10.mp3"
         },
         {
             "name": "V12",
             "image": "/assets/engines/v12.png",
-            "sound": "/assets/records/v12.mp3"
+            "sound": "https://www.turboss.baoswheels.com/assets/records/v12.mp3"
         },
         {
           "name": "W12",
           "image": "/assets/engines/w12.png",
-          "sound": "/assets/records/v8Sound.mp3"
+          "sound": "https://www.turboss.baoswheels.com/assets/records/w12.mp3"
         },
         {
           "name": "W16",
           "image": "/assets/engines/w16.png",
-          "sound": "/assets/records/w16.mp3"
+          "sound": "https://www.turboss.baoswheels.com/assets/records/w16.mp3"
        }
 
       ],
