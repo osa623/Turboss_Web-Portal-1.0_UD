@@ -8,6 +8,8 @@ import { EffectCoverflow, Navigation } from "swiper/modules";
 import MouseAnimation from '../components/mouseanimation/page';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Head from "next/head";
+
 
 
 
@@ -231,8 +233,15 @@ const Home = () => {
             };
         }, []);
 
+        <Head>
+            <title>Turboss - The Ultimate Digital Garage Experience</title>
+            <meta name="description" content="Step into Turboss, the ultimate digital garage experience. Explore cutting-edge automotive technology, tools, and innovations in an immersive virtual environment." />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-    
+
+
 
 
     return (
