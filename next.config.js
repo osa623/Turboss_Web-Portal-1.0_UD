@@ -2,16 +2,10 @@
 // Keep this file as your main Next.js configuration
 
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ['randomuser.me'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'randomuser.me',
-        pathname: '**',
-      },
-    ],
+  transpilePackages: ['three', '@react-three/fiber', '@react-three/drei'],
+  webpack: (config) => {
+    config.externals = [...(config.externals || []), { canvas: 'canvas' }];
+    return config;
   },
 }
 

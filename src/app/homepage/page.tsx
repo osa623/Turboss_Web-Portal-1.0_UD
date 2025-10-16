@@ -11,9 +11,6 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 
 
-
-
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -45,6 +42,11 @@ import chatPupil1 from '../assests/pupil01.jpg';
 import chatPupil2 from '../assests/pupil02.jpg';
 import chatPupil3 from '../assests/pupil03.jpg';
 
+//images
+import ExpoHall from '../assests/expoHall.png';
+
+import threedEffect from '../assests/3dEffect.png';
+
 
 //DYN Images
 import birthaBenz from '../assests/DYN/birthaBenz.png';
@@ -70,7 +72,9 @@ import flywheel1 from '../assests/flywheel2.png';
 import flywheel2 from '../assests/flywheel3.png';
 import flywheel3 from '../assests/flywheel4.png';
 
-
+// video from public folder
+// Ensure expoHall.mp4 is located at <projectRoot>/public/expoHall.mp4
+const videoHall = "/expoHall.mp4";
 
 //files
 
@@ -345,7 +349,7 @@ const Home = () => {
                          </div>   
 
                         {/* Sub Paragrapgh Main Topic */}
-                        <div className="absolute flex flex-col items-center justify-center bottom-0 lgs:h-[60vh] mds:h-[25vh] sms:h-[30vh] w-full">
+                        <div className="absolute flex flex-col items-center justify-center bottom-0 lgs:h-[50vh] mds:h-[25vh] sms:h-[30vh] w-full">
 
                             <div className="flex flex-col w-auto h-auto justify-center items-center">
 
@@ -774,10 +778,11 @@ const Home = () => {
 
 
                       {/* Scrolling animation for the hero section */}
-                       <div className=" absolute flex w-[10rem] sms:scale-75 items-center justify-center lgs:h-[10rem] bottom-20">
+                       <div className=" absolute flex w-[10rem] sms:scale-75 items-center justify-center lgs:h-[5rem] bottom-20">
                          <MouseAnimation />
                        </div>
 
+                      
                     </div>
 
 
@@ -853,13 +858,38 @@ const Home = () => {
             </div>
 
              {/* Chat Section */}
-            <div className="flex h-[25rem] sms:flex-col sms:h-[50rem] w-full bg-orange-600 z-40" >
+            <div className="flex h-[25rem] sms:flex-col sms:h-[50rem] w-full lgs:bg-orange-600 z-40" >
 
 
                 <div className="relative flex h-[25rem] sms:h-[50rem] w-[60vw] sms:w-full items-center justify-start overflow-hidden">
-                        <Image src = {chatBAckground} alt="fwef" className="object-cover sms:h-[50rem]  sms:w-full  h-[30rem] w-full z-30"/>
-                        <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] w-[80vw] from  sms:w-full from-secondary to-transparent z-30"/>
-                        <div className="flex absolute bg-gradient-to-l sms:bg-gradient-to-b h-[30rem] sms:h-[50rem] w-[20vw] sms:w-full right-0  from-orange-600 via-orange-600 to-transparent z-30"/>
+                
+                                                         <video
+                                                    src='/expofinal.mp4'
+                                                    autoPlay
+                                                    muted
+                                                    loop
+                                                    height={'1000'}
+                                                    width={'500'}
+                                                    playsInline
+                                                    className="hidden lgs:flex h-[80vh] w-full object-cover z-20"
+                                                />
+
+
+                        <div className="hidden lgs:flex absolute bg-gradient-to-l sms:bg-gradient-to-b h-[30rem] sms:h-[50rem] w-[20vw] sms:w-full right-0  from-orange-600 via-orange-600 to-transparent z-30"/>
+                                           <div className="hidden sms:flex absolute bg-gradient-to-l  h-[30rem] sms:h-[50rem] w-[20vw] sms:w-full right-0  bg-transparent z-30">
+
+                                                <video
+                                                    src='/expofinal.mp4'
+                                                    autoPlay
+                                                    muted
+                                                    loop
+                                                    width={'10000'}
+                                                    playsInline
+                                                    className="hidden sms:flex h-[100vh] w-full object-cover z-20"
+                                                />
+
+                                            </div>
+
                         <div className="flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] w-[100vw] sms:w-full right-0  from-secondary to-transparent z-43"/>
                         <div className="hidden sms:flex absolute bg-gradient-to-r h-[30rem] sms:h-[50rem] sms:w-full w-[100vw] right-0  from-secondary to-transparent z-30"/>
                 </div>
@@ -872,7 +902,7 @@ const Home = () => {
                     <h2 className="flex font-dmsans animate-movingText02 text-primary opacity-20 text-center" style={{
                         fontSize:'50rem'
                     }}>
-                        COMMUNITY
+                        EXPOEXPO
                     </h2>
 
                     <h2 className="flex font-dmsans text-primary text-center" style={{
@@ -880,21 +910,6 @@ const Home = () => {
                     }}>
                         CommunityHub
                     </h2>
-
-                </div>
-
-                {/* Upper corner text */}
-                <div className="absolute flex right-0 w-[20vw] lgs:h-[4rem] h-[3rem] sms:w-[60vw] rounded-bl-full bg-primary items-center justify-center z-30"
-                style={{
-                    boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.4), inset 0px 0px 10px 2px rgba(0,0,0,0.8)'
-                }}>
-
-                    <h2 className="font-dmsans lgs:text-2xl sms:text-xl text-orange-600 text-center" style={{
-                        fontWeight:'200'
-                    }}>
-                        #ChatCommunity
-                    </h2>
-
 
                 </div>
 
@@ -916,7 +931,7 @@ const Home = () => {
 
 
                 {/* text Sections */}
-                <div className="absolute overflow-hidden flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem] mds:bg-gradient-to-l from-secondary to-transparent  items-center justify-center mds:z-50 z-40">
+                <div className="absolute lgs:overflow-hidden flex sms:flex-col w-full sms:h-auto sms:mt-20 h-[25rem] mds:bg-gradient-to-l from-secondary to-transparent  items-center justify-center mds:z-50 z-40">
 
                         <div className="flex lgs:h-[30rem] w-[40vw] sms:w-[60vw]  items-center justify-center overflow-hidden">
   
@@ -924,152 +939,43 @@ const Home = () => {
                         </div>
 
                         <div className="flex flex-col lgs:h-[25rem] z-50 w-[60vw] sms:w-[80vw] items-center justify-center">
-                        <div className="flex flex-col w-auto h-auto sms:items-center overflow-hidden">
+                        <div className="relative flex-col w-auto h-auto sms:items-center lgs:overflow-hidden">
 
-                                <h2 className="flex lgs:text-lg sms:text-xl mds:text-xl font-dmsans text-center items-center  text-primary" data-aos='fade-right' style={{
+                                <h2 className="relative flex lgs:text-lg sms:text-xl top-16 mds:text-xl font-dmsans text-center items-center sms:justify-center  text-primary" data-aos='fade-right' style={{
                                     fontWeight:'100'
                                 }}>
-                                Join the Turboss<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
+                                Join For An Amazing Experience<span className="flex bg-primary lgs:ml-5 lgs:w-[20rem] lgs:h-[0.1rem]"/>
                                 </h2>
 
-                                <span className="flex lgs:text-6xl mds:text-5xl font-dmsans sms:bg-orange-600 sms:text-primary bg-primary text-orange-600 sms:text-4xl text-center items-center p-4 rounded-lg "
+                                <span className="flex sms:flex-col lgs:text-6xl mds:text-5xl font-dmsans sms:text-primary sms:text-4xl text-center items-center rounded-lg "
                                 data-aos='fade-up' data-aos-delay='200'
                                     style={{
                                         fontWeight:'800'
                                     }}>
-                                     Community Chat
+                                     <Image src={threedEffect} className="flex object-cover items-center w-auto h-[40vh]" alt="Community Chat" />
+                                           <h2 className="absolute left-64 sms:left-0 sms:-bottom-6 opacity-40 text-shadow-xl font-kdamThmorPro text-9xl font-bold text-black">
+                                            RevX
+                                           </h2>
+                                            <h2 className="absolute left-60 sms:left-0 sms:-bottom-6 text-shadow-xl font-kdamThmorPro text-9xl font-bold text-white">
+                                            RevX
+                                           </h2>
+                                           <h2 className="absolute left-20 bottom-12 sms:left-0 sms:-bottom-24 text-shadow-xl font-londrina text-2xl font-thin text-white">
+                                            The Virtual Car Show 2026 | Experience  Coming Soon
+                                           </h2>
+                                
+
                                 </span>
                         </div>
 
-                            <p className="font-dmsans w-[40vw] sms:w-[60vw] mt-6 sms:text-xl lgs:text-xl text-center lgs:mt-8 text-primary h-auto items-center"
-                            data-aos='zoom-in' data-aos-delay='300'
-                            style={{
-                                fontWeight:'200'
-                            }}>
-                                    Whether you love cars, work in a garage, or are just starting to explore the world of automobiles — this is your place to connect, share, and chat with others.</p>
-                             <Link href="https://www.baoswheels.com/community" className="hidden lgs:flex mds:flex bg-primary mt-8 lgs:mt-4 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
+                             <Link href="https://www.baoswheels.com/community" className="hidden lgs:flex mds:flex bg-primary mb-12 sms:mt-4 items-center justify-center w-[20vw] sms:w-[60vw] h-[3rem] rounded-lg text-orange-600 font-dmsans text-lg"
                              data-aos='fade-up' data-aos-delay='400'>
-                                Join Now
+                                COMING SOON
                              </Link>
                        </div>
 
-                </div>
+                </div> 
 
-                {/* Chat Sections */}
-                <div className="absolute z-40 sms:mt-8 lgs:overflow-hidden flex sms:flex-col sms:h-[70rem] w-[60%] mds:w-[70%] sms:scale-90 sms:w-full bg-transparent h-[25rem] items-center justify-center">
-                        
-                        <div className="flex flex-col sms:mt-12 lgs:h-auto lgs:w-full items-start lgs:space-y-8 lgs:p-12 justify-center overflow-hidden">
-
-                            <div className="flex lgs:w-auto lgs:scale-90 scale-75 sms:scale-75 lgs:ml-12 items-start justify-center">
-                                
-                                <div className="flex bg-primary overflow-hidden border-4 w-[4rem] h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='350'>
-                                    <Image src={chatPupil2} alt="" className="flex object-cover z-50 h-[4rem] sms:w-[4rem] w-[4rem]"/>
-                                </div>
-
-                                <div className="flex flex-col bg-gray-900 rounded-2xl ml-2 items-start p-5 justify-center w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='400'
-                                style={{
-                                    boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
-                                }}>
-                                    <h2 className="flex font-dmsans text-orange-600 lgs:text-sm"
-                                    style={{
-                                        fontWeight:'800'
-                                    }}>
-                                        Jessica Anderson<span className="ml-2 text-primary"
-                                        style={{
-                                            fontWeight:'200'
-                                        }}>
-                                            Tue 03:01
-                                        </span>
-                                    </h2>
-                                    <p className="flex font-dmsans text-primary lgs:text-lg"
-                                    style={{
-                                        fontWeight:'100'
-                                    }}>
-                                        Why does my car make a ticking noise when I start it, and then the sound goes away after a few minutes?
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div className="flex lgs:w-auto sms:ml-12  lgs:scale-110 items-start scale-90 justify-center">
-                                
-                                <div className="flex bg-primary overflow-hidden border-4 w-[4rem] h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='450'>
-                                    <Image src={chatPupil1} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
-                                </div>
-
-                                <div className="flex flex-col bg-blue-950 rounded-2xl ml-2 items-start p-5 justify-center w-[30rem] sms:w-[25rem] lgs:h-[8rem]" 
-                                data-aos='fade-left' data-aos-delay='500'
-                                style={{
-                                    boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
-                                }}>
-
-                                    <div className="flex bg-transparent items-center justify-start w-full h-auto">
-                                    <h2 className="flex font-dmsans text-orange-600 lgs:text-sm"
-                                    style={{
-                                        fontWeight:'800'
-                                    }}>
-                                        Jhon Dewik<span className="ml-2 text-primary"
-                                        style={{
-                                            fontWeight:'200'
-                                        }}>
-                                            Tue 03:15
-                                        </span>
-                                    </h2>
-                                    <h2 className="flex font-dmsans ml-2 text-primary bg-orange-600 p-1 rounded-full"
-                                    style={{
-                                        fontWeight:'800',
-                                        fontSize:'0.5rem'
-                                    }}>
-                                        Auto Expert
-                                    </h2>
-                                    </div>
-                                    <p className="flex font-dmsans lgs:mt-1 text-primary text-sm"
-                                    style={{
-                                        fontWeight:'100'
-                                    }}>
-                                        A ticking noise at startup that fades after a few minutes is often due to low oil levels, cold engine parts, or worn valve lifters. It’s usually harmless if it stops quickly, but if it continues, it’s best to get it checked to avoid engine damage
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            
-                            <div className="flex lgs:w-auto lgs:scale-90 lgs:ml-2 scale-75 s  items-start justify-center">
-                                
-                                <div className="flex bg-primary overflow-hidden border-4 w-[4rem] h-[4rem] rounded-full" data-aos='zoom-in' data-aos-delay='550'>
-                                    <Image src={chatPupil3} alt="" className="flex object-cover z-50 lgs:h-[4rem] sms:w-[4rem] lgs:w-[4rem]"/>
-                                </div>
-
-                                <div className="flex flex-col bg-gray-900 rounded-2xl ml-2 items-start p-5 justify-center lgs:w-[30rem] lgs:h-[8rem]" data-aos='fade-left' data-aos-delay='600'
-                                style={{
-                                    boxShadow:'0px 0px 20px 5px rgba(0,0,0, 0.4), inset 0px 0px 10px 2px rgba(255,255,255, 0.4)'
-                                }}>
-                                    <h2 className="flex font-dmsans text-orange-600 lgs:text-sm"
-                                    style={{
-                                        fontWeight:'800'
-                                    }}>
-                                        David Jhohanson<span className="ml-2 text-primary"
-                                        style={{
-                                            fontWeight:'200'
-                                        }}>
-                                            Wed 08:01
-                                        </span>
-                                    </h2>
-                                    <p className="flex font-dmsans text-primary lgs:text-lg"
-                                    style={{
-                                        fontWeight:'100'
-                                    }}>
-                                        When I brake at high speeds, my car starts shaking. What could be the cause?
-                                    </p>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-
-                </div>
+         
 
 
                 {/*  Sections */}
@@ -2119,5 +2025,6 @@ const Home = () => {
     );
 };
 
-export default Home;
 
+
+export default Home;

@@ -285,6 +285,18 @@
   animation: movingText01Reverse 40s infinite ease-in-out forwards;
 }
 
+/* Scaling Animation for Picture Zoom Effect*/
+@keyframes expoZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(2); }
+  100% { transform: scale(1); }
+}
+
+.animate-expoZoom {
+  animation: 20s ease-in-out infinite expoZoom;
+}
+
+
 
 
 /* Scaling Animation 01*/

@@ -10,6 +10,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+     "types": ["@react-three/fiber", "@types/three"],
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
